@@ -2,10 +2,15 @@ package Player;
 import Item.*;
 import Room.*;
 
+import java.util.List;
+
 public abstract class Player {
 
-    
+    Room room;
 
+    private List<Item> items;
+
+    private int frozenForRound = 0;
 
     //-----------INVENTORY FUNCTIONS----------------
 
@@ -72,6 +77,14 @@ public abstract class Player {
 
     }
 
+    /**
+     * This function returns the room of the player.
+     * @return The room of the player.
+     */
+    public Room GetRoom() {
+        return this.room;
+    }
+
 
     //-----------INTERACTION FUNCTIONS----------------
 
@@ -81,6 +94,26 @@ public abstract class Player {
      */
     public abstract void Interact(Player player);
 
+    /**
+     * This function is called, when a player needs to interact with a Teacher
+     * @param teacher The teacher that we interact with
+     */
     public abstract void ReactToTeacher(Teacher teacher);
+
+    /**
+     * This function when called freeze the player for a number of rounds
+     * @param freezeForRounds The number of rounds the player needs to be frozen
+     */
+    public void Freeze( int freezeForRounds ) {
+        this.frozenForRound = freezeForRounds;
+    }
+
+    /**
+     * This function returns the number of rounds the player is frozen for
+     * @return The number of rounds the player is frozen for
+     */
+    public int GetFrozenForRound() {
+        return this.frozenForRound;
+    }
 
 }
