@@ -4,23 +4,18 @@ import Player.*;
 public class Tvsz extends Item {
     private int abilityNumber;
 
-    public int getAbilityNumber() {
-        return abilityNumber;
+    public Tvsz(){
+        abilityNumber = 3;
     }
 
-    public void setAbilityNumber(int abilityNumber) {
-        this.abilityNumber = abilityNumber;
+    @Override
+    public boolean NeedToThrow() {
+        return abilityNumber == 0;
     }
-
 
     @Override
     public void Use(Player player) {
-
-    }
-
-    @Override
-    public boolean ReactToGas(){
-        return true;
+        abilityNumber --;
     }
 
     @Override
@@ -28,7 +23,4 @@ public class Tvsz extends Item {
         return true;
     }
 
-    public void DecreaseAbility(){
-
-    }
 }

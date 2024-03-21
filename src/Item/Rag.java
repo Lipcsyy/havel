@@ -1,0 +1,30 @@
+package Item;
+
+import Player.Player;
+
+public class Rag extends Item{
+    private int turnsLeft;
+
+    public Rag(){
+        turnsLeft = 5;
+    }
+
+    public void Use(Player player){
+        player.Freeze(3);
+    }
+
+    @Override
+    public boolean ReactToHit(Player player){
+        return true;
+    }
+
+    @Override
+    public void DecreaseTurnsLeft(){
+        turnsLeft --;
+    }
+
+    @Override
+    public boolean NeedToThrow(){
+        return turnsLeft == 0;
+    }
+}

@@ -11,7 +11,9 @@ public abstract class Item {
      * Method to be overridden by subclasses to define the action taken when the item is used.
      * The default implementation is empty, indicating no action.
      */
-    public abstract void Use(Player player);
+    public void Use(Player player){}
+
+    public void UseTransistor(Player player){}
 
     /**
      * Indicates how an item reacts to gas exposure.
@@ -20,17 +22,21 @@ public abstract class Item {
      *
      * @return boolean indicating if the item reacts to gas.
      */
-    public abstract boolean ReactToGas();
+    public boolean ReactToGas(){
+        return false;
+    }
 
     /**
      * Indicates how an item reacts when hit by a teacher.
      * This method returns true by default, suggesting a generic reaction to being hit.
      * Subclasses are expected to override this method with specific behaviors.
      *
-     * @param teacher The Teacher object interacting with the item.
+     * @param player The Teacher object interacting with the item.
      * @return boolean indicating if the item reacts when hit by a teacher.
      */
-    public abstract boolean ReactToHit(Player player);
+    public boolean ReactToHit(Player player){
+        return false;
+    }
 
     /**
      * Defines the behavior when a player picks up the item.
@@ -39,5 +45,16 @@ public abstract class Item {
      * @param player The Player object picking up the item.
      */
     public void PickUpItem(Player player) {
-    };
+        player.AddItem(this);
+    }
+
+    public void DecreaseTurnsLeft(){}
+
+    public boolean NeedToThrow(){
+        return false;
+    }
+
+    public void Pair( Player player ){}
+
+    public void Connect( Transistor transistor ){}
 }

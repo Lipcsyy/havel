@@ -18,8 +18,14 @@ public abstract class Player {
      * This function adds an item to the inventory from the floor.
      * @param item The item to be added to the inventory from the floor.
      */
-    public  void CollectItem(Item item) {
+    public void CollectItem(Item item) {
 
+        if (this.HasMoreSpaceInInventory() == false) {
+            return;
+        }
+
+        item.PickUpItem(this);
+        this.room.RemoveItem(item);
     };
 
     /**
@@ -50,6 +56,12 @@ public abstract class Player {
         return true;
     };
 
+    public List<Item> GetInventory() {
+        return this.items;
+    }
+
+    public void AddItem(Item item) {
+        this.items.add(item);}
 
     //-----------MOVEMENT FUNCTIONS----------------
 
@@ -58,7 +70,8 @@ public abstract class Player {
      * @param room The room to move to.
      */
     public void Move(Room room) {
-
+        this.room.RemovePlayer(this);
+        room.AddPlayer(this);
     };
 
     /**
@@ -98,7 +111,7 @@ public abstract class Player {
      * This function is called, when a player needs to interact with a Teacher
      * @param teacher The teacher that we interact with
      */
-    public abstract void ReactToTeacher(Teacher teacher);
+    public abstract void ReactToTeacher(Player teacher);
 
     /**
      * This function when called freeze the player for a number of rounds
