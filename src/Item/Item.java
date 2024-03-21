@@ -1,22 +1,43 @@
 package Item;
 import Player.*;
 
+/**
+ * Represents an abstract Item class that defines the basic structure and behaviors of items in the game.
+ * This class serves as a base for all items, providing default implementations and expected behaviors for subclasses to override.
+ */
 public abstract class Item {
 
-    public void Use() {
+    /**
+     * Method to be overridden by subclasses to define the action taken when the item is used.
+     * The default implementation is empty, indicating no action.
+     */
+    public abstract void Use(Player player);
 
+    /**
+     * Indicates how an item reacts to gas exposure.
+     * By default, this method returns true, suggesting a generic reaction to gas.
+     * Subclasses can override this method to provide specific reactions.
+     *
+     * @return boolean indicating if the item reacts to gas.
+     */
+    public abstract boolean ReactToGas();
+
+    /**
+     * Indicates how an item reacts when hit by a teacher.
+     * This method returns true by default, suggesting a generic reaction to being hit.
+     * Subclasses are expected to override this method with specific behaviors.
+     *
+     * @param teacher The Teacher object interacting with the item.
+     * @return boolean indicating if the item reacts when hit by a teacher.
+     */
+    public abstract boolean ReactToHit(Player player);
+
+    /**
+     * Defines the behavior when a player picks up the item.
+     * The default implementation is empty, as specific behavior is expected to be defined in subclasses.
+     *
+     * @param player The Player object picking up the item.
+     */
+    public void PickUpItem(Player player) {
     };
-
-    public boolean ReactToGas() {
-
-        return true;
-    };
-
-    public boolean ReactToHit(Teacher teacher) {
-
-        return true;
-    };
-
-
-
 }
