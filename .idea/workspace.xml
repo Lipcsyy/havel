@@ -5,26 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Changed Player class">
-      <change afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Mask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Mask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
+    </list>
+    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
+    <list id="2ab48727-909b-4a84-abcd-3c107a2b399d" name="Changes by Madia" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Item/BeerGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BeerGlass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Teacher.java" afterDir="false" />
-    </list>
-    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
-    </list>
-    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Room/GasRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/GasRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
-    <list id="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" name="Changes by Madia" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-    </list>
-    <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
+    <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Changes made by the team" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,31 +46,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Item/Tvsz.java">
+    <file path="$PROJECT_DIR$/src/Player/Student.java">
       <ranges>
-        <range start1="6" end1="8" start2="6" end2="13" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="9" end1="14" start2="14" end2="14" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="17" end1="18" start2="17" end2="18" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="20" end1="25" start2="20" end2="20" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
-        <range start1="30" end1="33" start2="25" end2="25" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Item/Item.java">
-      <ranges>
-        <range start1="13" end1="14" start2="13" end2="16" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="22" end1="23" start2="24" end2="27" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="29" end1="30" start2="33" end2="34" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="32" end1="33" start2="36" end2="39" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="41" end1="42" start2="47" end2="59" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
+        <range start1="3" end1="3" start2="3" end2="4" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="5" end1="5" start2="6" end2="11" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="13" end1="13" start2="19" end2="25" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="19" end1="19" start2="31" end2="44" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/Player/Player.java">
       <ranges>
-        <range start1="20" end1="21" start2="20" end2="21" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="22" end1="22" start2="22" end2="28" changelist="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" />
-        <range start1="52" end1="52" start2="58" end2="64" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="60" end1="61" start2="72" end2="74" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="100" end1="101" start2="113" end2="114" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="4" end1="4" start2="4" end2="5" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="8" end1="8" start2="9" end2="10" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="10" end1="11" start2="12" end2="13" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="12" end1="13" start2="14" end2="15" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="14" end1="14" start2="16" end2="35" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="72" end1="74" start2="93" end2="98" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="81" end1="82" start2="105" end2="106" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="119" end1="121" start2="143" end2="146" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="130" end1="130" start2="155" end2="159" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Item/Transistor.java">
+      <ranges>
+        <range start1="13" end1="15" start2="13" end2="18" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="16" end1="17" start2="19" end2="20" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
+        <range start1="26" end1="26" start2="29" end2="30" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="44" end1="44" start2="48" end2="59" changelist="2ab48727-909b-4a84-abcd-3c107a2b399d" />
       </ranges>
     </file>
   </component>
@@ -78,25 +85,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="havel" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -111,7 +133,6 @@
       <workItem from="1710940764189" duration="2633000" />
       <workItem from="1710944962412" duration="19000" />
       <workItem from="1710944991561" duration="3082000" />
-      <workItem from="1711025931523" duration="4133000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -161,15 +182,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710948050177</updated>
     </task>
-    <task id="LOCAL-00007" summary="Last commit">
-      <option name="closed" value="true" />
-      <created>1711025979197</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1711025979197</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,13 +194,8 @@
     <MESSAGE value="Added Item class" />
     <MESSAGE value="Added Room Class" />
     <MESSAGE value="Added a Logger" />
-    <MESSAGE value="Changes made by the team" />
     <MESSAGE value="Changed Player class" />
-    <MESSAGE value="Last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last commit" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Changes made by the team" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes made by the team" />
   </component>
 </project>

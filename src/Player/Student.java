@@ -11,6 +11,12 @@ public class Student extends Player {
     @Override
     public void ReactToTeacher(Player teacher) {
 
+        for(Item item: items){
+            if(item.ReactToHit(teacher)){
+                return;
+            }
+        }
+        setIsAlive(false);
     }
 
     @Override

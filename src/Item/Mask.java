@@ -7,10 +7,6 @@ public class Mask extends Item{
     private int turnsLeft;
 
     public Mask(){turnsLeft = 3;}
-    @Override
-    public void Use(Player player) {
-
-    }
 
     public boolean ReactToGas(){
         return true;

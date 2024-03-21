@@ -24,6 +24,7 @@ public class Transistor extends Item{
     public void SetRoom(Room room){
         this.room = room;
     }
+    public Room GetRoom(){return room;}
 
     public boolean GetHasPair(){
         return hasPair;

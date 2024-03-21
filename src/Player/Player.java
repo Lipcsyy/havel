@@ -6,11 +6,31 @@ import java.util.List;
 
 public abstract class Player {
 
+    boolean isAlive;
     Room room;
 
-    private List<Item> items;
+    protected List<Item> items;
 
     private int frozenForRound = 0;
+
+
+    public Player( Room startRoom){
+        isAlive = true;
+        room = startRoom;
+        items = new ArrayList<Item>();
+        frozenForRound = 0;
+
+        if( startRoom != null)
+            startRoom.AddPlayer( this );
+    }
+
+    public void setIsAlive(boolean isAlive){
+        this.isAlive = isAlive;
+    }
+
+    public boolean GetIsAlive(){
+        return isAlive;
+    }
 
     //-----------INVENTORY FUNCTIONS----------------
 
