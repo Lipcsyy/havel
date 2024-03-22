@@ -14,7 +14,7 @@ public class Transistor extends Item{
 
 
     public void Pair(Player player){
-        List<Item> playerItems = player.GetInventiory();
+        List<Item> playerItems = player.GetInventory();
 
         for( Item item : playerItems){
             item.Connect(this);

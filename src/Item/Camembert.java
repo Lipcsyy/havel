@@ -10,4 +10,8 @@ public class Camembert extends Item{
         Room room = player.GetRoom();
         room.SetTurnsLeftForEffect(3);
     }
+
+    public void MakeGas(Room room){
+
+    }
 }

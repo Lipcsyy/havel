@@ -28,5 +28,6 @@ public class SlideRule extends Item {
      * @param player The Player object picking up the SlideRule.
      */
     public void PickUpItem(Player player) {
+
     }
 }

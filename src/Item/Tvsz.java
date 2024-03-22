@@ -1,4 +1,5 @@
 package Item;
+import Logger.Logger;
 import Player.*;
 
 public class Tvsz extends Item {
@@ -15,11 +16,15 @@ public class Tvsz extends Item {
 
     @Override
     public void Use(Player player) {
+        Logger.logEntry(this.getClass().getName(), "Use");
         abilityNumber --;
+        Logger.logExit(this.getClass().getName(), "Use");
     }
 
     @Override
-    public boolean ReactToHit(Player player){
+    public boolean CanSave(Player player){
+        Logger.logEntry(this.getClass().getName(), "CanSave");
+        Logger.logExit(this.getClass().getName(), "CanSave");
         return true;
     }
 

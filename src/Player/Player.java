@@ -2,26 +2,25 @@ package Player;
 import Item.*;
 import Room.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player {
 
     boolean isAlive;
     Room room;
-
     protected List<Item> items;
-
     private int frozenForRound = 0;
 
 
-    public Player( Room startRoom){
+    public Player( Room startRoom ) {
         isAlive = true;
         room = startRoom;
         items = new ArrayList<Item>();
         frozenForRound = 0;
 
-        if( startRoom != null)
-            startRoom.AddPlayer( this );
+       if( startRoom != null)
+          startRoom.AddPlayer( this );
     }
 
     public void setIsAlive(boolean isAlive){
@@ -40,7 +39,7 @@ public abstract class Player {
      */
     public void CollectItem(Item item) {
 
-        if (this.HasMoreSpaceInInventory() == false) {
+        if (!this.HasMoreSpaceInInventory()) {
             return;
         }
 
@@ -49,31 +48,28 @@ public abstract class Player {
     };
 
     /**
-     * This function drops an item from the inventory to the floor.
-     * @param item The item to be dropped.
-     */
-    public void DropItem(Item item) {
-
-    };
-
-    /**
      * This function drops all the items in the inventory to the floor.
      */
     public void DropAllItem() {
-
+        for(Item i: items){
+            this.room.AddItem(i);
+            this.items.remove(i);
+        }
     };
 
     /**
      * This function removes an item from the inventory. The doesn't drop to the floor, it is removed completely.
      * @param item The item to be removed from the inventory.
      */
-    public abstract void RemoveFromInventory(Item item);
+    public void RemoveFromInventory(Item item){
+        this.items.remove(item);
+    }
 
     /**
      * This function return true or false based on the inventory space of the player
      */
     public boolean HasMoreSpaceInInventory() {
-        return true;
+        return this.items.size() < 5;
     };
 
     public List<Item> GetInventory() {
@@ -92,6 +88,7 @@ public abstract class Player {
     public void Move(Room room) {
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
+        this.SetRoom(room);
     };
 
     /**
@@ -99,7 +96,7 @@ public abstract class Player {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
-
+        room.Enter(this);
     };
 
     /**
@@ -107,7 +104,7 @@ public abstract class Player {
      * @param room The room to set.
      */
     public void SetRoom(Room room) {
-
+        this.room = room;
     }
 
     /**

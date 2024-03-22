@@ -2,8 +2,10 @@ package Room;
 import Item.*;
 import Player.*;
 import java.util.*;
+import Logger.*;
 
-public abstract class Room {
+
+public class Room {
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
@@ -15,7 +17,9 @@ public abstract class Room {
         this.capacity = capacity;
         this. items = items;
         this.neighbours = neighbours;
+        this.players = new ArrayList<Player>();
     }
+
 
 
     //----------ITEM FUNCTIONS------------------------
@@ -59,6 +63,8 @@ public abstract class Room {
     //-------------MOVING AND DOOR FUNCTIONS--------------
     public void Enter(Player player){
 
+        Logger.logEntry(this.getClass().getName(), "Enter");
+
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             AddPlayer(player);
@@ -84,12 +90,16 @@ public abstract class Room {
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
         }
+
+        Logger.logExit(this.getClass().getName(), "Enter");
     }
 
     public boolean HasMoreSpaceInRoom(){
         return players.size() < capacity;
     }
 
-    public abstract void ManageDoors();
+    public void ManageDoors() {
+
+    };
 
 }

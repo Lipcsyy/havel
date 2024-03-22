@@ -7,7 +7,7 @@ public class Logger {
     // Logs the entry of a method with indentation based on call depth
     public static void logEntry(String className, String methodName) {
         indent();
-        System.out.println(">" + "[ " + className.toLowerCase() + ": " + className + "]." + methodName + "()");
+        System.out.println(">" + "[ " + className.toLowerCase() + ": ]." + methodName + "()");
         callDepth.set(callDepth.get() + 1);
     }
 

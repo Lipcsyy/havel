@@ -1,5 +1,6 @@
 package Item;
 import Player.*;
+import Room.*;
 
 /**
  * Represents an abstract Item class that defines the basic structure and behaviors of items in the game.
@@ -34,7 +35,7 @@ public abstract class Item {
      * @param player The Teacher object interacting with the item.
      * @return boolean indicating if the item reacts when hit by a teacher.
      */
-    public boolean ReactToHit(Player player){
+    public boolean CanSave(Player player){
         return false;
     }
 
@@ -57,4 +58,6 @@ public abstract class Item {
     public void Pair( Player player ){}
 
     public void Connect( Transistor transistor ){}
+
+    public void MakeGas(Room room){}
 }

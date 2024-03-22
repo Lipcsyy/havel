@@ -15,7 +15,7 @@ public class BeerGlass extends Item{
     }
 
     @Override
-    public boolean ReactToHit(Player player){
+    public boolean CanSave(Player player){
         return true;
     }
 
