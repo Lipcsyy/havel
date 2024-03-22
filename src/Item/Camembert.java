@@ -7,11 +7,10 @@ public class Camembert extends Item{
 
     @Override
     public void Use(Player player) {
-        Room room = player.GetRoom();
-        room.SetTurnsLeftForEffect(3);
+        this.MakeGas(player.GetRoom());
     }
 
     public void MakeGas(Room room){
-
+        room.SetTurnsLeftForEffect(5);
     }
 }

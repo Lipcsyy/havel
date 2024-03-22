@@ -34,7 +34,7 @@ public class Student extends Player {
         Logger.logExit(this.getClass().getName(), "Interact");
     }
 
-    // Own methods of the Student class
+    // ------OWN METHODS OF THE STUDENT CLASS TO BE USED BY BUTTONS-------
 
     // Uses camembert if there is one in the inventory
     public void Camembert(){
@@ -49,6 +49,10 @@ public class Student extends Player {
             this.room.AddItem(items.get(0));
             this.items.remove(items.get(0));
         }
+    }
+
+    public void Transistor(){
+
     }
 
 }

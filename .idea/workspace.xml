@@ -4,95 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Changes made by the team">
-      <change afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__22__12_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__22__12_20__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/BeerGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BeerGlass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
-    </list>
-    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
-    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="">
       <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
-    <list id="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" name="Changes by Madia" comment="" />
-    <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Item/Item.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="36" end1="37" start2="37" end2="38" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="59" end1="59" start2="60" end2="62" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Room/Room.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="6" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="5" end1="6" start2="7" end2="8" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="17" end1="17" start2="19" end2="20" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="18" end1="18" start2="21" end2="22" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="61" end1="61" start2="65" end2="67" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="86" end1="86" start2="92" end2="94" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="92" end1="93" start2="100" end2="103" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Player/Student.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="5" end1="7" start2="7" end2="10" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="11" end1="12" start2="14" end2="17" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="13" end1="15" start2="18" end2="22" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="19" end1="19" start2="26" end2="28" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="23" end1="24" start2="32" end2="34" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="25" end1="25" start2="35" end2="53" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Player/Player.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="10" end1="11" start2="11" end2="11" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="12" end1="13" start2="12" end2="12" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="16" end1="17" start2="15" end2="16" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="22" end1="24" start2="21" end2="23" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="42" end1="43" start2="41" end2="42" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="49" end1="57" start2="48" end2="48" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="62" end1="63" start2="53" end2="57" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="69" end1="70" start2="63" end2="66" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="75" end1="76" start2="71" end2="72" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="94" end1="94" start2="90" end2="91" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="101" end1="102" start2="98" end2="99" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-        <range start1="109" end1="110" start2="106" end2="107" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -105,7 +32,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -115,7 +41,6 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -123,7 +48,6 @@
     <attachedChunks>
       <set>
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -135,87 +59,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710940763209</updated>
-      <workItem from="1710940764189" duration="2633000" />
-      <workItem from="1710944962412" duration="19000" />
-      <workItem from="1710944991561" duration="3082000" />
-      <workItem from="1711025931523" duration="4133000" />
-      <workItem from="1711106833629" duration="4256000" />
+      <workItem from="1710940764189" duration="79000" />
     </task>
-    <task id="LOCAL-00001" summary="Initinal Commit">
-      <option name="closed" value="true" />
-      <created>1710940860421</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1710940860421</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added Player class">
-      <option name="closed" value="true" />
-      <created>1710945586832</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1710945586832</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added Item class">
-      <option name="closed" value="true" />
-      <created>1710945617563</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1710945617563</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added Room Class">
-      <option name="closed" value="true" />
-      <created>1710945702907</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1710945702907</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added a Logger">
-      <option name="closed" value="true" />
-      <created>1710948034670</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1710948034670</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Changed Player class">
-      <option name="closed" value="true" />
-      <created>1710948050177</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1710948050177</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Last commit">
-      <option name="closed" value="true" />
-      <created>1711025979197</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1711025979197</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initinal Commit" />
-    <MESSAGE value="Added Player class" />
-    <MESSAGE value="Added Item class" />
-    <MESSAGE value="Added Room Class" />
-    <MESSAGE value="Added a Logger" />
-    <MESSAGE value="Changes made by the team" />
-    <MESSAGE value="Changed Player class" />
-    <MESSAGE value="Last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last commit" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

@@ -59,5 +59,6 @@ public abstract class Item {
 
     public void Connect( Transistor transistor ){}
 
+    // a method used by Camembert to implicitely make gas in the given room
     public void MakeGas(Room room){}
 }

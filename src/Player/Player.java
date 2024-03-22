@@ -53,7 +53,7 @@ public abstract class Player {
     public void DropAllItem() {
         for(Item i: items){
             this.room.AddItem(i);
-            this.items.remove(i);
+            this.RemoveFromInventory(i);
         }
     };
 
