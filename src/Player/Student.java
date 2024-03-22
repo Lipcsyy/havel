@@ -6,6 +6,8 @@ import Room.*;
 
 public class Student extends Player {
 
+    private boolean hasTransistorPair;
+    private boolean hasDeployedTransistors;
     public Student(Room startRoom) {
         super(startRoom);
 
@@ -51,8 +53,25 @@ public class Student extends Player {
         }
     }
 
-    public void Transistor(){
+    public void PairTransistor(){
+        for(Item i: this.items){
+            if(i.Pair(this)) {
+                hasTransistorPair = true;
+                break;
+            }
+        }
+    }
 
+    public void UseTransistor(){
+        for(Item i: this.items){
+            i.Teleport(this);
+        }
+    }
+
+    public void DeployTransistor(){
+        for(Item i: this.items){
+            i.Deploy(this);
+        }
     }
 
 }

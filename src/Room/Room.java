@@ -73,11 +73,8 @@ public class Room {
             return;
         }
 
-        if ( items.isEmpty() == false ) {
-            for ( Item item : items ) {
-                player.CollectItem(item);
-            }
-
+        if (!items.isEmpty()) {
+            player.CollectItem(items.get(0));
         }
 
         //making the players interact with eachother
