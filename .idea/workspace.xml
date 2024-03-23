@@ -4,15 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Hunor változtatásai">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+=======
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Changes made by the team">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__10_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__10_03__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__13_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__13_04__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
+>>>>>>> 96622aa5ae94508bc030ac6b5b415909e07236f4
     </list>
+    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
+    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="" />
+    <list id="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" name="Changes by Madia" comment="" />
+    <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,6 +46,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -39,12 +60,29 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 96622aa5ae94508bc030ac6b5b415909e07236f4
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -56,25 +94,103 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710940763209</updated>
+<<<<<<< HEAD
       <workItem from="1710940764189" duration="79000" />
       <workItem from="1711200010037" duration="21000" />
+=======
+      <workItem from="1710940764189" duration="2633000" />
+      <workItem from="1710944962412" duration="19000" />
+      <workItem from="1710944991561" duration="3082000" />
+      <workItem from="1711025931523" duration="4133000" />
+      <workItem from="1711106833629" duration="4256000" />
+>>>>>>> 96622aa5ae94508bc030ac6b5b415909e07236f4
     </task>
-    <task id="LOCAL-00001" summary="Hunor változtatásai">
+    <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
-      <created>1711119688029</created>
+      <created>1710940860421</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1711119688029</updated>
+      <updated>1710940860421</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Player class">
+      <option name="closed" value="true" />
+      <created>1710945586832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710945586832</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Item class">
+      <option name="closed" value="true" />
+      <created>1710945617563</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710945617563</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Room Class">
+      <option name="closed" value="true" />
+      <created>1710945702907</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710945702907</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added a Logger">
+      <option name="closed" value="true" />
+      <created>1710948034670</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710948034670</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changed Player class">
+      <option name="closed" value="true" />
+      <created>1710948050177</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710948050177</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Last commit">
+      <option name="closed" value="true" />
+      <created>1711025979197</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711025979197</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hunor változtatásai" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hunor változtatásai" />
+    <MESSAGE value="Initinal Commit" />
+    <MESSAGE value="Added Player class" />
+    <MESSAGE value="Added Item class" />
+    <MESSAGE value="Added Room Class" />
+    <MESSAGE value="Added a Logger" />
+    <MESSAGE value="Changes made by the team" />
+    <MESSAGE value="Changed Player class" />
+    <MESSAGE value="Last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -4,6 +4,8 @@ import Player.*;
 import java.util.*;
 import Logger.*;
 
+import static Logger.Logger.callDepth;
+
 
 public class Room {
     protected int capacity;
@@ -24,11 +26,15 @@ public class Room {
 
     //----------ITEM FUNCTIONS------------------------
     public void AddItem(Item item) {
+        Logger.logEntry(this.getClass().getName(), "AddItem", "item");
         items.add(item);
+        Logger.logExit(this.getClass().getName(), "AddItem");
     }
 
     public void RemoveItem(Item item) {
+        Logger.logEntry(this.getClass().getName(), "RemoveItem", "item");
         items.remove(item);
+        Logger.logExit(this.getClass().getName(), "RemoveItem");
     }
 
     //-----------------ROOM FUNCTIONS----------------
@@ -43,11 +49,19 @@ public class Room {
 
     //-------------PLAYER FUNCTIONS--------------
     public void AddPlayer(Player player) {
+        Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+
         players.add(player);
+
+        Logger.logExit(this.getClass().getName(), "AddPlayer");
     }
 
     public void RemovePlayer(Player player){
+        Logger.logEntry(this.getClass().getName(), "RemovePlayer", "player");
+
         players.remove(player);
+
+        Logger.logExit(this.getClass().getName(), "RemovePlayer");
     }
 
 
@@ -63,13 +77,14 @@ public class Room {
     //-------------MOVING AND DOOR FUNCTIONS--------------
     public void Enter(Player player){
 
-        Logger.logEntry(this.getClass().getName(), "Enter");
+        Logger.logEntry(this.getClass().getName(), "Enter", "player");
 
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             AddPlayer(player);
             player.Move(this);
         } else {
+            Logger.logExit(this.getClass().getName(), "Enter");
             return;
         }
 
@@ -92,7 +107,10 @@ public class Room {
     }
 
     public boolean HasMoreSpaceInRoom(){
+        Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInRoom", "");
+        Logger.logExit(this.getClass().getName(), "HasMoreSpaceInRoom", players.size() < capacity ? "true" : "false");
         return players.size() < capacity;
+
     }
 
     public void ManageDoors() {

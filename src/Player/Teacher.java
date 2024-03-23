@@ -15,13 +15,14 @@ public class Teacher extends Player{
     }
 
     @Override
-    public void ReactToTeacher(Player teacher) {
-        Logger.logEntry(this.getClass().getName(), "ReactToTeacher");
+    public void ReactToTeacher(Player player) {
+        Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
+        Logger.logExit(this.getClass().getName(), "ReactToTeacher");
     }
 
     @Override
     public void Interact(Player player) {
-        Logger.logEntry(this.getClass().getName(), "Interact");
+        Logger.logEntry(this.getClass().getName(), "Interact", "player");
         player.ReactToTeacher(this);
         Logger.logExit(this.getClass().getName(), "Interact");
     }
