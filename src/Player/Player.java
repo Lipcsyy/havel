@@ -1,6 +1,7 @@
 package Player;
 import Item.*;
 import Room.*;
+import Logger.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,9 +87,13 @@ public abstract class Player {
      * @param room The room to move to.
      */
     public void Move(Room room) {
+        Logger.logEntry(this.getClass().getName(), "Move" );
+
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
         this.SetRoom(room);
+
+        Logger.logExit(this.getClass().getName(), "Move" );
     };
 
     /**
@@ -96,7 +101,11 @@ public abstract class Player {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
+        Logger.logEntry(this.getClass().getName(), "ChangeRoom" );
+
         room.Enter(this);
+
+        Logger.logExit(this.getClass().getName(), "ChangeRoom" );
     };
 
     /**
@@ -104,7 +113,12 @@ public abstract class Player {
      * @param room The room to set.
      */
     public void SetRoom(Room room) {
+
+        Logger.logEntry(this.getClass().getName(), "SetRoom");
+
         this.room = room;
+
+        Logger.logExit(this.getClass().getName(), "SetRoom");
     }
 
     /**

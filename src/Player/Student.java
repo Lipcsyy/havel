@@ -48,8 +48,8 @@ public class Student extends Player {
     // Drops the oldest item in the invetory
     public void DropItem() {
         if(!this.items.isEmpty()){
-            this.room.AddItem(items.get(0));
-            this.items.remove(items.get(0));
+            this.room.AddItem(items.getFirst());
+            this.items.remove(items.getFirst());
         }
     }
 

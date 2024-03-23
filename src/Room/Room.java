@@ -43,11 +43,19 @@ public class Room {
 
     //-------------PLAYER FUNCTIONS--------------
     public void AddPlayer(Player player) {
+        Logger.logEntry(this.getClass().getName(), "AddPlayer");
+
         players.add(player);
+
+        Logger.logExit(this.getClass().getName(), "AddPlayer");
     }
 
     public void RemovePlayer(Player player){
+        Logger.logEntry(this.getClass().getName(), "RemovePlayer");
+
         players.remove(player);
+
+        Logger.logExit(this.getClass().getName(), "RemovePlayer");
     }
 
 
