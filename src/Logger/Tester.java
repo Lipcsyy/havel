@@ -29,7 +29,7 @@ public class Tester {
         testMap.put(15, Tester::Test15);
         testMap.put(16, Tester::Test16);
         testMap.put(17, Tester::Test17);
-        testMap.put(18, Tester::Test17);
+        testMap.put(18, Tester::Test18);
     }
 
     enum RoomType {
