@@ -244,7 +244,7 @@ public class Tester {
 
     //9.1.2 The Student has two transistors and he pairs them
     /* Megfigyeles
-    - !!! NEM FUT LE, KIAKAD A PROGRAM AGYA!!!
+
     */
     public static void Test14() {
 
@@ -258,7 +258,7 @@ public class Tester {
 
     //9.2.1 The Student has two transistors but none of them are placed in the room
     /* Megfigyeles
-    - !!! NEM FUT LE, a this.room is null miatt
+
     */
     public static void Test15() {
 
