@@ -7,15 +7,14 @@ import Room.*;
  * This class serves as a base for all items, providing default implementations and expected behaviors for subclasses to override.
  */
 public abstract class Item {
-
     /**
      * Method to be overridden by subclasses to define the action taken when the item is used.
      * The default implementation is empty, indicating no action.
      */
-    public void Use(Player player){}
+    public void Use(Player player){ }
 
     // overridden by Transistor class to implement teleporting
-    public void Teleport(Player player){}
+    public void Teleport(Player player){ }
 
     /**
      * Indicates how an item reacts to gas exposure.
@@ -50,7 +49,7 @@ public abstract class Item {
         player.AddItem(this);
     }
 
-    public void DecreaseTurnsLeft(){}
+    public void DecreaseTurnsLeft(){ }
 
     public boolean NeedToThrow(){
         return false;
