@@ -54,7 +54,7 @@ public abstract class Item {
     }
 
     // overridden by Transistor class to implement teleporting
-    public boolean Teleport(Player player){ return false; }
+    public boolean Teleport(Student student){ return false; }
 
     // overridden in Transistor, looks for a transistor pair in the player's inventory
     public boolean Pair(Player player){ return false; }

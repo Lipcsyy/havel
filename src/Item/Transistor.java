@@ -39,13 +39,15 @@ public class Transistor extends Item{
 
     @Override
     public void Connect(Transistor transistor){
-        this.SetPair(transistor);
-        this.SetHasPair(true);
-        transistor.Connect(this);
+        if(!hasPair) {
+            this.SetPair(transistor);
+            this.SetHasPair(true);
+            transistor.Connect(this);
+        }
     }
 
     @Override
-    public boolean Teleport(Player player){
+    public boolean Teleport(Student player){
         this.Use(player);
         return true;
     }

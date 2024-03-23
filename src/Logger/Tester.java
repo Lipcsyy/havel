@@ -120,6 +120,8 @@ public class Tester {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
 
+        room2.Enter(student1);
+
     }
 
     //4.2.1. Student enters gas room where there is nobody and the student doesn't have a mask
@@ -263,7 +265,7 @@ public class Tester {
         student1.AddItem(new Transistor());
         student1.AddItem(new Transistor());
 
-        student1.UseTransistor();
+        student1.Transistor();
 
     }
 
