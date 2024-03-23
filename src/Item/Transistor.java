@@ -47,8 +47,8 @@ public class Transistor extends Item{
     }
 
     @Override
-    public boolean Teleport(Student student){
-        this.Use(student);
+    public boolean Teleport(Student player){
+        this.Use(player);
         return true;
     }
 

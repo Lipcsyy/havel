@@ -29,6 +29,7 @@ public class Tester {
         testMap.put(15, Tester::Test15);
         testMap.put(16, Tester::Test16);
         testMap.put(17, Tester::Test17);
+        testMap.put(18, Tester::Test17);
     }
 
     enum RoomType {
@@ -237,7 +238,7 @@ public class Tester {
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
         student1.AddItem(new Transistor());
 
-        student1.PairTransistor();
+        student1.Transistor();
 
     }
 
@@ -251,7 +252,7 @@ public class Tester {
         student1.AddItem(new Transistor());
         student1.AddItem(new Transistor());
 
-        student1.PairTransistor();
+        student1.Transistor();
 
     }
 
@@ -266,16 +267,28 @@ public class Tester {
         student1.AddItem(new Transistor());
 
         student1.Transistor();
+        student1.Transistor();
 
     }
 
-    //9.2.2 ?? Mi értelme
+    //9.2.2 parosit, lerak es atteleportal
+    public static void Test16() {
+
+        SetupStudentEntersRoomWhereNobody(RoomType.Normal);
+        student1.AddItem(new Transistor());
+        student1.AddItem(new Transistor());
+
+        student1.Transistor();
+        student1.Transistor();
+        student1.Transistor();
+
+    }
 
     //10.1 A Door of the Magic Room disappears
     /* Megfigyeles
     - nincs managedoor es changeroom sem
     */
-    public static void Test16() {
+    public static void Test17() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Magic);
         MagicRoom magicRoom = (MagicRoom) room2;
@@ -287,7 +300,7 @@ public class Tester {
     /* Megfigyeles
     - nincs managedoor, changeroom es move
     */
-    public static void Test17() {
+    public static void Test18() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Magic);
         MagicRoom magicRoom = (MagicRoom) room2;
