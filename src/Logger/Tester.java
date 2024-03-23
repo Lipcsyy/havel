@@ -271,7 +271,7 @@ public class Tester {
 
     //10.1 A Door of the Magic Room disappears
     /* Megfigyeles
-    - nincs managedoor es changeroom
+    - nincs managedoor es changeroom sem
     */
     public static void Test16() {
 
