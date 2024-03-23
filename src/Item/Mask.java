@@ -4,22 +4,23 @@ import Player.Player;
 
 public class Mask extends Item{
 
-    private int turnsLeft;
+    private int abilityNumber;
 
-    public Mask(){turnsLeft = 3;}
+    public Mask(){abilityNumber = 3;}
 
+    @Override
     public boolean ReactToGas(){
         return true;
     }
 
     @Override
     public void DecreaseTurnsLeft(){
-        turnsLeft --;
+        abilityNumber --;
     }
 
     @Override
     public boolean NeedToThrow(){
-        return turnsLeft == 0;
+        return abilityNumber == 0;
     }
 
 

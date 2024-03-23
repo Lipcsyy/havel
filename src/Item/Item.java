@@ -19,7 +19,7 @@ public abstract class Item {
 
     /**
      * Indicates how an item reacts to gas exposure.
-     * By default, this method returns true, suggesting a generic reaction to gas.
+     * By default, this method returns false, suggesting a generic reaction to gas.
      * Subclasses can override this method to provide specific reactions.
      *
      * @return boolean indicating if the item reacts to gas.
@@ -64,7 +64,7 @@ public abstract class Item {
     // overridden by transistor, deployes the first transistor at hand
     public void Deploy(Player player){}
 
-    // a method used by Camembert to implicitely make gas in the given room
+    // a method used by Camembert to expicitly make gas in the given room
     public void MakeGas(Room room){}
 
 

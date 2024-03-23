@@ -9,6 +9,7 @@ public class Rag extends Item{
         turnsLeft = 5;
     }
 
+    @Override
     public void Use(Player player){
         player.Freeze(3);
     }

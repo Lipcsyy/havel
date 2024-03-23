@@ -18,25 +18,29 @@ public class Transistor extends Item{
             if( !item.equals(this)){
                 item.Connect(this);
             }
-            if(this.hasPair)
+            if(this.GetHasPair())
                 return true;
         }
         return false;
     }
 
+    public Transistor GetPair(){
+        return pair;
+    }
+    public void SetPair(Transistor tr) { this.pair = tr; }
+    public boolean GetHasPair(){
+        return hasPair;
+    }
+    public void SetHasPair(boolean b) { this.hasPair = b; }
     public void SetRoom(Room room){
         this.room = room;
     }
     public Room GetRoom(){return room;}
 
-    public boolean GetHasPair(){
-        return hasPair;
-    }
-
     @Override
     public void Connect(Transistor transistor){
-        pair = transistor;
-        hasPair = true;
+        this.SetPair(transistor);
+        this.SetHasPair(true);
         transistor.Connect(this);
     }
 
@@ -47,17 +51,21 @@ public class Transistor extends Item{
 
     @Override
     public void Use(Player player){
+
         // we can only use the transistor if the other room has more space
-        if( this.room.HasMoreSpaceInRoom() ){
+        if( this.GetPair().GetRoom().HasMoreSpaceInRoom() ){
+
             // put the transistor at hand to the ground from the player's hand
             this.SetRoom(player.GetRoom());
             player.RemoveFromInventory(this);
+
             // teleport the player to the room of the pair of the transistor
-            player.ChangeRoom(this.pair.GetRoom());
+            player.ChangeRoom(this.GetPair().GetRoom());
+
             // set the pair's room to null and put it into the players inventory, removing it from the ground
-            this.pair.SetRoom(null);
-            player.CollectItem(this.pair);
-            player.GetRoom().RemoveItem(this.pair);
+            this.GetPair().SetRoom(null);
+            player.CollectItem(this.GetPair());
+            player.GetRoom().RemoveItem(this.GetPair());
         }
     }
 }
