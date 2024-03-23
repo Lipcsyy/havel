@@ -46,7 +46,6 @@ public class Tester {
     static Teacher teacher;
 
 
-
     private static void SetupStudentEntersRoomWhereTeacher() {
         room1 = new Room( 5, new ArrayList<Item>(), null);
         student1 = new Student(room1);
@@ -72,9 +71,6 @@ public class Tester {
     }
 
     //1. Use Tvsz
-    /* Megfigyeles
-    - nincs feeze hivas
-    */
     public static void Test1() {
 
         //Setting up the rooms and players
@@ -86,9 +82,6 @@ public class Tester {
     }
 
     //2. Use Camambert
-    /* Megfigyeles
-    - nincs setgas, freeze, reacttogas es cansave fuggveny
-    */
     public static void Test2() {
 
         SetupStudentEntersRoomWhereTeacher();
@@ -97,12 +90,10 @@ public class Tester {
 
         room2.Enter(student1);
 
+
     }
 
     //3. Use BeerGlass
-    /* Megfigyeles
-    - nincs setgas es freeze fuggveny
-    */
     public static void Test3() {
 
         SetupStudentEntersRoomWhereTeacher();
@@ -126,9 +117,6 @@ public class Tester {
     }
 
     //4.2.1. Student enters gas room where there is nobody and the student doesn't have a mask
-    /* Megfigyeles
-    - nincs reacttogas es cansave
-    */
     public static void Test5() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Gas);
@@ -138,9 +126,6 @@ public class Tester {
     }
 
     //4.2.2. Student enters gas room where there is nobody and the student has a mask
-    /* Megfigyeles
-    - nincs reacttogas es cansave
-    */
     public static void Test6() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Gas);
@@ -151,9 +136,6 @@ public class Tester {
     }
 
     //4.3 Student enters a Room where there is another Student
-    /* Megfigyeles
-    - ez jonak tunik
-    */
     public static void Test7() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
@@ -164,9 +146,6 @@ public class Tester {
     }
 
     //4.4 Student enters a Room where there is a Teacher and the Student doesn't have a TVSZ
-    /* Megfigyeles
-    - ez jonak tunik
-    */
     public static void Test8() {
 
         SetupStudentEntersRoomWhereTeacher();
@@ -176,9 +155,6 @@ public class Tester {
     }
 
     //5. The Student enters a Room where there is a Teacher but the Student has a Rag
-    /* Megfigyeles
-    - setIsAlive hianyzik
-    */
     public static void Test9() {
 
         SetupStudentEntersRoomWhereTeacher();
@@ -189,9 +165,6 @@ public class Tester {
     }
 
     //6. The Student enters a Room where there is no Teacher but the SlideRule is in the Room
-    /* Megfigyeles
-    - move nincs interact, freeze es use
-    */
     public static void Test10() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
@@ -202,9 +175,6 @@ public class Tester {
     }
 
     //7. The Student enters a Room where there is no Teacher. In the Room there are items and the Student has enough space in the inventory
-    /* Megfigyeles
-    - ez jonak tunik
-    */
     public static void Test11() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
@@ -216,9 +186,6 @@ public class Tester {
     }
 
     //8. The inventory of a Student is not empty and he drops an item
-    /* Megfigyeles
-    - ez jonak tunik
-    */
     public static void Test12() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);

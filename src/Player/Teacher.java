@@ -11,7 +11,9 @@ public class Teacher extends Player{
 
     @Override
     public void RemoveFromInventory(Item item) {
-
+        Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
+        items.remove(item);
+        Logger.logExit(this.getClass().getName(), "RemoveFromInventory");
     }
 
     @Override

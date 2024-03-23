@@ -2,6 +2,7 @@ package Item;
 
 import Player.*;
 import Room.*;
+import Logger.Logger;
 
 import java.util.List;
 
@@ -14,46 +15,84 @@ public class Transistor extends Item{
 
     @Override
     public boolean Pair(Player player){
+
+        Logger.logEntry(this.getClass().getName(), "Pair", "player");
+
         for(Item item : player.GetInventory()){
+
             if( !item.equals(this)){
                 item.Connect(this);
             }
-            if(this.GetHasPair())
+
+            if(this.GetHasPair()) {
+                Logger.logExit(this.getClass().getName(), "Pair", "true ");
                 return true;
+            }
         }
+
+        Logger.logExit(this.getClass().getName(), "Pair", "false");
         return false;
     }
 
     public Transistor GetPair(){
+        Logger.logEntry(this.getClass().getName(), "GetPair", "");
+        Logger.logExit(this.getClass().getName(), "GetPair");
         return pair;
     }
-    public void SetPair(Transistor tr) { this.pair = tr; }
+
+    public void SetPair(Transistor tr) {
+        Logger.logEntry(this.getClass().getName(), "SetPair", "tr");
+        this.pair = tr;
+        Logger.logExit(this.getClass().getName(), "SetPair");
+    }
+
     public boolean GetHasPair(){
+        Logger.logEntry(this.getClass().getName(), "GetHasPair", "");
+        Logger.logExit(this.getClass().getName(), "GetHasPair", hasPair ? "true" : "false");
         return hasPair;
     }
-    public void SetHasPair(boolean b) { this.hasPair = b; }
-    public void SetRoom(Room room){
-        this.room = room;
+
+    public void SetHasPair(boolean b) {
+        Logger.logEntry(this.getClass().getName(), "SetHasPair", "b");
+        Logger.logExit(this.getClass().getName(), "SetHasPair");
+        this.hasPair = b;
     }
-    public Room GetRoom(){return room;}
+
+    public void SetRoom(Room room){
+        Logger.logEntry(this.getClass().getName(), "SetRoom", "room");
+        this.room = room;
+        Logger.logExit(this.getClass().getName(), "SetRoom");
+    }
+
+    public Room GetRoom(){
+        Logger.logEntry(this.getClass().getName(), "GetRoom", "");
+        Logger.logExit(this.getClass().getName(), "GetRoom");
+        return room;
+    }
 
     @Override
     public void Connect(Transistor transistor){
+        Logger.logEntry(this.getClass().getName(), "Connect", "transistor");
         if(!hasPair) {
             this.SetPair(transistor);
             this.SetHasPair(true);
             transistor.Connect(this);
         }
+        Logger.logExit(this.getClass().getName(), "Connect");
     }
 
     @Override
-    public boolean Teleport(Student player){
+    public boolean Teleport(Player player){
+        Logger.logEntry(this.getClass().getName(), "Teleport", "player");
         this.Use(player);
+        Logger.logExit(this.getClass().getName(), "Teleport", "true");
         return true;
     }
 
     @Override
     public void Use(Player player){
+
+        Logger.logEntry(this.getClass().getName(), "Use", "player");
 
         // we can only use the transistor if the other room has more space
         if( this.GetPair().GetRoom().HasMoreSpaceInRoom() ){
@@ -70,14 +109,21 @@ public class Transistor extends Item{
             player.CollectItem(this.GetPair());
             player.GetRoom().RemoveItem(this.GetPair());
         }
+
+        Logger.logExit(this.getClass().getName(), "Use");
     }
 
     @Override
-    public boolean Deploy(Student student){
+    public boolean Deploy(Player player){
+
+        Logger.logEntry(this.getClass().getName(), "Deploy", "student");
 
         // put the transistor on the ground from the players inventory
-        this.SetRoom(student.GetRoom());
-        student.RemoveFromInventory(this);
+        this.SetRoom(player.GetRoom());
+        player.RemoveFromInventory(this);
+
+        Logger.logExit(this.getClass().getName(), "Deploy", "true");
+
         return true;
     }
 }

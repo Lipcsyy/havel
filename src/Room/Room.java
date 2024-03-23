@@ -3,9 +3,7 @@ import Item.*;
 import Player.*;
 import java.util.*;
 import Logger.*;
-
 import static Logger.Logger.callDepth;
-
 
 public class Room {
     protected int capacity;
@@ -19,7 +17,7 @@ public class Room {
         this.capacity = capacity;
         this. items = items;
         this.neighbours = neighbours;
-        this.players = new ArrayList<Player>();
+        this.players = new ArrayList<>();
     }
 
 
@@ -67,11 +65,21 @@ public class Room {
 
     //-------------TURNS LEFT FOR EFFECT FUNCTIONS--------------
     public int GetTurnsLeftForEffect() {
+        Logger.logEntry(this.getClass().getName(), "GetTurnsLeftForEffect", "");
+        Logger.logExit(this.getClass().getName(), "GetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
         return turnsLeftForEffect;
     }
 
     public void SetTurnsLeftForEffect(int turnsLeftForEffect) {
+        Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
         this.turnsLeftForEffect = turnsLeftForEffect;
+
+        System.out.println(players.size());
+
+        for ( Player player : this.players ) {
+            player.Freeze(turnsLeftForEffect);
+        }
+        Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
     }
 
     //-------------MOVING AND DOOR FUNCTIONS--------------
@@ -81,7 +89,6 @@ public class Room {
 
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
-            AddPlayer(player);
             player.Move(this);
         } else {
             Logger.logExit(this.getClass().getName(), "Enter");
@@ -89,10 +96,10 @@ public class Room {
         }
 
         if (!items.isEmpty()) {
-            player.CollectItem(items.get(0));
+            player.CollectItem(items.getFirst());
         }
 
-        //making the players interact with eachother
+        //making the players interact with each-other
         for (Player playerInRoom : players) {
 
             if (playerInRoom == player) {
@@ -110,11 +117,10 @@ public class Room {
         Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInRoom", "");
         Logger.logExit(this.getClass().getName(), "HasMoreSpaceInRoom", players.size() < capacity ? "true" : "false");
         return players.size() < capacity;
-
     }
 
     public void ManageDoors() {
 
-    };
+    }
 
 }
