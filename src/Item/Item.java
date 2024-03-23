@@ -14,9 +14,6 @@ public abstract class Item {
      */
     public void Use(Player player){}
 
-    // overridden by Transistor class to implement teleporting
-    public void Teleport(Player player){}
-
     /**
      * Indicates how an item reacts to gas exposure.
      * By default, this method returns false, suggesting a generic reaction to gas.
@@ -56,13 +53,16 @@ public abstract class Item {
         return false;
     }
 
+    // overridden by Transistor class to implement teleporting
+    public boolean Teleport(Player player){ return false; }
+
     // overridden in Transistor, looks for a transistor pair in the player's inventory
     public boolean Pair(Player player){ return false; }
 
     // overridden in Transistor, connects a transistor to another
     public void Connect(Transistor transistor){}
     // overridden by transistor, deployes the first transistor at hand
-    public void Deploy(Player player){}
+    public boolean Deploy(Student student){ return false; }
 
     // a method used by Camembert to expicitly make gas in the given room
     public void MakeGas(Room room){}

@@ -45,8 +45,9 @@ public class Transistor extends Item{
     }
 
     @Override
-    public void Teleport(Player player){
+    public boolean Teleport(Player player){
         this.Use(player);
+        return true;
     }
 
     @Override
@@ -67,5 +68,14 @@ public class Transistor extends Item{
             player.CollectItem(this.GetPair());
             player.GetRoom().RemoveItem(this.GetPair());
         }
+    }
+
+    @Override
+    public boolean Deploy(Student student){
+
+        // put the transistor on the ground from the players inventory
+        this.SetRoom(student.GetRoom());
+        student.RemoveFromInventory(this);
+        return true;
     }
 }

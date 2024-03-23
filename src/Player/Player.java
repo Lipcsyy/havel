@@ -10,11 +10,10 @@ import static Logger.Logger.callDepth;
 
 public abstract class Player {
 
-    boolean isAlive;
-    Room room;
+    protected boolean isAlive;
+    protected Room room;
     protected List<Item> items;
-    private int frozenForRound = 0;
-
+    protected int frozenForRound = 0;
 
     public Player( Room startRoom ) {
         isAlive = true;
@@ -69,7 +68,7 @@ public abstract class Player {
      * @param item The item to be removed from the inventory.
      */
     public void RemoveFromInventory(Item item){
-        this.items.remove(item);
+        this.GetInventory().remove(item);
     }
 
     /**
@@ -83,6 +82,7 @@ public abstract class Player {
         return this.items;
     }
 
+    // ???
     public void AddItem(Item item) {
         this.items.add(item);}
 

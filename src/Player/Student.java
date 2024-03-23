@@ -8,6 +8,7 @@ public class Student extends Player {
 
     private boolean hasTransistorPair;
     private boolean hasDeployedTransistors;
+
     public Student(Room startRoom) {
         super(startRoom);
 
@@ -68,13 +69,17 @@ public class Student extends Player {
 
     public void UseTransistor(){
         for(Item i: this.items){
-            i.Teleport(this);
+            if(i.Teleport(this)){
+                return;
+            }
         }
     }
 
     public void DeployTransistor(){
         for(Item i: this.items){
-            i.Deploy(this);
+            if(i.Deploy(this)){
+                break;
+            }
         }
     }
 
