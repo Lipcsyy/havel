@@ -6,12 +6,17 @@ import Room.*;
 
 public class Student extends Player {
 
-    private boolean hasTransistorPair;
-    private boolean hasDeployedTransistors;
+    private enum TransistorState {
+        Inactive,
+        Paired,
+        Deployed
+    }
+
+    private TransistorState transistorState;
 
     public Student(Room startRoom) {
         super(startRoom);
-
+        transistorState = TransistorState.Inactive;
     }
 
     @Override
@@ -61,7 +66,7 @@ public class Student extends Player {
     public void PairTransistor(){
         for(Item i: this.items){
             if(i.Pair(this)) {
-                hasTransistorPair = true;
+                transistorState = TransistorState.Paired;
                 break;
             }
         }
@@ -78,9 +83,18 @@ public class Student extends Player {
     public void DeployTransistor(){
         for(Item i: this.items){
             if(i.Deploy(this)){
+                transistorState = TransistorState.Deployed;
                 break;
             }
         }
+    }
+
+    public void Transistor(){
+        if(transistorState == TransistorState.Inactive)
+            PairTransistor();
+        if(transistorState == TransistorState.Paired)
+            DeployTransistor();
+        else UseTransistor();
     }
 
 }
