@@ -62,7 +62,7 @@ public abstract class Item {
     // overridden in Transistor, connects a transistor to another
     public void Connect(Transistor transistor){}
     // overridden by transistor, deployes the first transistor at hand
-    public void Deploy((Player player){}
+    public void Deploy(Player player){}
 
     // a method used by Camembert to implicitely make gas in the given room
     public void MakeGas(Room room){}
