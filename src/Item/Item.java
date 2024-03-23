@@ -1,6 +1,7 @@
 package Item;
 import Player.*;
 import Room.*;
+import Logger.*;
 
 /**
  * Represents an abstract Item class that defines the basic structure and behaviors of items in the game.
@@ -46,7 +47,9 @@ public abstract class Item {
      * @param player The Player object picking up the item.
      */
     public void PickUpItem(Player player) {
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
         player.AddItem(this);
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 
     public void DecreaseTurnsLeft(){ }

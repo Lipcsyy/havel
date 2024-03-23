@@ -6,6 +6,8 @@ import Logger.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Logger.Logger.callDepth;
+
 public abstract class Player {
 
     boolean isAlive;
@@ -40,12 +42,16 @@ public abstract class Player {
      */
     public void CollectItem(Item item) {
 
+        Logger.logEntry(this.getClass().getName(), "CollectItem", "item");
+
         if (!this.HasMoreSpaceInInventory()) {
             return;
         }
 
         item.PickUpItem(this);
         this.room.RemoveItem(item);
+
+        Logger.logExit(this.getClass().getName(), "CollectItem");
     };
 
     /**
@@ -87,7 +93,8 @@ public abstract class Player {
      * @param room The room to move to.
      */
     public void Move(Room room) {
-        Logger.logEntry(this.getClass().getName(), "Move" );
+
+        Logger.logEntry(this.getClass().getName(), "Move", "room" );
 
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
@@ -101,7 +108,7 @@ public abstract class Player {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
-        Logger.logEntry(this.getClass().getName(), "ChangeRoom" );
+        Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
 
         room.Enter(this);
 
@@ -114,7 +121,7 @@ public abstract class Player {
      */
     public void SetRoom(Room room) {
 
-        Logger.logEntry(this.getClass().getName(), "SetRoom");
+        Logger.logEntry(this.getClass().getName(), "SetRoom", "room");
 
         this.room = room;
 

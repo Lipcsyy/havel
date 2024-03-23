@@ -16,7 +16,7 @@ public class Student extends Player {
     @Override
     public void ReactToTeacher(Player player) {
 
-        Logger.logEntry(this.getClass().getName(), "ReactToTeacher");
+        Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
 
         for( Item item: items ) {
             if( item.CanSave(player) ){
@@ -32,7 +32,7 @@ public class Student extends Player {
 
     @Override
     public void Interact(Player player) {
-        Logger.logEntry(this.getClass().getName(), "Interact");
+        Logger.logEntry(this.getClass().getName(), "Interact", "player");
         Logger.logExit(this.getClass().getName(), "Interact");
     }
 
@@ -40,9 +40,12 @@ public class Student extends Player {
 
     // Uses camembert if there is one in the inventory
     public void Camembert(){
+        Logger.logEntry(this.getClass().getName(), "Camembert", "");
         for(Item i: this.items){
             i.MakeGas(this.GetRoom());
         }
+
+        Logger.logExit(this.getClass().getName(), "Camembert");
     }
 
     // Drops the oldest item in the invetory

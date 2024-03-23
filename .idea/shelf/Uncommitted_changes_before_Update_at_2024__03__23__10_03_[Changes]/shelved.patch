@@ -1,0 +1,136 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" name=\"Changes\" comment=\"Changes made by the team\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Logger/Tester.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/BeerGlass.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/BeerGlass.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Item.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Item.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Rag.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Rag.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Transistor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Transistor.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Tvsz.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Tvsz.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Logger/Logger.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Logger/Logger.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Player/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/Player.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Player/Student.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/Student.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Player/Teacher.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/Teacher.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Room/MagicRoom.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Room/MagicRoom.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Room/Room.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Room/Room.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"83cf7ace-ec11-4137-aa22-c4509206ecb7\" name=\"Changes by kovac\" comment=\"\" />\r\n    <list id=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" name=\"Changes by lenovo\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Camembert.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Camembert.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/Item.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/Item.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Item/SlideRule.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Item/SlideRule.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Player/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/Player.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Player/Student.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/Student.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Room/Room.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Room/Room.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"8c73dfd3-c01e-42a0-8d6b-cbf3770109fe\" name=\"Changes by Madia\" comment=\"\" />\r\n    <list id=\"e6fcc51d-a55e-468b-9f93-c8734d044c53\" name=\"Changes by User\" comment=\"Last commit\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"LineStatusTrackerManager\">\r\n    <file path=\"$PROJECT_DIR$/src/Item/Item.java\">\r\n      <ranges>\r\n        <range start1=\"2\" end1=\"2\" start2=\"2\" end2=\"3\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"36\" end1=\"37\" start2=\"37\" end2=\"38\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"59\" end1=\"59\" start2=\"60\" end2=\"62\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n      </ranges>\r\n    </file>\r\n    <file path=\"$PROJECT_DIR$/src/Room/Room.java\">\r\n      <ranges>\r\n        <range start1=\"4\" end1=\"4\" start2=\"4\" end2=\"6\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"5\" end1=\"6\" start2=\"7\" end2=\"8\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"17\" end1=\"17\" start2=\"19\" end2=\"20\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"18\" end1=\"18\" start2=\"21\" end2=\"22\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"61\" end1=\"61\" start2=\"65\" end2=\"67\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"86\" end1=\"86\" start2=\"92\" end2=\"94\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"92\" end1=\"93\" start2=\"100\" end2=\"103\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n      </ranges>\r\n    </file>\r\n    <file path=\"$PROJECT_DIR$/src/Player/Student.java\">\r\n      <ranges>\r\n        <range start1=\"3\" end1=\"3\" start2=\"3\" end2=\"5\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"5\" end1=\"7\" start2=\"7\" end2=\"10\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"11\" end1=\"12\" start2=\"14\" end2=\"17\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"13\" end1=\"15\" start2=\"18\" end2=\"22\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"19\" end1=\"19\" start2=\"26\" end2=\"28\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"23\" end1=\"24\" start2=\"32\" end2=\"34\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"25\" end1=\"25\" start2=\"35\" end2=\"53\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n      </ranges>\r\n    </file>\r\n    <file path=\"$PROJECT_DIR$/src/Player/Player.java\">\r\n      <ranges>\r\n        <range start1=\"4\" end1=\"4\" start2=\"4\" end2=\"5\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"10\" end1=\"11\" start2=\"11\" end2=\"11\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"12\" end1=\"13\" start2=\"12\" end2=\"12\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"16\" end1=\"17\" start2=\"15\" end2=\"16\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"22\" end1=\"24\" start2=\"21\" end2=\"23\" changelist=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" />\r\n        <range start1=\"42\" end1=\"43\" start2=\"41\" end2=\"42\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"49\" end1=\"57\" start2=\"48\" end2=\"48\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"62\" end1=\"63\" start2=\"53\" end2=\"57\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"69\" end1=\"70\" start2=\"63\" end2=\"66\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"75\" end1=\"76\" start2=\"71\" end2=\"72\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"94\" end1=\"94\" start2=\"90\" end2=\"91\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"101\" end1=\"102\" start2=\"98\" end2=\"99\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n        <range start1=\"109\" end1=\"110\" start2=\"106\" end2=\"107\" changelist=\"40d1ef38-4444-41d0-92b7-22aa7917da5b\" />\r\n      </ranges>\r\n    </file>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2dxDIubedSR4HLDysQqhwzOBcFB\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021\" />\r\n        <option value=\"jdk-22-openjdk-22-4caba194b151-f504ca98\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7a460ec7-2448-4304-ac71-fd92baaa9954\" name=\"Changes\" comment=\"\" />\r\n      <created>1710940763209</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1710940763209</updated>\r\n      <workItem from=\"1710940764189\" duration=\"2633000\" />\r\n      <workItem from=\"1710944962412\" duration=\"19000\" />\r\n      <workItem from=\"1710944991561\" duration=\"3082000\" />\r\n      <workItem from=\"1711025931523\" duration=\"4133000\" />\r\n      <workItem from=\"1711106833629\" duration=\"4256000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Initinal Commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710940860421</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710940860421</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added Player class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710945586832</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710945586832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Added Item class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710945617563</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710945617563</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Added Room Class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710945702907</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710945702907</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Added a Logger\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710948034670</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710948034670</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Changed Player class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1710948050177</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1710948050177</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Last commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1711025979197</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1711025979197</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Initinal Commit\" />\r\n    <MESSAGE value=\"Added Player class\" />\r\n    <MESSAGE value=\"Added Item class\" />\r\n    <MESSAGE value=\"Added Room Class\" />\r\n    <MESSAGE value=\"Added a Logger\" />\r\n    <MESSAGE value=\"Changes made by the team\" />\r\n    <MESSAGE value=\"Changed Player class\" />\r\n    <MESSAGE value=\"Last commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Last commit\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3f68c2c75670c607417afd8fff96cd6974a4c473)
++++ b/.idea/workspace.xml	(date 1711111573624)
+@@ -4,31 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Changes made by the team">
+-      <change afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/BeerGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BeerGlass.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Logger.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Teacher.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
++    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Made the tester again">
++      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/blobs/version" afterDir="false" />
+     </list>
+     <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
+-    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+-    </list>
++    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="" />
+     <list id="8c73dfd3-c01e-42a0-8d6b-cbf3770109fe" name="Changes by Madia" comment="" />
+     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -46,54 +26,6 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="LineStatusTrackerManager">
+-    <file path="$PROJECT_DIR$/src/Item/Item.java">
+-      <ranges>
+-        <range start1="2" end1="2" start2="2" end2="3" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="36" end1="37" start2="37" end2="38" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="59" end1="59" start2="60" end2="62" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-      </ranges>
+-    </file>
+-    <file path="$PROJECT_DIR$/src/Room/Room.java">
+-      <ranges>
+-        <range start1="4" end1="4" start2="4" end2="6" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="5" end1="6" start2="7" end2="8" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="17" end1="17" start2="19" end2="20" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="18" end1="18" start2="21" end2="22" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="61" end1="61" start2="65" end2="67" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="86" end1="86" start2="92" end2="94" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="92" end1="93" start2="100" end2="103" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-      </ranges>
+-    </file>
+-    <file path="$PROJECT_DIR$/src/Player/Student.java">
+-      <ranges>
+-        <range start1="3" end1="3" start2="3" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="5" end1="7" start2="7" end2="10" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="11" end1="12" start2="14" end2="17" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="13" end1="15" start2="18" end2="22" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="19" end1="19" start2="26" end2="28" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="23" end1="24" start2="32" end2="34" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="25" end1="25" start2="35" end2="53" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-      </ranges>
+-    </file>
+-    <file path="$PROJECT_DIR$/src/Player/Player.java">
+-      <ranges>
+-        <range start1="4" end1="4" start2="4" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="10" end1="11" start2="11" end2="11" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="12" end1="13" start2="12" end2="12" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="16" end1="17" start2="15" end2="16" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="22" end1="24" start2="21" end2="23" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+-        <range start1="42" end1="43" start2="41" end2="42" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="49" end1="57" start2="48" end2="48" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="62" end1="63" start2="53" end2="57" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="69" end1="70" start2="63" end2="66" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="75" end1="76" start2="71" end2="72" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="94" end1="94" start2="90" end2="91" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="101" end1="102" start2="98" end2="99" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-        <range start1="109" end1="110" start2="106" end2="107" changelist="40d1ef38-4444-41d0-92b7-22aa7917da5b" />
+-      </ranges>
+-    </file>
+-  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 5
+ }</component>
+@@ -139,7 +71,7 @@
+       <workItem from="1710944962412" duration="19000" />
+       <workItem from="1710944991561" duration="3082000" />
+       <workItem from="1711025931523" duration="4133000" />
+-      <workItem from="1711106833629" duration="4256000" />
++      <workItem from="1711106833629" duration="4427000" />
+     </task>
+     <task id="LOCAL-00001" summary="Initinal Commit">
+       <option name="closed" value="true" />
+@@ -197,7 +129,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1711025979197</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Made the tester again">
++      <option name="closed" value="true" />
++      <created>1711111524382</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1711111524382</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -212,7 +152,8 @@
+     <MESSAGE value="Changes made by the team" />
+     <MESSAGE value="Changed Player class" />
+     <MESSAGE value="Last commit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Last commit" />
++    <MESSAGE value="Made the tester again" />
++    <option name="LAST_COMMIT_MESSAGE" value="Made the tester again" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />

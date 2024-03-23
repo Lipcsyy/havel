@@ -11,12 +11,17 @@ public class Main {
         System.out.println("Enter the test number to run: ");
         Scanner scanner = new Scanner(System.in);
         int testNumber = scanner.nextInt();
-        Runnable test = testMap.get(testNumber);
 
-        if (test != null) {
-            test.run();
-        } else {
-            System.out.println("Invalid test number. Please try again.");
+        while( testNumber != 0 ) {
+            Runnable test = testMap.get(testNumber);
+
+            if (test != null) {
+                test.run();
+            } else {
+                System.out.println("Invalid test number. Please try again.");
+            }
+
+            testNumber = scanner.nextInt();
         }
 
     }

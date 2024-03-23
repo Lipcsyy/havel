@@ -16,15 +16,15 @@ public class Tvsz extends Item {
 
     @Override
     public void Use(Player player) {
-        Logger.logEntry(this.getClass().getName(), "Use");
+        Logger.logEntry(this.getClass().getName(), "Use", "player");
         abilityNumber --;
         Logger.logExit(this.getClass().getName(), "Use");
     }
 
     @Override
     public boolean CanSave(Player player){
-        Logger.logEntry(this.getClass().getName(), "CanSave");
-        Logger.logExit(this.getClass().getName(), "CanSave");
+        Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        Logger.logExit(this.getClass().getName(), "CanSave", "true");
         return true;
     }
 
