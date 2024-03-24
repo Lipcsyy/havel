@@ -71,7 +71,7 @@ public class Student extends Player {
 
         if( !this.items.isEmpty() ){
 
-            Item firstItem = this.items.removeFirst();
+            Item firstItem = this.items.remove(0);
 
             // Add the removed item to the room
             this.room.AddItem(firstItem);
