@@ -85,12 +85,12 @@ public abstract class Player {
     public List<Item> GetInventory() {
         Logger.logEntry(this.getClass().getName(), "GetInventory", "");
 
-        String itemNames = "";
+        StringBuilder itemNames = new StringBuilder();
         for (Item item : this.items) {
-            itemNames += item.getClass().getName() + ", ";
+            itemNames.append(item.getClass().getName()).append(", ");
         }
 
-        Logger.logExit(this.getClass().getName(), "GetInventory", itemNames );
+        Logger.logExit(this.getClass().getName(), "GetInventory", itemNames.toString());
 
         return this.items;
     }
