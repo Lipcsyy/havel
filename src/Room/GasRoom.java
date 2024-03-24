@@ -13,6 +13,10 @@ public class GasRoom extends Room {
         super(capacity, items, neighbours);
     }
 
+    /**
+     * This function is called when a player enters the room.
+     * @param player The player that enters the room.
+     */
     @Override
     public void Enter(Player player){
 
@@ -42,8 +46,4 @@ public class GasRoom extends Room {
         Logger.logExit(this.getClass().getName(), "Enter");
     }
 
-    @Override
-    public void ManageDoors() {
-
-    }
 }

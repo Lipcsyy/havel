@@ -59,14 +59,14 @@ public class Transistor extends Item{
     }
 
     public void SetRoom(Room room){
-        Logger.logEntry(this.getClass().getName(), "SetRoom", "room");
+        Logger.logEntry(this.getClass().getName(), "SetRoom", room == null ? "null" : "room");
         this.room = room;
         Logger.logExit(this.getClass().getName(), "SetRoom");
     }
 
     public Room GetRoom(){
         Logger.logEntry(this.getClass().getName(), "GetRoom", "");
-        Logger.logExit(this.getClass().getName(), "GetRoom");
+        Logger.logExit(this.getClass().getName(), "GetRoom", room == null ? "null" : "room");
         return room;
     }
 
@@ -132,14 +132,13 @@ public class Transistor extends Item{
             // put the transistor at hand to the ground from the player's hand
             this.SetRoom(player.GetRoom());
             player.RemoveFromInventory(this);
+            player.CollectItem(this.GetPair());
 
             // teleport the player to the room of the pair of the transistor
-            player.ChangeRoom(this.GetPair().GetRoom());
+            this.GetPair().GetRoom().Enter(player);
 
             // set the pair's room to null and put it into the players inventory, removing it from the ground
             this.GetPair().SetRoom(null);
-            player.CollectItem(this.GetPair());
-            player.GetRoom().RemoveItem(this.GetPair());
         }
 
         Logger.logExit(this.getClass().getName(), "Use");
@@ -152,7 +151,7 @@ public class Transistor extends Item{
 
         // put the transistor on the ground from the players inventory
         this.SetRoom(player.GetRoom());
-        player.GetRoom().AddItem(this);
+        //player.GetRoom().AddItem(this);
         player.RemoveFromInventory(this);
 
         Logger.logExit(this.getClass().getName(), "Deploy", "true");
