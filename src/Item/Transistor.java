@@ -70,6 +70,38 @@ public class Transistor extends Item{
         return room;
     }
 
+
+    @Override
+    public boolean UseTransistor(Player player) {
+
+        Logger.logEntry(this.getClass().getName(), "UseTransistor", "player");
+
+        //We need to check wether we have a pair or not
+        if ( this.pair == null ) {
+
+            //If we could pair we pair, if we couldn't, we couldn't
+            this.Pair(player);
+
+            Logger.logExit(this.getClass().getName(), "UseTransistor", "true");
+
+            //Wether we could pair or not, we need to return because we can't use the transistor just yet
+            return true;
+        }
+
+        //If we have a pair we should check if this or the other transistor is deployed.
+        if ( this.GetRoom() == null && this.pair.GetRoom() == null )  {
+            this.Deploy(player);
+            Logger.logExit(this.getClass().getName(), "UseTransistor", "true");
+            return true;
+        }
+
+        //If we have a pair and one of them is deployed, we can use the transistor
+        this.Teleport(player);
+        Logger.logExit(this.getClass().getName(), "UseTransistor", "true");
+        return true;
+
+    }
+
     @Override
     public void Connect(Transistor transistor){
         Logger.logEntry(this.getClass().getName(), "Connect", "transistor");

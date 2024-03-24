@@ -63,6 +63,7 @@ public abstract class Item {
         return false;
     }
 
+
     // overridden by Transistor class to implement teleporting
     public boolean Teleport(Player player){
         Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
@@ -70,17 +71,25 @@ public abstract class Item {
         return false;
     }
 
+
     // overridden in Transistor, looks for a transistor pair in the player's inventory
     public boolean Pair(Player player){
         Logger.logEntry(this.getClass().getName(), "Pair", "");
         Logger.logExit(this.getClass().getName(), "Pair", "false");
         return false; }
 
+    public Transistor GetPair() {
+        Logger.logEntry(this.getClass().getName(), "GetPair", "");
+        Logger.logExit(this.getClass().getName(), "GetPair");
+        return null;
+    }
+
     // overridden in Transistor, connects a transistor to another
     public void Connect(Transistor transistor){
         Logger.logEntry(this.getClass().getName(), "Connect", "transistor");
         Logger.logExit(this.getClass().getName(), "Connect");
     }
+
     // overridden by transistor, deployes the first transistor at hand
     public boolean Deploy(Player player){
         Logger.logEntry(this.getClass().getName(), "Deply", "");
@@ -88,11 +97,18 @@ public abstract class Item {
         return false;
     }
 
+
     // a method used by Camembert to expicitly make gas in the given room
     public void MakeGas(Room room){
         Logger.logEntry(this.getClass().getName(), "MakeGas", "room");
         Logger.logExit(this.getClass().getName(), "MakeGas");
     }
 
+
+    public boolean UseTransistor(Player player) {
+        Logger.logEntry(this.getClass().getName(), "UseTransistor", "");
+        Logger.logExit(this.getClass().getName(), "UseTransistor", "false");
+        return false;
+    }
 
 }
