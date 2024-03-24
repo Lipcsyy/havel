@@ -120,6 +120,7 @@ public class Transistor extends Item{
 
         // put the transistor on the ground from the players inventory
         this.SetRoom(player.GetRoom());
+        player.GetRoom().AddItem(this);
         player.RemoveFromInventory(this);
 
         Logger.logExit(this.getClass().getName(), "Deploy", "true");

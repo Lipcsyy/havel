@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6660675-0eec-4d7c-a048-157df9ddaf58" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__22_13_[Changes]/00000000000.xd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__22_13_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024__03__23__22_13__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/BeerGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BeerGlass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Mask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Mask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logger/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/GasRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/GasRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "master",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>

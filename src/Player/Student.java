@@ -80,7 +80,7 @@ public class Student extends Player {
 
         if( !this.items.isEmpty() ){
 
-            Item firstItem = this.items.removeFirst();
+            Item firstItem = this.items.remove(0);
 
             // Add the removed item to the room
             this.room.AddItem(firstItem);
@@ -136,7 +136,7 @@ public class Student extends Player {
 
         if(transistorState == TransistorState.Inactive)
             PairTransistor();
-        if(transistorState == TransistorState.Paired)
+        else if(transistorState == TransistorState.Paired)
             DeployTransistor();
         else UseTransistor();
 

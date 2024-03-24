@@ -96,7 +96,7 @@ public class Room {
         }
 
         if (!items.isEmpty()) {
-            player.CollectItem(items.getFirst());
+            player.CollectItem(items.get(0));
         }
 
         //making the players interact with each-other
