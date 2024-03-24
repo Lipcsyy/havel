@@ -6,8 +6,6 @@ import Logger.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Logger.Logger.callDepth;
-
 public abstract class Player {
 
     protected boolean isAlive;
@@ -25,7 +23,7 @@ public abstract class Player {
           startRoom.AddPlayer( this );
     }
 
-    public void setIsAlive(boolean isAlive){
+    public void SetIsAlive(boolean isAlive){
         this.isAlive = isAlive;
     }
 
@@ -57,10 +55,12 @@ public abstract class Player {
      * This function drops all the items in the inventory to the floor.
      */
     public void DropAllItem() {
+        Logger.logEntry(this.getClass().getName(), "DropAllItem", "");
         for(Item i: items){
             this.room.AddItem(i);
             this.RemoveFromInventory(i);
         }
+        Logger.logExit(this.getClass().getName(), "DropAllItem");
     };
 
     /**
@@ -68,23 +68,40 @@ public abstract class Player {
      * @param item The item to be removed from the inventory.
      */
     public void RemoveFromInventory(Item item){
+        Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
         this.GetInventory().remove(item);
+        Logger.logExit(this.getClass().getName(), "RemoveFromInventory");
     }
 
     /**
      * This function return true or false based on the inventory space of the player
      */
     public boolean HasMoreSpaceInInventory() {
+        Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInInventory", "");
+        Logger.logExit(this.getClass().getName(), "HasMoreSpaceInInventory");
         return this.items.size() < 5;
     };
 
     public List<Item> GetInventory() {
+        Logger.logEntry(this.getClass().getName(), "GetInventory", "");
+
+        String itemNames = "";
+        for (Item item : this.items) {
+            itemNames += item.getClass().getName() + ", ";
+        }
+
+        Logger.logExit(this.getClass().getName(), "GetInventory", itemNames );
+
         return this.items;
     }
 
     // ???
     public void AddItem(Item item) {
-        this.items.add(item);}
+        Logger.logEntry(this.getClass().getName(), "AddItem", "item");
+        this.items.add(item);
+        Logger.logExit(this.getClass().getName(), "AddItem");
+    }
+
 
     //-----------MOVEMENT FUNCTIONS----------------
 
@@ -133,6 +150,8 @@ public abstract class Player {
      * @return The room of the player.
      */
     public Room GetRoom() {
+        Logger.logEntry(this.getClass().getName(), "GetRoom", "");
+        Logger.logExit(this.getClass().getName(), "GetRoom", "room");
         return this.room;
     }
 
@@ -156,7 +175,9 @@ public abstract class Player {
      * @param freezeForRounds The number of rounds the player needs to be frozen
      */
     public void Freeze( int freezeForRounds ) {
+        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
         this.frozenForRound = freezeForRounds;
+        Logger.logExit(this.getClass().getName(), "Freeze");
     }
 
     /**
@@ -164,6 +185,8 @@ public abstract class Player {
      * @return The number of rounds the player is frozen for
      */
     public int GetFrozenForRound() {
+        Logger.logEntry(this.getClass().getName(), "GetFrozenForRound", "");
+        Logger.logExit(this.getClass().getName(), "GetFrozenForRound", String.valueOf(this.frozenForRound));
         return this.frozenForRound;
     }
 

@@ -25,13 +25,14 @@ public class Student extends Player {
         Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
 
         for( Item item: items ) {
-            if( item.CanSave(player) ){
-                //If the item can save the player, use it
-                item.Use(player);
+            boolean canSave = item.CanSave(player);
+            if(canSave){
+                Logger.logExit(this.getClass().getName(), "ReactToTeacher");
                 return;
             }
         }
-        setIsAlive(false);
+
+        SetIsAlive(false);
 
         Logger.logExit(this.getClass().getName(), "ReactToTeacher");
     }
@@ -42,11 +43,29 @@ public class Student extends Player {
         Logger.logExit(this.getClass().getName(), "Interact");
     }
 
+    @Override
+    public void Freeze( int freezeForRounds) {
+
+        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+
+        for ( Item item : this.items ) {
+             if(item.ReactToGas()) {
+                Logger.logExit(this.getClass().getName(), "Freeze" );
+                 return;
+             }
+        }
+
+        this.frozenForRound = freezeForRounds;
+
+        Logger.logExit(this.getClass().getName(), "Freeze");
+    }
+
     // ------OWN METHODS OF THE STUDENT CLASS TO BE USED BY BUTTONS-------
 
     // Uses camembert if there is one in the inventory
     public void Camembert(){
         Logger.logEntry(this.getClass().getName(), "Camembert", "");
+
         for(Item i: this.items){
             i.MakeGas(this.GetRoom());
         }
@@ -56,45 +75,72 @@ public class Student extends Player {
 
     // Drops the oldest item in the invetory
     public void DropItem() {
-        if(!this.items.isEmpty()){
-            Item firstItem = this.items.remove(0);
+
+        Logger.logEntry(this.getClass().getName(), "DropItem", "");
+
+        if( !this.items.isEmpty() ){
+
+            Item firstItem = this.items.removeFirst();
+
             // Add the removed item to the room
             this.room.AddItem(firstItem);
         }
+
+        Logger.logExit(this.getClass().getName(), "DropItem");
     }
 
     public void PairTransistor(){
+
+        Logger.logEntry(this.getClass().getName(), "PairTransistor", "");
+
         for(Item i: this.items){
             if(i.Pair(this)) {
                 transistorState = TransistorState.Paired;
                 break;
             }
         }
+
+        Logger.logExit(this.getClass().getName(), "PairTransistor", "");
     }
 
     public void UseTransistor(){
+
+        Logger.logEntry(this.getClass().getName(), "UseTransistor", "");
+
         for(Item i: this.items){
             if(i.Teleport(this)){
                 return;
             }
         }
+
+        Logger.logExit(this.getClass().getName(), "UseTransistor" );
     }
 
     public void DeployTransistor(){
+
+        Logger.logEntry(this.getClass().getName(), "DeployTransistor", "");
+
         for(Item i: this.items){
             if(i.Deploy(this)){
                 transistorState = TransistorState.Deployed;
                 break;
             }
         }
+
+        Logger.logExit(this.getClass().getName(), "DeployTransistor");
     }
 
     public void Transistor(){
+
+        Logger.logEntry(this.getClass().getName(), "Transistor", "");
+
         if(transistorState == TransistorState.Inactive)
             PairTransistor();
         if(transistorState == TransistorState.Paired)
             DeployTransistor();
         else UseTransistor();
+
+        Logger.logExit(this.getClass().getName(), "Transistor");
     }
 
 }

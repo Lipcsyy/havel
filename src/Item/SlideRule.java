@@ -1,6 +1,7 @@
 package Item;
 
 import Player.*;
+import Logger.Logger;
 
 /**
  * Represents a SlideRule class which is a specific type of item within the game.
@@ -17,7 +18,8 @@ public class SlideRule extends Item {
 
     @Override
     public void Use(Player player) {
-
+        Logger.logEntry(this.getClass().getName(), "Use", "player");
+        Logger.logExit(this.getClass().getName(), "Use");
     }
 
     /**
@@ -28,6 +30,7 @@ public class SlideRule extends Item {
      * @param player The Player object picking up the SlideRule.
      */
     public void PickUpItem(Player player) {
-
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 }

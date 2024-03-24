@@ -1,6 +1,7 @@
 package Room;
 
 import Item.Item;
+import Logger.Logger;
 import Player.Player;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public class GasRoom extends Room {
 
     @Override
     public void Enter(Player player){
+
+        Logger.logEntry(this.getClass().getName(), "Enter", "player");
 
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
@@ -35,6 +38,8 @@ public class GasRoom extends Room {
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
         }
+
+        Logger.logExit(this.getClass().getName(), "Enter");
     }
 
     @Override

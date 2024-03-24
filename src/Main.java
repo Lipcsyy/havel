@@ -2,7 +2,7 @@ import Logger.Tester.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+import static Logger.Logger.callDepth;
 import static Logger.Tester.testMap;
 
 public class Main {
@@ -17,6 +17,7 @@ public class Main {
 
             if (test != null) {
                 test.run();
+                callDepth.set(0);
             } else {
                 System.out.println("Invalid test number. Please try again.");
             }
