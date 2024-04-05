@@ -64,6 +64,7 @@ public class Student extends Player {
         Logger.logExit(this.getClass().getName(), "Camembert");
     }
 
+    /* //átraktam a Playerbe
     // Drops the oldest item in the invetory
     public void DropItem() {
 
@@ -79,6 +80,7 @@ public class Student extends Player {
 
         Logger.logExit(this.getClass().getName(), "DropItem");
     }
+    */
 
 
     public void Transistor(){

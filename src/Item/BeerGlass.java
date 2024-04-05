@@ -28,6 +28,16 @@ public class BeerGlass extends Item{
         return true;
     }
 
+    //player felveszi -> eldobja legrégebbi tárgyát
+    @Override
+    public void PickUpItem(Player player){
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        player.AddItem(this);
+        if(player.GetInventory().size() >= 2)
+            player.DropItem();
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
+    }
+
     @Override
     public void DecreaseTurnsLeft(){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");

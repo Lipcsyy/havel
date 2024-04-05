@@ -212,4 +212,20 @@ public abstract class Player {
         return this.frozenForRound;
     }
 
+    // Drops the oldest item in the inventory
+    public void DropItem() {
+
+        Logger.logEntry(this.getClass().getName(), "DropItem", "");
+
+        if( !this.items.isEmpty() ){
+
+            Item firstItem = this.items.remove(0);
+
+            // Add the removed item to the room
+            this.room.AddItem(firstItem);
+        }
+
+        Logger.logExit(this.getClass().getName(), "DropItem");
+    }
+
 }
