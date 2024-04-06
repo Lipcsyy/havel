@@ -3,17 +3,17 @@ package Item;
 import Logger.Logger;
 import Player.Player;
 
-public class Mask extends Item{
+public class FakeMask extends Item{
 
     private int abilityNumber;
 
-    public Mask(){abilityNumber = 3;}
+    public FakeMask(){abilityNumber = 3;}
 
     @Override
     public boolean ReactToGas(){
         Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
-        Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
-        return true;
+        Logger.logExit(this.getClass().getName(), "ReactToGas", "false");
+        return false;
     }
 
     @Override

@@ -14,6 +14,8 @@ public class BeerGlass extends Item{
     public void Use(Player player){
         Logger.logEntry(this.getClass().getName(), "Use", "player");
 
+        // not good yet !! Should be called on caller
+        player.DropRandomItem();
         player.Freeze(3);
 
         Logger.logExit(this.getClass().getName(), "Use");
@@ -28,13 +30,11 @@ public class BeerGlass extends Item{
         return true;
     }
 
-    //player felveszi -> eldobja legrégebbi tárgyát
+    //Student picks up -> drops a random item
     @Override
     public void PickUpItem(Player player){
         Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
         player.AddItem(this);
-        if(player.GetInventory().size() >= 2)
-            player.DropItem();
         Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 

@@ -1,8 +1,9 @@
 package Player;
-
 import Item.Item;
 import Logger.*;
 import Room.*;
+
+import java.util.Random;
 
 public class Student extends Player {
 
@@ -64,8 +65,7 @@ public class Student extends Player {
         Logger.logExit(this.getClass().getName(), "Camembert");
     }
 
-    /* //átraktam a Playerbe
-    // Drops the oldest item in the invetory
+    // Drops the oldest item in the inventory
     public void DropItem() {
 
         Logger.logEntry(this.getClass().getName(), "DropItem", "");
@@ -80,8 +80,23 @@ public class Student extends Player {
 
         Logger.logExit(this.getClass().getName(), "DropItem");
     }
-    */
 
+    public void DropRandomItem() {
+        Logger.logEntry(this.getClass().getName(), "DropRandomItem", "");
+
+        if( !this.items.isEmpty() ){
+
+            Random rnd = new Random();
+            int inventorySize = this.GetInventory().size();
+            int indexToRemove = rnd.nextInt(inventorySize);
+            Item droppedItem = this.items.remove(indexToRemove);
+
+            // Add the removed item to the room
+            this.room.AddItem(droppedItem);
+        }
+
+        Logger.logExit(this.getClass().getName(), "DropRandomItem");
+    }
 
     public void Transistor(){
 
