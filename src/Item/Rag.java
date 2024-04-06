@@ -28,8 +28,8 @@ public class Rag extends Item{
     @Override
     public void DecreaseTurnsLeft(){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
-        Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "turnsLeft --");
         turnsLeft --;
+        Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "turnsLeft --");
     }
 
     @Override

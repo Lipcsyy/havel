@@ -198,7 +198,7 @@ public abstract class Player {
      */
     public void Freeze( int freezeForRounds ) {
         Logger.logEntry(this.getClass().getName(), "Freeze", "5");
-        this.frozenForRound = freezeForRounds;
+        this.frozenForRound += freezeForRounds;
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 

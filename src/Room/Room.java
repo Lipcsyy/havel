@@ -21,7 +21,7 @@ public class Room {
      */
     public Room(int capacity, List<Item> items, List<Room> neighbours){
         this.capacity = capacity;
-        this. items = items;
+        this.items = items;
         this.neighbours = neighbours;
         this.players = new ArrayList<>();
     }
@@ -150,6 +150,10 @@ public class Room {
 
         if (!items.isEmpty()) {
             player.CollectItem(items.get(0));
+        }
+
+        if(turnsLeftForEffect > 0){
+            player.Freeze(turnsLeftForEffect);
         }
 
         //making the players interact with each-other

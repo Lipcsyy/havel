@@ -16,11 +16,13 @@ public class Student extends Player {
 
         Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
 
-        for( Item item: items ) {
-            boolean canSave = item.CanSave(player);
-            if(canSave){
-                Logger.logExit(this.getClass().getName(), "ReactToTeacher");
-                return;
+        // the student can only defend itself if not frozen
+        if( this.frozenForRound == 0){
+            for( Item item: items ) {
+                if(item.CanSave(player)){
+                    Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+                    return;
+                }
             }
         }
 
