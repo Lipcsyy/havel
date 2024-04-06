@@ -30,14 +30,6 @@ public class BeerGlass extends Item{
         return true;
     }
 
-    //Student picks up -> drops a random item
-    @Override
-    public void PickUpItem(Player player){
-        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
-        player.AddItem(this);
-        Logger.logExit(this.getClass().getName(), "PickUpItem");
-    }
-
     @Override
     public void DecreaseTurnsLeft(){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
