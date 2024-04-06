@@ -13,6 +13,10 @@ public abstract class Player {
     protected List<Item> items;
     protected int frozenForRound = 0;
 
+    /**
+     * This is the constructor of the player class.
+     * @param startRoom The room where the player starts.
+     */
     public Player( Room startRoom ) {
         isAlive = true;
         room = startRoom;
@@ -23,10 +27,19 @@ public abstract class Player {
           startRoom.AddPlayer( this );
     }
 
+    /**
+     * This function sets the status of the player.
+     * @param isAlive The status of the player.
+     */
     public void SetIsAlive(boolean isAlive){
         this.isAlive = isAlive;
     }
 
+
+    /**
+     * This function returns the status of the player.
+     * @return The status of the player.
+     */
     public boolean GetIsAlive(){
         return isAlive;
     }
@@ -73,6 +86,7 @@ public abstract class Player {
         Logger.logExit(this.getClass().getName(), "RemoveFromInventory");
     }
 
+
     /**
      * This function return true or false based on the inventory space of the player
      */
@@ -82,6 +96,11 @@ public abstract class Player {
         return this.items.size() < 5;
     };
 
+
+    /**
+     * This function returns the inventory of the player.
+     * @return The inventory of the player.
+     */
     public List<Item> GetInventory() {
         Logger.logEntry(this.getClass().getName(), "GetInventory", "");
 
@@ -95,9 +114,12 @@ public abstract class Player {
         return this.items;
     }
 
-    // ???
+    /**
+     * This function adds an item to the inventory.
+     * @param item The item to be added to the inventory.
+     */
     public void AddItem(Item item) {
-        Logger.logEntry(this.getClass().getName(), "AddItem", "item");
+        Logger.logEntry(this.getClass().getName(), "AddItem", item.getClass().getName());
         this.items.add(item);
         Logger.logExit(this.getClass().getName(), "AddItem");
     }
@@ -188,6 +210,22 @@ public abstract class Player {
         Logger.logEntry(this.getClass().getName(), "GetFrozenForRound", "");
         Logger.logExit(this.getClass().getName(), "GetFrozenForRound", String.valueOf(this.frozenForRound));
         return this.frozenForRound;
+    }
+
+    // Drops the oldest item in the inventory
+    public void DropItem() {
+
+        Logger.logEntry(this.getClass().getName(), "DropItem", "");
+
+        if( !this.items.isEmpty() ){
+
+            Item firstItem = this.items.remove(0);
+
+            // Add the removed item to the room
+            this.room.AddItem(firstItem);
+        }
+
+        Logger.logExit(this.getClass().getName(), "DropItem");
     }
 
 }

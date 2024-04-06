@@ -64,6 +64,7 @@ public class Student extends Player {
         Logger.logExit(this.getClass().getName(), "Camembert");
     }
 
+    /* //átraktam a Playerbe
     // Drops the oldest item in the invetory
     public void DropItem() {
 
@@ -79,47 +80,8 @@ public class Student extends Player {
 
         Logger.logExit(this.getClass().getName(), "DropItem");
     }
+    */
 
-//    public void PairTransistor(){
-//
-//        Logger.logEntry(this.getClass().getName(), "PairTransistor", "");
-//
-//        for(Item i: this.items){
-//            if(i.Pair(this)) {
-//                transistorState = TransistorState.Paired;
-//                break;
-//            }
-//        }
-//
-//        Logger.logExit(this.getClass().getName(), "PairTransistor", "");
-//    }
-
-//    public void UseTransistor(){
-//
-//        Logger.logEntry(this.getClass().getName(), "UseTransistor", "");
-//
-//        for(Item i: this.items){
-//            if(i.Teleport(this)){
-//                return;
-//            }
-//        }
-//
-//        Logger.logExit(this.getClass().getName(), "UseTransistor" );
-//    }
-
-//    public void DeployTransistor(){
-//
-//        Logger.logEntry(this.getClass().getName(), "DeployTransistor", "");
-//
-////        for(Item i: this.items){
-////            if(i.Deploy(this)){
-////                transistorState = TransistorState.Deployed;
-////                break;
-////            }
-////        }
-//
-//        Logger.logExit(this.getClass().getName(), "DeployTransistor");
-//    }
 
     public void Transistor(){
 
@@ -153,12 +115,6 @@ public class Student extends Player {
         *
         * */
 
-
-//        if(transistorState == TransistorState.Inactive)
-//            PairTransistor();
-//        else if(transistorState == TransistorState.Paired)
-//            DeployTransistor();
-//        else UseTransistor();
 
         Logger.logExit(this.getClass().getName(), "Transistor");
     }

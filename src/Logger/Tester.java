@@ -47,25 +47,32 @@ public class Tester {
 
 
     private static void SetupStudentEntersRoomWhereTeacher() {
-        room1 = new Room( 5, new ArrayList<Item>(), null);
+
+        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
         student1 = new Student(room1);
-        room2 = new Room( 5, new ArrayList<Item>(), null);
+        room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
         teacher = new Teacher(room2);
+
+        room1.SetNeighbours(room2);
     }
 
     private static void SetupStudentEntersRoomWhereNobody( RoomType enterRoomType ) {
-        room1 = new Room( 5, new ArrayList<Item>(), null);
+
+        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
         student1 = new Student(room1);
 
         switch( enterRoomType ) {
             case Normal:
-                room2 = new Room( 5, new ArrayList<Item>(), null);
+                room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
+                room2.SetNeighbours(room1);
                 break;
             case Gas:
-                room2 = new GasRoom( 5, new ArrayList<Item>(), null);
+                room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>());
+                room2.SetNeighbours(room1);
                 break;
             case Magic:
-                room2 = new MagicRoom( 5, new ArrayList<Item>(), null);
+                room2 = new MagicRoom( 5, new ArrayList<Item>(), new ArrayList<Room>());
+                room2.SetNeighbours(room1);
                 break;
         }
     }
@@ -76,8 +83,9 @@ public class Tester {
         //Setting up the rooms and players
         SetupStudentEntersRoomWhereTeacher();
         student1.AddItem(new Tvsz());
+
         //Testing the interaction between student and teacher
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -88,9 +96,7 @@ public class Tester {
         student1.AddItem(new Camembert());
         student1.AddItem(new Mask());
 
-        room2.Enter(student1);
-
-
+        student1.ChangeRoom(room2);
     }
 
     //3. Use BeerGlass
@@ -100,19 +106,16 @@ public class Tester {
 
         student1.AddItem(new BeerGlass());
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
     //4.1 Change Room, Normal to Normal where there is nobody
-    /* Megfigyeles
-    - nincs enter sem move
-    */
     public static void Test4() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -121,7 +124,7 @@ public class Tester {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Gas);
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -131,7 +134,7 @@ public class Tester {
         SetupStudentEntersRoomWhereNobody(RoomType.Gas);
         student1.AddItem(new Mask());
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -141,7 +144,7 @@ public class Tester {
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
         student2 = new Student(room2);
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -150,7 +153,7 @@ public class Tester {
 
         SetupStudentEntersRoomWhereTeacher();
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -160,7 +163,7 @@ public class Tester {
         SetupStudentEntersRoomWhereTeacher();
         student1.AddItem(new Rag());
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -170,7 +173,7 @@ public class Tester {
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
         room2.AddItem(new SlideRule());
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -181,7 +184,7 @@ public class Tester {
         room2.AddItem(new Rag());
         room2.AddItem(new Mask());
 
-        room2.Enter(student1);
+        student1.ChangeRoom(room2);
 
     }
 
@@ -197,9 +200,6 @@ public class Tester {
     }
 
     //9.1.1 The Student only has one transistor he wants to pair it, but he can't
-    /* Megfigyeles
-    - pairTransistor es pair sincs
-    */
     public static void Test13() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
@@ -210,9 +210,6 @@ public class Tester {
     }
 
     //9.1.2 The Student has two transistors and he pairs them
-    /* Megfigyeles
-
-    */
     public static void Test14() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
@@ -252,27 +249,25 @@ public class Tester {
     }
 
     //10.1 A Door of the Magic Room disappears
-    /* Megfigyeles
-    - nincs managedoor es changeroom sem
-    */
     public static void Test17() {
 
-        SetupStudentEntersRoomWhereNobody(RoomType.Magic);
-        MagicRoom magicRoom = (MagicRoom) room2;
-        magicRoom.ManageDoors();
+        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>());
+        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>());
+        room.SetNeighbours(magicRoom);
+        Student student = new Student(room);
+        magicRoom.ManageDoors(room, true);
+        student.ChangeRoom(magicRoom);
 
     }
 
     //10.2 A Door of the Magic Room appears
-    /* Megfigyeles
-    - nincs managedoor, changeroom es move
-    */
     public static void Test18() {
 
-        SetupStudentEntersRoomWhereNobody(RoomType.Magic);
-        MagicRoom magicRoom = (MagicRoom) room2;
-        magicRoom.ManageDoors();
-
+        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>());
+        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>());
+        Student student = new Student(room);
+        magicRoom.ManageDoors(room, false);
+        student.ChangeRoom(magicRoom);
     }
 
 }
