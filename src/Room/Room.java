@@ -156,6 +156,8 @@ public class Room {
             player.Freeze(turnsLeftForEffect);
         }
 
+        player.CleanRoom();
+
         //making the players interact with each-other
         for (Player playerInRoom : players) {
 

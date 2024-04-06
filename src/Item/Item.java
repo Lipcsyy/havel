@@ -13,7 +13,10 @@ public abstract class Item {
      * Method to be overridden by subclasses to define the action taken when the item is used.
      * The default implementation is empty, indicating no action.
      */
-    public void Use(Player player){}
+    public void Use(Player player){
+        Logger.logEntry(this.getClass().getName(), "Use", "player");
+        Logger.logExit(this.getClass().getName(), "Use");
+    }
 
     /**
      * Indicates how an item reacts to gas exposure.

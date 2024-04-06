@@ -217,4 +217,5 @@ public abstract class Player {
 
     public void DropItem() {}
 
+    public void CleanRoom(){}
 }

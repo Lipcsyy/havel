@@ -27,9 +27,6 @@ public class Cleaner extends Player {
             }
         }
 
-        // de-gas the room
-        this.GetRoom().SetTurnsLeftForEffect(0);
-
         Logger.logExit(this.getClass().getName(), "Interact");
     }
 
@@ -38,5 +35,17 @@ public class Cleaner extends Player {
     public void ReactToTeacher(Player teacher) {
         Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
         Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+    }
+
+    // Cleaner can't freeze
+    @Override
+    public void Freeze( int freezeForRounds ) {
+        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        Logger.logExit(this.getClass().getName(), "Freeze");
+    }
+
+    public void CleanRoom(){
+        // de-gas the room
+        this.GetRoom().SetTurnsLeftForEffect(0);
     }
 }
