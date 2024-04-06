@@ -58,6 +58,12 @@ public abstract class Player {
             return;
         }
 
+
+        //If the room is sticky the items can't be collected
+        if( room.GetPassagesBeforeStickiness() == 0 ) {
+            return;
+        }
+
         item.PickUpItem(this);
         this.room.RemoveItem(item);
 
@@ -138,6 +144,10 @@ public abstract class Player {
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
         this.SetRoom(room);
+
+        //When we go into a room we decrease the passages that are left before stickiness
+        //This only decreases if the room was cleared before
+        this.room.DecreasePassagesBeforeStickiness();
 
         Logger.logExit(this.getClass().getName(), "Move" );
     };

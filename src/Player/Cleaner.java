@@ -11,17 +11,20 @@ public class Cleaner extends Player {
         super(startRoom);
     }
 
-    // oving the player into a neighbouring room and de-gasing the room
+    // moving the player into a neighbouring room and de-gasing the room
+    //Every player who calls on interract on the cleaner will be moved out of the room
     @Override
     public void Interact(Player player) {
+
         Logger.logEntry(this.getClass().getName(), "Interact", "player");
 
         // we try to move the player into any neighbouring room that has enough space
         // if two cleaners meet, the one who entered the room will move the other out
         // (the incomer reacts first)
         List<Room> neighbours = this.GetRoom().GetNeighbours();
-        for(Room observedRoom: neighbours){
-            if( observedRoom.HasMoreSpaceInRoom()){
+
+        for(Room observedRoom : neighbours){
+            if( observedRoom.HasMoreSpaceInRoom() ){
                 player.ChangeRoom(observedRoom);
                 break;
             }
@@ -47,5 +50,9 @@ public class Cleaner extends Player {
     public void CleanRoom(){
         // de-gas the room
         this.GetRoom().SetTurnsLeftForEffect(0);
+
+        //clean the room, so it can be sticky later
+
+        this.GetRoom().SetRoomNumberOfPassagesBeforeStickiness(5);
     }
 }

@@ -11,6 +11,8 @@ public class Room {
     protected List<Room> neighbours;
     protected int turnsLeftForEffect;
 
+    protected int passagesBeforeStickiness = -1;
+
     //-----------CONSTRUCTOR--------------------------
 
     /**
@@ -140,6 +142,11 @@ public class Room {
 
         Logger.logEntry(this.getClass().getName(), "Enter", "player");
 
+        //The player can't move is he is frozen
+        if( player.GetFrozenForRound() != 0 ) {
+            return;
+        }
+
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
@@ -156,6 +163,7 @@ public class Room {
             player.Freeze(turnsLeftForEffect);
         }
 
+        //If the player is a cleaner the room will be cleaned.
         player.CleanRoom();
 
         //making the players interact with each-other
@@ -189,6 +197,24 @@ public class Room {
      */
     public void ManageDoors(Room room, boolean makeDoorDisappearOrAppear) {
 
+    }
+
+    public int GetPassagesBeforeStickiness() {
+        return passagesBeforeStickiness;
+    }
+
+    public void DecreasePassagesBeforeStickiness() {
+
+        //Only decrease the stickiness if the room was cleaned before.
+        //We know that the room was cleared, because the passagesLeftForStickiness is not -1
+        if( passagesBeforeStickiness > 0 ) {
+            passagesBeforeStickiness--;
+        }
+
+    }
+    
+    public void SetRoomNumberOfPassagesBeforeStickiness(int numberOfPlayersBefore) {
+        this.passagesBeforeStickiness = numberOfPlayersBefore;
     }
 
 }
