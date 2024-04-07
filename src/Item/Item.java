@@ -108,6 +108,10 @@ public abstract class Item {
     }
 
 
+    public void SetRoom(Room room) {
+
+    };
+
     public boolean UseTransistor(Player player) {
         Logger.logEntry(this.getClass().getName(), "UseTransistor", "");
         Logger.logExit(this.getClass().getName(), "UseTransistor", "false");

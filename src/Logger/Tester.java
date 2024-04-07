@@ -1,4 +1,5 @@
 package Logger;
+import GameManager.GameManager;
 import Room.*;
 import Item.*;
 import Player.*;
@@ -30,6 +31,7 @@ public class Tester {
         testMap.put(16, Tester::Test16);
         testMap.put(17, Tester::Test17);
         testMap.put(18, Tester::Test18);
+        testMap.put(19, Tester::Test19);
     }
 
     enum RoomType {
@@ -45,36 +47,42 @@ public class Tester {
     static Student student2;
     static Teacher teacher;
 
+    static GameManager gameManager = new GameManager();
 
     private static void SetupStudentEntersRoomWhereTeacher() {
 
-        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
-        student1 = new Student(room1);
-        room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
-        teacher = new Teacher(room2);
+        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        student1 = new Student(room1, gameManager);
+        room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        teacher = new Teacher(room2, gameManager);
 
-        room1.SetNeighbours(room2);
+        gameManager.MakeRoomsNeighbours(room1, room2);
+
     }
 
     private static void SetupStudentEntersRoomWhereNobody( RoomType enterRoomType ) {
 
-        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
-        student1 = new Student(room1);
+        System.out.println("Creating rooms");
+        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        System.out.println("Creating student");
+        student1 = new Student(room1, gameManager);
 
         switch( enterRoomType ) {
             case Normal:
-                room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>());
-                room2.SetNeighbours(room1);
+                room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
                 break;
             case Gas:
-                room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>());
-                room2.SetNeighbours(room1);
+                System.out.println("Creating room2");
+                room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
                 break;
             case Magic:
-                room2 = new MagicRoom( 5, new ArrayList<Item>(), new ArrayList<Room>());
-                room2.SetNeighbours(room1);
+                room2 = new MagicRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
                 break;
         }
+
+        System.out.println("Making the rooms neighbours");
+        gameManager.MakeRoomsNeighbours(room1, room2);
+
     }
 
     //1. Use Tvsz
@@ -142,7 +150,7 @@ public class Tester {
     public static void Test7() {
 
         SetupStudentEntersRoomWhereNobody(RoomType.Normal);
-        student2 = new Student(room2);
+        student2 = new Student(room2, gameManager);
 
         student1.ChangeRoom(room2);
 
@@ -251,10 +259,10 @@ public class Tester {
     //10.1 A Door of the Magic Room disappears
     public static void Test17() {
 
-        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>());
-        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>());
+        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
         room.SetNeighbours(magicRoom);
-        Student student = new Student(room);
+        Student student = new Student(room, gameManager);
         magicRoom.ManageDoors(room, true);
         student.ChangeRoom(magicRoom);
 
@@ -263,11 +271,22 @@ public class Tester {
     //10.2 A Door of the Magic Room appears
     public static void Test18() {
 
-        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>());
-        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>());
-        Student student = new Student(room);
+        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        Student student = new Student(room, gameManager);
         magicRoom.ManageDoors(room, false);
         student.ChangeRoom(magicRoom);
+    }
+
+    public static void Test19() {
+
+        SetupStudentEntersRoomWhereNobody(RoomType.Gas);
+
+        Cleaner cleaner = new Cleaner(room1, gameManager);
+        room1.AddPlayer(cleaner);
+
+        cleaner.ChangeRoom(room2);
+
     }
 
 }

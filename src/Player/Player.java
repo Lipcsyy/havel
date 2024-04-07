@@ -2,11 +2,14 @@ package Player;
 import Item.*;
 import Room.*;
 import Logger.*;
+import GameManager.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player {
+
+    protected GameManager gameManager;
 
     protected boolean isAlive;
     protected Room room;
@@ -17,11 +20,15 @@ public abstract class Player {
      * This is the constructor of the player class.
      * @param startRoom The room where the player starts.
      */
-    public Player( Room startRoom ) {
+    public Player( Room startRoom, GameManager gameManager ) {
+
         isAlive = true;
         room = startRoom;
-        items = new ArrayList<Item>();
+        items = new ArrayList<>();
         frozenForRound = 0;
+
+        this.gameManager = gameManager;
+
 
        if( startRoom != null)
           startRoom.AddPlayer( this );
@@ -227,5 +234,5 @@ public abstract class Player {
 
     public void DropItem() {}
 
-    public void CleanRoom(){}
+    public void Clean(){}
 }

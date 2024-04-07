@@ -1,4 +1,5 @@
 package Player;
+import GameManager.GameManager;
 import Item.Item;
 import Logger.*;
 import Room.*;
@@ -7,8 +8,8 @@ import java.util.Random;
 
 public class Student extends Player {
 
-    public Student(Room startRoom) {
-        super(startRoom);
+    public Student(Room startRoom, GameManager gameManager) {
+        super(startRoom, gameManager) ;
     }
 
     @Override

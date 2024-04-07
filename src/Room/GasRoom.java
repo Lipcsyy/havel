@@ -1,5 +1,6 @@
 package Room;
 
+import GameManager.GameManager;
 import Item.Item;
 import Logger.Logger;
 import Player.Player;
@@ -9,8 +10,8 @@ import java.util.List;
 public class GasRoom extends Room {
 
 
-    public GasRoom(int capacity, List<Item> items, List<Room> neighbours) {
-        super(capacity, items, neighbours);
+    public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
+        super(capacity, items, neighbours, gameManager);
     }
 
     /**
@@ -24,11 +25,12 @@ public class GasRoom extends Room {
 
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
-            AddPlayer(player);
             player.Move(this);
         } else {
             return;
         }
+
+        player.Clean();
 
         player.Freeze(3);
 
@@ -46,4 +48,17 @@ public class GasRoom extends Room {
         Logger.logExit(this.getClass().getName(), "Enter");
     }
 
+    @Override
+    public void CleanRoom() {
+
+        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+
+        //TODO: Make the players go out of the room
+        this.gameManager.ChangeRoomToNormalInList(this);
+
+        //clean the room, so it can be sticky later
+        this.SetRoomNumberOfPassagesBeforeStickiness(5);
+
+        Logger.logExit(this.getClass().getName(), "CleanRoom");
+    }
 }

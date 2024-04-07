@@ -1,5 +1,6 @@
 package Room;
 
+import GameManager.GameManager;
 import Item.Item;
 import Room.*;
 
@@ -8,8 +9,8 @@ import java.util.Random;
 import Logger.Logger;
 
 public class MagicRoom extends Room {
-    public MagicRoom(int capacity, List<Item> items, List<Room> neighbours) {
-        super(capacity, items, neighbours);
+    public MagicRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
+        super(capacity, items, neighbours, gameManager);
     }
 
     @Override
@@ -30,5 +31,12 @@ public class MagicRoom extends Room {
 
         Logger.logExit(this.getClass().getName(), "ManageDoors");
 
+    }
+
+    @Override
+    public void CleanRoom() {
+        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        this.turnsLeftForEffect = 0;
+        Logger.logExit(this.getClass().getName(), "CleanRoom" );
     }
 }

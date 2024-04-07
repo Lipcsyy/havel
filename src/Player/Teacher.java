@@ -1,12 +1,13 @@
 package Player;
 
+import GameManager.GameManager;
 import Item.*;
 import Logger.Logger;
 import Room.*;
 
 public class Teacher extends Player{
-    public Teacher(Room startRoom) {
-        super(startRoom);
+    public Teacher(Room startRoom, GameManager gameManager) {
+        super(startRoom, gameManager);
     }
 
     @Override

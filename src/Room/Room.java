@@ -3,8 +3,12 @@ import Item.*;
 import Player.*;
 import java.util.*;
 import Logger.*;
+import GameManager.*;
 
 public class Room {
+
+    GameManager gameManager;
+
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
@@ -21,13 +25,31 @@ public class Room {
      * @param items The items in the room.
      * @param neighbours The neighbours of the room.
      */
-    public Room(int capacity, List<Item> items, List<Room> neighbours){
+    public Room(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager){
+
         this.capacity = capacity;
         this.items = items;
         this.neighbours = neighbours;
         this.players = new ArrayList<>();
+        this.gameManager = gameManager;
+
+        System.out.println("Adding the room to the gameManager");
+
+        gameManager.AddRoom(this);
     }
 
+    //Copy constructor
+    public Room( Room room, GameManager gameManager ) {
+
+        this.capacity = room.capacity;
+        this.items = room.items;
+        this.neighbours = room.neighbours;
+        this.players = room.players;
+        this.gameManager = gameManager;
+
+        gameManager.AddRoom(this);
+
+    }
 
     //----------ITEM FUNCTIONS------------------------
 
@@ -57,6 +79,7 @@ public class Room {
      * This function returns the neighbours of the room.
      */
     public List<Room> GetNeighbours(){
+        System.out.println("IN");
         Logger.logEntry(this.getClass().getName(), "GetNeighbours", "");
         StringBuilder neighboursString = new StringBuilder();
         for (Room neighbour : this.neighbours) {
@@ -75,6 +98,22 @@ public class Room {
         this.neighbours.add(neighbour);
         neighbour.neighbours.add(this);
         Logger.logExit(this.getClass().getName(), "SetNeighbours");
+    }
+
+    public void RemoveNeighbour( Room room ) {
+        Logger.logEntry(this.getClass().getName(), "RemoveNeighbour", "room");
+        this.neighbours.remove(room);
+        Logger.logExit(this.getClass().getName(), "RemoveNeighbour");
+    }
+
+    public void SetRoom(Room room) {
+
+    }
+
+    public void CleanRoom() {
+        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        this.turnsLeftForEffect = 0;
+        Logger.logExit(this.getClass().getName(), "CleanRoom");
     }
 
     //-------------PLAYER FUNCTIONS--------------
@@ -104,6 +143,19 @@ public class Room {
         Logger.logExit(this.getClass().getName(), "RemovePlayer");
     }
 
+    public List<Player> GetPlayers() {
+
+        Logger.logEntry(this.getClass().getName(), "GetPlayers", "");
+
+        StringBuilder playerNames = new StringBuilder();
+        for (Player player : this.players) {
+            playerNames.append(player.getClass().getName()).append(", ");
+        }
+
+        Logger.logExit(this.getClass().getName(), playerNames.toString());
+
+        return this.players;
+    }
 
     //-------------TURNS LEFT FOR EFFECT FUNCTIONS--------------
 
@@ -121,6 +173,7 @@ public class Room {
      * @param turnsLeftForEffect The number of turns left for the effect.
      */
     public void SetTurnsLeftForEffect(int turnsLeftForEffect) {
+
         Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
         this.turnsLeftForEffect = turnsLeftForEffect;
 
@@ -159,12 +212,12 @@ public class Room {
             player.CollectItem(items.get(0));
         }
 
+        //If the player is a cleaner the room will be cleaned.
+        player.Clean();
+
         if(turnsLeftForEffect > 0){
             player.Freeze(turnsLeftForEffect);
         }
-
-        //If the player is a cleaner the room will be cleaned.
-        player.CleanRoom();
 
         //making the players interact with each-other
         for (Player playerInRoom : players) {
@@ -205,16 +258,22 @@ public class Room {
 
     public void DecreasePassagesBeforeStickiness() {
 
+        Logger.logEntry(this.getClass().getName(), "DecreasePassagesBeforeStickiness", "");
+
         //Only decrease the stickiness if the room was cleaned before.
         //We know that the room was cleared, because the passagesLeftForStickiness is not -1
         if( passagesBeforeStickiness > 0 ) {
             passagesBeforeStickiness--;
         }
 
+        Logger.logExit(this.getClass().getName(), "DecreasePassagesBeforeStickiness");
+
     }
     
     public void SetRoomNumberOfPassagesBeforeStickiness(int numberOfPlayersBefore) {
+        Logger.logEntry(this.getClass().getName(),"SetRoomNumberOfPassagesBeforeStickiness", "" );
         this.passagesBeforeStickiness = numberOfPlayersBefore;
+        Logger.logExit(this.getClass().getName(), "SetRoomNumberOfPassagesBeforeStickiness");
     }
 
 }

@@ -4,14 +4,11 @@ import Player.*;
 import Room.*;
 import Logger.Logger;
 
-import java.util.List;
-
 public class Transistor extends Item{
 
     private Transistor pair;
     private boolean hasPair;
     private Room room;
-
 
     @Override
     public boolean Pair(Player player){
@@ -58,6 +55,7 @@ public class Transistor extends Item{
         this.hasPair = b;
     }
 
+    @Override
     public void SetRoom(Room room){
         Logger.logEntry(this.getClass().getName(), "SetRoom", room == null ? "null" : "room");
         this.room = room;

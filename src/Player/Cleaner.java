@@ -1,5 +1,6 @@
 package Player;
 
+import GameManager.GameManager;
 import Logger.Logger;
 import Room.Room;
 
@@ -7,8 +8,8 @@ import java.util.List;
 
 public class Cleaner extends Player {
 
-    public Cleaner(Room startRoom) {
-        super(startRoom);
+    public Cleaner(Room startRoom, GameManager gameManager) {
+        super(startRoom, gameManager);
     }
 
     // moving the player into a neighbouring room and de-gasing the room
@@ -47,12 +48,12 @@ public class Cleaner extends Player {
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 
-    public void CleanRoom(){
-        // de-gas the room
-        this.GetRoom().SetTurnsLeftForEffect(0);
+    public void Clean(){
 
-        //clean the room, so it can be sticky later
+        Logger.logEntry(this.getClass().getName(), "Clean", "5");
 
-        this.GetRoom().SetRoomNumberOfPassagesBeforeStickiness(5);
+        this.room.CleanRoom();
+
+        Logger.logExit(this.getClass().getName(), "Clean");
     }
 }
