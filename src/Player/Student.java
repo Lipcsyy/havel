@@ -44,7 +44,7 @@ public class Student extends Player {
         Logger.logEntry(this.getClass().getName(), "Freeze", "5");
 
         for ( Item item : this.items ) {
-             if(item.ReactToGas()) {
+             if(item.ReactToGas(this)) {
                 Logger.logExit(this.getClass().getName(), "Freeze" );
                  return;
              }
