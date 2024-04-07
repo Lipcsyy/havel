@@ -48,12 +48,21 @@ public class Cleaner extends Player {
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 
-    public void Clean(){
+    @Override
+    public void Move(Room room) {
+        Logger.logEntry(this.getClass().getName(), "Move", "room" );
 
-        Logger.logEntry(this.getClass().getName(), "Clean", "5");
+        this.room.RemovePlayer(this);
+        room.AddPlayer(this);
+        this.SetRoom(room);
 
-        this.room.CleanRoom();
+        room.CleanRoom();
 
-        Logger.logExit(this.getClass().getName(), "Clean");
-    }
+        //When we go into a room we decrease the passages that are left before stickiness
+        //This only decreases if the room was cleared before
+        this.room.DecreasePassagesBeforeStickiness();
+
+        Logger.logExit(this.getClass().getName(), "Move" );
+    };
+
 }

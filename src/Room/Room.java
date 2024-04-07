@@ -44,7 +44,7 @@ public class Room {
         this.capacity = room.capacity;
         this.items = room.items;
         this.neighbours = room.neighbours;
-        this.players = room.players;
+        this.players = room.GetPlayers();
         this.gameManager = gameManager;
 
         gameManager.AddRoom(this);
@@ -211,9 +211,6 @@ public class Room {
         if (!items.isEmpty()) {
             player.CollectItem(items.get(0));
         }
-
-        //If the player is a cleaner the room will be cleaned.
-        player.Clean();
 
         if(turnsLeftForEffect > 0){
             player.Freeze(turnsLeftForEffect);

@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: The room and the cleaner were changed.">
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Changes made by the team">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logger/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Cleaner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/GasRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/GasRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
+    <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
     <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
-    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="" />
     <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="" />
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +33,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-        &quot;associatedIndex&quot;: 5
-        }</component>
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2dxDIubedSR4HLDysQqhwzOBcFB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,9 +43,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -58,13 +55,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
         <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
@@ -83,7 +84,6 @@
       <workItem from="1711025931523" duration="4133000" />
       <workItem from="1711106833629" duration="4256000" />
       <workItem from="1711228227141" duration="5964000" />
-      <workItem from="1712339955056" duration="5680000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -167,20 +167,19 @@
     <MESSAGE value="Changes made by the team" />
     <MESSAGE value="Changed Player class" />
     <MESSAGE value="Last commit" />
-    <MESSAGE value="feat: The room and the cleaner were changed." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: The room and the cleaner were changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Last commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GameManager/GameManager.java</url>
-          <line>13</line>
+          <line>14</line>
           <properties class="GameManager.GameManager" method="ChangeRoomToNormalInList">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

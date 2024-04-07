@@ -145,7 +145,6 @@ public abstract class Player {
      * @param room The room to move to.
      */
     public void Move(Room room) {
-
         Logger.logEntry(this.getClass().getName(), "Move", "room" );
 
         this.room.RemovePlayer(this);
@@ -164,7 +163,13 @@ public abstract class Player {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
+
         Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
+
+        if( !room.GetNeighbours().contains(this.room) ) {
+            Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
+            return;
+        }
 
         room.Enter(this);
 
@@ -234,5 +239,4 @@ public abstract class Player {
 
     public void DropItem() {}
 
-    public void Clean(){}
 }

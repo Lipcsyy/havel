@@ -2,6 +2,7 @@ package GameManager;
 import Logger.Logger;
 import Room.*;
 import java.util.*;
+import Player.*;
 
 public class GameManager {
 
@@ -19,28 +20,34 @@ public class GameManager {
         //Copying the room we want to change -> we make it into a normal room no matter what
         Room newRoom = new Room(targetRoom, this);
 
-        //Now setting the room new room as the room of each player in the previous room
-        targetRoom.GetPlayers().forEach((p) -> {
+        //We need remove the players from the target room and add them to the new room
+        Iterator<Player> it = targetRoom.GetPlayers().iterator();
+        while (it.hasNext()) {
 
-            System.out.println("HELO1");
+            Player p = it.next();
 
-            targetRoom.RemovePlayer(p);
+            // Remove player from the current room
+            it.remove();
             p.SetRoom(newRoom);
 
+            // Move items to the new room
             p.GetInventory().forEach((item) -> {
                 item.SetRoom(newRoom);
             });
 
             System.out.println("HELO2");
-
-        });
+        }
 
         //We need to set the newRoom as the neighbour of the target room's (the room we want to delete) neighbours.
-        System.out.println("SZOSZI");
-        targetRoom.GetNeighbours().forEach((r) -> {
+
+        var neighboursOfTarget = targetRoom.GetNeighbours();
+        for (Room r : neighboursOfTarget) {
             r.RemoveNeighbour(targetRoom);
+        }
+
+        for (Room r : neighboursOfTarget) {
             r.SetNeighbours(newRoom);
-        });
+        }
 
         //There are no references left for the targetRoom, so it should be deleted
         map.remove(targetRoom);
