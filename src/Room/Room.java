@@ -113,6 +113,7 @@ public class Room {
     public void CleanRoom() {
         Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         this.turnsLeftForEffect = 0;
+        this.SetRoomNumberOfPassagesBeforeStickiness(5);
         Logger.logExit(this.getClass().getName(), "CleanRoom");
     }
 

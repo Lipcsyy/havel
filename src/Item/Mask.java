@@ -10,7 +10,7 @@ public class Mask extends Item{
     public Mask(){abilityNumber = 3;}
 
     @Override
-    public boolean ReactToGas(){
+    public boolean ReactToGas(Player player){
         Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
         Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
         return true;

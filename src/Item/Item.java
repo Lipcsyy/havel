@@ -25,7 +25,7 @@ public abstract class Item {
      *
      * @return boolean indicating if the item reacts to gas.
      */
-    public boolean ReactToGas(){
+    public boolean ReactToGas(Player player){
         return false;
     }
 

@@ -12,10 +12,8 @@ public class BeerGlass extends Item{
     }
 
     public void Use(Player player){
-        Logger.logEntry(this.getClass().getName(), "Use", "player");
 
-        // not good yet !! Should be called on caller
-        player.DropRandomItem();
+        Logger.logEntry(this.getClass().getName(), "Use", "player");
         player.Freeze(3);
 
         Logger.logExit(this.getClass().getName(), "Use");
@@ -46,4 +44,13 @@ public class BeerGlass extends Item{
 
         return turnsLeft == 0;
     }
+
+    @Override
+    public void PickUpItem(Player player) {
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        player.AddItem(this);
+        player.DropRandomItem();
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
+    }
+
 }
