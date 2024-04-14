@@ -10,6 +10,10 @@ public class Transistor extends Item{
     private boolean hasPair;
     private Room room;
 
+    public Transistor(){
+        hasPair = false;
+        pair = null;
+    }
     @Override
     public boolean Pair(Player player){
 
