@@ -12,6 +12,7 @@ public class Mask extends Item{
     @Override
     public boolean ReactToGas(Player player){
         Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
+        DecreaseTurnsLeft();
         Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
         return true;
     }

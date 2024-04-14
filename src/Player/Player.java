@@ -72,7 +72,6 @@ public abstract class Player {
         }
 
         item.PickUpItem(this);
-        this.room.RemoveItem(item);
 
         Logger.logExit(this.getClass().getName(), "CollectItem");
     };

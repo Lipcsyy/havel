@@ -52,6 +52,7 @@ public abstract class Item {
     public void PickUpItem(Player player) {
         Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
         player.AddItem(this);
+        player.GetRoom().RemoveItem(this);
         Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 

@@ -10,6 +10,10 @@ public class Transistor extends Item{
     private boolean hasPair;
     private Room room;
 
+    public Transistor(){
+        hasPair = false;
+        pair = null;
+    }
     @Override
     public boolean Pair(Player player){
 
@@ -155,5 +159,14 @@ public class Transistor extends Item{
         Logger.logExit(this.getClass().getName(), "Deploy", "true");
 
         return true;
+    }
+
+    public void PickUpItem(Player player) {
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        if(!this.hasPair){
+            player.AddItem(this);
+            player.GetRoom().RemoveItem(this);
+        }
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 }
