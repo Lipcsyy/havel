@@ -78,16 +78,20 @@ public class Room {
     /**
      * This function returns the neighbours of the room.
      */
-    public List<Room> GetNeighbours(){
-        System.out.println("IN");
+    public Set<Room> GetNeighbours(){
         Logger.logEntry(this.getClass().getName(), "GetNeighbours", "");
         StringBuilder neighboursString = new StringBuilder();
+
+        Set<Room> neighbours = gameManager.GetNeighbours(this);
+
         for (Room neighbour : this.neighbours) {
             neighboursString.append(neighbour.getClass().getName()).append(" ");
         }
         Logger.logExit(this.getClass().getName(), "GetNeighbours", neighboursString.toString() );
+
         return neighbours;
     }
+
 
     /**
      * This function sets the neighbours of the room.
@@ -95,19 +99,16 @@ public class Room {
      */
     public void SetNeighbours(Room neighbour){
         Logger.logEntry(this.getClass().getName(), "SetNeighbours", "neighbour");
-        this.neighbours.add(neighbour);
-        neighbour.neighbours.add(this);
+
+        gameManager.ConnectRoomsTwoWay(this, neighbour);
+
         Logger.logExit(this.getClass().getName(), "SetNeighbours");
     }
 
-    public void RemoveNeighbour( Room room ) {
+    public void RemoveNeighbour( Room neighbour ) {
         Logger.logEntry(this.getClass().getName(), "RemoveNeighbour", "room");
-        this.neighbours.remove(room);
+        gameManager.DisconnectRoomsTwoWay(this, neighbour);
         Logger.logExit(this.getClass().getName(), "RemoveNeighbour");
-    }
-
-    public void SetRoom(Room room) {
-
     }
 
     public void CleanRoom() {

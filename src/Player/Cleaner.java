@@ -5,6 +5,7 @@ import Logger.Logger;
 import Room.Room;
 
 import java.util.List;
+import java.util.Set;
 
 public class Cleaner extends Player {
 
@@ -22,7 +23,7 @@ public class Cleaner extends Player {
         // we try to move the player into any neighbouring room that has enough space
         // if two cleaners meet, the one who entered the room will move the other out
         // (the incomer reacts first)
-        List<Room> neighbours = this.GetRoom().GetNeighbours();
+        Set<Room> neighbours = this.GetRoom().GetNeighbours();
 
         for(Room observedRoom : neighbours){
             if( observedRoom.HasMoreSpaceInRoom() ){

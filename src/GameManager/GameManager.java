@@ -6,10 +6,10 @@ import Player.*;
 
 public class GameManager {
 
-    public List<Room> map;
+    private Map<Room, Set<Room>> map;
 
     public GameManager() {
-        map = new ArrayList<Room>() ;
+       map = new HashMap<Room, Set<Room>>() ;
     }
 
     public void ChangeRoomToNormalInList( Room targetRoom )
@@ -58,14 +58,42 @@ public class GameManager {
 
     public void AddRoom( Room room ) {
         Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
-        map.add(room);
+        map.put(room, new HashSet<Room>());
         Logger.logExit(this.getClass().getName(), "AddRoom");
     }
 
-    public void MakeRoomsNeighbours(Room room1, Room room2) {
-        Logger.logEntry(this.getClass().getName(), "MakeRoomsNeighbours", "room1, room2");
-        room1.SetNeighbours(room2);
-        Logger.logExit(this.getClass().getName(), "MakeRoomsNeighbours");
+    public void ConnectRoomsOneWay(Room room1, Room room2) {
+        Set<Room> room1Neighbours = map.get(room1);
+        room1Neighbours.add(room2);
     }
+
+    public void ConnectRoomsTwoWay(Room room1, Room room2) {
+        Set<Room> room1Neighbors = map.get(room1);
+        Set<Room> room2Neighbors = map.get(room2);
+
+        room1Neighbors.add(room2);
+        room2Neighbors.add(room1);
+    }
+
+    public void DisconnectRoomsOneWay(Room room1, Room room2) {
+        Set<Room> room1Neighbors = map.get(room1);
+        if (room1Neighbors != null) {
+            room1Neighbors.remove(room2);
+        }
+    }
+
+    public void DisconnectRoomsTwoWay(Room room1, Room room2) {
+        DisconnectRoomsOneWay(room1, room2);
+        DisconnectRoomsOneWay(room2, room1);
+    }
+
+    public void EndGame() {
+
+    }
+
+    public Set<Room> GetNeighbours(Room room) {
+        return map.get(room);
+    }
+
 
 }

@@ -56,7 +56,7 @@ public class Tester {
         room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
         teacher = new Teacher(room2, gameManager);
 
-        gameManager.MakeRoomsNeighbours(room1, room2);
+        gameManager.ConnectRoomsTwoWay(room1, room2);
 
     }
 
@@ -81,7 +81,7 @@ public class Tester {
         }
 
         System.out.println("Making the rooms neighbours");
-        gameManager.MakeRoomsNeighbours(room1, room2);
+        gameManager.DisconnectRoomsTwoWay(room1, room2);
 
     }
 
