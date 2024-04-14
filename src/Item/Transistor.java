@@ -160,4 +160,13 @@ public class Transistor extends Item{
 
         return true;
     }
+
+    public void PickUpItem(Player player) {
+        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        if(!this.hasPair){
+            player.AddItem(this);
+            player.GetRoom().RemoveItem(this);
+        }
+        Logger.logExit(this.getClass().getName(), "PickUpItem");
+    }
 }
