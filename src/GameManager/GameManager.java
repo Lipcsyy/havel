@@ -6,10 +6,14 @@ import Player.*;
 
 public class GameManager {
 
-    public List<Room> map;
+    private List<Room> map;
 
     public GameManager() {
         map = new ArrayList<Room>() ;
+    }
+
+    public List<Room> GetMap() {
+        return map;
     }
 
     public void ChangeRoomToNormalInList( Room targetRoom )
