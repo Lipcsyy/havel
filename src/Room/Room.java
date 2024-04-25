@@ -44,7 +44,7 @@ public class Room {
         this.capacity = room.capacity;
         this.items = room.items;
         this.neighbours = room.neighbours;
-        this.players = room.players;
+        this.players = room.GetPlayers();
         this.gameManager = gameManager;
 
         gameManager.AddRoom(this);
@@ -78,16 +78,20 @@ public class Room {
     /**
      * This function returns the neighbours of the room.
      */
-    public List<Room> GetNeighbours(){
-        System.out.println("IN");
+    public Set<Room> GetNeighbours(){
         Logger.logEntry(this.getClass().getName(), "GetNeighbours", "");
         StringBuilder neighboursString = new StringBuilder();
+
+        Set<Room> neighbours = gameManager.GetNeighbours(this);
+
         for (Room neighbour : this.neighbours) {
             neighboursString.append(neighbour.getClass().getName()).append(" ");
         }
         Logger.logExit(this.getClass().getName(), "GetNeighbours", neighboursString.toString() );
+
         return neighbours;
     }
+
 
     /**
      * This function sets the neighbours of the room.
@@ -95,24 +99,22 @@ public class Room {
      */
     public void SetNeighbours(Room neighbour){
         Logger.logEntry(this.getClass().getName(), "SetNeighbours", "neighbour");
-        this.neighbours.add(neighbour);
-        neighbour.neighbours.add(this);
+
+        gameManager.ConnectRoomsTwoWay(this, neighbour);
+
         Logger.logExit(this.getClass().getName(), "SetNeighbours");
     }
 
-    public void RemoveNeighbour( Room room ) {
+    public void RemoveNeighbour( Room neighbour ) {
         Logger.logEntry(this.getClass().getName(), "RemoveNeighbour", "room");
-        this.neighbours.remove(room);
+        gameManager.DisconnectRoomsTwoWay(this, neighbour);
         Logger.logExit(this.getClass().getName(), "RemoveNeighbour");
-    }
-
-    public void SetRoom(Room room) {
-
     }
 
     public void CleanRoom() {
         Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         this.turnsLeftForEffect = 0;
+        this.SetRoomNumberOfPassagesBeforeStickiness(5);
         Logger.logExit(this.getClass().getName(), "CleanRoom");
     }
 
@@ -211,9 +213,6 @@ public class Room {
         if (!items.isEmpty()) {
             player.CollectItem(items.get(0));
         }
-
-        //If the player is a cleaner the room will be cleaned.
-        player.Clean();
 
         if(turnsLeftForEffect > 0){
             player.Freeze(turnsLeftForEffect);

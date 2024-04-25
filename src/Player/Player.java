@@ -71,7 +71,6 @@ public abstract class Player {
         }
 
         item.PickUpItem(this);
-        this.room.RemoveItem(item);
 
         Logger.logExit(this.getClass().getName(), "CollectItem");
     };
@@ -144,7 +143,6 @@ public abstract class Player {
      * @param room The room to move to.
      */
     public void Move(Room room) {
-
         Logger.logEntry(this.getClass().getName(), "Move", "room" );
 
         this.room.RemovePlayer(this);
@@ -163,7 +161,13 @@ public abstract class Player {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
+
         Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
+
+        if( !room.GetNeighbours().contains(this.room) ) {
+            Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
+            return;
+        }
 
         room.Enter(this);
 
@@ -214,7 +218,7 @@ public abstract class Player {
      */
     public void Freeze( int freezeForRounds ) {
         Logger.logEntry(this.getClass().getName(), "Freeze", "5");
-        this.frozenForRound += freezeForRounds;
+        this.frozenForRound = freezeForRounds;
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 
@@ -233,5 +237,4 @@ public abstract class Player {
 
     public void DropItem() {}
 
-    public void Clean(){}
 }

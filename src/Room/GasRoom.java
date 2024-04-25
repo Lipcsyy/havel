@@ -30,8 +30,6 @@ public class GasRoom extends Room {
             return;
         }
 
-        player.Clean();
-
         player.Freeze(3);
 
         //making the players interact with each-other

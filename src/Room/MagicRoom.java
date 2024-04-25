@@ -6,6 +6,8 @@ import Room.*;
 
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+
 import Logger.Logger;
 
 public class MagicRoom extends Room {
@@ -21,8 +23,14 @@ public class MagicRoom extends Room {
         //Disappear
         if ( makeDoorDisappearOrAppear ) {
             //Remove a random neighbour
-            Room removedRoom = this.neighbours.remove(new Random().nextInt(this.neighbours.size()));
-            removedRoom.neighbours.remove(this);
+
+            Set<Room> neighboursOfRoom = gameManager.GetNeighbours(this);
+
+            if(neighboursOfRoom.size() == 0)
+                return;
+
+            gameManager.DisconnectRoomsTwoWay(this, neighboursOfRoom.stream().toList().get(new Random().nextInt(neighboursOfRoom.size())));
+
         }
         else //Make two rooms neighbours
         {

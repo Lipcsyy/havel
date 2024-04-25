@@ -5,6 +5,7 @@ import Logger.Logger;
 import Room.Room;
 
 import java.util.List;
+import java.util.Set;
 
 public class Cleaner extends Player {
 
@@ -22,7 +23,7 @@ public class Cleaner extends Player {
         // we try to move the player into any neighbouring room that has enough space
         // if two cleaners meet, the one who entered the room will move the other out
         // (the incomer reacts first)
-        List<Room> neighbours = this.GetRoom().GetNeighbours();
+        Set<Room> neighbours = this.GetRoom().GetNeighbours();
 
         for(Room observedRoom : neighbours){
             if( observedRoom.HasMoreSpaceInRoom() ){
@@ -48,12 +49,21 @@ public class Cleaner extends Player {
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 
-    public void Clean(){
+    @Override
+    public void Move(Room room) {
+        Logger.logEntry(this.getClass().getName(), "Move", "room" );
 
-        Logger.logEntry(this.getClass().getName(), "Clean", "5");
+        this.room.RemovePlayer(this);
+        room.AddPlayer(this);
+        this.SetRoom(room);
 
-        this.room.CleanRoom();
+        room.CleanRoom();
 
-        Logger.logExit(this.getClass().getName(), "Clean");
-    }
+        //When we go into a room we decrease the passages that are left before stickiness
+        //This only decreases if the room was cleared before
+        this.room.DecreasePassagesBeforeStickiness();
+
+        Logger.logExit(this.getClass().getName(), "Move" );
+    };
+
 }

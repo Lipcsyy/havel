@@ -25,7 +25,7 @@ public abstract class Item {
      *
      * @return boolean indicating if the item reacts to gas.
      */
-    public boolean ReactToGas(){
+    public boolean ReactToGas(Player player){
         return false;
     }
 
@@ -52,6 +52,7 @@ public abstract class Item {
     public void PickUpItem(Player player) {
         Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
         player.AddItem(this);
+        player.GetRoom().RemoveItem(this);
         Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 
