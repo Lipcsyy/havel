@@ -42,7 +42,6 @@ public abstract class Player {
         this.isAlive = isAlive;
     }
 
-
     /**
      * This function returns the status of the player.
      * @return The status of the player.
