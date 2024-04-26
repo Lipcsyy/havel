@@ -20,7 +20,9 @@ public abstract class Player {
      * This is the constructor of the player class.
      * @param startRoom The room where the player starts.
      */
-    public Player( Room startRoom, GameManager gameManager ) {
+    public Player( Room startRoom, GameManager gameManager, String _id  ) {
+
+        id = _id;
 
         isAlive = true;
         room = startRoom;
@@ -235,5 +237,21 @@ public abstract class Player {
     public void DropRandomItem() {}
 
     public void DropItem() {}
+
+    public void Transistor() {};
+
+
+    //-----------INFORMATION FUNCTIONS----------------
+
+    public void PrintInfo() {
+        System.out.println("Player: " + id);
+        System.out.println("Room: " + room.id);
+        System.out.println("Is Alive: " + isAlive);
+        System.out.println("Frozen for: " + frozenForRound);
+        System.out.println("Items: ");
+        for (Item item : items) {
+            System.out.println(item.id + " ");
+        }
+    }
 
 }

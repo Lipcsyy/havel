@@ -8,8 +8,16 @@ import java.util.Random;
 
 public class Student extends Player {
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
+    public int getIdNumber(){return idNumber;}
+    public void setIdNumber(int idValue){idNumber = idValue;}
+
     public Student(Room startRoom, GameManager gameManager) {
-        super(startRoom, gameManager) ;
+        super(startRoom, gameManager, "Student_" + idNumber++);
     }
 
     @Override

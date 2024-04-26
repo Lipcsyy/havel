@@ -6,11 +6,17 @@ import Logger.Logger;
 
 public class Transistor extends Item{
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     private Transistor pair;
     private boolean hasPair;
     private Room room;
 
     public Transistor(){
+        super( "Transistor_" + idNumber++ );
         hasPair = false;
         pair = null;
     }

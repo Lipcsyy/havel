@@ -5,9 +5,21 @@ import Player.Player;
 
 public class Mask extends Item{
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
+    public void SetAbility( int _ability){
+        abilityNumber = _ability;
+    }
+
     private int abilityNumber;
 
-    public Mask(){abilityNumber = 3;}
+    public Mask(){
+        super( "Mask_" + idNumber++ );
+        abilityNumber = 3;
+    }
 
     @Override
     public boolean ReactToGas(Player player){

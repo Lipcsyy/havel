@@ -9,6 +9,8 @@ public class Room {
 
     GameManager gameManager;
 
+    public String id;
+
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
@@ -29,7 +31,6 @@ public class Room {
 
         this.capacity = capacity;
         this.items = items;
-        this.neighbours = neighbours;
         this.players = new ArrayList<>();
         this.gameManager = gameManager;
 
@@ -41,9 +42,9 @@ public class Room {
     //Copy constructor
     public Room( Room room, GameManager gameManager ) {
 
+        this.id = room.id;
         this.capacity = room.capacity;
         this.items = room.items;
-        this.neighbours = room.neighbours;
         this.players = room.GetPlayers();
         this.gameManager = gameManager;
 
@@ -84,7 +85,7 @@ public class Room {
 
         Set<Room> neighbours = gameManager.GetNeighbours(this);
 
-        for (Room neighbour : this.neighbours) {
+        for (Room neighbour : neighbours) {
             neighboursString.append(neighbour.getClass().getName()).append(" ");
         }
         Logger.logExit(this.getClass().getName(), "GetNeighbours", neighboursString.toString() );
@@ -274,6 +275,27 @@ public class Room {
         Logger.logEntry(this.getClass().getName(),"SetRoomNumberOfPassagesBeforeStickiness", "" );
         this.passagesBeforeStickiness = numberOfPlayersBefore;
         Logger.logExit(this.getClass().getName(), "SetRoomNumberOfPassagesBeforeStickiness");
+    }
+
+    //-----------INFORMATION FUNCTIONS----------------
+
+    public void PrintInfo() {
+        System.out.println("Room id: " + id);
+        System.out.println("Room capacity: " + capacity);
+        System.out.println("Room items: ");
+        for (Item item : items) {
+            System.out.print(item.id + " ");
+        }
+        System.out.println("Room players: ");
+        for (Player player : players) {
+            System.out.print(player.id + " ");
+        }
+        System.out.println("Room neighbours: ");
+        for (Room neighbour : neighbours) {
+            System.out.println(neighbour.id + " ");
+        }
+        System.out.println("Room turns left for effect: " + turnsLeftForEffect);
+        System.out.println("Room passages before stickiness: " + passagesBeforeStickiness);
     }
 
 }

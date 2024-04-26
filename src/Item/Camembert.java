@@ -6,6 +6,15 @@ import Room.*;
 
 public class Camembert extends Item{
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
+    public Camembert(){
+       super( "Camembert_" + idNumber++ );
+    }
+
     @Override
     public void Use(Player player) {
 

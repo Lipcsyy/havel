@@ -4,10 +4,12 @@ import Player.Player;
 import Logger.Logger;
 
 public class BeerGlass extends Item{
+    static int idNumber = 1;
 
     private int turnsLeft;
 
     public BeerGlass(){
+        super( "BeerGlass_" + idNumber++);
         turnsLeft = 5;
     }
 

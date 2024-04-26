@@ -34,8 +34,6 @@ public class GameManager {
             p.GetInventory().forEach((item) -> {
                 item.SetRoom(newRoom);
             });
-
-            System.out.println("HELO2");
         }
 
         //We need to set the newRoom as the neighbour of the target room's (the room we want to delete) neighbours.
@@ -100,5 +98,38 @@ public class GameManager {
         return map.get(room);
     }
 
+    public Room GetRoomById(String id) {
+        for (Room r : map.keySet()) {
+            if (r.id.equals(id)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public Player GetPlayerById(String id) {
+        for (Room r : map.keySet()) {
+            for (Player p : r.GetPlayers()) {
+                if (p.id.equals(id)) {
+                    return p;
+                }
+            }
+        }
+        return null;
+    }
+
+    //-----------INFORMATION FUNCTIONS----------------
+
+    public void PrintInfo() {
+
+        for ( Room r : map.keySet() ) {
+            r.PrintInfo();
+        }
+
+        for ( Player p : players ) {
+            p.PrintInfo();
+        }
+
+    }
 
 }

@@ -6,8 +6,14 @@ import Logger.Logger;
 import Room.*;
 
 public class Teacher extends Player{
+
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     public Teacher(Room startRoom, GameManager gameManager) {
-        super(startRoom, gameManager);
+        super(startRoom, gameManager, "Teacher_" + idNumber++);
     }
 
     @Override

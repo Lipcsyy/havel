@@ -3,9 +3,12 @@ package Commander;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import GameManager.GameManager;
+import java.util.Arrays;
 
 public class CommandInterpreter {
 
+    public static GameManager gameManager;
     static public Map<String, Command> commands = new HashMap<String, Command>();
 
     static{
@@ -13,11 +16,10 @@ public class CommandInterpreter {
         commands.put( "Load", new Load());
         commands.put( "Save", new Save());
         commands.put( "ChangeRoom", new ChangeRoom());
-        commands.put( "UseItem", new UseItem());
         commands.put( "DropItem", new DropItem());
-        commands.put( "Transistor", new Transistor());
-        commands.put( "AddToRoom", new AddToRoom());
-        commands.put( "AddToPlayer", new AddToPlayer());
+        commands.put( "UseTransistor", new UseTransistor());
+        commands.put( "AddToRoom", new AddItemToRoom());
+        commands.put( "AddToPlayer", new AddItemToPlayer());
         commands.put( "SetNeighbour", new SetNeighbour());
         commands.put( "ManageDoor", new ManageDoor());
         commands.put( "Info", new Info());
@@ -28,8 +30,8 @@ public class CommandInterpreter {
 
     public void Interpreting(){
 
-        System.out.Println("Welcome to the tester class!");
-        System.out.Println("Commands:");
+        System.out.println("Welcome to the tester class!");
+        System.out.println("Commands:");
 
         isRunning = true;
         while( isRunning ){
@@ -42,7 +44,7 @@ public class CommandInterpreter {
             }
             else {
                 Command command = commands.get(cmdParams[0]);
-                command.execute(cmdParams);
+                command.execute(Arrays.copyOfRange(cmdParams, 1, cmdParams.length));
             }
         }
     }

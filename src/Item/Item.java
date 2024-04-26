@@ -119,4 +119,10 @@ public abstract class Item {
         return false;
     }
 
+    //-----------INFORMATION FUNCTIONS----------------
+
+    public void PrintInfo() {
+        System.out.println( id );
+    } ;
+
 }

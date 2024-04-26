@@ -4,9 +4,16 @@ import Player.Player;
 
 public class AirFreshener extends Item{
 
+    static int idNumber = 1;
+
     private int abilityNumber;
 
-    public AirFreshener(){abilityNumber = 1;}
+    public AirFreshener(){
+
+        super( "AirFreshener_" + idNumber++);
+
+        abilityNumber = 1;
+    }
 
     @Override
     public boolean ReactToGas(Player player){

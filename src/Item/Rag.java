@@ -4,9 +4,16 @@ import Logger.Logger;
 import Player.Player;
 
 public class Rag extends Item{
+
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     private int turnsLeft;
 
     public Rag(){
+        super( "Rag_" + idNumber++ );
         turnsLeft = 5;
     }
 

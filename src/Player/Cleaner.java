@@ -9,8 +9,13 @@ import java.util.Set;
 
 public class Cleaner extends Player {
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     public Cleaner(Room startRoom, GameManager gameManager) {
-        super(startRoom, gameManager);
+        super(startRoom, gameManager, "Cleaner_" + idNumber++);
     }
 
     // moving the player into a neighbouring room and de-gasing the room

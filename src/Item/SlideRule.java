@@ -9,6 +9,15 @@ import Logger.Logger;
  */
 public class SlideRule extends Item {
 
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
+    public SlideRule() {
+        super( "SlideRule_" + idNumber++ );
+    }
+
     /**
      * Defines the behavior when a player picks up the SlideRule.
      * This method should be implemented to specify the actions taken when the SlideRule is collected by a player,
