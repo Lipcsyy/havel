@@ -225,6 +225,7 @@ public class Room {
                 continue;
             }
 
+
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
         }

@@ -29,7 +29,6 @@ public abstract class Player {
 
         this.gameManager = gameManager;
 
-
        if( startRoom != null)
           startRoom.AddPlayer( this );
     }

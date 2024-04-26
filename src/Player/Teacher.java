@@ -26,6 +26,12 @@ public class Teacher extends Player{
     @Override
     public void Interact(Player player) {
         Logger.logEntry(this.getClass().getName(), "Interact", "player");
+
+        if ( player.room != this.room ) {
+            Logger.logExit(this.getClass().getName(), "Interact");
+            return;
+        }
+
         player.ReactToTeacher(this);
         Logger.logExit(this.getClass().getName(), "Interact");
     }

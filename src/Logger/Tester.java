@@ -32,6 +32,7 @@ public class Tester {
         testMap.put(17, Tester::Test17);
         testMap.put(18, Tester::Test18);
         testMap.put(19, Tester::Test19);
+        testMap.put(20, Tester::Test20);
     }
 
     enum RoomType {
@@ -81,7 +82,7 @@ public class Tester {
         }
 
         System.out.println("Making the rooms neighbours");
-        gameManager.DisconnectRoomsTwoWay(room1, room2);
+        gameManager.ConnectRoomsTwoWay(room1, room2);
 
     }
 
@@ -280,11 +281,20 @@ public class Tester {
 
     public static void Test19() {
 
-        SetupStudentEntersRoomWhereNobody(RoomType.Gas);
+        SetupStudentEntersRoomWhereNobody(RoomType.Normal);
 
-        Cleaner cleaner = new Cleaner(room1, gameManager);
-        room1.AddPlayer(cleaner);
+        Cleaner cleaner = new Cleaner(room2, gameManager);
 
+        cleaner.ChangeRoom(room1);
+
+    }
+
+    public static void Test20 () {
+        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        gameManager.ConnectRoomsTwoWay(room1, room2);
+
+        Player cleaner = new Cleaner(room1, gameManager);
         cleaner.ChangeRoom(room2);
 
     }

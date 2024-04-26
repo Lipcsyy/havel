@@ -20,6 +20,11 @@ public class Cleaner extends Player {
 
         Logger.logEntry(this.getClass().getName(), "Interact", "player");
 
+        if (this.room != player.GetRoom()) {
+            Logger.logExit(this.getClass().getName(), "Interact");
+            return;
+        }
+
         // we try to move the player into any neighbouring room that has enough space
         // if two cleaners meet, the one who entered the room will move the other out
         // (the incomer reacts first)
@@ -45,7 +50,7 @@ public class Cleaner extends Player {
     // Cleaner can't freeze
     @Override
     public void Freeze( int freezeForRounds ) {
-        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        Logger.logEntry(this.getClass().getName(), "Freeze", "3");
         Logger.logExit(this.getClass().getName(), "Freeze");
     }
 

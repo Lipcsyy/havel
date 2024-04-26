@@ -40,14 +40,19 @@ public class GameManager {
 
         //We need to set the newRoom as the neighbour of the target room's (the room we want to delete) neighbours.
 
+        //we get here all the neighbours of the room we want to delete
         var neighboursOfTarget = targetRoom.GetNeighbours();
+
+        //we add the new room as new neighbour for the room's neighbours that will be deleted
+        for (Room r : neighboursOfTarget) {
+            r.SetNeighbours(newRoom);
+        }
+
+        //we remove from the rooms neighbour list the room that will be deleted soon
         for (Room r : neighboursOfTarget) {
             r.RemoveNeighbour(targetRoom);
         }
 
-        for (Room r : neighboursOfTarget) {
-            r.SetNeighbours(newRoom);
-        }
 
         //There are no references left for the targetRoom, so it should be deleted
         map.remove(targetRoom);

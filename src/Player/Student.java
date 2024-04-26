@@ -35,6 +35,12 @@ public class Student extends Player {
     @Override
     public void Interact(Player player) {
         Logger.logEntry(this.getClass().getName(), "Interact", "player");
+
+        if ( this.room != player.room ) {
+            Logger.logExit(this.getClass().getName(), "Interact");
+            return;
+        }
+
         Logger.logExit(this.getClass().getName(), "Interact");
     }
 
