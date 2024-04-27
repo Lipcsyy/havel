@@ -2,12 +2,26 @@ package Item;
 import Logger.Logger;
 import Player.*;
 import Room.*;
+import java.io.*;
 
 /**
  * Represents an abstract Item class that defines the basic structure and behaviors of items in the game.
  * This class serves as a base for all items, providing default implementations and expected behaviors for subclasses to override.
  */
-public abstract class Item {
+public abstract class Item implements java.io.Serializable{
+
+
+
+    protected static int idCounter = 1;
+    public String id;
+
+    protected int idNumberCopy = 1;
+    public abstract void setIdNumberCopySer();
+    public abstract void setIdNumberSer();
+
+    public Item (String _id) {
+        id = _id;
+    }
 
     /**
      * Method to be overridden by subclasses to define the action taken when the item is used.

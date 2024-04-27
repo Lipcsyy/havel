@@ -8,6 +8,9 @@ public class BeerGlass extends Item{
 
     private int turnsLeft;
 
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     public BeerGlass(){
         super( "BeerGlass_" + idNumber++);
         turnsLeft = 5;

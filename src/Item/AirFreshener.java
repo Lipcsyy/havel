@@ -8,6 +8,9 @@ public class AirFreshener extends Item{
 
     private int abilityNumber;
 
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     public AirFreshener(){
 
         super( "AirFreshener_" + idNumber++);

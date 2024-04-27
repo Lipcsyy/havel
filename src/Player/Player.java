@@ -6,8 +6,11 @@ import GameManager.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
-public abstract class Player {
+public abstract class Player implements java.io.Serializable {
+
+    public String id;
 
     protected GameManager gameManager;
 
@@ -15,6 +18,10 @@ public abstract class Player {
     protected Room room;
     protected List<Item> items;
     protected int frozenForRound = 0;
+
+    protected int idNumberCopy = 1;
+    public abstract void setIdNumberCopySer();
+    public abstract void setIdNumberSer();
 
     /**
      * This is the constructor of the player class.

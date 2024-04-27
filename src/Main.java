@@ -1,3 +1,4 @@
+import Commander.CommandInterpreter;
 import Logger.Tester.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class Main {
 
 
         try {
-            System.out.println("Enter the test number to run: ");
+            System.out.println("Enter the test number to run or enter 0 to write your commands: ");
             Scanner scanner = new Scanner(System.in);
             int testNumber = scanner.nextInt();
 
@@ -49,6 +50,11 @@ public class Main {
 
                 testNumber = scanner.nextInt();
             }
+
+            CommandInterpreter commandInterpreter = new CommandInterpreter();
+            commandInterpreter.Interpreting();
+
+
         } catch (Exception e) {
            return;
         }

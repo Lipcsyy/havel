@@ -1,15 +1,42 @@
 package GameManager;
+import Commander.CommandInterpreter;
 import Logger.Logger;
 import Room.*;
+import Item.*;
+
+import java.security.Key;
 import java.util.*;
 import Player.*;
 
-public class GameManager {
+public class GameManager implements java.io.Serializable{
 
     private Map<Room, Set<Room>> map;
+    private ArrayList<Player> players;
 
     public GameManager() {
-       map = new HashMap<Room, Set<Room>>() ;
+       map = new HashMap<Room, Set<Room>>();
+       players = new ArrayList<Player>();
+    }
+
+    public ArrayList<Room> getRooms(){
+        ArrayList<Room> allRooms = new ArrayList<Room >();
+        allRooms.addAll( map.keySet() );
+        return allRooms;
+    }
+
+    public ArrayList<Player> getPlayers(){
+        return players;
+    }
+
+    public ArrayList<Item> getItems(){
+        ArrayList<Item> allItems = new ArrayList< Item >();
+        ArrayList<Room> allRooms = getRooms();
+        for(Room r: allRooms){
+
+        }
+        ArrayList<Player> allPlayers = getPlayers();
+
+        return allItems;
     }
 
     public void ChangeRoomToNormalInList( Room targetRoom )
@@ -63,6 +90,12 @@ public class GameManager {
         Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
         map.put(room, new HashSet<Room>());
         Logger.logExit(this.getClass().getName(), "AddRoom");
+    }
+
+    public void AddPlayer( Player player){
+        Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+        players.add( player );
+        Logger.logExit(this.getClass().getName(), "AddPlayer");
     }
 
     public void ConnectRoomsOneWay(Room room1, Room room2) {

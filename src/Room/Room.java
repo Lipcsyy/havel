@@ -5,7 +5,8 @@ import java.util.*;
 import Logger.*;
 import GameManager.*;
 
-public class Room {
+public class Room implements java.io.Serializable{
+
 
     GameManager gameManager;
 
@@ -18,6 +19,13 @@ public class Room {
     protected int turnsLeftForEffect;
 
     protected int passagesBeforeStickiness = -1;
+
+    static int idNumber = 1;
+    //public int getIdNumber(){return idNumber;}
+    //public void setIdNumber(int idValue){idNumber = idValue;}
+    protected int idNumberCopy = 1;
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
 
     //-----------CONSTRUCTOR--------------------------
 
@@ -33,6 +41,7 @@ public class Room {
         this.items = items;
         this.players = new ArrayList<>();
         this.gameManager = gameManager;
+        this.id = "Room_" + idNumber++;
 
         System.out.println("Adding the room to the gameManager");
 
