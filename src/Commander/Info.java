@@ -1,6 +1,6 @@
 package Commander;
 
-public class Info implements Command {
+public class Info implements ICommand {
     public void execute( String[] params){
 
         if( params.length != 1){
@@ -29,6 +29,10 @@ public class Info implements Command {
                 }
                 break;
             case "TVSZ", "Mask", "Rag", "BeerGlass", "SlideRule", "FakeItem", "AirFreshener", "Camembert", "Transistor":
+                break;
+
+            case "GameManager" :
+                CommandInterpreter.gameManager.PrintInfo();
                 break;
             default:
                 System.out.println( "invalid type");

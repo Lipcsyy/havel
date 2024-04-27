@@ -3,7 +3,7 @@ package Commander;
 import Item.*;
 import Player.Player;
 
-public class AddItemToPlayer implements Command {
+public class AddItemToPlayer implements ICommand {
     public void execute( String[] params){
 
         if( params.length != 2){

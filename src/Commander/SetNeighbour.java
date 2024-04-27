@@ -1,6 +1,6 @@
 package Commander;
 
-public class SetNeighbour implements Command {
+public class SetNeighbour implements ICommand {
     public void execute( String[] params){
 
         if (params.length != 2) {

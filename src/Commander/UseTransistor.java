@@ -1,7 +1,7 @@
 package Commander;
 import Player.*;
 
-public class UseTransistor implements Command {
+public class UseTransistor implements ICommand {
     public void execute( String[] params){
 
         String studentId = params[0];

@@ -2,7 +2,7 @@ package Commander;
 
 import Item.*;
 
-public class AddItemToRoom implements Command {
+public class AddItemToRoom implements ICommand {
     public void execute( String[] params){
 
         if( params.length != 2){

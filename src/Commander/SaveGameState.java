@@ -7,7 +7,7 @@ import Item.*;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Save implements Command {
+public class SaveGameState implements ICommand {
     public void execute( String[] params){
 
         String filename = params[0];

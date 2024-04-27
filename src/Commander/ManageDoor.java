@@ -1,6 +1,6 @@
 package Commander;
 
-public class ManageDoor implements Command {
+public class ManageDoor implements ICommand {
     public void execute( String[] params){
 
         var room1 = Commander.CommandInterpreter.gameManager.GetRoomById(params[0]);

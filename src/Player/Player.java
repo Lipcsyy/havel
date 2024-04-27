@@ -257,10 +257,14 @@ public abstract class Player implements java.io.Serializable {
         System.out.println("Room: " + room.id);
         System.out.println("Is Alive: " + isAlive);
         System.out.println("Frozen for: " + frozenForRound);
-        System.out.println("Items: ");
-        for (Item item : items) {
-            System.out.println(item.id + " ");
+
+        if ( items != null ) {
+            System.out.print("Items: ");
+            for (Item item : items) {
+                System.out.print(item.id + " ");
+            }
         }
+
     }
 
 }

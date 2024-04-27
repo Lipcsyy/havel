@@ -1,8 +1,7 @@
 package Commander;
 import Item.Item;
-import Player.Student;
 
-public class DropItem implements Command {
+public class DropItem implements ICommand {
     public void execute( String[] params) {
 
         if ( params.length != 1 ) {

@@ -1,6 +1,6 @@
 package Commander;
 
-public class ChangeRoom implements Command {
+public class ChangeRoom implements ICommand {
     public void execute( String[] params){
 
         if (params.length != 2) {

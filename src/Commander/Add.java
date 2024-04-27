@@ -2,11 +2,8 @@ package Commander;
 
 import Player.*;
 import Room.*;
-import Item.*;
 
-import java.sql.SQLOutput;
-
-public class Add implements Command {
+public class Add implements ICommand {
 
     public void execute( String[] params){
 
