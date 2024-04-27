@@ -16,7 +16,20 @@ public class Add implements Command {
                     Student student = new Student( null, CommandInterpreter.gameManager );
                     if ( params.length == 2 ) {
                         Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
-                        if ( room != null ) student.SetRoom( room );
+
+                        if( room == null ) {
+                            System.out.println("Could not find the room");
+                            return;
+                        }
+
+                        if (!room.HasMoreSpaceInRoom()) {
+                            System.out.println("Not enough space in room");
+                            return;
+                        }
+
+                        student.SetRoom( room );
+                        room.AddPlayer(student);
+
                     }
 
                     System.out.println( student.id );

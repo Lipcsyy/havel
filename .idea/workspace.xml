@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="fix: Fixed the player and room's functions">
-      <change afterPath="$PROJECT_DIR$/TestData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Reading from file implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/LoadGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
     </list>
     <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
@@ -30,6 +25,8 @@
       <change beforePath="$PROJECT_DIR$/src/Commander/UseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/UseItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commander/UseTransistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/UseTransistor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
     <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="" />
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
@@ -50,27 +47,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Main.java">
+    <file path="$PROJECT_DIR$/src/Commander/Add.java">
       <ranges>
-        <range start1="11" end1="33" start2="11" end2="33" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="36" end1="52" start2="36" end2="52" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="60" end1="61" start2="60" end2="60" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Commander/CommandInterpreter.java">
-      <ranges>
-        <range start1="7" end1="7" start2="7" end2="10" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="11" end1="12" start2="14" end2="15" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="15" end1="17" start2="18" end2="20" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="20" end1="21" start2="23" end2="24" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="25" end1="25" start2="28" end2="29" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="26" end1="28" start2="30" end2="30" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="34" end1="34" start2="36" end2="42" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="36" end1="36" start2="44" end2="46" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="37" end1="38" start2="47" end2="47" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="43" end1="43" start2="52" end2="54" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="45" end1="46" start2="56" end2="57" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="48" end1="48" start2="59" end2="60" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
+        <range start1="4" end1="5" start2="4" end2="4" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
+        <range start1="6" end1="9" start2="5" end2="6" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
+        <range start1="18" end1="19" start2="15" end2="29" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
       </ranges>
     </file>
   </component>
@@ -201,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712518303135</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Reading from file implemented">
+      <option name="closed" value="true" />
+      <created>1714235650954</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714235650954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +218,8 @@
     <MESSAGE value="Last commit" />
     <MESSAGE value="Changes made by the team" />
     <MESSAGE value="fix: Fixed the player and room's functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Fixed the player and room's functions" />
+    <MESSAGE value="Reading from file implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reading from file implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,6 +228,16 @@
           <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Commander/CommandInterpreter.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
