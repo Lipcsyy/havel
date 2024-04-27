@@ -5,7 +5,17 @@ import Player.*;
 public class Tvsz extends Item {
     private int abilityNumber;
 
+    public void SetAbility( int _ability){
+        abilityNumber = _ability;
+    }
+
+    static int idNumber = 1;
+
+    public void setIdNumberCopySer(){idNumberCopy = idNumber;}
+    public void setIdNumberSer(){idNumber = idNumberCopy;}
+
     public Tvsz(){
+        super( "TVSZ_" + idNumber++);
         abilityNumber = 3;
     }
 

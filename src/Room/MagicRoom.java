@@ -11,8 +11,13 @@ import java.util.Set;
 import Logger.Logger;
 
 public class MagicRoom extends Room {
+
+    static int idNumber = 1;
     public MagicRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
+
         super(capacity, items, neighbours, gameManager);
+
+        this.id = "MagicRoom_" + idNumber++;
     }
 
     @Override

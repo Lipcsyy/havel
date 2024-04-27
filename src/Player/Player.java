@@ -40,6 +40,8 @@ public abstract class Player implements java.io.Serializable {
 
        if( startRoom != null)
           startRoom.AddPlayer( this );
+
+       gameManager.AddPlayer( this );
     }
 
     /**

@@ -9,9 +9,12 @@ import java.util.List;
 
 public class GasRoom extends Room {
 
+    static int idNumber = 1;
 
     public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
         super(capacity, items, neighbours, gameManager);
+
+        this.id = "GasRoom_" + idNumber++;
     }
 
     /**
