@@ -1,8 +1,6 @@
 package Commander;
 
-import GameManager.GameManager;
-
-public abstract interface Command {
+public abstract interface ICommand {
 
     public abstract void execute( String[] params);
 

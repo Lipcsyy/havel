@@ -5,7 +5,7 @@ import Room.Room;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Load implements Command {
+public class LoadGameState implements ICommand {
     public void execute( String[] params){
 
         String filename = params[0];

@@ -24,8 +24,6 @@ public class CommandInterpreter {
         commands.put( "ManageDoor", new ManageDoor());
         commands.put( "Info", new Info());
     }
-    
-    Scanner scanner = new Scanner( System.in );
     public boolean isRunning;
 
     public void Interpreting(){
@@ -34,6 +32,8 @@ public class CommandInterpreter {
         System.out.println("Commands:");
 
         isRunning = true;
+        Scanner scanner = new Scanner( System.in );
+
         while( isRunning ){
 
             String cmd = scanner.nextLine();
