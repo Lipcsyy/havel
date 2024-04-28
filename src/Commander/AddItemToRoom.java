@@ -21,13 +21,19 @@ public class AddItemToRoom implements ICommand {
 
         switch( itemType ) {
             case "TVSZ":
-                room.AddItem( new Tvsz() );
+                Tvsz tvsz = new Tvsz();
+                room.AddItem( tvsz );
+                System.out.println( tvsz.id );
                 break;
             case "Beerglass" :
-                room.AddItem( new BeerGlass() );
+                BeerGlass beerGlass = new BeerGlass();
+                room.AddItem( beerGlass );
+                System.out.println( beerGlass.id );
                 break;
             case "Camembert" :
-                room.AddItem( new Camembert() );
+                Camembert camembert = new Camembert();
+                room.AddItem( camembert );
+                System.out.println( camembert.id );
                 break;
             case "Mask" :
                 Mask mask = new Mask();
@@ -50,10 +56,14 @@ public class AddItemToRoom implements ICommand {
                 System.out.println( slideRule.id );
                 break;
             case "Rag" :
-                room.AddItem( new Rag() );
+                Rag rag = new Rag();
+                room.AddItem( rag );
+                System.out.println( rag.id );
                 break;
             case "Transistor":
-                room.AddItem( new Transistor() );
+                Transistor transistor = new Transistor();
+                room.AddItem( transistor );
+                System.out.println( transistor.id );
                 break;
 
             default:

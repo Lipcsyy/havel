@@ -25,7 +25,9 @@ public class AddItemToPlayer implements ICommand {
 
         switch ( params[0] ){
             case "TVSZ":
-                player.AddItem( new Tvsz() );
+                Tvsz tvsz = new Tvsz();
+                player.AddItem( tvsz );
+                System.out.println( tvsz.id );
                 break;
 
             case "Mask":
@@ -41,19 +43,27 @@ public class AddItemToPlayer implements ICommand {
                 break;
 
             case "BeerGlass":
-                player.AddItem( new BeerGlass() );
+                BeerGlass beerGlass = new BeerGlass();
+                player.AddItem( beerGlass );
+                System.out.println( beerGlass.id );
                 break;
 
             case "AirFreshener":
-                player.AddItem( new AirFreshener() );
+                AirFreshener airFreshener = new AirFreshener();
+                player.AddItem( airFreshener );
+                System.out.println( airFreshener.id);
                 break;
 
             case "FakeItem":
-                player.AddItem( new FakeItem() );
+                FakeItem fakeItem = new FakeItem();
+                player.AddItem( fakeItem );
+                System.out.println( fakeItem.id );
                 break;
 
             case "SlideRule":
-                player.AddItem( new SlideRule() );
+                SlideRule slideRule = new SlideRule();
+                player.AddItem( slideRule );
+                System.out.println( slideRule );
                 break;
 
             case "Transistor":

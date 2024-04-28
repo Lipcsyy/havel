@@ -63,4 +63,11 @@ public class Rag extends Item{
         }
         return turnsLeft == 0;
     }
+
+    @Override
+    public void PrintInfo() {
+        System.out.println();
+        System.out.println(  "Item: " + id );
+        System.out.println( "Durability: " + turnsLeft);
+    };
 }

@@ -64,4 +64,11 @@ public class Tvsz extends Item {
         return true;
     }
 
+    @Override
+    public void PrintInfo() {
+        System.out.println();
+        System.out.println(  "Item: " + id );
+        System.out.println( "Durability: " + abilityNumber );
+    };
+
 }

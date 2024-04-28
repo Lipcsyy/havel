@@ -47,4 +47,6 @@ public class AirFreshener extends Item{
         }
         return abilityNumber == 0;
     }
+
+
 }

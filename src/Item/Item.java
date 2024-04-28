@@ -164,7 +164,8 @@ public abstract class Item implements java.io.Serializable{
     //-----------INFORMATION FUNCTIONS----------------
 
     public void PrintInfo() {
-        System.out.println( id );
-    } ;
+        System.out.println("\n");
+        System.out.println( "Item: " + id );
+    };
 
 }

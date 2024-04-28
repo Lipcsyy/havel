@@ -29,6 +29,12 @@ public class Info implements ICommand {
                 }
                 break;
             case "TVSZ", "Mask", "Rag", "BeerGlass", "SlideRule", "FakeItem", "AirFreshener", "Camembert", "Transistor":
+                var item = CommandInterpreter.gameManager.GetItemById( params[0] );
+                if( item != null){
+                    item.PrintInfo();
+                } else {
+                    System.out.println( "Invalid item id" );
+                }
                 break;
 
             case "GameManager" :

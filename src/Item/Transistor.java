@@ -237,4 +237,14 @@ public class Transistor extends Item{
             Logger.logExit(this.getClass().getName(), "PickUpItem");
         }
     }
+
+    @Override
+    public void PrintInfo() {
+        System.out.println("\n");
+        System.out.println(  "Item: " + id );
+        if( hasPair)
+            System.out.println( "Pair: " + pair.id );
+        if( room != null)
+            System.out.println( "Deployed: " + room.id );
+    };
 }
