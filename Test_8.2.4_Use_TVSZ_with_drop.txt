@@ -18,5 +18,4 @@ ChangeRoom Student_1 Room_3
 ChangeRoom Student_1 Room_4
 ChangeRoom Student_1 Room_5
 Info Student_1
-Info TVSZ_1
 Info Room_5
