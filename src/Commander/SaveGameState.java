@@ -11,7 +11,8 @@ public class SaveGameState implements ICommand {
     public void execute( String[] params){
 
         String filename = params[0];
-        //GameManager gameManager = new GameManager();
+        filename = filename.concat(".ser");
+
         ArrayList<Room> allRooms = CommandInterpreter.gameManager.getRooms();
         for(Room r: allRooms){
             r.setIdNumberCopySer();
@@ -39,6 +40,7 @@ public class SaveGameState implements ICommand {
             file.close();
 
             System.out.println("Object (gameManager) has been serialized");
+            System.out.println("my gameManager: " + Commander.CommandInterpreter.gameManager);
         }
 
         catch(IOException ex)

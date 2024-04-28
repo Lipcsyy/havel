@@ -26,6 +26,7 @@ public class Room implements java.io.Serializable{
     protected int idNumberCopy = 1;
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
+    public List<Item> getItems(){return items;}
 
     //-----------CONSTRUCTOR--------------------------
 

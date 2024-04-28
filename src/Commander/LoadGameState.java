@@ -1,5 +1,7 @@
 package Commander;
 import GameManager.GameManager;
+import Item.Item;
+import Player.Player;
 import Room.Room;
 
 import java.io.*;
@@ -9,10 +11,19 @@ public class LoadGameState implements ICommand {
     public void execute( String[] params){
 
         String filename = params[0];
-        //GameManager gameManager = new GameManager();
-        ArrayList< Room > allRooms = CommandInterpreter.gameManager.getRooms();
+        filename = filename.concat(".ser");
+
+        ArrayList<Room> allRooms = CommandInterpreter.gameManager.getRooms();
         for(Room r: allRooms){
             r.setIdNumberSer();
+        }
+        ArrayList< Player > allPlayers = CommandInterpreter.gameManager.getPlayers();
+        for(Player p: allPlayers){
+            p.setIdNumberSer();
+        }
+        ArrayList< Item > allItems = CommandInterpreter.gameManager.getItems();
+        for(Item i: allItems){
+            i.setIdNumberSer();
         }
 
         // Deserialization

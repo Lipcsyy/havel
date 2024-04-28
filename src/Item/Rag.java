@@ -33,7 +33,7 @@ public class Rag extends Item{
     }
 
     @Override
-    public void DecreaseTurnsLeft(){
+    public void DecreaseTurnsLeft(Player player){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
         turnsLeft --;
         Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "turnsLeft --");

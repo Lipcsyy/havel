@@ -23,6 +23,7 @@ public abstract class Player implements java.io.Serializable {
     protected int idNumberCopy = 1;
     public abstract void setIdNumberCopySer();
     public abstract void setIdNumberSer();
+    public List<Item> getItems(){return items;}
 
     /**
      * This is the constructor of the player class.
