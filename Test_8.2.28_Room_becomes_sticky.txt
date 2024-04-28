@@ -6,7 +6,7 @@ Add Student Room_1
 Add Student Room_1
 Add Student Room_1
 Add Student Room_1
-Add Student Room_1	
+Add Student Room_1
 ChangeRoom Student_1 Room_2
 ChangeRoom Student_2 Room_2
 ChangeRoom Student_3 Room_2
