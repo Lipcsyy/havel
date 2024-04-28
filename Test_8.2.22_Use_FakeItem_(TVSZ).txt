@@ -6,5 +6,4 @@ Add Teacher Room_2
 AddItemToPlayer FakeItem Student_1
 ChangeRoom Student_1 Room_2
 Info Room_2
-Info FakeItem_1
 Info Student_1
