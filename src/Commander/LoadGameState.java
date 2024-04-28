@@ -45,12 +45,12 @@ public class LoadGameState implements ICommand {
 
         catch(IOException ex)
         {
-            System.out.println("IOException is caught (in load)");
+            System.out.println("Could not load game state");
         }
 
         catch(ClassNotFoundException ex)
         {
-            System.out.println("ClassNotFoundException is caught(in load)");
+            System.out.println("Could not load game state");
         }
 
 
