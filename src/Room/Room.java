@@ -4,6 +4,7 @@ import Player.*;
 import java.util.*;
 import Logger.*;
 import GameManager.*;
+import Enums.*;
 
 public class Room implements java.io.Serializable{
 
@@ -21,6 +22,11 @@ public class Room implements java.io.Serializable{
     protected int passagesBeforeStickiness = -1;
 
     static int idNumber = 1;
+
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
+
     //public int getIdNumber(){return idNumber;}
     //public void setIdNumber(int idValue){idNumber = idValue;}
     protected int idNumberCopy = 1;
@@ -43,8 +49,6 @@ public class Room implements java.io.Serializable{
         this.players = new ArrayList<>();
         this.gameManager = gameManager;
         this.id = "Room_" + idNumber++;
-
-        System.out.println("Adding the room to the gameManager");
 
         gameManager.AddRoom(this);
     }
@@ -69,9 +73,13 @@ public class Room implements java.io.Serializable{
      * @param item The item to add.
      */
     public void AddItem(Item item) {
-        Logger.logEntry(this.getClass().getName(), "AddItem", "item");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "AddItem", "item");
+        }
         items.add(item);
-        Logger.logExit(this.getClass().getName(), "AddItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "AddItem");
+        }
     }
 
     /**
@@ -79,9 +87,13 @@ public class Room implements java.io.Serializable{
      * @param item The item to remove.
      */
     public void RemoveItem(Item item) {
-        Logger.logEntry(this.getClass().getName(), "RemoveItem", "item");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "RemoveItem", "item");
+        }
         items.remove(item);
-        Logger.logExit(this.getClass().getName(), "RemoveItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "RemoveItem");
+        }
     }
 
     //-----------------ROOM FUNCTIONS----------------
@@ -90,7 +102,10 @@ public class Room implements java.io.Serializable{
      * This function returns the neighbours of the room.
      */
     public Set<Room> GetNeighbours(){
-        Logger.logEntry(this.getClass().getName(), "GetNeighbours", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetNeighbours", "");
+        }
+
         StringBuilder neighboursString = new StringBuilder();
 
         Set<Room> neighbours = gameManager.GetNeighbours(this);
@@ -98,7 +113,10 @@ public class Room implements java.io.Serializable{
         for (Room neighbour : neighbours) {
             neighboursString.append(neighbour.getClass().getName()).append(" ");
         }
-        Logger.logExit(this.getClass().getName(), "GetNeighbours", neighboursString.toString() );
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "GetNeighbours", neighboursString.toString() );
+        }
 
         return neighbours;
     }
@@ -109,24 +127,36 @@ public class Room implements java.io.Serializable{
      * @param neighbour The neighbour to set.
      */
     public void SetNeighbours(Room neighbour){
-        Logger.logEntry(this.getClass().getName(), "SetNeighbours", "neighbour");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetNeighbours", "neighbour");
+        }
 
         gameManager.ConnectRoomsTwoWay(this, neighbour);
 
-        Logger.logExit(this.getClass().getName(), "SetNeighbours");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetNeighbours");
+        }
     }
 
     public void RemoveNeighbour( Room neighbour ) {
-        Logger.logEntry(this.getClass().getName(), "RemoveNeighbour", "room");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "RemoveNeighbour", "room");
+        }
         gameManager.DisconnectRoomsTwoWay(this, neighbour);
-        Logger.logExit(this.getClass().getName(), "RemoveNeighbour");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "RemoveNeighbour");
+        }
     }
 
     public void CleanRoom() {
-        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        }
         this.turnsLeftForEffect = 0;
         this.SetRoomNumberOfPassagesBeforeStickiness(5);
-        Logger.logExit(this.getClass().getName(), "CleanRoom");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "CleanRoom");
+        }
     }
 
     //-------------PLAYER FUNCTIONS--------------
@@ -136,11 +166,15 @@ public class Room implements java.io.Serializable{
      * @param player The player to add.
      */
     public void AddPlayer(Player player) {
-        Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+        }
 
         players.add(player);
 
-        Logger.logExit(this.getClass().getName(), "AddPlayer");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "AddPlayer");
+        }
     }
 
 
@@ -149,23 +183,31 @@ public class Room implements java.io.Serializable{
      * @param player The player to remove.
      */
     public void RemovePlayer(Player player){
-        Logger.logEntry(this.getClass().getName(), "RemovePlayer", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "RemovePlayer", "player");
+        }
 
         players.remove(player);
 
-        Logger.logExit(this.getClass().getName(), "RemovePlayer");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "RemovePlayer");
+        }
     }
 
     public List<Player> GetPlayers() {
 
-        Logger.logEntry(this.getClass().getName(), "GetPlayers", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetPlayers", "");
+        }
 
         StringBuilder playerNames = new StringBuilder();
         for (Player player : this.players) {
             playerNames.append(player.getClass().getName()).append(", ");
         }
 
-        Logger.logExit(this.getClass().getName(), playerNames.toString());
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), playerNames.toString());
+        }
 
         return this.players;
     }
@@ -176,8 +218,10 @@ public class Room implements java.io.Serializable{
      * This function returns the turns left for the effect.
      */
     public int GetTurnsLeftForEffect() {
-        Logger.logEntry(this.getClass().getName(), "GetTurnsLeftForEffect", "");
-        Logger.logExit(this.getClass().getName(), "GetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetTurnsLeftForEffect", "");
+            Logger.logExit(this.getClass().getName(), "GetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        }
         return turnsLeftForEffect;
     }
 
@@ -187,7 +231,9 @@ public class Room implements java.io.Serializable{
      */
     public void SetTurnsLeftForEffect(int turnsLeftForEffect) {
 
-        Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        }
         this.turnsLeftForEffect = turnsLeftForEffect;
 
         System.out.println(players.size());
@@ -195,7 +241,9 @@ public class Room implements java.io.Serializable{
         for ( Player player : this.players ) {
             player.Freeze(turnsLeftForEffect);
         }
-        Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
+        }
     }
 
     //-------------MOVING AND DOOR FUNCTIONS--------------
@@ -206,10 +254,15 @@ public class Room implements java.io.Serializable{
      */
     public void Enter(Player player){
 
-        Logger.logEntry(this.getClass().getName(), "Enter", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Enter", "player");
+        }
 
         //The player can't move is he is frozen
         if( player.GetFrozenForRound() != 0 ) {
+            if (GameManager.loggerStatus == ELogger.INFO) {
+                Logger.logExit(this.getClass().getName(), "Enter");
+            }
             return;
         }
 
@@ -217,7 +270,9 @@ public class Room implements java.io.Serializable{
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
         } else {
-            Logger.logExit(this.getClass().getName(), "Enter");
+            if (GameManager.loggerStatus == ELogger.INFO) {
+                Logger.logExit(this.getClass().getName(), "Enter");
+            }
             return;
         }
 
@@ -236,20 +291,23 @@ public class Room implements java.io.Serializable{
                 continue;
             }
 
-
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
         }
 
-        Logger.logExit(this.getClass().getName(), "Enter");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Enter");
+        }
     }
 
     /**
      * This function checks if there is more space in the room.
      */
     public boolean HasMoreSpaceInRoom(){
-        Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInRoom", "");
-        Logger.logExit(this.getClass().getName(), "HasMoreSpaceInRoom", players.size() < capacity ? "true" : "false");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInRoom", "");
+            Logger.logExit(this.getClass().getName(), "HasMoreSpaceInRoom", players.size() < capacity ? "true" : "false");
+        }
         return players.size() < capacity;
     }
 
@@ -269,7 +327,9 @@ public class Room implements java.io.Serializable{
 
     public void DecreasePassagesBeforeStickiness() {
 
-        Logger.logEntry(this.getClass().getName(), "DecreasePassagesBeforeStickiness", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DecreasePassagesBeforeStickiness", "");
+        }
 
         //Only decrease the stickiness if the room was cleaned before.
         //We know that the room was cleared, because the passagesLeftForStickiness is not -1
@@ -277,19 +337,28 @@ public class Room implements java.io.Serializable{
             passagesBeforeStickiness--;
         }
 
-        Logger.logExit(this.getClass().getName(), "DecreasePassagesBeforeStickiness");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DecreasePassagesBeforeStickiness");
+        }
 
     }
     
     public void SetRoomNumberOfPassagesBeforeStickiness(int numberOfPlayersBefore) {
-        Logger.logEntry(this.getClass().getName(),"SetRoomNumberOfPassagesBeforeStickiness", "" );
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(),"SetRoomNumberOfPassagesBeforeStickiness", "" );
+        }
         this.passagesBeforeStickiness = numberOfPlayersBefore;
-        Logger.logExit(this.getClass().getName(), "SetRoomNumberOfPassagesBeforeStickiness");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetRoomNumberOfPassagesBeforeStickiness");
+        }
     }
 
     //-----------INFORMATION FUNCTIONS----------------
 
     public void PrintInfo() {
+
+        System.out.println("\n");
+
         System.out.println("Room id: " + id);
         System.out.println("Room capacity: " + capacity);
 
@@ -320,9 +389,7 @@ public class Room implements java.io.Serializable{
         }
 
         System.out.println("Room turns left for effect: " + turnsLeftForEffect);
-        System.out.println("Room passages before stickiness: " + passagesBeforeStickiness);
-
-        System.out.println();
+        System.out.print("Room passages before stickiness: " + passagesBeforeStickiness);
 
     }
 

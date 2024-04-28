@@ -3,12 +3,17 @@ import GameManager.GameManager;
 import Item.Item;
 import Logger.*;
 import Room.*;
+import Enums.ELogger;
 
 import java.util.Random;
 
 public class Student extends Player {
 
     static int idNumber = 1;
+
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
 
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
@@ -23,14 +28,18 @@ public class Student extends Player {
     @Override
     public void ReactToTeacher(Player player) {
 
-        Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
+        }
 
         // the student can only defend itself if not frozen
         if( this.frozenForRound == 0){
             for( Item item: items ) {
                 boolean canSave = item.CanSave(player);
                 if(canSave){
-                    Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+                    if (GameManager.loggerStatus == ELogger.INFO) {
+                        Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+                    }
                     if (item.NeedToThrow()) {
                         this.RemoveFromInventory(item);
                     }
@@ -41,55 +50,76 @@ public class Student extends Player {
 
         SetIsAlive(false);
 
-        Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+        }
     }
 
     @Override
     public void Interact(Player player) {
-        Logger.logEntry(this.getClass().getName(), "Interact", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Interact", "player");
+        }
 
         if ( this.room != player.room ) {
-            Logger.logExit(this.getClass().getName(), "Interact");
+            if (GameManager.loggerStatus == ELogger.INFO) {
+                Logger.logExit(this.getClass().getName(), "Interact");
+            }
             return;
         }
 
-        Logger.logExit(this.getClass().getName(), "Interact");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Interact");
+        }
     }
 
     @Override
     public void Freeze( int freezeForRounds) {
 
-        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        }
 
         for ( Item item : this.items ) {
              if(item.ReactToGas(this)) {
-                Logger.logExit(this.getClass().getName(), "Freeze" );
+                 if (GameManager.loggerStatus == ELogger.INFO) {
+                     Logger.logExit(this.getClass().getName(), "Freeze" );
+                 }
                  return;
              }
         }
 
         this.frozenForRound = freezeForRounds;
+        this.DropAllItem();
 
-        Logger.logExit(this.getClass().getName(), "Freeze");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Freeze");
+        }
     }
 
     // ------OWN METHODS OF THE STUDENT CLASS TO BE USED BY BUTTONS-------
 
     // Uses camembert if there is one in the inventory
     public void Camembert(){
-        Logger.logEntry(this.getClass().getName(), "Camembert", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Camembert", "");
+        }
 
         for(Item i: this.items){
             i.MakeGas(this.GetRoom());
         }
 
-        Logger.logExit(this.getClass().getName(), "Camembert");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Camembert");
+        }
     }
 
     // Drops the oldest item in the inventory
     public void DropItem() {
 
-        Logger.logEntry(this.getClass().getName(), "DropItem", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DropItem", "");
+        }
 
         if( !this.items.isEmpty() ){
 
@@ -99,11 +129,15 @@ public class Student extends Player {
             this.room.AddItem(firstItem);
         }
 
-        Logger.logExit(this.getClass().getName(), "DropItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DropItem");
+        }
     }
 
     public void DropRandomItem() {
-        Logger.logEntry(this.getClass().getName(), "DropRandomItem", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DropRandomItem", "");
+        }
 
         if( !this.items.isEmpty() ){
 
@@ -116,17 +150,23 @@ public class Student extends Player {
             this.room.AddItem(droppedItem);
         }
 
-        Logger.logExit(this.getClass().getName(), "DropRandomItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DropRandomItem");
+        }
     }
 
     public void Transistor(){
 
-        Logger.logEntry(this.getClass().getName(), "Transistor", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Transistor", "");
+        }
 
         for ( Item item : this.GetInventory() ) {
             //after the first use of the transistor we return, because we don't want to use the second one too. Only one at a time.
-            if ( item.UseTransistor(this) ) {
-                Logger.logExit(this.getClass().getName(), "Transistor");
+            if ( item.UseTransistor(this) == true ) {
+                if (GameManager.loggerStatus == ELogger.INFO) {
+                    Logger.logExit(this.getClass().getName(), "Transistor");
+                }
                 return;
             }
         }
@@ -152,18 +192,24 @@ public class Student extends Player {
         * */
 
 
-        Logger.logExit(this.getClass().getName(), "Transistor");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Transistor");
+        }
     }
 
     @Override
     public void DecreaseItemsTurnsLeft() {
-        Logger.logEntry(this.getClass().getName(), "DecreaseItemsTurnsLeft", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DecreaseItemsTurnsLeft", "");
+        }
 
         for(Item i: items){
             i.DecreaseTurnsLeft(this);
         }
 
-        Logger.logExit(this.getClass().getName(), "DecreaseItemsTurnsLeft");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DecreaseItemsTurnsLeft");
+        }
     }
 
 }

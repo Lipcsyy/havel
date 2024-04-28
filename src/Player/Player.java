@@ -85,12 +85,18 @@ public abstract class Player implements java.io.Serializable {
         }
 
         if (!this.HasMoreSpaceInInventory()) {
+            if (GameManager.loggerStatus == ELogger.INFO ) {
+                Logger.logEntry(this.getClass().getName(), "CollectItem", "item");
+            }
             return;
         }
 
 
         //If the room is sticky the items can't be collected
         if( room.GetPassagesBeforeStickiness() == 0 ) {
+            if (GameManager.loggerStatus == ELogger.INFO ) {
+                Logger.logEntry(this.getClass().getName(), "CollectItem", "item");
+            }
             return;
         }
 
@@ -108,10 +114,13 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "DropAllItem", "");
         }
-        for(Item i: items){
-            this.room.AddItem(i);
-            this.RemoveFromInventory(i);
+
+        for ( int i = 0; i < items.size(); i++ ) {
+            this.room.AddItem(items.get(i));
+            this.RemoveFromInventory(items.get(i));
+            i--;
         }
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "DropAllItem");
         }
@@ -125,7 +134,9 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
         }
+
         this.GetInventory().remove(item);
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit( this.getClass().getName(), "RemoveFromInventory" );
         }
@@ -226,7 +237,9 @@ public abstract class Player implements java.io.Serializable {
         }
 
         if( !room.GetNeighbours().contains(this.room) ) {
-            Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
+            if (GameManager.loggerStatus == ELogger.INFO) {
+                Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
+            }
             return;
         }
 
@@ -289,7 +302,11 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Freeze", "5");
         }
+
         this.frozenForRound = freezeForRounds;
+
+        this.DropAllItem();
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Freeze");
         }
@@ -318,6 +335,7 @@ public abstract class Player implements java.io.Serializable {
     //-----------INFORMATION FUNCTIONS----------------
 
     public void PrintInfo() {
+        System.out.println();
         System.out.println("Player: " + id);
         System.out.println("Room: " + room.id);
         System.out.println("Is Alive: " + isAlive);
@@ -329,9 +347,6 @@ public abstract class Player implements java.io.Serializable {
                 System.out.print(item.id + " ");
             }
         }
-
-        System.out.println();
-
     }
 
 }

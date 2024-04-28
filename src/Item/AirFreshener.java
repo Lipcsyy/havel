@@ -1,6 +1,8 @@
 package Item;
 import Logger.Logger;
 import Player.Player;
+import Enums.ELogger;
+import GameManager.GameManager;
 
 public class AirFreshener extends Item{
 
@@ -20,17 +22,25 @@ public class AirFreshener extends Item{
 
     @Override
     public boolean ReactToGas(Player player){
-        Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
+        }
+
         abilityNumber--;
         player.GetRoom().CleanRoom();
-        Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
+
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
+        }
         return true;
     }
 
     @Override
     public boolean NeedToThrow(){
-        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
-        Logger.logExit(this.getClass().getName(), "NeedToThrow", "abilityNumber == 0");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+            Logger.logExit(this.getClass().getName(), "NeedToThrow", "abilityNumber == 0");
+        }
         return abilityNumber == 0;
     }
 }

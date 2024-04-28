@@ -3,7 +3,7 @@ package Room;
 import GameManager.GameManager;
 import Item.Item;
 import Room.*;
-
+import Enums.ELogger;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -13,6 +13,11 @@ import Logger.Logger;
 public class MagicRoom extends Room {
 
     static int idNumber = 1;
+
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
+
     public MagicRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
 
         super(capacity, items, neighbours, gameManager);
@@ -23,7 +28,9 @@ public class MagicRoom extends Room {
     @Override
     public void ManageDoors(Room room, boolean makeDoorDisappearOrAppear) {
 
-        Logger.logEntry(this.getClass().getName(), "ManageDoors", makeDoorDisappearOrAppear ? "true" : "false");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "ManageDoors", makeDoorDisappearOrAppear ? "true" : "false");
+        }
 
         //Disappear
         if ( makeDoorDisappearOrAppear ) {
@@ -42,14 +49,20 @@ public class MagicRoom extends Room {
             this.SetNeighbours(room);
         }
 
-        Logger.logExit(this.getClass().getName(), "ManageDoors");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "ManageDoors");
+        }
 
     }
 
     @Override
     public void CleanRoom() {
-        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        }
         this.turnsLeftForEffect = 0;
-        Logger.logExit(this.getClass().getName(), "CleanRoom" );
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "CleanRoom" );
+        }
     }
 }

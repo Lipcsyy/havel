@@ -1,5 +1,6 @@
 package Commander;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 import GameManager.GameManager;
@@ -26,12 +27,15 @@ public class CommandInterpreter {
         commands.put( "ManageDoor", new ManageDoor());
         commands.put( "Info", new Info());
         commands.put( "LoadFromFile", new LoadFromFile());
+        commands.put( "ToggleLogger", new ToggleLogger());
     }
     public boolean isRunning;
 
     public void Interpreting(){
 
         System.out.println("Welcome to the tester class!");
+        System.out.println("Info you want to toggle logger, type 'ToggleLogger'");
+        System.out.println();
         System.out.println("Commands:");
         System.out.println("Add <RoomType | PlayerType>");
         System.out.println("LoadGameState <FilePath>");

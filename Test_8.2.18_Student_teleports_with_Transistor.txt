@@ -2,12 +2,13 @@ Add Room 5
 Add Room 5
 SetNeighbour Room_1 Room_2
 Add Student Room_1
-AddItemToPlayer Transistor_1 Student_1
-AddItemToPlayer Transistor_2 Student_1
-Transistor Student_1
-Transistor Student_1
+AddItemToPlayer Transistor Student_1
+AddItemToPlayer Transistor Student_1
+UseTransistor Student_1
+UseTransistor Student_1
 ChangeRoom Student_1 Room_2
-Transistor Student_1
+UseTransistor Student_1
 Info Student_1
 Info Room_1
 Info Room_2
+Info Transistor_2

@@ -1,4 +1,5 @@
 package Player;
+import Enums.ELogger;
 
 import GameManager.GameManager;
 import Logger.Logger;
@@ -10,6 +11,10 @@ import java.util.Set;
 public class Cleaner extends Player {
 
     static int idNumber = 1;
+
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
 
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
@@ -23,7 +28,9 @@ public class Cleaner extends Player {
     @Override
     public void Interact(Player player) {
 
-        Logger.logEntry(this.getClass().getName(), "Interact", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Interact", "player");
+        }
 
         if (this.room != player.GetRoom()) {
             Logger.logExit(this.getClass().getName(), "Interact");
@@ -42,26 +49,34 @@ public class Cleaner extends Player {
             }
         }
 
-        Logger.logExit(this.getClass().getName(), "Interact");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Interact");
+        }
     }
 
     // empty, the Cleaner doesn't need to react to teacher
     @Override
     public void ReactToTeacher(Player teacher) {
-        Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
-        Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "ReactToTeacher", "player");
+            Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+        }
     }
 
     // Cleaner can't freeze
     @Override
     public void Freeze( int freezeForRounds ) {
-        Logger.logEntry(this.getClass().getName(), "Freeze", "3");
-        Logger.logExit(this.getClass().getName(), "Freeze");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Freeze", "3");
+            Logger.logExit(this.getClass().getName(), "Freeze");
+        }
     }
 
     @Override
     public void Move(Room room) {
-        Logger.logEntry(this.getClass().getName(), "Move", "room" );
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Move", "room" );
+        }
 
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
@@ -73,7 +88,9 @@ public class Cleaner extends Player {
         //This only decreases if the room was cleared before
         this.room.DecreasePassagesBeforeStickiness();
 
-        Logger.logExit(this.getClass().getName(), "Move" );
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Move" );
+        }
     };
 
 }

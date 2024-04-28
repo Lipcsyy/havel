@@ -2,6 +2,8 @@ package Item;
 
 import Logger.Logger;
 import Player.Player;
+import Enums.ELogger;
+import GameManager.GameManager;
 
 public class Mask extends Item{
 
@@ -23,23 +25,33 @@ public class Mask extends Item{
 
     @Override
     public boolean ReactToGas(Player player){
-        Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
+        }
         DecreaseTurnsLeft(player);
-        Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
+        }
         return true;
     }
 
     @Override
     public void DecreaseTurnsLeft(Player player){
-        Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
+        }
         abilityNumber --;
-        Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "abilityNumber --");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "abilityNumber --");
+        }
     }
 
     @Override
     public boolean NeedToThrow(){
-        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
-        Logger.logExit(this.getClass().getName(), "NeedToThrow", "abilityNumber == 0");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+            Logger.logExit(this.getClass().getName(), "NeedToThrow", "abilityNumber == 0");
+        }
         return abilityNumber == 0;
     }
 }

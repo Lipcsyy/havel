@@ -2,6 +2,8 @@ package Item;
 
 import Player.Player;
 import Logger.Logger;
+import Enums.ELogger;
+import GameManager.GameManager;
 
 public class BeerGlass extends Item{
     static int idNumber = 1;
@@ -18,18 +20,28 @@ public class BeerGlass extends Item{
 
     @Override
     public void Use(Player player){
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "Use", "player");
+        }
 
-        Logger.logEntry(this.getClass().getName(), "Use", "player");
         player.Freeze(3);
 
-        Logger.logExit(this.getClass().getName(), "Use");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Use");
+        }
     }
 
     @Override
     public boolean CanSave(Player player){
-        Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        }
+
         this.Use(player);
-        Logger.logExit(this.getClass().getName(), "CanSave", "true");
+
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "CanSave", "true");
+        }
 
         return true;
     }
@@ -37,28 +49,40 @@ public class BeerGlass extends Item{
     @Override
     public void DecreaseTurnsLeft( Player player ){
 
-        Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
+        }
 
         turnsLeft --;
 
-        Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft");
+        }
     }
 
     @Override
     public boolean NeedToThrow(){
-        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
-        Logger.logExit(this.getClass().getName(), "NeedToThrow",  turnsLeft == 0 ? "true" : "false");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+            Logger.logExit(this.getClass().getName(), "NeedToThrow",  turnsLeft == 0 ? "true" : "false");
+        }
 
         return turnsLeft == 0;
     }
 
     @Override
     public void PickUpItem(Player player) {
-        Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
+        }
+
         player.AddItem(this);
         player.GetRoom().RemoveItem(this);
         player.DropRandomItem();
-        Logger.logExit(this.getClass().getName(), "PickUpItem");
+
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "PickUpItem");
+        }
     }
 
 }

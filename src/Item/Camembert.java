@@ -3,6 +3,8 @@ package Item;
 import Logger.Logger;
 import Player.Player;
 import Room.*;
+import Enums.ELogger;
+import GameManager.GameManager;
 
 public class Camembert extends Item{
 
@@ -21,36 +23,50 @@ public class Camembert extends Item{
 
     @Override
     public boolean NeedToThrow(){
-        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
-        Logger.logExit(this.getClass().getName(), "NeedToThrow", abilityNumber == 0 ? "true" : "false");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+            Logger.logExit(this.getClass().getName(), "NeedToThrow", abilityNumber == 0 ? "true" : "false");
+        }
         return abilityNumber == 0;
     }
 
     @Override
     public void Use(Player player) {
 
-        Logger.logEntry(this.getClass().getName(), "Use", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "Use", "player");
+        }
 
         this.MakeGas(player.GetRoom());
         abilityNumber--;
 
-        Logger.logExit(this.getClass().getName(), "Use");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "Use");
+        }
     }
 
     public void MakeGas(Room room){
-        Logger.logEntry(this.getClass().getName(), "MakeGas", "room");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "MakeGas", "room");
+        }
         room.SetTurnsLeftForEffect(5);
-        Logger.logExit(this.getClass().getName(), "MakeGas");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "MakeGas");
+        }
     }
 
     @Override
     public boolean CanSave(Player player){
 
-        Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        }
 
         this.Use(player);
 
-        Logger.logExit(this.getClass().getName(), "CanSave", "true");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "CanSave", "true");
+        }
 
         return true;
     }

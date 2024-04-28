@@ -19,6 +19,25 @@ public class GameManager implements java.io.Serializable{
     public GameManager() {
        map = new HashMap<Room, Set<Room>>();
        players = new ArrayList<Player>();
+
+       Student.ResetCounter();
+       Teacher.ResetCounter();
+       Cleaner.ResetCounter();
+
+       AirFreshener.ResetCounter();
+       BeerGlass.ResetCounter();
+       Camembert.ResetCounter();
+       FakeItem.ResetCounter();
+       Mask.ResetCounter();
+       Rag.ResetCounter();
+       SlideRule.ResetCounter();
+       Transistor.ResetCounter();
+       Tvsz.ResetCounter();
+
+       Room.ResetCounter();
+       GasRoom.ResetCounter();
+       MagicRoom.ResetCounter();
+
     }
 
     public ArrayList<Room> getRooms(){
@@ -38,8 +57,10 @@ public class GameManager implements java.io.Serializable{
     }
 
     public ArrayList<Item> getItems(){
+
         ArrayList<Item> allItems = new ArrayList< Item >();
         ArrayList<Room> allRooms = getRooms();
+
         for(Room r: allRooms){
             allItems.addAll( r.getItems() );
         }
@@ -53,7 +74,9 @@ public class GameManager implements java.io.Serializable{
     public void ChangeRoomToNormalInList( Room targetRoom )
     {
 
-        Logger.logEntry(this.getClass().getName(), "ChangeRoomToNormalInList", "targetRoom");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "ChangeRoomToNormalInList", "targetRoom");
+        }
 
         //Copying the room we want to change -> we make it into a normal room no matter what
         Room newRoom = new Room(targetRoom, this);
@@ -92,20 +115,30 @@ public class GameManager implements java.io.Serializable{
         //There are no references left for the targetRoom, so it should be deleted
         map.remove(targetRoom);
 
-        Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
+        }
 
     }
 
     public void AddRoom( Room room ) {
-        Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
+        }
         map.put(room, new HashSet<Room>());
-        Logger.logExit(this.getClass().getName(), "AddRoom");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "AddRoom");
+        }
     }
 
     public void AddPlayer( Player player){
-        Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
+        }
         players.add( player );
-        Logger.logExit(this.getClass().getName(), "AddPlayer");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "AddPlayer");
+        }
     }
 
     public void ConnectRoomsOneWay(Room room1, Room room2) {
@@ -173,6 +206,15 @@ public class GameManager implements java.io.Serializable{
         for ( Player p : players ) {
             p.PrintInfo();
         }
+    }
+
+    public Item GetItemById(String id) {
+        for (Item i : getItems()) {
+            if (i.id.equals(id)) {
+                return i;
+            }
+        }
+        return null;
     }
 
     public void GameLoop(){

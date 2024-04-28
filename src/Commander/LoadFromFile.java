@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
+import GameManager.GameManager;
 
 public class LoadFromFile implements ICommand{
     public void execute(String[] params) {
@@ -37,10 +38,14 @@ public class LoadFromFile implements ICommand{
             return;
         }
 
+        CommandInterpreter.gameManager = new GameManager();
+        Player.Student.ResetCounter();
+
         while(fileScanner.hasNextLine()){
 
             String cmd = fileScanner.nextLine();
             String[] cmdParams = cmd.split(" ");
+
 
 
             ICommand command = CommandInterpreter.commands.get(cmdParams[0]);

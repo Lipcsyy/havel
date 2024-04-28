@@ -1,6 +1,10 @@
 package Item;
 import Logger.Logger;
 import Player.*;
+import Enums.ELogger;
+import GameManager.GameManager;
+
+import java.nio.channels.GatheringByteChannel;
 
 public class Tvsz extends Item {
     private int abilityNumber;
@@ -21,28 +25,38 @@ public class Tvsz extends Item {
 
     @Override
     public boolean NeedToThrow() {
-        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
-        Logger.logExit(this.getClass().getName(), "NeedToThrow", abilityNumber == 0 ? "true" : "false");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+            Logger.logExit(this.getClass().getName(), "NeedToThrow", abilityNumber == 0 ? "true" : "false");
+        }
         return abilityNumber == 0;
     }
 
     @Override
     public void Use(Player player) {
-        Logger.logEntry(this.getClass().getName(), "Use", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "Use", "player");
+        }
         abilityNumber --;
-        Logger.logExit(this.getClass().getName(), "Use");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "Use");
+        }
     }
 
     @Override
     public boolean CanSave(Player player) {
-        Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+        }
 
         if ( abilityNumber == 0 ) {
             return false;
         }
 
         this.Use(player);
-        Logger.logExit(this.getClass().getName(), "CanSave", "true");
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "CanSave", "true");
+        }
         return true;
     }
 

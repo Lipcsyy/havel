@@ -4,12 +4,16 @@ import GameManager.GameManager;
 import Item.Item;
 import Logger.Logger;
 import Player.Player;
+import Enums.ELogger;
 
 import java.util.List;
 
 public class GasRoom extends Room {
 
     static int idNumber = 1;
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
 
     public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
         super(capacity, items, neighbours, gameManager);
@@ -24,12 +28,17 @@ public class GasRoom extends Room {
     @Override
     public void Enter(Player player){
 
-        Logger.logEntry(this.getClass().getName(), "Enter", "player");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Enter", "player");
+        }
 
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
         } else {
+            if (GameManager.loggerStatus == ELogger.INFO ) {
+                Logger.logExit(this.getClass().getName(), "Enter");
+            }
             return;
         }
 
@@ -46,13 +55,17 @@ public class GasRoom extends Room {
             playerInRoom.Interact(player);
         }
 
-        Logger.logExit(this.getClass().getName(), "Enter");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Enter");
+        }
     }
 
     @Override
     public void CleanRoom() {
 
-        Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        }
 
         //TODO: Make the players go out of the room
         this.gameManager.ChangeRoomToNormalInList(this);
@@ -60,6 +73,8 @@ public class GasRoom extends Room {
         //clean the room, so it can be sticky later
         this.SetRoomNumberOfPassagesBeforeStickiness(5);
 
-        Logger.logExit(this.getClass().getName(), "CleanRoom");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "CleanRoom");
+        }
     }
 }
