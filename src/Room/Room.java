@@ -68,6 +68,8 @@ public class Room implements java.io.Serializable{
 
     }
 
+    public Room(){}
+
     //----------ITEM FUNCTIONS------------------------
 
     /**

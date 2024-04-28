@@ -5,3 +5,4 @@ AddItemToPlayer Transistor Student_1
 UseTransistor Student_1
 UseTransistor Student_1
 Info Student_1
+Info Room_1

@@ -6,6 +6,7 @@ import Logger.Logger;
 import Player.Player;
 import Enums.ELogger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GasRoom extends Room {
@@ -16,9 +17,14 @@ public class GasRoom extends Room {
     }
 
     public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
-        super(capacity, items, neighbours, gameManager);
+        this.capacity = capacity;
+        this.items = items;
+        this.players = new ArrayList<>();
+        this.gameManager = gameManager;
 
         this.id = "GasRoom_" + idNumber++;
+
+        gameManager.AddRoom(this);
     }
 
     /**
