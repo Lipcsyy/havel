@@ -2,7 +2,7 @@ Add Room 5
 Add GasRoom 5
 SetNeighbour Room_1 GasRoom_1
 Add Student Room_1
-AddIemToPlayer TVSZ Student_1
+AddItemToPlayer TVSZ Student_1
 ChangeRoom Student_1 GasRoom_1
 Info Student_1
 Info TVSZ_1

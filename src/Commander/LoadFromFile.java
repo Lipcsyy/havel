@@ -8,8 +8,6 @@ import java.util.Scanner;
 public class LoadFromFile implements ICommand{
     public void execute(String[] params) {
 
-        System.out.println("Reading commands from file...");
-
         File folder = new File("./");
         File[] listOfFiles = folder.listFiles();
         if(listOfFiles != null) {
