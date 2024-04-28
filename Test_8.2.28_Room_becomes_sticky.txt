@@ -1,0 +1,18 @@
+Add Room 10
+Add Room 10
+SetNeighbour Room_1 Room_2
+AddItemToRoom TVSZ Room_1
+Add Student Room_1
+Add Student Room_1
+Add Student Room_1
+Add Student Room_1
+Add Student Room_1	
+ChangeRoom Student_1 Room_2
+ChangeRoom Student_2 Room_2
+ChangeRoom Student_3 Room_2
+ChangeRoom Student_4 Room_2
+ChangeRoom Student_5 Room_2
+ChangeRoom Student_1 Room_1
+Info Room_1
+Info Room_2
+Info Student_1

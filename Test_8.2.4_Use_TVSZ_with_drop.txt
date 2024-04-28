@@ -1,0 +1,22 @@
+Add Room 5
+Add Room 5
+Add Room 5
+Add Room 5
+Add Room 5
+SetNeighbour Room_1 Room_2
+SetNeighbour Room_2 Room_3
+SetNeighbour Room_3 Room_4
+SetNeighbour Room_4 Room_5
+Add Student Room_1
+Add Teacher Room_2
+Add Teacher Room_3
+Add Teacher Room_4
+Add Teacher Room_5
+AddItemToPlayer TVSZ Student_1
+ChangeRoom Student_1 Room_2
+ChangeRoom Student_1 Room_3
+ChangeRoom Student_1 Room_4
+ChangeRoom Student_1 Room_5
+Info Student_1
+Info TVSZ_1
+Info Room_5

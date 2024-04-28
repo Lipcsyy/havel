@@ -2,35 +2,39 @@ package Commander;
 
 import Player.*;
 import Room.*;
+import Item.*;
+
+import java.util.ArrayList;
 
 public class Add implements ICommand {
 
-    public void execute( String[] params){
+    public void execute( String[] params ) {
 
-        if ( params.length > 0) {
-            switch ( params[ 0 ] ) {
-                case "Student":
-                    Student student = new Student( null, CommandInterpreter.gameManager );
-                    if ( params.length == 2 ) {
-                        Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
+        if ( params.length != 2 ) {
+            System.out.println( "Invalid number of parameters" );
+            return;
+        }
 
-                        if( room == null ) {
-                            System.out.println("Could not find the room");
-                            return;
-                        }
+        switch ( params[ 0 ] ) {
+            case "Student":
+                Student student = null;
 
-                        if (!room.HasMoreSpaceInRoom()) {
-                            System.out.println("Not enough space in room");
-                            return;
-                        }
+                Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
 
-                        student.SetRoom( room );
-                        room.AddPlayer(student);
+                if ( room == null ) {
+                    System.out.println( "Could not find the room" );
+                    return;
+                }
 
-                    }
+                if ( ! room.HasMoreSpaceInRoom() ) {
+                    System.out.println( "Not enough space in room" );
+                    return;
+                }
 
-                    System.out.println( student.id );
-                    break;
+                student = new Student( room, CommandInterpreter.gameManager );
+
+                System.out.println( student.id );
+                break;
 
                 case "Teacher":
                     Teacher teacher = new Teacher( null, CommandInterpreter.gameManager );
@@ -52,35 +56,20 @@ public class Add implements ICommand {
                     System.out.println( cleaner.id );
                     break;
 
-                case "Room":
-                    if ( params.length == 2 ) {
-                        Room room = new Room( Integer.parseInt( params[ 1 ] ), null, null, CommandInterpreter.gameManager );
+            case "Room":
+                room = new Room( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                System.out.println( room.id );
+                break;
 
-                        System.out.println( room.id );
-                    } else {
-                        System.out.println( "Room parameters are BAD" );
-                    }
-                    break;
+            case "GasRoom":
+                GasRoom gasRoom = new GasRoom( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                System.out.println( gasRoom.id );
+                break;
 
-                case "GasRoom":
-                    if ( params.length == 2 ) {
-                        GasRoom gasRoom = new GasRoom( Integer.parseInt( params[ 1 ] ), null, null, CommandInterpreter.gameManager );
-
-                        System.out.println( gasRoom.id );
-                    } else {
-                        System.out.println( "Room parameters are BAD" );
-                    }
-                    break;
-
-                case "MagicRoom":
-                    if ( params.length == 2 ) {
-                        MagicRoom magicRoom = new MagicRoom( Integer.parseInt( params[ 1 ] ), null, null, CommandInterpreter.gameManager );
-
-                        System.out.println( magicRoom.id );
-                    } else {
-                        System.out.println( "Room parameters are BAD" );
-                    }
-                    break;
+            case "MagicRoom":
+                MagicRoom magicRoom = new MagicRoom( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                System.out.println( magicRoom.id );
+                break;
 
                 default:
             }

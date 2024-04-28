@@ -1,0 +1,14 @@
+Add Room 5
+Add GasRoom 5
+SetNeighbour Room_1 GasRoom_1
+Add Student Room_1
+Add TVSZ 3
+Add FakeItem Mask
+AddToPlayer TVSZ_1 Student_1
+AddToPlayer FakeItem_1 Student_1
+
+ChangeRoom Student_1 Room_2
+
+Info GasRoom_1
+Info FakeItem_1
+Info Student_1

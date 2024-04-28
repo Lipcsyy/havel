@@ -24,13 +24,13 @@ public class Mask extends Item{
     @Override
     public boolean ReactToGas(Player player){
         Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
-        DecreaseTurnsLeft();
+        DecreaseTurnsLeft(player);
         Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
         return true;
     }
 
     @Override
-    public void DecreaseTurnsLeft(){
+    public void DecreaseTurnsLeft(Player player){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
         abilityNumber --;
         Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "abilityNumber --");

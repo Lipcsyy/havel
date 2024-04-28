@@ -122,10 +122,8 @@ public class Transistor extends Item{
     }
 
     @Override
-    public boolean Teleport(Player player){
+    public boolean Teleport(Player student){
         Logger.logEntry(this.getClass().getName(), "Teleport", "player");
-        this.Use(player);
-        Logger.logExit(this.getClass().getName(), "Teleport", "true");
         return true;
     }
 

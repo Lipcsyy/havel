@@ -1,0 +1,10 @@
+Add Room 5
+Add Room 5
+SetNeighbour Room_1 Room_2
+Add Student Room_1
+Add Teacher Room_2
+AddItemToPlayer TVSZ Student_1
+ChangeRoom Student_1 Room_2
+Info Student_1
+Info Teacher_1
+Info TVSZ_1

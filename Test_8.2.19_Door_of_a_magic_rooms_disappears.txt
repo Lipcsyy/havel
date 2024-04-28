@@ -1,0 +1,9 @@
+Add MagicRoom 5
+Add Room 5
+SetNeighbour MagicRoom_1 Room_1
+Add Student MagicRoom_1
+ManageDoor MagicRoom_1 Disappear Room_1
+ChangeRoom MagicRoom_1 Room_1
+Info Student_1
+Info MagicRoom_1
+Info Room_2

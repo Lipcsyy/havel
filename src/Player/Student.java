@@ -28,8 +28,12 @@ public class Student extends Player {
         // the student can only defend itself if not frozen
         if( this.frozenForRound == 0){
             for( Item item: items ) {
-                if(item.CanSave(player)){
+                boolean canSave = item.CanSave(player);
+                if(canSave){
                     Logger.logExit(this.getClass().getName(), "ReactToTeacher");
+                    if (item.NeedToThrow()) {
+                        this.RemoveFromInventory(item);
+                    }
                     return;
                 }
             }
@@ -149,6 +153,17 @@ public class Student extends Player {
 
 
         Logger.logExit(this.getClass().getName(), "Transistor");
+    }
+
+    @Override
+    public void DecreaseItemsTurnsLeft() {
+        Logger.logEntry(this.getClass().getName(), "DecreaseItemsTurnsLeft", "");
+
+        for(Item i: items){
+            i.DecreaseTurnsLeft(this);
+        }
+
+        Logger.logExit(this.getClass().getName(), "DecreaseItemsTurnsLeft");
     }
 
 }

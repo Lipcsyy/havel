@@ -1,4 +1,5 @@
 package Player;
+import Enums.ELogger;
 import Item.*;
 import Room.*;
 import Logger.*;
@@ -49,8 +50,18 @@ public abstract class Player implements java.io.Serializable {
      * @param isAlive The status of the player.
      */
     public void SetIsAlive(boolean isAlive){
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetIsAlive", ": " + isAlive);
+        }
+
         this.isAlive = isAlive;
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetIsAlive");
+        }
     }
+
 
     /**
      * This function returns the status of the player.
@@ -68,7 +79,9 @@ public abstract class Player implements java.io.Serializable {
      */
     public void CollectItem(Item item) {
 
-        Logger.logEntry(this.getClass().getName(), "CollectItem", "item");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "CollectItem", "item");
+        }
 
         if (!this.HasMoreSpaceInInventory()) {
             return;
@@ -82,19 +95,25 @@ public abstract class Player implements java.io.Serializable {
 
         item.PickUpItem(this);
 
-        Logger.logExit(this.getClass().getName(), "CollectItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "CollectItem");
+        }
     };
 
     /**
      * This function drops all the items in the inventory to the floor.
      */
     public void DropAllItem() {
-        Logger.logEntry(this.getClass().getName(), "DropAllItem", "");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DropAllItem", "");
+        }
         for(Item i: items){
             this.room.AddItem(i);
             this.RemoveFromInventory(i);
         }
-        Logger.logExit(this.getClass().getName(), "DropAllItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DropAllItem");
+        }
     };
 
     /**
@@ -102,9 +121,13 @@ public abstract class Player implements java.io.Serializable {
      * @param item The item to be removed from the inventory.
      */
     public void RemoveFromInventory(Item item){
-        Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
+        }
         this.GetInventory().remove(item);
-        Logger.logExit(this.getClass().getName(), "RemoveFromInventory");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit( this.getClass().getName(), "RemoveFromInventory" );
+        }
     }
 
 
@@ -112,8 +135,10 @@ public abstract class Player implements java.io.Serializable {
      * This function return true or false based on the inventory space of the player
      */
     public boolean HasMoreSpaceInInventory() {
-        Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInInventory", "");
-        Logger.logExit(this.getClass().getName(), "HasMoreSpaceInInventory");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "HasMoreSpaceInInventory", "");
+            Logger.logExit(this.getClass().getName(), "HasMoreSpaceInInventory");
+        }
         return this.items.size() < 5;
     };
 
@@ -123,37 +148,50 @@ public abstract class Player implements java.io.Serializable {
      * @return The inventory of the player.
      */
     public List<Item> GetInventory() {
-        Logger.logEntry(this.getClass().getName(), "GetInventory", "");
+        if ( GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetInventory", "");
+        }
 
         StringBuilder itemNames = new StringBuilder();
         for (Item item : this.items) {
             itemNames.append(item.getClass().getName()).append(", ");
         }
 
-        Logger.logExit(this.getClass().getName(), "GetInventory", itemNames.toString());
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "GetInventory", itemNames.toString());
+        }
 
         return this.items;
     }
+
 
     /**
      * This function adds an item to the inventory.
      * @param item The item to be added to the inventory.
      */
     public void AddItem(Item item) {
-        Logger.logEntry(this.getClass().getName(), "AddItem", item.getClass().getName());
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "AddItem", item.getClass().getName());
+        }
         this.items.add(item);
-        Logger.logExit(this.getClass().getName(), "AddItem");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "AddItem");
+        }
     }
 
-
     //-----------MOVEMENT FUNCTIONS----------------
+
+    public void DecreaseItemsTurnsLeft() {}
 
     /**
      * This function moves the player to a different room.
      * @param room The room to move to.
      */
     public void Move(Room room) {
-        Logger.logEntry(this.getClass().getName(), "Move", "room" );
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Move", "room" );
+        }
 
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
@@ -163,7 +201,17 @@ public abstract class Player implements java.io.Serializable {
         //This only decreases if the room was cleared before
         this.room.DecreasePassagesBeforeStickiness();
 
-        Logger.logExit(this.getClass().getName(), "Move" );
+        for ( int i = 0; i < items.size(); i++ ) {
+            items.get(i).DecreaseTurnsLeft(this);
+            if (items.get(i).NeedToThrow()) {
+                this.RemoveFromInventory( items.get(i) );
+                i--;
+            }
+        }
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Move" );
+        }
     };
 
     /**
@@ -172,7 +220,9 @@ public abstract class Player implements java.io.Serializable {
      */
     public void ChangeRoom(Room room) {
 
-        Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
+        }
 
         if( !room.GetNeighbours().contains(this.room) ) {
             Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
@@ -181,7 +231,9 @@ public abstract class Player implements java.io.Serializable {
 
         room.Enter(this);
 
-        Logger.logExit(this.getClass().getName(), "ChangeRoom" );
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "ChangeRoom" );
+        }
     };
 
     /**
@@ -190,11 +242,15 @@ public abstract class Player implements java.io.Serializable {
      */
     public void SetRoom(Room room) {
 
-        Logger.logEntry(this.getClass().getName(), "SetRoom", "room");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetRoom", "room");
+        }
 
         this.room = room;
 
-        Logger.logExit(this.getClass().getName(), "SetRoom");
+        if ( GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetRoom");
+        }
     }
 
     /**
@@ -202,8 +258,10 @@ public abstract class Player implements java.io.Serializable {
      * @return The room of the player.
      */
     public Room GetRoom() {
-        Logger.logEntry(this.getClass().getName(), "GetRoom", "");
-        Logger.logExit(this.getClass().getName(), "GetRoom", "room");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetRoom", "");
+            Logger.logExit(this.getClass().getName(), "GetRoom", "room");
+        }
         return this.room;
     }
 
@@ -227,9 +285,13 @@ public abstract class Player implements java.io.Serializable {
      * @param freezeForRounds The number of rounds the player needs to be frozen
      */
     public void Freeze( int freezeForRounds ) {
-        Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Freeze", "5");
+        }
         this.frozenForRound = freezeForRounds;
-        Logger.logExit(this.getClass().getName(), "Freeze");
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Freeze");
+        }
     }
 
     /**
@@ -237,8 +299,10 @@ public abstract class Player implements java.io.Serializable {
      * @return The number of rounds the player is frozen for
      */
     public int GetFrozenForRound() {
-        Logger.logEntry(this.getClass().getName(), "GetFrozenForRound", "");
-        Logger.logExit(this.getClass().getName(), "GetFrozenForRound", String.valueOf(this.frozenForRound));
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetFrozenForRound", "");
+            Logger.logExit(this.getClass().getName(), "GetFrozenForRound", String.valueOf(this.frozenForRound));
+        }
         return this.frozenForRound;
     }
 
@@ -264,6 +328,8 @@ public abstract class Player implements java.io.Serializable {
                 System.out.print(item.id + " ");
             }
         }
+
+        System.out.println();
 
     }
 

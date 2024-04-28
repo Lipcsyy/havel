@@ -3,12 +3,15 @@ import Commander.CommandInterpreter;
 import Logger.Logger;
 import Room.*;
 import Item.*;
+import Enums.ELogger;
 
 import java.security.Key;
 import java.util.*;
 import Player.*;
 
 public class GameManager implements java.io.Serializable{
+
+    public static ELogger loggerStatus = ELogger.SUPRESS;
 
     private Map<Room, Set<Room>> map;
     private ArrayList<Player> players;

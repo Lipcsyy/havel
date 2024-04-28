@@ -4,13 +4,12 @@ import Player.*;
 import Room.*;
 import java.io.*;
 
+
 /**
  * Represents an abstract Item class that defines the basic structure and behaviors of items in the game.
  * This class serves as a base for all items, providing default implementations and expected behaviors for subclasses to override.
  */
 public abstract class Item implements java.io.Serializable{
-
-
 
     protected static int idCounter = 1;
     public String id;

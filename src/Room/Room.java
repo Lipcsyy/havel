@@ -1,8 +1,6 @@
 package Room;
 import Item.*;
 import Player.*;
-
-import java.sql.SQLOutput;
 import java.util.*;
 import Logger.*;
 import GameManager.*;
@@ -291,37 +289,39 @@ public class Room implements java.io.Serializable{
     //-----------INFORMATION FUNCTIONS----------------
 
     public void PrintInfo() {
-
         System.out.println("Room id: " + id);
         System.out.println("Room capacity: " + capacity);
 
         if ( items != null ) {
-            System.out.println("Room items: ");
+            System.out.print("Room items: ");
             for (Item item : items) {
                 System.out.print(item.getClass().getName() + " ");
             }
+            System.out.println();
         }
 
         if ( players != null ) {
-            System.out.println("Room players: ");
+            System.out.print("Room players: ");
             for (Player player : players) {
-                System.out.print(player.getClass().getName());
+                System.out.print(player.id  + " ");
             }
         }
 
         var neighbours = gameManager.GetNeighbours(this);
 
-        if (neighbours != null ) {
-            System.out.println("Room neighbours: ");
-            for ( Room room : neighbours ) {
-                System.out.println(room.id + " ");
+        if ( neighbours != null ) {
+            System.out.print("Room neighbours: ");
+            for (Room neighbour : neighbours) {
+                System.out.print(neighbour.id + " ");
             }
+            System.out.println();
         }
 
         System.out.println("Room turns left for effect: " + turnsLeftForEffect);
         System.out.println("Room passages before stickiness: " + passagesBeforeStickiness);
 
         System.out.println();
+
     }
 
 }

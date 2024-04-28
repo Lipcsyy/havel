@@ -1,0 +1,6 @@
+Add Room 5
+Add Student Room_1
+AddItemToPlayer TVSZ Student_1
+DropItem Student_1
+Info Student_1
+Info Room_1

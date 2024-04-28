@@ -4,31 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Reading from file implemented">
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="fix: almost made the command interpreter">
+      <change afterPath="$PROJECT_DIR$/Test_8.2.10_Move_to_Room_where there_is_a_Teacher.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.11_Rag_Use.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.12_Use_SlideRule.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.13_Collect_Item.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.14_Drop_Item.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.15_Student_tries_to_pair_transistors_but_has_only_one.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.18_Student_teleports_with_Transistor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.19_Door_of_a_magic_rooms_disappears.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.1_Move_to_room_where_there_is_space.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.20_Door_of_a_magic-rooms-appears.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.21_Collect_BeerGlass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.22_Use_FakeItem_(TVSZ).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.23_ReactToGas_FakeItem_(Mask).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.24_Collect_FakeItem_(SlideRule).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.25_Use_AirFreshener.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.26_Cleaner_moves_to_normal_room.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.27_Cleaner_moves_to_GasRoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.28_Room_becomes_sticky.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.29_Two_Cleaners_meet.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.3_Use_TVSZ.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.4_Use_TVSZ_with_drop.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.5_Use_Camembert.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.6_Use_Beer_Glass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.7_Move_to_GasRooom_without_mask.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.8_Move_to_GasRoom_with_mask.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test_8.2.9_Move_to_GasRoom_with_mask_and_drop_it.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Enums/ELogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
-    </list>
-    <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
-    <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
-    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
-    <list id="e7cee06c-eff0-40db-954f-f5f39ff512c2" name="Changes by lipcseymarton" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/AddItemToRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/AddItemToRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/DropItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/DropItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/ManageDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ManageDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/SaveGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/SetNeighbour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/SetNeighbour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/UseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/UseItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commander/UseTransistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/UseTransistor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/LoadFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/LoadFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Mask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Mask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Tvsz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Tvsz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+    </list>
+    <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
+    <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="Changes by kovac">
+      <change beforePath="$PROJECT_DIR$/src/Commander/LoadGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/LoadGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/SaveGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/SaveGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
-    <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="" />
+    <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="Changes by Madia">
+      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/AddItemToRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/AddItemToRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/DropItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/DropItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/ManageDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ManageDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/BeerGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BeerGlass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+    </list>
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +80,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -47,52 +90,151 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Commander/Add.java">
+    <file path="$PROJECT_DIR$/src/Player/Player.java">
       <ranges>
-        <range start1="4" end1="5" start2="4" end2="4" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="6" end1="9" start2="5" end2="6" changelist="e7cee06c-eff0-40db-954f-f5f39ff512c2" />
-        <range start1="18" end1="19" start2="15" end2="29" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="1" end1="1" start2="1" end2="2" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="24" end1="24" start2="25" end2="26" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
+        <range start1="51" end1="51" start2="53" end2="58" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="52" end1="52" start2="59" end2="63" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="53" end1="53" start2="64" end2="65" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="70" end1="71" start2="82" end2="85" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="84" end1="85" start2="98" end2="101" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="91" end1="92" start2="107" end2="110" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="96" end1="97" start2="114" end2="117" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="104" end1="105" start2="124" end2="127" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="106" end1="107" start2="128" end2="131" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="114" end1="116" start2="138" end2="142" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="125" end1="126" start2="151" end2="154" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="132" end1="133" start2="160" end2="163" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="137" end1="137" start2="167" end2="168" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="142" end1="143" start2="173" end2="176" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="144" end1="145" start2="177" end2="180" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="147" end1="148" start2="182" end2="182" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="150" end1="150" start2="184" end2="186" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="155" end1="156" start2="191" end2="195" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="165" end1="166" start2="204" end2="215" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="174" end1="175" start2="223" end2="226" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="183" end1="184" start2="234" end2="237" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="192" end1="193" start2="245" end2="248" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="196" end1="197" start2="251" end2="254" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="204" end1="206" start2="261" end2="265" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="229" end1="230" start2="288" end2="291" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="231" end1="232" start2="292" end2="295" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="239" end1="241" start2="302" end2="306" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="267" end1="267" start2="332" end2="334" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
       </ranges>
     </file>
+    <file path="$PROJECT_DIR$/src/Commander/Add.java">
+      <ranges>
+        <range start1="4" end1="4" start2="4" end2="7" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="7" end1="8" start2="10" end2="11" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="9" end1="15" start2="12" end2="22" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="16" end1="20" start2="23" end2="27" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="21" end1="25" start2="28" end2="32" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="26" end1="30" start2="33" end2="34" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="31" end1="33" start2="35" end2="37" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="34" end1="40" start2="38" end2="56" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="41" end1="43" start2="57" end2="59" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="44" end1="50" start2="60" end2="76" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="51" end1="53" start2="77" end2="79" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="54" end1="63" start2="80" end2="84" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="64" end1="73" start2="85" end2="89" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="74" end1="83" start2="90" end2="94" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="84" end1="88" start2="95" end2="97" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Room/Room.java">
+      <ranges>
+        <range start1="3" end1="5" start2="3" end2="3" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="30" end1="30" start2="28" end2="29" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
+        <range start1="293" end1="294" start2="292" end2="292" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="298" end1="299" start2="296" end2="297" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="300" end1="301" start2="298" end2="299" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="302" end1="302" start2="300" end2="301" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="305" end1="306" start2="304" end2="305" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="307" end1="308" start2="306" end2="307" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="309" end1="309" start2="308" end2="309" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="313" end1="317" start2="313" end2="317" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="318" end1="318" start2="318" end2="319" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="324" end1="324" start2="325" end2="326" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/GameManager/GameManager.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="12" end1="12" start2="13" end2="15" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="27" end1="27" start2="30" end2="36" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
+        <range start1="34" end1="35" start2="43" end2="44" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
+        <range start1="37" end1="38" start2="46" end2="49" changelist="83cf7ace-ec11-4137-aa22-c4509206ecb7" />
+        <range start1="79" end1="80" start2="90" end2="90" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="125" end1="125" start2="135" end2="136" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="126" end1="127" start2="137" end2="138" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="164" end1="165" start2="175" end2="175" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="167" end1="167" start2="177" end2="189" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Item/Camembert.java">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="9" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="10" end1="10" start2="11" end2="13" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="15" end1="15" start2="18" end2="19" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="17" end1="17" start2="21" end2="28" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="23" end1="23" start2="34" end2="35" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Item/Item.java">
+      <ranges>
+        <range start1="6" end1="6" start2="6" end2="7" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="12" end1="14" start2="13" end2="13" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="72" end1="73" start2="71" end2="72" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2dxDIubedSR4HLDysQqhwzOBcFB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lipcseymarton/4.semester/Projlab/havel&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="GameManager" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -117,6 +259,8 @@
       <workItem from="1711025931523" duration="4133000" />
       <workItem from="1711106833629" duration="4256000" />
       <workItem from="1711228227141" duration="5964000" />
+      <workItem from="1714232967374" duration="14554000" />
+      <workItem from="1714299849382" duration="3930000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -182,15 +326,47 @@
       <option name="project" value="LOCAL" />
       <updated>1712518303135</updated>
     </task>
-    <task id="LOCAL-00009" summary="Reading from file implemented">
+    <task id="LOCAL-00009" summary="fix: almost made the command interpreter">
       <option name="closed" value="true" />
-      <created>1714235650954</created>
+      <created>1714160658304</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1714235650954</updated>
+      <updated>1714160658304</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: almost made the command interpreter">
+      <option name="closed" value="true" />
+      <created>1714233524882</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714233524882</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix: almost made the command interpreter">
+      <option name="closed" value="true" />
+      <created>1714233719552</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714233719552</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changes by kovac">
+      <option name="closed" value="true" />
+      <created>1714233727667</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714233727667</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changes by Madia">
+      <option name="closed" value="true" />
+      <created>1714233730850</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714233730850</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initinal Commit" />
     <MESSAGE value="Added Player class" />
     <MESSAGE value="Added Item class" />
@@ -218,29 +393,12 @@
     <MESSAGE value="Last commit" />
     <MESSAGE value="Changes made by the team" />
     <MESSAGE value="fix: Fixed the player and room's functions" />
-    <MESSAGE value="Reading from file implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reading from file implemented" />
+    <MESSAGE value="Changes by kovac" />
+    <MESSAGE value="fix: almost made the command interpreter" />
+    <MESSAGE value="Changes by Madia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Madia" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Commander/CommandInterpreter.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />

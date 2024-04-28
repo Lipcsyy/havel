@@ -34,8 +34,13 @@ public class Tvsz extends Item {
     }
 
     @Override
-    public boolean CanSave(Player player){
+    public boolean CanSave(Player player) {
         Logger.logEntry(this.getClass().getName(), "CanSave", "player");
+
+        if ( abilityNumber == 0 ) {
+            return false;
+        }
+
         this.Use(player);
         Logger.logExit(this.getClass().getName(), "CanSave", "true");
         return true;

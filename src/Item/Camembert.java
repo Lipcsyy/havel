@@ -6,13 +6,24 @@ import Room.*;
 
 public class Camembert extends Item{
 
+
     static int idNumber = 1;
+
+    int abilityNumber;
 
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
 
     public Camembert(){
        super( "Camembert_" + idNumber++ );
+       abilityNumber = 1;
+    }
+
+    @Override
+    public boolean NeedToThrow(){
+        Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
+        Logger.logExit(this.getClass().getName(), "NeedToThrow", abilityNumber == 0 ? "true" : "false");
+        return abilityNumber == 0;
     }
 
     @Override

@@ -1,0 +1,7 @@
+Add Room
+Add Student Room_1
+AddItemToPlayer Transistor_1 Student_1
+AddItemToPlayer Transistor_2 Student_1
+Transistor Student_1
+Transistor Student_1
+Info Student_1

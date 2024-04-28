@@ -1,10 +1,9 @@
 package Commander;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+
 import GameManager.GameManager;
-import java.util.Arrays;
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 
@@ -54,16 +53,18 @@ public class CommandInterpreter {
             String cmd = scanner.nextLine();
             String[] cmdParams = cmd.split(" ");
 
-            if(cmdParams[0].equals("Exit")){
+            if (cmdParams[0].equals("Exit")) {
                 isRunning = false;
                 scanner.close();
                 return;
+            } else {
+                try {
+                    ICommand command = commands.get(cmdParams[0]);
+                    command.execute(Arrays.copyOfRange(cmdParams, 1, cmdParams.length));
+                } catch (Exception e) {
+                    System.out.println("Invalid command");
+                }
             }
-            else {
-                ICommand command = commands.get(cmdParams[0]);
-                command.execute(Arrays.copyOfRange(cmdParams, 1, cmdParams.length));
-            }
-
         }
     }
 }

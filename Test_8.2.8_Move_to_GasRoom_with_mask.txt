@@ -1,0 +1,8 @@
+Add Room 5
+Add GasRoom 5
+SetNeighbour Room_1 GasRoom_1
+Add Student Room_1
+AddItemToPlayer Mask Student_1
+ChangeRoom Student_1 GasRoom_1
+Info Student_1
+Info Mask_1

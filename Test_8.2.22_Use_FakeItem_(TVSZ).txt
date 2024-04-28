@@ -1,0 +1,13 @@
+Add Room 5
+Add Room 5
+SetNeighbour Room_1 Room_2
+Add Student Room_1
+Add Teacher Room_2
+Add FakeItem TVSZ
+AddToPlayer FakeItem_1 Student_1
+
+ChangeRoom Student_1 Room_2
+
+Info Room_2
+Info FakeItem_1
+Info Student_1

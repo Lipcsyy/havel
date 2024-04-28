@@ -1,0 +1,8 @@
+Add Room 5
+Add Room 5
+SetNeighbour Room_1 Room_2
+Add Student Room_1
+AddItemToRoom TVSZ Room_2
+ChangeRoom Student_1 Room_2
+Info Student_1
+Info Room_2

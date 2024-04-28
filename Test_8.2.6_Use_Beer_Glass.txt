@@ -1,0 +1,19 @@
+Add Room 5
+Add Room 5
+Add Room 5
+Add Room 5
+Add Room 5
+Add Room 5
+SetNeighbour Room_1 Room_2
+SetNeighbour Room_2 Room_3
+SetNeighbour Room_3 Room_4
+SetNeighbour Room_4 Room_5
+SetNeighbour Room_5 Room_6
+Add Student Room_1
+AddItemToPlayer BeerGlass Student_1
+ChangeRoom Student_1 Room_2
+ChangeRoom Student_1 Room_3
+ChangeRoom Student_1 Room_4
+ChangeRoom Student_1 Room_5
+ChangeRoom Student_1 Room_6
+Info Student_1

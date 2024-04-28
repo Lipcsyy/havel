@@ -10,21 +10,38 @@ public class LoadFromFile implements ICommand{
 
         System.out.println("Reading commands from file...");
 
-        File file = new File(params[0]);
+        File folder = new File("./");
+        File[] listOfFiles = folder.listFiles();
+        if(listOfFiles != null) {
+            for (int i = 0; i < listOfFiles.length; i++) {
+                if (listOfFiles[i].isFile() && listOfFiles[i].getName().startsWith("Test_")) {
+                    System.out.println( listOfFiles[ i ].getName() );
+                }
+            }
+        }
 
-        Scanner scanner;
+        System.out.println("Select a file to read from: ");
+        
+        Scanner scanner = new Scanner(System.in);
+        Scanner fileScanner;
+
         try {
-            scanner = new Scanner(file);
+            
+            String filePath = scanner.nextLine();
+            
+            File file = new File("./" + filePath);
+            fileScanner = new Scanner(file);
         }
         catch (FileNotFoundException exception) {
             System.out.println("File not found");
             return;
         }
 
-        while(scanner.hasNextLine() ){
+        while(fileScanner.hasNextLine()){
 
-            String cmd = scanner.nextLine();
+            String cmd = fileScanner.nextLine();
             String[] cmdParams = cmd.split(" ");
+
 
             ICommand command = CommandInterpreter.commands.get(cmdParams[0]);
             command.execute(Arrays.copyOfRange(cmdParams, 1, cmdParams.length));
