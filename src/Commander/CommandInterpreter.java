@@ -54,6 +54,10 @@ public class CommandInterpreter {
         Scanner scanner = new Scanner( System.in );
 
         while( isRunning ){
+
+            System.out.println();
+            System.out.println("Please give a command:");
+
             String cmd = scanner.nextLine();
             String[] cmdParams = cmd.split(" ");
 
