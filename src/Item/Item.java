@@ -69,7 +69,7 @@ public abstract class Item implements java.io.Serializable{
         Logger.logExit(this.getClass().getName(), "PickUpItem");
     }
 
-    public void DecreaseTurnsLeft(){
+    public void DecreaseTurnsLeft( Player student ){
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
         Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft");
     }

@@ -16,6 +16,7 @@ public class BeerGlass extends Item{
         turnsLeft = 5;
     }
 
+    @Override
     public void Use(Player player){
 
         Logger.logEntry(this.getClass().getName(), "Use", "player");
@@ -34,7 +35,8 @@ public class BeerGlass extends Item{
     }
 
     @Override
-    public void DecreaseTurnsLeft(){
+    public void DecreaseTurnsLeft( Player player ){
+
         Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
 
         turnsLeft --;

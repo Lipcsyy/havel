@@ -6,14 +6,14 @@ public class AddItemToRoom implements ICommand {
     public void execute( String[] params){
 
         if( params.length != 2){
-            System.out.println( "BAD PARAMS");
+            System.out.println( "Invalid number of parameters");
             return;
         }
 
         var room = CommandInterpreter.gameManager.GetRoomById( params[1] );
 
         if( room == null){
-            System.out.println( "invalid room id");
+            System.out.println( "Invalid room id");
             return;
         }
 
@@ -49,7 +49,7 @@ public class AddItemToRoom implements ICommand {
                 break;
 
             default:
-                System.out.println( "invalid item type");
+                System.out.println( "Invalid item type");
         }
 
     }

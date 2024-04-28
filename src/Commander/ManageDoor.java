@@ -3,6 +3,19 @@ package Commander;
 public class ManageDoor implements ICommand {
     public void execute( String[] params){
 
+
+        if( params.length != 3){
+            System.out.println( "Invalid number of parameters" );
+            return;
+        }
+
+        String magicRoom = params[0].split( "_" )[0];
+
+        if( magicRoom.equals( "MagicRoom" ) == false){
+            System.out.println( "Room isn't MagicRoom");
+            return;
+        }
+
         var room1 = Commander.CommandInterpreter.gameManager.GetRoomById(params[0]);
         var room2 = Commander.CommandInterpreter.gameManager.GetRoomById(params[2]);
 
@@ -15,9 +28,17 @@ public class ManageDoor implements ICommand {
 
         switch ( mode ) {
             case "Disappear":
+                if( room1.GetNeighbours().contains( room2 ) == false){
+                    System.out.println( "The Rooms are not connected" );
+                    return;
+                }
                 CommandInterpreter.gameManager.DisconnectRoomsTwoWay( room1, room2 );
                 break;
             case "Appear":
+                if( room1.GetNeighbours().contains( room2 ) == true){
+                    System.out.println( "The Rooms are already connected" );
+                    return;
+                }
                 CommandInterpreter.gameManager.ConnectRoomsTwoWay( room1, room2 );
                 break;
             default:

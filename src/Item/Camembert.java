@@ -32,6 +32,7 @@ public class Camembert extends Item{
         Logger.logEntry(this.getClass().getName(), "Use", "player");
 
         this.MakeGas(player.GetRoom());
+        abilityNumber--;
 
         Logger.logExit(this.getClass().getName(), "Use");
     }

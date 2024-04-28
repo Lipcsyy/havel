@@ -296,7 +296,7 @@ public class Room implements java.io.Serializable{
         if ( items != null ) {
             System.out.print("Room items: ");
             for (Item item : items) {
-                System.out.print(item.getClass().getName() + " ");
+                System.out.print(item.id + " ");
             }
             System.out.println();
         }
@@ -306,6 +306,7 @@ public class Room implements java.io.Serializable{
             for (Player player : players) {
                 System.out.print(player.id  + " ");
             }
+            System.out.println();
         }
 
         var neighbours = gameManager.GetNeighbours(this);

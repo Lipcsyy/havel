@@ -5,20 +5,23 @@ public class DropItem implements ICommand {
     public void execute( String[] params) {
 
         if ( params.length != 1 ) {
+            System.out.println( "Invalid number of parameters");
             return;
         }
 
         var student = CommandInterpreter.gameManager.GetPlayerById( params[ 0 ] );
 
-        Item lastItem = student.GetInventory().get( 0 );
+        if( student == null){
+            System.out.println( "Student not found" );
+            return;
+        }
+
+        if( student.GetInventory().isEmpty() ){
+            System.out.println( "Student has no items" );
+            return;
+        }
 
         student.DropItem();
-
-        if ( student.GetInventory().stream().anyMatch( item -> item == lastItem ) == false )
-            System.out.println( "Drop Failed" );
-        else
-            System.out.println( "Drop Success" );
-
     }
 
 }

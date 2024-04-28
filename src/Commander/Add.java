@@ -36,25 +36,47 @@ public class Add implements ICommand {
                 System.out.println( student.id );
                 break;
 
-                case "Teacher":
-                    Teacher teacher = new Teacher( null, CommandInterpreter.gameManager );
-                    if ( params.length == 2 ) {
-                        Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
-                        if ( room != null ) teacher.SetRoom( room );
-                    }
+            case "Teacher":
+                Teacher teacher = null;
 
-                    System.out.println( teacher.id );
-                    break;
+                room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
 
-                case "Cleaner":
-                    Cleaner cleaner = new Cleaner( null, CommandInterpreter.gameManager );
-                    if ( params.length == 2 ) {
-                        Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
-                        if ( room != null ) cleaner.SetRoom( room );
-                    }
+                if ( room == null ) {
+                    System.out.println( "Could not find the room" );
+                    return;
+                }
 
-                    System.out.println( cleaner.id );
-                    break;
+                if ( ! room.HasMoreSpaceInRoom() ) {
+                    System.out.println( "Not enough space in room" );
+                    return;
+                }
+
+                teacher = new Teacher( room, CommandInterpreter.gameManager );
+
+                System.out.println( "Invalid number of parameters" );
+
+                System.out.println( teacher.id );
+                break;
+
+            case "Cleaner":
+                Cleaner cleaner = null;
+
+                room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
+
+                if ( room == null ) {
+                    System.out.println( "Could not find the room" );
+                    return;
+                }
+
+                if ( room.HasMoreSpaceInRoom() == false ) {
+                    System.out.println( "Not enough space in room" );
+                    return;
+                }
+
+                cleaner = new Cleaner( room, CommandInterpreter.gameManager );
+
+                System.out.println( cleaner.id );
+                break;
 
             case "Room":
                 room = new Room( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
@@ -71,10 +93,8 @@ public class Add implements ICommand {
                 System.out.println( magicRoom.id );
                 break;
 
-                default:
-            }
-        } else {
-            System.out.println( "Szar az add paraméterezése");
+            default:
+                System.out.println( "Invalid type of Add" );
         }
     }
 

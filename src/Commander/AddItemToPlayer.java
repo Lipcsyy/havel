@@ -7,14 +7,19 @@ public class AddItemToPlayer implements ICommand {
     public void execute( String[] params){
 
         if( params.length != 2){
-            System.out.println( "BAD PARAMS");
+            System.out.println( "Invalid number of params");
             return;
         }
 
         Player player = CommandInterpreter.gameManager.GetPlayerById( params[1] );
 
         if( player == null){
-            System.out.println( "invalid player id");
+            System.out.println( "Invalid player id");
+            return;
+        }
+
+        if( player.HasMoreSpaceInInventory() == false){
+            System.out.println( "Not enough space in player's inventory" );
             return;
         }
 
@@ -56,7 +61,7 @@ public class AddItemToPlayer implements ICommand {
                 break;
 
             default:
-                System.out.println( "invalid item type");
+                System.out.println( "Invalid item type");
         }
     }
 

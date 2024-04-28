@@ -89,7 +89,6 @@ public class GameManager implements java.io.Serializable{
             r.RemoveNeighbour(targetRoom);
         }
 
-
         //There are no references left for the targetRoom, so it should be deleted
         map.remove(targetRoom);
 
@@ -134,8 +133,9 @@ public class GameManager implements java.io.Serializable{
         DisconnectRoomsOneWay(room2, room1);
     }
 
+    boolean isRuning = true;
     public void EndGame() {
-
+        isRuning = false;
     }
 
     public Set<Room> GetNeighbours(Room room) {
@@ -173,7 +173,18 @@ public class GameManager implements java.io.Serializable{
         for ( Player p : players ) {
             p.PrintInfo();
         }
-
     }
 
+    public void GameLoop(){
+        while( isRuning ) {
+            //akkor anyád
+            for ( Player p : players ) {
+                //p.move();
+            }
+
+            for ( Player p : players ) {
+                p.DecreaseItemsTurnsLeft();
+            }
+        }
+    }
 }

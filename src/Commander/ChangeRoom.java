@@ -13,13 +13,23 @@ public class ChangeRoom implements ICommand {
 
         var room = CommandInterpreter.gameManager.GetRoomById( roomId );
         if (room == null) {
-            System.out.println("Room not found");
+            System.out.println( "Room not found" );
             return;
         }
 
         var player = CommandInterpreter.gameManager.GetPlayerById( playerId );
         if (player == null) {
-            System.out.println("Player not found");
+            System.out.println( "Player not found" );
+            return;
+        }
+
+        if( room.HasMoreSpaceInRoom() == false){
+            System.out.println( "Not enough space in room" );
+            return;
+        }
+
+        if( room.GetNeighbours().contains( player.GetRoom() ) == false ){
+            System.out.println( "Invalid move, the rooms are not connected" );
             return;
         }
 
