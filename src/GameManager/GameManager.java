@@ -47,12 +47,6 @@ public class GameManager implements java.io.Serializable{
     }
 
     public ArrayList<Player> getPlayers(){
-        /*ArrayList<Player> allPlayers = new ArrayList<Player>();
-        ArrayList<Room> allRooms = getRooms();
-        for(Room r: allRooms){
-            allPlayers.addAll(r.getPlayers());
-        }
-        return allPlayers;*/
         return players;
     }
 
