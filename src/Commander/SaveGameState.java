@@ -40,7 +40,6 @@ public class SaveGameState implements ICommand {
             file.close();
 
             System.out.println("Object (gameManager) has been serialized");
-            System.out.println("my gameManager: " + Commander.CommandInterpreter.gameManager);
         }
 
         catch(IOException ex)
