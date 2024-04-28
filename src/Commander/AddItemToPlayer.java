@@ -29,11 +29,15 @@ public class AddItemToPlayer implements ICommand {
                 break;
 
             case "Mask":
-                player.AddItem( new Mask() );
+                Mask mask = new Mask();
+                player.AddItem(mask);
+                System.out.println( mask.id );
                 break;
 
             case "Camembert":
-                player.AddItem( new Camembert() );
+                Camembert camembert = new Camembert();
+                player.AddItem( camembert);
+                System.out.println( camembert.id );
                 break;
 
             case "BeerGlass":
@@ -53,11 +57,15 @@ public class AddItemToPlayer implements ICommand {
                 break;
 
             case "Transistor":
-                player.AddItem( new Transistor() );
+                Transistor transistor = new Transistor();
+                player.AddItem( transistor);
+                System.out.println( transistor.id );
                 break;
 
             case "Rag":
-                player.AddItem( new Rag() );
+                Rag rag = new Rag();
+                player.AddItem( rag );
+                System.out.println( rag.id );
                 break;
 
             default:

@@ -1,7 +1,13 @@
 Add Room 5
 Add GasRoom 5
+Add GasRoom 5
+Add GasRoom 5
 SetNeighbour Room_1 GasRoom_1
+SetNeighbour GasRoom_1 GasRoom_2
+SetNeighbour GasRoom_2 GasRoom_3
 Add Student Room_1
 AddItemToPlayer Mask Student_1
 ChangeRoom Student_1 GasRoom_1
+ChangeRoom Student_1 GasRoom_2
+ChangeRoom Student_1 GasRoom_3
 Info Student_1

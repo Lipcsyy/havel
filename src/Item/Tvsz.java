@@ -15,6 +15,10 @@ public class Tvsz extends Item {
 
     static int idNumber = 1;
 
+    public static void ResetCounter(){
+        idNumber = 1;
+    }
+
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
 

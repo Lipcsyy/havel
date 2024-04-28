@@ -30,16 +30,24 @@ public class AddItemToRoom implements ICommand {
                 room.AddItem( new Camembert() );
                 break;
             case "Mask" :
-                room.AddItem( new Mask() );
+                Mask mask = new Mask();
+                room.AddItem( mask);
+                System.out.println( mask.id );
                 break;
             case "FakeItem":
-                room.AddItem( new FakeItem() );
+                FakeItem fakeItem = new FakeItem();
+                room.AddItem( fakeItem);
+                System.out.println( fakeItem.id );
                 break;
             case "AirFreshener":
-                room.AddItem( new AirFreshener() );
+                AirFreshener airFreshener = new AirFreshener();
+                room.AddItem( airFreshener);
+                System.out.println( airFreshener.id );
                 break;
             case "SlideRule":
-                room.AddItem( new SlideRule() );
+                SlideRule slideRule = new SlideRule();
+                room.AddItem( slideRule);
+                System.out.println( slideRule.id );
                 break;
             case "Rag" :
                 room.AddItem( new Rag() );
