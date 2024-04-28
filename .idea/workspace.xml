@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="12 javítva">
-      <change beforePath="$PROJECT_DIR$/Test_8.2.15_Student_tries_to_pair_transistors_but_has_only_one.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.15_Student_tries_to_pair_transistors_but_has_only_one.txt" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="15 javítva">
+      <change beforePath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" afterDir="false" />
     </list>
     <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
@@ -188,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714337575145</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="15 javítva">
+      <option name="closed" value="true" />
+      <created>1714337913246</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714337913246</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +229,8 @@
     <MESSAGE value="TVSZ drop teszt javítva" />
     <MESSAGE value="29 javítva" />
     <MESSAGE value="12 javítva" />
-    <option name="LAST_COMMIT_MESSAGE" value="12 javítva" />
+    <MESSAGE value="15 javítva" />
+    <option name="LAST_COMMIT_MESSAGE" value="15 javítva" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
