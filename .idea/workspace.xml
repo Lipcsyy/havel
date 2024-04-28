@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="magicroom javítva" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="15 javítva">
+      <change beforePath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" afterDir="false" />
+    </list>
     <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
     <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
@@ -194,23 +197,7 @@
       <option name="project" value="LOCAL" />
       <updated>1714337913246</updated>
     </task>
-    <task id="LOCAL-00014" summary="17 javítva">
-      <option name="closed" value="true" />
-      <created>1714338913115</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1714338913115</updated>
-    </task>
-    <task id="LOCAL-00015" summary="magicroom javítva">
-      <option name="closed" value="true" />
-      <created>1714339647098</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1714339647098</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,9 +230,7 @@
     <MESSAGE value="29 javítva" />
     <MESSAGE value="12 javítva" />
     <MESSAGE value="15 javítva" />
-    <MESSAGE value="17 javítva" />
-    <MESSAGE value="magicroom javítva" />
-    <option name="LAST_COMMIT_MESSAGE" value="magicroom javítva" />
+    <option name="LAST_COMMIT_MESSAGE" value="15 javítva" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
