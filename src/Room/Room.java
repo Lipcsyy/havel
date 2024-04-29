@@ -289,14 +289,20 @@ public class Room implements java.io.Serializable{
         }
 
         //making the players interact with each-other
-        for (Player playerInRoom : players) {
-
+        for(int i = 0; i<players.size();i++){
+            int siz = players.size();
+            Player playerInRoom = players.get(i);
             if (playerInRoom == player) {
                 continue;
             }
 
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
+            int newsiz = players.size();
+            //if we removed a player
+            if(newsiz != siz){
+                i--;
+            }
         }
 
         if (GameManager.loggerStatus == ELogger.INFO ) {

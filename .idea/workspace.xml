@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="15 javítva">
-      <change beforePath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="tests vera">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
     <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
@@ -73,7 +74,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
         <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
@@ -92,6 +92,7 @@
       <workItem from="1711025931523" duration="4133000" />
       <workItem from="1711106833629" duration="4256000" />
       <workItem from="1711228227141" duration="5964000" />
+      <workItem from="1714375887000" duration="1957000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -239,6 +240,15 @@
           <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
           <line>27</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Player/Cleaner.java</url>
+          <line>28</line>
+          <properties class="Player.Cleaner" method="Interact">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
