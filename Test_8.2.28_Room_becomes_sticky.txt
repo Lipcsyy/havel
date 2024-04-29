@@ -1,6 +1,12 @@
 Add Room 10
 Add Room 10
+Add Room 10
 SetNeighbour Room_1 Room_2
+SetNeighbour Room_2 Room_3
+Add Cleaner Room_2
+ChangeRoom Cleaner_1 Room_1
+ChangeRoom Cleaner_1 Room_2
+ChangeRoom Cleaner_1 Room_3
 AddItemToRoom TVSZ Room_1
 Add Student Room_1
 Add Student Room_1

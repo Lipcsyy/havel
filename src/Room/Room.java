@@ -352,6 +352,10 @@ public class Room implements java.io.Serializable{
     }
 
     public int GetPassagesBeforeStickiness() {
+        if ( GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetPassagesBeforeStickiness", String.valueOf(passagesBeforeStickiness));
+            Logger.logExit(this.getClass().getName(), "GetPassagesBeforeStickiness");
+        }
         return passagesBeforeStickiness;
     }
 
