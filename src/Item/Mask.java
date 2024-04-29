@@ -32,22 +32,11 @@ public class Mask extends Item{
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "ReactToGas", "");
         }
-        DecreaseTurnsLeft(player);
+        abilityNumber--;
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
         }
         return true;
-    }
-
-    @Override
-    public void DecreaseTurnsLeft(Player player){
-        if (GameManager.loggerStatus == ELogger.INFO) {
-            Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
-        }
-        abilityNumber --;
-        if (GameManager.loggerStatus == ELogger.INFO) {
-            Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "abilityNumber --");
-        }
     }
 
     @Override

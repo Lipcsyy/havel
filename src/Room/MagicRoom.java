@@ -63,11 +63,16 @@ public class MagicRoom extends Room {
     }
 
     @Override
-    public void CleanRoom() {
+    public void CleanRoom(boolean isWashed) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         }
         this.turnsLeftForEffect = 0;
+
+        if ( isWashed ) {
+            this.passagesBeforeStickiness = 5;
+        }
+
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "CleanRoom" );
         }

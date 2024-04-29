@@ -84,7 +84,7 @@ public class Cleaner extends Player {
         room.AddPlayer(this);
         this.SetRoom(room);
 
-        room.CleanRoom();
+        room.CleanRoom(true);
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Move" );

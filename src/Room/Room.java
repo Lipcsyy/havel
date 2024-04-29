@@ -64,6 +64,7 @@ public class Room implements java.io.Serializable{
 
         this.id = room.id;
         this.capacity = room.capacity;
+        this.passagesBeforeStickiness = room.GetPassagesBeforeStickiness();
 
         this.items = new ArrayList<Item>();
         this.players = new ArrayList<Player>();
@@ -168,12 +169,17 @@ public class Room implements java.io.Serializable{
         }
     }
 
-    public void CleanRoom() {
+    public void CleanRoom( boolean isWashed ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         }
+
         this.turnsLeftForEffect = 0;
-        this.SetRoomNumberOfPassagesBeforeStickiness(5);
+
+        if ( isWashed ) {
+            this.SetRoomNumberOfPassagesBeforeStickiness(5);
+        }
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CleanRoom");
         }
