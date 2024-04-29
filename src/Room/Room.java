@@ -256,7 +256,7 @@ public class Room implements java.io.Serializable{
         }
         this.turnsLeftForEffect = turnsLeftForEffect;
 
-        System.out.println(players.size());
+        //System.out.println(players.size());
 
         for ( Player player : this.players ) {
             player.Freeze(turnsLeftForEffect);
