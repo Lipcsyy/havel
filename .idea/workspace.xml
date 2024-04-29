@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="15 javítva">
-      <change beforePath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.16_Student_pairs_its_two_transistors.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.17_Student_deployes_one_of_their_transistors.txt" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: The room and the cleaner were changed.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_2024_18_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_2024_18_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Transistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Transistor.java" afterDir="false" />
     </list>
-    <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
-    <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
     <list id="83cf7ace-ec11-4137-aa22-c4509206ecb7" name="Changes by kovac" comment="" />
-    <list id="e7cee06c-eff0-40db-954f-f5f39ff512c2" name="Changes by lipcseymarton" comment="" />
+    <list id="40d1ef38-4444-41d0-92b7-22aa7917da5b" name="Changes by lenovo" comment="" />
     <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="" />
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -31,50 +31,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+        &quot;associatedIndex&quot;: 5
+        }</component>
   <component name="ProjectId" id="2dxDIubedSR4HLDysQqhwzOBcFB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="GameManager" />
-    </key>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -92,6 +76,8 @@
       <workItem from="1711025931523" duration="4133000" />
       <workItem from="1711106833629" duration="4256000" />
       <workItem from="1711228227141" duration="5964000" />
+      <workItem from="1712339955056" duration="5680000" />
+      <workItem from="1714375584433" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -149,55 +135,7 @@
       <option name="project" value="LOCAL" />
       <updated>1711025979197</updated>
     </task>
-    <task id="LOCAL-00008" summary="fix: Fixed the player and room's functions">
-      <option name="closed" value="true" />
-      <created>1712518303135</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1712518303135</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Reading from file implemented">
-      <option name="closed" value="true" />
-      <created>1714235650954</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1714235650954</updated>
-    </task>
-    <task id="LOCAL-00010" summary="TVSZ drop teszt javítva">
-      <option name="closed" value="true" />
-      <created>1714336635204</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1714336635204</updated>
-    </task>
-    <task id="LOCAL-00011" summary="29 javítva">
-      <option name="closed" value="true" />
-      <created>1714336961029</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1714336961029</updated>
-    </task>
-    <task id="LOCAL-00012" summary="12 javítva">
-      <option name="closed" value="true" />
-      <created>1714337575145</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1714337575145</updated>
-    </task>
-    <task id="LOCAL-00013" summary="15 javítva">
-      <option name="closed" value="true" />
-      <created>1714337913246</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1714337913246</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,38 +153,40 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initinal Commit" />
     <MESSAGE value="Added Player class" />
     <MESSAGE value="Added Item class" />
     <MESSAGE value="Added Room Class" />
     <MESSAGE value="Added a Logger" />
+    <MESSAGE value="Changes made by the team" />
     <MESSAGE value="Changed Player class" />
     <MESSAGE value="Last commit" />
-    <MESSAGE value="Changes made by the team" />
-    <MESSAGE value="fix: Fixed the player and room's functions" />
-    <MESSAGE value="Reading from file implemented" />
-    <MESSAGE value="TVSZ drop teszt javítva" />
-    <MESSAGE value="29 javítva" />
-    <MESSAGE value="12 javítva" />
-    <MESSAGE value="15 javítva" />
-    <option name="LAST_COMMIT_MESSAGE" value="15 javítva" />
+    <MESSAGE value="feat: The room and the cleaner were changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: The room and the cleaner were changed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Commander/Add.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/GameManager/GameManager.java</url>
+          <line>13</line>
+          <properties class="GameManager.GameManager">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Item/Transistor.java</url>
+          <line>174</line>
+          <properties class="Item.Transistor" method="Teleport">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
