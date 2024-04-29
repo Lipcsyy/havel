@@ -58,13 +58,29 @@ public class Room implements java.io.Serializable{
     //Copy constructor
     public Room( Room room, GameManager gameManager ) {
 
-        this.id = room.id;
-        this.capacity = room.capacity;
-        this.items = room.items;
-        this.players = room.GetPlayers();
         this.gameManager = gameManager;
 
         gameManager.AddRoom(this);
+
+        this.id = room.id;
+        this.capacity = room.capacity;
+
+        this.items = new ArrayList<Item>();
+        this.players = new ArrayList<Player>();
+        this.neighbours = new ArrayList<Room>();
+
+        for ( var i : room.getItems() ) {
+            this.AddItem(i);
+        }
+
+        for ( var p : room.GetPlayers() ){
+            this.AddPlayer(p);
+        }
+        var targetNeighbours = gameManager.GetNeighbours(room);
+
+        for ( var r : targetNeighbours ) {
+            this.SetNeighbours(r);
+        }
 
     }
 
@@ -290,8 +306,11 @@ public class Room implements java.io.Serializable{
 
         //making the players interact with each-other
         for(int i = 0; i<players.size();i++){
+
             int siz = players.size();
+
             Player playerInRoom = players.get(i);
+
             if (playerInRoom == player) {
                 continue;
             }
@@ -299,6 +318,7 @@ public class Room implements java.io.Serializable{
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
             int newsiz = players.size();
+
             //if we removed a player
             if(newsiz != siz){
                 i--;
