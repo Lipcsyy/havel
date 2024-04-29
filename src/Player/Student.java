@@ -85,6 +85,10 @@ public class Student extends Player {
                  if (GameManager.loggerStatus == ELogger.INFO) {
                      Logger.logExit(this.getClass().getName(), "Freeze" );
                  }
+
+                 if ( item.NeedToThrow() )
+                     this.RemoveFromInventory(item);
+
                  return;
              }
         }
