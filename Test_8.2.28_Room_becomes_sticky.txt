@@ -21,4 +21,5 @@ ChangeRoom Student_5 Room_2
 ChangeRoom Student_1 Room_1
 Info Room_1
 Info Room_2
+Info Room_3
 Info Student_1

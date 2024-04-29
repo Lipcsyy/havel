@@ -7,9 +7,7 @@
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="fix: fixed gamemanager changing room">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_8.2.28_Room_becomes_sticky.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.28_Room_becomes_sticky.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_8.2.29_Two_Cleaners_meet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test_8.2.29_Two_Cleaners_meet.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Cleaner.java" afterDir="false" />
     </list>
     <list id="e4a15154-94a9-45e0-9822-9c7bf4d049af" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="" />
@@ -216,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714382023557</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix: fixed gamemanager changing room">
+      <option name="closed" value="true" />
+      <created>1714383737705</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714383737705</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
