@@ -54,6 +54,7 @@ public class GameManager implements java.io.Serializable{
 
         ArrayList<Item> allItems = new ArrayList< Item >();
         ArrayList<Room> allRooms = getRooms();
+        ArrayList<Item> transistorPairs = new ArrayList<Item>();
 
         for(Room r: allRooms){
             allItems.addAll( r.getItems() );
@@ -62,6 +63,16 @@ public class GameManager implements java.io.Serializable{
         for(Player p: allPlayers){
             allItems.addAll(p.getItems());
         }
+
+        for ( Item item : allItems ) {
+            var temp = item.GetPair();
+            if ( temp != null ) {
+                transistorPairs.add(temp);
+            }
+        }
+
+        allItems.addAll(transistorPairs);
+
         return allItems;
     }
 
@@ -95,11 +106,6 @@ public class GameManager implements java.io.Serializable{
 
         //we get here all the neighbours of the room we want to delete
         var neighboursOfTarget = targetRoom.GetNeighbours();
-
-        //we add the new room as new neighbour for the room's neighbours that will be deleted
-        for (Room r : neighboursOfTarget) {
-            r.SetNeighbours(newRoom);
-        }
 
         //we remove from the rooms neighbour list the room that will be deleted soon
         for (Room r : neighboursOfTarget) {

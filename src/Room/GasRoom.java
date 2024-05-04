@@ -6,6 +6,7 @@ import Logger.Logger;
 import Player.Player;
 import Enums.ELogger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GasRoom extends Room {
@@ -16,9 +17,14 @@ public class GasRoom extends Room {
     }
 
     public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
-        super(capacity, items, neighbours, gameManager);
+        this.capacity = capacity;
+        this.items = items;
+        this.players = new ArrayList<>();
+        this.gameManager = gameManager;
 
         this.id = "GasRoom_" + idNumber++;
+
+        gameManager.AddRoom(this);
     }
 
     /**
@@ -61,10 +67,14 @@ public class GasRoom extends Room {
     }
 
     @Override
-    public void CleanRoom() {
+    public void CleanRoom(boolean isWashed) {
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
+        }
+
+        if ( isWashed ) {
+            this.passagesBeforeStickiness = 5;
         }
 
         //TODO: Make the players go out of the room
@@ -73,8 +83,47 @@ public class GasRoom extends Room {
         //clean the room, so it can be sticky later
         this.SetRoomNumberOfPassagesBeforeStickiness(5);
 
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CleanRoom");
         }
+    }
+
+    @Override
+    public void PrintInfo() {
+
+        System.out.println("\n");
+
+        System.out.println("Room id: " + id);
+        System.out.println("Room capacity: " + capacity);
+
+        if ( items != null ) {
+            System.out.print("Room items: ");
+            for (Item item : items) {
+                System.out.print(item.id + " ");
+            }
+            System.out.println();
+        }
+
+        if ( players != null ) {
+            System.out.print("Room players: ");
+            for (Player player : players) {
+                System.out.print(player.id  + " ");
+            }
+            System.out.println();
+        }
+
+        var neighbours = gameManager.GetNeighbours(this);
+
+        if ( neighbours != null ) {
+            System.out.print("Room neighbours: ");
+            for (Room neighbour : neighbours) {
+                System.out.print(neighbour.id + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.print("Room passages before stickiness: " + passagesBeforeStickiness);
+
     }
 }

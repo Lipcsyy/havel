@@ -173,9 +173,32 @@ public class Transistor extends Item{
 
     @Override
     public boolean Teleport(Player student){
+
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "Teleport", "player");
         }
+
+        //Student's room should be the room of our pair's room
+        Room targetRoom = this.pair.GetRoom();
+
+        if ( student.GetFrozenForRound() > 0 )
+            return false;
+
+        if ( targetRoom.HasMoreSpaceInRoom() == false )
+            return false;
+
+        //setting our room
+        this.SetRoom(student.GetRoom());
+
+        //removing us from the players inventory
+        student.RemoveFromInventory(this );
+
+        //collecting the other pair
+        student.AddItem( this.pair );
+
+        //moving to the room
+        student.ChangeRoom( targetRoom );
+
         return true;
     }
 

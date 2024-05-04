@@ -3,7 +3,6 @@ Add Room 5
 SetNeighbour Room_1 Room_2
 Add Cleaner Room_1
 Add Cleaner Room_2
-ChangerRoom Cleaner_2 Room_1
-ChangeRoom Cleaner_1 Room_2
+ChangeRoom Cleaner_2 Room_1
 Info Room_1
 Info Room_2

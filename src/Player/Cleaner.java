@@ -78,15 +78,13 @@ public class Cleaner extends Player {
             Logger.logEntry(this.getClass().getName(), "Move", "room" );
         }
 
+        this.room.DecreasePassagesBeforeStickiness();
+
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
         this.SetRoom(room);
 
-        room.CleanRoom();
-
-        //When we go into a room we decrease the passages that are left before stickiness
-        //This only decreases if the room was cleared before
-        this.room.DecreasePassagesBeforeStickiness();
+        room.CleanRoom(true);
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Move" );

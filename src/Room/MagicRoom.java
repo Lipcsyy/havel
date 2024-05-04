@@ -4,6 +4,8 @@ import GameManager.GameManager;
 import Item.Item;
 import Room.*;
 import Enums.ELogger;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -20,9 +22,14 @@ public class MagicRoom extends Room {
 
     public MagicRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
 
-        super(capacity, items, neighbours, gameManager);
+        this.capacity = capacity;
+        this.items = items;
+        this.players = new ArrayList<>();
+        this.gameManager = gameManager;
 
         this.id = "MagicRoom_" + idNumber++;
+
+        gameManager.AddRoom(this);
     }
 
     @Override
@@ -56,11 +63,16 @@ public class MagicRoom extends Room {
     }
 
     @Override
-    public void CleanRoom() {
+    public void CleanRoom(boolean isWashed) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         }
         this.turnsLeftForEffect = 0;
+
+        if ( isWashed ) {
+            this.passagesBeforeStickiness = 5;
+        }
+
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "CleanRoom" );
         }

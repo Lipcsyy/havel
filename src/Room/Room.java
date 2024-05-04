@@ -64,15 +64,34 @@ public class Room implements java.io.Serializable , IObservable {
     //Copy constructor
     public Room( Room room, GameManager gameManager ) {
 
-        this.id = room.id;
-        this.capacity = room.capacity;
-        this.items = room.items;
-        this.players = room.GetPlayers();
         this.gameManager = gameManager;
 
         gameManager.AddRoom(this);
 
+        this.id = room.id;
+        this.capacity = room.capacity;
+        this.passagesBeforeStickiness = room.GetPassagesBeforeStickiness();
+
+        this.items = new ArrayList<Item>();
+        this.players = new ArrayList<Player>();
+        this.neighbours = new ArrayList<Room>();
+
+        for ( var i : room.getItems() ) {
+            this.AddItem(i);
+        }
+
+        for ( var p : room.GetPlayers() ){
+            this.AddPlayer(p);
+        }
+        var targetNeighbours = gameManager.GetNeighbours(room);
+
+        for ( var r : targetNeighbours ) {
+            this.SetNeighbours(r);
+        }
+
     }
+
+    public Room(){}
 
     //----------ITEM FUNCTIONS------------------------
 
@@ -156,12 +175,17 @@ public class Room implements java.io.Serializable , IObservable {
         }
     }
 
-    public void CleanRoom() {
+    public void CleanRoom( boolean isWashed ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         }
+
         this.turnsLeftForEffect = 0;
-        this.SetRoomNumberOfPassagesBeforeStickiness(5);
+
+        if ( isWashed ) {
+            this.SetRoomNumberOfPassagesBeforeStickiness(5);
+        }
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CleanRoom");
         }
@@ -245,7 +269,7 @@ public class Room implements java.io.Serializable , IObservable {
         }
         this.turnsLeftForEffect = turnsLeftForEffect;
 
-        System.out.println(players.size());
+        //System.out.println(players.size());
 
         for ( Player player : this.players ) {
             player.Freeze(turnsLeftForEffect);
@@ -295,7 +319,11 @@ public class Room implements java.io.Serializable , IObservable {
         }
 
         //making the players interact with each-other
-        for (Player playerInRoom : players) {
+        for(int i = 0; i<players.size();i++){
+
+            int siz = players.size();
+
+            Player playerInRoom = players.get(i);
 
             if (playerInRoom == player) {
                 continue;
@@ -303,6 +331,12 @@ public class Room implements java.io.Serializable , IObservable {
 
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
+            int newsiz = players.size();
+
+            //if we removed a player
+            if(newsiz != siz){
+                i--;
+            }
         }
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
@@ -332,6 +366,10 @@ public class Room implements java.io.Serializable , IObservable {
     }
 
     public int GetPassagesBeforeStickiness() {
+        if ( GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "GetPassagesBeforeStickiness", String.valueOf(passagesBeforeStickiness));
+            Logger.logExit(this.getClass().getName(), "GetPassagesBeforeStickiness");
+        }
         return passagesBeforeStickiness;
     }
 

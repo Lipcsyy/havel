@@ -55,8 +55,6 @@ public class Add implements ICommand {
 
                 teacher = new Teacher( room, CommandInterpreter.gameManager );
 
-                System.out.println( "Invalid number of parameters" );
-
                 System.out.println( teacher.id );
                 break;
 

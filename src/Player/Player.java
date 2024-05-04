@@ -205,13 +205,12 @@ public abstract class Player implements java.io.Serializable {
             Logger.logEntry(this.getClass().getName(), "Move", "room" );
         }
 
+        this.room.DecreasePassagesBeforeStickiness();
+
         this.room.RemovePlayer(this);
         room.AddPlayer(this);
         this.SetRoom(room);
 
-        //When we go into a room we decrease the passages that are left before stickiness
-        //This only decreases if the room was cleared before
-        this.room.DecreasePassagesBeforeStickiness();
 
         for ( int i = 0; i < items.size(); i++ ) {
             items.get(i).DecreaseTurnsLeft(this);

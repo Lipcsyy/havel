@@ -2,7 +2,7 @@ Add MagicRoom 5
 Add Room 5
 Add Student MagicRoom_1
 ManageDoor MagicRoom_1 Appear Room_1
-ChangeRoom MagicRoom_1 Room_1
+ChangeRoom Student_1 Room_1
 Info Student_1
 Info MagicRoom_1
-Info Room_2
+Info Room_1
