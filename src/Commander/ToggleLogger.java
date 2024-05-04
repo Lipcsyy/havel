@@ -15,7 +15,6 @@ public class ToggleLogger implements ICommand {
         if (GameManager.loggerStatus == ELogger.SUPRESS) {
             System.out.println("Logger is now in INFO mode");
             GameManager.loggerStatus = ELogger.INFO;
-            return;
         }
 
     }

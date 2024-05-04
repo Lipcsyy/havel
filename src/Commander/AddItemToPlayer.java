@@ -18,7 +18,7 @@ public class AddItemToPlayer implements ICommand {
             return;
         }
 
-        if( player.HasMoreSpaceInInventory() == false){
+        if( ! player.HasMoreSpaceInInventory() ){
             System.out.println( "Not enough space in player's inventory" );
             return;
         }

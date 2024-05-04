@@ -163,7 +163,7 @@ public class Student extends Player {
 
         for ( Item item : this.GetInventory() ) {
             //after the first use of the transistor we return, because we don't want to use the second one too. Only one at a time.
-            if ( item.UseTransistor(this) == true ) {
+            if ( item.UseTransistor( this ) ) {
                 if (GameManager.loggerStatus == ELogger.INFO) {
                     Logger.logExit(this.getClass().getName(), "Transistor");
                 }

@@ -53,7 +53,6 @@ public class Main {
             commandInterpreter.Interpreting();
 
         } catch (Exception e) {
-           return;
         }
     }
 }

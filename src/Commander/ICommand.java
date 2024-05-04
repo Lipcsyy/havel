@@ -1,7 +1,7 @@
 package Commander;
 
-public abstract interface ICommand {
+public interface ICommand {
 
-    public abstract void execute( String[] params);
+    void execute( String[] params );
 
 }

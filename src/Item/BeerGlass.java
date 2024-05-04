@@ -94,6 +94,6 @@ public class BeerGlass extends Item{
         System.out.println();
         System.out.println(  "Item: " + id );
         System.out.println( "Durability: " + turnsLeft);
-    };
+    }
 
 }

@@ -70,7 +70,7 @@ public class Add implements ICommand {
                     return;
                 }
 
-                if ( room.HasMoreSpaceInRoom() == false ) {
+                if ( ! room.HasMoreSpaceInRoom() ) {
                     System.out.println( "Not enough space in room" );
                     return;
                 }

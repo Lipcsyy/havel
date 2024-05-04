@@ -13,8 +13,8 @@ public class GameManager implements java.io.Serializable{
 
     public static ELogger loggerStatus = ELogger.SUPRESS;
 
-    private Map<Room, Set<Room>> map;
-    private ArrayList<Player> players;
+    private final Map<Room, Set<Room>> map;
+    private final ArrayList<Player> players;
 
     public GameManager() {
        map = new HashMap<Room, Set<Room>>();

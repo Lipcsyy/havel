@@ -105,7 +105,7 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CollectItem");
         }
-    };
+    }
 
     /**
      * This function drops all the items in the inventory to the floor.
@@ -124,7 +124,7 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "DropAllItem");
         }
-    };
+    }
 
     /**
      * This function removes an item from the inventory. The doesn't drop to the floor, it is removed completely.
@@ -152,7 +152,7 @@ public abstract class Player implements java.io.Serializable {
             Logger.logExit(this.getClass().getName(), "HasMoreSpaceInInventory");
         }
         return this.items.size() < 5;
-    };
+    }
 
 
     /**
@@ -224,7 +224,7 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Move" );
         }
-    };
+    }
 
     /**
      * This function changes the room of the player.
@@ -248,7 +248,7 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "ChangeRoom" );
         }
-    };
+    }
 
     /**
      * This function sets the room of the player.
@@ -329,7 +329,7 @@ public abstract class Player implements java.io.Serializable {
 
     public void DropItem() {}
 
-    public void Transistor() {};
+    public void Transistor() {}
 
 
     //-----------INFORMATION FUNCTIONS----------------

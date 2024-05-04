@@ -151,7 +151,7 @@ public abstract class Item implements java.io.Serializable{
 
     public void SetRoom(Room room) {
 
-    };
+    }
 
     public boolean UseTransistor(Player player) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
@@ -166,6 +166,6 @@ public abstract class Item implements java.io.Serializable{
     public void PrintInfo() {
         System.out.println("\n");
         System.out.println( "Item: " + id );
-    };
+    }
 
 }

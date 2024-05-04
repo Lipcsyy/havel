@@ -11,7 +11,7 @@ public class ManageDoor implements ICommand {
 
         String magicRoom = params[0].split( "_" )[0];
 
-        if( magicRoom.equals( "MagicRoom" ) == false){
+        if( ! magicRoom.equals( "MagicRoom" ) ){
             System.out.println( "Room isn't MagicRoom");
             return;
         }
@@ -28,14 +28,14 @@ public class ManageDoor implements ICommand {
 
         switch ( mode ) {
             case "Disappear":
-                if( room1.GetNeighbours().contains( room2 ) == false){
+                if( ! room1.GetNeighbours().contains( room2 ) ){
                     System.out.println( "The Rooms are not connected" );
                     return;
                 }
                 CommandInterpreter.gameManager.DisconnectRoomsTwoWay( room1, room2 );
                 break;
             case "Appear":
-                if( room1.GetNeighbours().contains( room2 ) == true){
+                if( room1.GetNeighbours().contains( room2 ) ){
                     System.out.println( "The Rooms are already connected" );
                     return;
                 }

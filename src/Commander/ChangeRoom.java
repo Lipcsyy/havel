@@ -23,12 +23,12 @@ public class ChangeRoom implements ICommand {
             return;
         }
 
-        if( room.HasMoreSpaceInRoom() == false){
+        if( ! room.HasMoreSpaceInRoom() ){
             System.out.println( "Not enough space in room" );
             return;
         }
 
-        if( room.GetNeighbours().contains( player.GetRoom() ) == false ){
+        if( ! room.GetNeighbours().contains( player.GetRoom() ) ){
             System.out.println( "Invalid move, the rooms are not connected" );
             return;
         }

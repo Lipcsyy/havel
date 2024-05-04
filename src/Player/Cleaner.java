@@ -91,6 +91,6 @@ public class Cleaner extends Player {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Move" );
         }
-    };
+    }
 
 }

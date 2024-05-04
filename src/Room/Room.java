@@ -1,22 +1,28 @@
 package Room;
-import Item.*;
-import Player.*;
-import java.util.*;
-import Logger.*;
-import GameManager.*;
-import Enums.*;
 
-public class Room implements java.io.Serializable{
+import Enums.ELogger;
+import GameManager.GameManager;
+import Interfaces.IObservable;
+import Interfaces.IObserver;
+import Item.Item;
+import Logger.Logger;
+import Player.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class Room implements java.io.Serializable , IObservable {
 
     GameManager gameManager;
+    private List<IObserver> observers = new ArrayList<>();
 
     public String id;
 
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
-    protected List<Room> neighbours;
+
     protected int turnsLeftForEffect;
 
     protected int passagesBeforeStickiness = -1;
@@ -168,6 +174,7 @@ public class Room implements java.io.Serializable{
      * @param player The player to add.
      */
     public void AddPlayer(Player player) {
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
         }
@@ -271,6 +278,7 @@ public class Room implements java.io.Serializable{
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
+            notifyObservers();
         } else {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");
@@ -395,4 +403,24 @@ public class Room implements java.io.Serializable{
 
     }
 
+    @Override
+    public void addObserver( IObserver o ) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver( IObserver o ) {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObservers() {
+
+        // Notify all observers
+
+        //This runs but does not do anything because it doesn't have the controller as an observer
+        for ( IObserver observer : observers ) {
+            observer.render();
+        }
+    }
 }

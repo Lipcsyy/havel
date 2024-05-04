@@ -246,5 +246,5 @@ public class Transistor extends Item{
             System.out.println( "Pair: " + pair.id );
         if( room != null)
             System.out.println( "Deployed: " + room.id );
-    };
+    }
 }

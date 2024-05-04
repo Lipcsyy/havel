@@ -64,5 +64,5 @@ public class Mask extends Item{
         System.out.println();
         System.out.println(  "Item: " + id );
         System.out.println( "Durability: " + abilityNumber);
-    };
+    }
 }
