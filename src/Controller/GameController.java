@@ -6,6 +6,7 @@ import Player.*;
 import Item.*;
 import Views.ItemView;
 import Views.PlayerView;
+import Views.RoomView;
 
 import java.util.HashMap;
 
@@ -15,6 +16,8 @@ public class GameController implements IObserver {
 
     //This is the room of the student
     private Room displayedRoom;
+
+    HashMap<Room, RoomView> roomViews = new HashMap<Room, RoomView >();
     HashMap<Player, PlayerView > playerViews = new HashMap<Player, PlayerView>();
     HashMap<Item, ItemView > itemViews = new HashMap<Item, ItemView>();
 
