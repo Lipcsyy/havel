@@ -31,9 +31,9 @@ public class GameController implements IObserver {
     }
 
 
-    public void startGame() {
+    public void StartGame() {
         while (isRunning) {
-            handleInput();  // Handle user input for the active room
+            HandleInput();  // Handle user input for the active room
 
             //move non-playable character
 
@@ -46,7 +46,7 @@ public class GameController implements IObserver {
         }
     }
 
-    private void handleInput() {
+    private void HandleInput() {
         //Gets the user input
 
         //Updates the model accordingly
@@ -62,7 +62,7 @@ public class GameController implements IObserver {
 
     }
 
-    public void render() {
+    public void Render() {
 
         for ( Player p : displayedRoom.GetPlayers() ) {
             //render the player
