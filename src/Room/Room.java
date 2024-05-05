@@ -20,7 +20,7 @@ public class Room implements java.io.Serializable , IObservable {
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
-    private List<Room> neighbours;
+
     protected int turnsLeftForEffect;
 
     protected int passagesBeforeStickiness = -1;
@@ -72,7 +72,6 @@ public class Room implements java.io.Serializable , IObservable {
 
         this.items = new ArrayList<Item>();
         this.players = new ArrayList<Player>();
-        this.neighbours = new ArrayList<Room>();
 
         for ( var i : room.getItems() ) {
             this.AddItem(i);
