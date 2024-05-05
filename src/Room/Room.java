@@ -16,13 +16,11 @@ public class Room implements java.io.Serializable , IObservable {
 
     GameManager gameManager;
     private List<IObserver> observers = new ArrayList<>();
-
     public String id;
-
     protected int capacity;
     protected List<Item> items;
     protected List<Player> players;
-
+    private List<Room> neighbours;
     protected int turnsLeftForEffect;
 
     protected int passagesBeforeStickiness = -1;
