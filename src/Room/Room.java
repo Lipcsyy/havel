@@ -455,7 +455,7 @@ public class Room implements java.io.Serializable , IObservable {
 
         //This runs but does not do anything because it doesn't have the controller as an observer
         for ( IObserver observer : observers ) {
-            observer.render();
+            observer.Render();
         }
     }
 }

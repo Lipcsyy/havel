@@ -37,7 +37,7 @@ public class GameController implements IObserver {
 
             //move non-playable character
 
-            render();       // Render only the active room
+            Render();       // Render only the active room
             try {
                 Thread.sleep(16);  // Approximately 60 FPS
             } catch (InterruptedException e) {
@@ -74,5 +74,4 @@ public class GameController implements IObserver {
             itemViews.get(item).render();
         }
     }
-
 }
