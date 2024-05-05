@@ -1,7 +1,7 @@
 package Interfaces;
 
 public interface IObservable {
-    void addObserver(IObserver o);
-    void removeObserver(IObserver o);
-    void notifyObservers();
+    void AddObserver(IObserver o);
+    void RemoveObserver(IObserver o);
+    void NotifyObservers();
 }

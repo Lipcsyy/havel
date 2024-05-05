@@ -27,7 +27,7 @@ public class GameController implements IObserver {
         this.gameManager = gameManager;
         this.displayedRoom = initialRoom;
         this.isRunning = true;
-        this.displayedRoom.addObserver( this );  // Add GameController as an observer to the active room
+        this.displayedRoom.AddObserver( this );  // Add GameController as an observer to the active room
     }
 
 

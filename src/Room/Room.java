@@ -299,7 +299,7 @@ public class Room implements java.io.Serializable , IObservable {
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
-            notifyObservers();
+            NotifyObservers();
         } else {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");
@@ -439,17 +439,17 @@ public class Room implements java.io.Serializable , IObservable {
     }
 
     @Override
-    public void addObserver( IObserver o ) {
+    public void AddObserver( IObserver o ) {
         observers.add(o);
     }
 
     @Override
-    public void removeObserver( IObserver o ) {
+    public void RemoveObserver( IObserver o ) {
         observers.remove(o);
     }
 
     @Override
-    public void notifyObservers() {
+    public void NotifyObservers() {
 
         // Notify all observers
 

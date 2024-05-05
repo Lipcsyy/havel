@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="updatek, pausepanel">
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="Render fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/IObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/IObservable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IObservable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
@@ -328,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714924910856</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Render fixed">
+      <option name="closed" value="true" />
+      <created>1714925039700</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1714925039700</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +371,8 @@
     <MESSAGE value="feat: added the observer architecture to the game" />
     <MESSAGE value="Changes by Madia" />
     <MESSAGE value="updatek, pausepanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="updatek, pausepanel" />
+    <MESSAGE value="Render fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Render fixed" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
