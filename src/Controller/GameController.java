@@ -66,12 +66,12 @@ public class GameController implements IObserver {
 
         for ( Player p : displayedRoom.GetPlayers() ) {
             //render the player
-            playerViews.get(p).render();
+            playerViews.get(p).Render();
         }
 
         for ( Item item : displayedRoom.getItems() ) {
             //render the item
-            itemViews.get(item).render();
+            itemViews.get(item).Render();
         }
     }
 }

@@ -1,7 +1,7 @@
 package Views;
 
 public class ItemView {
-    public void render() {
+    public void Render() {
         // TODO implement here
     }
 }
