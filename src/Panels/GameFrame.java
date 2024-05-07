@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
+    public static CardLayout layout = new CardLayout();
     public static JPanel mainPanel = new JPanel();
     public static MenuPanel menuPanel = new MenuPanel();
     public static GamePanel gamePanel = new GamePanel();
@@ -14,7 +15,7 @@ public class GameFrame extends JFrame {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
-        mainPanel.setLayout(new CardLayout());
+        mainPanel.setLayout(layout);
         mainPanel.add(menuPanel, "MENU");
         mainPanel.add(gamePanel, "GAME");
         mainPanel.add(loaderPanel, "LOADER");
