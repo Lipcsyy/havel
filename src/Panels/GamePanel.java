@@ -2,10 +2,11 @@ package Panels;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
-    private final JButton mainMenuButton = new JButton("Return to main menu");
     private final ArrayList<GameConsole> gameConsoles = new ArrayList<GameConsole>();
     private final ArrayList<InventoryConsole> inventoryConsoles = new ArrayList<InventoryConsole>();
 
@@ -15,15 +16,25 @@ public class GamePanel extends JPanel {
         int SCREEN_WIDTH = (int) screenSize.getWidth();
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
-        this.setFocusable(true);
+        this.setFocusable(true); // Enable keyboard focus for the panel
+        requestFocusInWindow(); // Request keyboard focus when the panel is shown
         setBackground(Color.GRAY);
 
-        SetButtons();
+        SetKeyListener();
+
     }
 
-    public void SetButtons() {
-        mainMenuButton.addActionListener( event -> {
-            GameFrame.layout.show(GameFrame.mainPanel, "MENU" );
+
+    private void SetKeyListener() {
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Check if the pressed key is ESC (key code 27)
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    // Handle ESC key press here
+                    GameFrame.layout.show(GameFrame.mainPanel, "PAUSE");
+                }
+            }
         });
     }
 
@@ -35,9 +46,5 @@ public class GamePanel extends JPanel {
     public void AddInventoryConsole(InventoryConsole inventoryConsole){
         inventoryConsoles.add(inventoryConsole);
         add(inventoryConsoles.get(inventoryConsoles.size()-1));
-    }
-
-    public void AddButton() {
-        add(mainMenuButton);
     }
 }

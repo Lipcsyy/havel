@@ -30,10 +30,14 @@ public class MenuPanel extends JPanel {
 
         singlePlayer.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
+            GameFrame.previousPanel = GameFrame.singleGamePanel;
+            GameFrame.singleGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
         });
 
         multiPlayer.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
+            GameFrame.previousPanel = GameFrame.multiGamePanel;
+            GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
         });
 
         loadGameButton.addActionListener( event -> {
