@@ -10,11 +10,13 @@ public class MenuPanel extends JPanel {
     private final JButton exitButton = new JButton("Exit");
 
     public MenuPanel() {
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int SCREEN_WIDTH = (int) screenSize.getWidth();
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true);
+        setBackground(Color.GRAY);
 
         SetButtons();
 
