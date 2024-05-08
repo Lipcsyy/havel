@@ -6,7 +6,8 @@ public class GameFrame extends JFrame {
     public static CardLayout layout = new CardLayout();
     public static JPanel mainPanel = new JPanel();
     public static MenuPanel menuPanel = new MenuPanel();
-    public static GamePanel gamePanel = new GamePanel();
+    public static GamePanel singleGamePanel = new GamePanel();
+    public static GamePanel multiGamePanel = new GamePanel();
     public static LoaderPanel loaderPanel = new LoaderPanel();
     public GameFrame(){
 
@@ -17,7 +18,8 @@ public class GameFrame extends JFrame {
 
         mainPanel.setLayout(layout);
         mainPanel.add(menuPanel, "MENU");
-        mainPanel.add(gamePanel, "GAME");
+        mainPanel.add(singleGamePanel, "SINGLE");
+        mainPanel.add(multiGamePanel, "MULTI");
         mainPanel.add(loaderPanel, "LOADER");
 
         add(mainPanel);

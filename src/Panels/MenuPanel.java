@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MenuPanel extends JPanel {
-    private final JButton newGameButton = new JButton("Single Player");
+    private final JButton singlePlayer = new JButton("Single Player");
+    private final JButton multiPlayer = new JButton("Multiplayer");
     private final JButton loadGameButton = new JButton("Load Game");
     private final JButton exitButton = new JButton("Exit");
 
@@ -17,15 +18,20 @@ public class MenuPanel extends JPanel {
 
         SetButtons();
 
-        add(newGameButton);
+        add(singlePlayer);
+        add(multiPlayer);
         add(loadGameButton);
         add(exitButton);
     }
 
     private void SetButtons() {
 
-        newGameButton.addActionListener( event -> {
-            GameFrame.layout.show(GameFrame.mainPanel, "GAME" );
+        singlePlayer.addActionListener(event -> {
+            GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
+        });
+
+        multiPlayer.addActionListener(event -> {
+            GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
         });
 
         loadGameButton.addActionListener( event -> {
