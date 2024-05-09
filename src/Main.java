@@ -33,7 +33,7 @@ public class Main {
 //        System.out.println("17. Door of a magic rooms disappears");
 //        System.out.println("18. Door of a magic rooms appears");
 
-//        try {
+        try {
 //            System.out.println("Enter the test number to run or enter 0 to write your commands: ");
 //            Scanner scanner = new Scanner(System.in);
 //            int testNumber = scanner.nextInt();
@@ -50,13 +50,11 @@ public class Main {
 //
 //                testNumber = scanner.nextInt();
 //            }
-//            CommandInterpreter commandInterpreter = new CommandInterpreter();
-//            commandInterpreter.Interpreting();
-//
-//} catch (Exception e) {
-//        }
+            CommandInterpreter commandInterpreter = new CommandInterpreter();
+            commandInterpreter.Interpreting();
 
-        new GameFrame();
+        } catch (Exception e) {
+        }
 
     }
 }

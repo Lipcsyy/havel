@@ -15,6 +15,9 @@ import java.util.Set;
 public class Room implements java.io.Serializable , IObservable {
 
     GameManager gameManager;
+
+    public int x, y;
+    public boolean in = false; // In the maze
     private List<IObserver> observers = new ArrayList<>();
     public String id;
     protected int capacity;
@@ -89,6 +92,12 @@ public class Room implements java.io.Serializable , IObservable {
     }
 
     public Room(){}
+
+    public Room setCoordinates(int x, int y) {
+        this.x = x;
+        this.y = y;
+        return this;
+    }
 
     //----------ITEM FUNCTIONS------------------------
 

@@ -4,6 +4,7 @@ import Logger.Logger;
 import Room.*;
 import Item.*;
 import Enums.ELogger;
+import Map.GameMap;
 
 import java.security.Key;
 import java.util.*;
@@ -12,12 +13,13 @@ import Player.*;
 public class GameManager implements java.io.Serializable{
 
     public static ELogger loggerStatus = ELogger.SUPRESS;
-
-    private final Map<Room, Set<Room>> map;
+    private GameMap map;
     private final ArrayList<Player> players;
 
     public GameManager() {
-       map = new HashMap<Room, Set<Room>>();
+       map = new GameMap(20,20);
+       map.generateMaze();
+
        players = new ArrayList<Player>();
 
        Student.ResetCounter();
@@ -40,9 +42,10 @@ public class GameManager implements java.io.Serializable{
 
     }
 
+
     public ArrayList<Room> getRooms(){
         ArrayList<Room> allRooms = new ArrayList<Room >();
-        allRooms.addAll( map.keySet() );
+        allRooms.addAll( map.getAdjacencyList().keySet() );
         return allRooms;
     }
 
@@ -113,7 +116,7 @@ public class GameManager implements java.io.Serializable{
         }
 
         //There are no references left for the targetRoom, so it should be deleted
-        map.remove(targetRoom);
+        map.getAdjacencyList().remove(targetRoom);
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
@@ -125,7 +128,7 @@ public class GameManager implements java.io.Serializable{
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
         }
-        map.put(room, new HashSet<Room>());
+        map.getAdjacencyList().put(room, new HashSet<Room>());
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "AddRoom");
         }
@@ -142,20 +145,20 @@ public class GameManager implements java.io.Serializable{
     }
 
     public void ConnectRoomsOneWay(Room room1, Room room2) {
-        Set<Room> room1Neighbours = map.get(room1);
+        Set<Room> room1Neighbours = map.getAdjacencyList().get(room1);
         room1Neighbours.add(room2);
     }
 
     public void ConnectRoomsTwoWay(Room room1, Room room2) {
-        Set<Room> room1Neighbors = map.get(room1);
-        Set<Room> room2Neighbors = map.get(room2);
+        Set<Room> room1Neighbors = map.getAdjacencyList().get(room1);
+        Set<Room> room2Neighbors = map.getAdjacencyList().get(room2);
 
         room1Neighbors.add(room2);
         room2Neighbors.add(room1);
     }
 
     public void DisconnectRoomsOneWay(Room room1, Room room2) {
-        Set<Room> room1Neighbors = map.get(room1);
+        Set<Room> room1Neighbors = map.getAdjacencyList().get(room1);
         if (room1Neighbors != null) {
             room1Neighbors.remove(room2);
         }
@@ -172,11 +175,11 @@ public class GameManager implements java.io.Serializable{
     }
 
     public Set<Room> GetNeighbours(Room room) {
-        return map.get(room);
+        return map.getAdjacencyList().get(room);
     }
 
     public Room GetRoomById(String id) {
-        for (Room r : map.keySet()) {
+        for (Room r : map.getAdjacencyList().keySet()) {
             if (r.id.equals(id)) {
                 return r;
             }
@@ -185,7 +188,7 @@ public class GameManager implements java.io.Serializable{
     }
 
     public Player GetPlayerById(String id) {
-        for (Room r : map.keySet()) {
+        for (Room r : map.getAdjacencyList().keySet()) {
             for (Player p : r.GetPlayers()) {
                 if (p.id.equals(id)) {
                     return p;
@@ -199,7 +202,7 @@ public class GameManager implements java.io.Serializable{
 
     public void PrintInfo() {
 
-        for ( Room r : map.keySet() ) {
+        for ( Room r : map.getAdjacencyList().keySet() ) {
             r.PrintInfo();
         }
 
