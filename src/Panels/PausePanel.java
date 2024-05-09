@@ -1,10 +1,15 @@
 package Panels;
 
+import Buttons.MenuButton;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class PausePanel extends JPanel {
-    private final JButton mainMenuButton = new JButton("Return to main menu");
+    private final JButton mainMenuButton = new MenuButton("Return to main menu");
+    private final JButton saveButton = new MenuButton("Save the game");
+    private final JButton restartButton = new MenuButton("Restart the game");
+
 
     public PausePanel() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -15,16 +20,30 @@ public class PausePanel extends JPanel {
         // Set the background color to transparent red
         setBackground(new Color(0,0,0,128));
         // Make the panel not opaque
-        //setOpaque(false);
 
         setButtons();
 
         add(mainMenuButton);
+        add(saveButton);
+        add(restartButton);
     }
 
     private void setButtons() {
         mainMenuButton.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "MENU");
+        });
+        saveButton.addActionListener(event -> {
+
+        });
+        restartButton.addActionListener(event -> {
+            if(GameFrame.previousPanel == GameFrame.singleGamePanel){
+                GameFrame.layout.show(GameFrame.mainPanel, "SINGLE");
+                GameFrame.singleGamePanel.requestFocusInWindow();
+            }
+            else {
+                GameFrame.layout.show(GameFrame.mainPanel, "MULTI");
+                GameFrame.multiGamePanel.requestFocusInWindow();
+            }
         });
     }
 

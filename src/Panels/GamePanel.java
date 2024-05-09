@@ -7,8 +7,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
-    private final ArrayList<GameConsole> gameConsoles = new ArrayList<GameConsole>();
-    private final ArrayList<InventoryConsole> inventoryConsoles = new ArrayList<InventoryConsole>();
+    private ArrayList<GameConsole> gameConsoles = new ArrayList<GameConsole>();
+    private ArrayList<InventoryConsole> inventoryConsoles = new ArrayList<InventoryConsole>();
 
     public GamePanel(){
 

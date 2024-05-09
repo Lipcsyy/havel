@@ -1,13 +1,15 @@
 package Panels;
 
+import Buttons.MenuButton;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MenuPanel extends JPanel {
-    private final JButton singlePlayer = new JButton("Single Player");
-    private final JButton multiPlayer = new JButton("Multiplayer");
-    private final JButton loadGameButton = new JButton("Load Game");
-    private final JButton exitButton = new JButton("Exit");
+    private final JButton singlePlayer = new MenuButton("Single Player");
+    private final JButton multiPlayer = new MenuButton("Multiplayer");
+    private final JButton loadGameButton = new MenuButton("Load Game");
+    private final JButton exitButton = new MenuButton("Exit");
 
     public MenuPanel() {
 
@@ -16,6 +18,21 @@ public class MenuPanel extends JPanel {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true);
+
+        JPanel topPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                ImageIcon imageIcon = new ImageIcon("SlideRuleGame.jpg");
+                Image image = imageIcon.getImage();
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        topPanel.setPreferredSize(new Dimension((int)Math.round(SCREEN_WIDTH* 0.95), (int)Math.round(SCREEN_HEIGHT* 0.75)));
+        this.setFocusable(true);
+
+        add(topPanel);
+
         setBackground(Color.GRAY);
 
         SetButtons();
