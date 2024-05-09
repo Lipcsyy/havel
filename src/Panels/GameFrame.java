@@ -8,7 +8,9 @@ public class GameFrame extends JFrame {
     public static MenuPanel menuPanel = new MenuPanel();
     public static GamePanel singleGamePanel = new GamePanel();
     public static GamePanel multiGamePanel = new GamePanel();
+    public static PausePanel pausePanel = new PausePanel();
     public static LoaderPanel loaderPanel = new LoaderPanel();
+    public static JPanel previousPanel;
     public GameFrame(){
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -16,10 +18,19 @@ public class GameFrame extends JFrame {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
+        singleGamePanel.AddGameConsole(new GameConsole(1000,652));
+        singleGamePanel.AddInventoryConsole(new InventoryConsole(1000,100));
+
+        multiGamePanel.AddGameConsole(new GameConsole(700,400));
+        multiGamePanel.AddGameConsole(new GameConsole(700,400));
+        multiGamePanel.AddInventoryConsole(new InventoryConsole(700,100));
+        multiGamePanel.AddInventoryConsole(new InventoryConsole(700,100));
+
         mainPanel.setLayout(layout);
         mainPanel.add(menuPanel, "MENU");
         mainPanel.add(singleGamePanel, "SINGLE");
         mainPanel.add(multiGamePanel, "MULTI");
+        mainPanel.add(pausePanel, "PAUSE");
         mainPanel.add(loaderPanel, "LOADER");
 
         add(mainPanel);

@@ -11,6 +11,7 @@ public class LoaderPanel extends JPanel {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true);
+        setBackground(Color.GRAY);
 
         SetButtons();
 
