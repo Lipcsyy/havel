@@ -50,8 +50,10 @@ public class Main {
 //
 //                testNumber = scanner.nextInt();
 //            }
-            CommandInterpreter commandInterpreter = new CommandInterpreter();
-            commandInterpreter.Interpreting();
+            //CommandInterpreter commandInterpreter = new CommandInterpreter();
+            //commandInterpreter.Interpreting();
+
+            GameFrame gameFrame = new GameFrame();
 
         } catch (Exception e) {
         }

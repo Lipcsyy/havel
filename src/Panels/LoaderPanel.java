@@ -1,10 +1,12 @@
 package Panels;
 
+import Buttons.MenuButton;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class LoaderPanel extends JPanel {
-    private final JButton mainMenuButton = new JButton("Return to main menu");
+    private final JButton mainMenuButton = new MenuButton("Return to main menu");
     public LoaderPanel(){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int SCREEN_WIDTH = (int) screenSize.getWidth();

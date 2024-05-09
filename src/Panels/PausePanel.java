@@ -10,7 +10,6 @@ public class PausePanel extends JPanel {
     private final JButton saveButton = new MenuButton("Save the game");
     private final JButton restartButton = new MenuButton("Restart the game");
 
-
     public PausePanel() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int SCREEN_WIDTH = (int) screenSize.getWidth();
@@ -21,14 +20,24 @@ public class PausePanel extends JPanel {
         setBackground(new Color(0,0,0,128));
         // Make the panel not opaque
 
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Set layout to BoxLayout
+
         setButtons();
 
-        add(mainMenuButton);
+        add(Box.createVerticalGlue()); // Add vertical glue before buttons
         add(saveButton);
+        add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
         add(restartButton);
+        add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
+        add(mainMenuButton);
+        add(Box.createVerticalGlue()); // Add vertical glue after buttons
     }
 
     private void setButtons() {
+        mainMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        saveButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        restartButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+
         mainMenuButton.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "MENU");
         });

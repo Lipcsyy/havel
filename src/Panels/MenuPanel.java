@@ -28,22 +28,40 @@ public class MenuPanel extends JPanel {
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
-        topPanel.setPreferredSize(new Dimension((int)Math.round(SCREEN_WIDTH* 0.95), (int)Math.round(SCREEN_HEIGHT* 0.75)));
+        topPanel.setPreferredSize(new Dimension((int)Math.round(SCREEN_WIDTH * 0.8), (int)Math.round(SCREEN_HEIGHT* 0.5)));
         this.setFocusable(true);
-
-        add(topPanel);
 
         setBackground(Color.GRAY);
 
         SetButtons();
 
-        add(singlePlayer);
-        add(multiPlayer);
-        add(loadGameButton);
-        add(exitButton);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS)); // Set layout to BoxLayout
+        buttonPanel.setBackground(Color.GRAY);
+        buttonPanel.add(Box.createHorizontalGlue()); // Add horizontal glue before buttons
+        buttonPanel.add(singlePlayer);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
+        buttonPanel.add(multiPlayer);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
+        buttonPanel.add(loadGameButton);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
+        buttonPanel.add(exitButton);
+        buttonPanel.add(Box.createHorizontalGlue()); // Add horizontal glue after buttons
+
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Set layout to BoxLayout
+        add(Box.createVerticalGlue()); // Add vertical glue before topPanel
+        add(topPanel);
+        add(Box.createVerticalGlue()); // Add vertical glue between topPanel and buttonPanel
+        add(buttonPanel);
+        add(Box.createVerticalGlue()); // Add vertical glue after buttonPanel
     }
 
     private void SetButtons() {
+
+        singlePlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        multiPlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        loadGameButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        exitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
 
         singlePlayer.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
