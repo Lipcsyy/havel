@@ -1,6 +1,7 @@
 package Panels;
 
 import Buttons.MenuButton;
+import Map.GameMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,15 +65,31 @@ public class MenuPanel extends JPanel {
         exitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
 
         singlePlayer.addActionListener(event -> {
-            GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
+
+            // make the maze and add it to the panel
+            GameMap maze = new GameMap(20, 20);
+            maze.generateMaze();
+            GameFrame.singleGamePanel.SetMazeDisplay(maze);
+
+            // set the previous panel and set focus
             GameFrame.previousPanel = GameFrame.singleGamePanel;
+
+            GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
             GameFrame.singleGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
         });
 
         multiPlayer.addActionListener(event -> {
-            GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
+
+            // make the maze and add it to the panel
+            GameMap maze = new GameMap(20, 20);
+            maze.generateMaze();
+            GameFrame.multiGamePanel.SetMazeDisplay(maze);
+
+            // set the previous panel and set focus
             GameFrame.previousPanel = GameFrame.multiGamePanel;
-            GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
+
+            GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
+            GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "MULTI" panel
         });
 
         loadGameButton.addActionListener( event -> {
