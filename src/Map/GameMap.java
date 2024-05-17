@@ -91,11 +91,10 @@ public class GameMap {
 
     private Room removeRandomFrontierCell() {
         List<Room> frontierCells = new ArrayList<>(adjacencyList.keySet().stream().filter(c -> !c.in && !adjacencyList.get(c).isEmpty()).toList());
-        System.out.println("Frontier cells: " + frontierCells.size());
         return frontierCells.remove(rand.nextInt(frontierCells.size()));
     }
 
-    private Room findCell(int x, int y) {
+    public Room findCell(int x, int y) {
         for (var cell : adjacencyList.keySet()) {
             if (cell.x == x && cell.y == y) {
                 return cell;

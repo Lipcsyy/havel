@@ -1,11 +1,9 @@
 package Panels;
-import javax.security.auth.Refreshable;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
 import Controller.GameController;
-import Enums.EGameMode;
 import Map.GameMap;
 import Room.Room;
 import Player.Student;
@@ -27,47 +25,65 @@ public class MazeDisplay extends JPanel {
 
     private void drawMaze(Graphics g) {
         HashMap<Room, Set<Room>> adjacencyList = mazeGenerator.getAdjacencyList();
-        int RoomSize = 300 / mazeGenerator.getWidth(); // Calculate Room size based on maze width and panel size
+        int roomSize = 300 / mazeGenerator.getWidth(); // Calculate Room size based on maze width and panel size
+
+        this.setLayout(null); // Set the layout manager to null for absolute positioning
 
         for (Room room : adjacencyList.keySet()) {
-            int RoomX = room.x * RoomSize;
-            int RoomY = room.y * RoomSize;
+            int roomX = room.x * roomSize;
+            int roomY = room.y * roomSize;
 
-            // Determine if there are walls based on connectivity in the adjacency list
-            boolean hasNorth = adjacencyList.get(room).stream().anyMatch(c -> c.y == room.y - 1);
-            boolean hasSouth = adjacencyList.get(room).stream().anyMatch(c -> c.y == room.y + 1);
-            boolean hasEast = adjacencyList.get(room).stream().anyMatch(c -> c.x == room.x + 1);
-            boolean hasWest = adjacencyList.get(room).stream().anyMatch(c -> c.x == room.x - 1);
+            // We need to add a JPanel for each room
+            JPanel roomPanel = new JPanel();
+            roomPanel.setBounds(roomX, roomY, roomSize, roomSize);
+            roomPanel.setBackground(Color.BLACK);
+            roomPanel.setLayout(null); // Set layout manager to null for absolute positioning of the red dot
 
-            if (!hasNorth) {
-                g.drawLine(RoomX, RoomY, RoomX + RoomSize, RoomY);
-            }
-            if (!hasSouth) {
-                g.drawLine(RoomX, RoomY + RoomSize, RoomX + RoomSize, RoomY + RoomSize);
-            }
-            if (!hasEast) {
-                g.drawLine(RoomX + RoomSize, RoomY, RoomX + RoomSize, RoomY + RoomSize);
-            }
-            if (!hasWest) {
-                g.drawLine(RoomX, RoomY, RoomX, RoomY + RoomSize);
-            }
+            ArrayList<JPanel> playerIndicators = new ArrayList<>();
 
-            boolean hasStudent = false;
-            for (Student student : gameController.studentViews.keySet()){
-                if(student.GetRoom() == room){
-                    hasStudent = true;
-                    break;
+            for (Student student : gameController.studentToViews.keySet()) {
+                if (student.GetRoom() == room) {
+                    JPanel playerPanel = gameController.studentToViews.get(student);
+
+                    // Create a copy of the playerPanel
+                    JPanel playerIndicator = new JPanel();
+                    playerIndicator.setBackground(Color.RED);
+                    int indicatorSize = 10;
+
+                    playerIndicator.setSize(indicatorSize, indicatorSize);
+                    playerIndicators.add(playerIndicator);
                 }
             }
-            if(hasStudent){
-                // Draw a filled rectangle around the room
-                g.setColor(Color.BLACK);
-                g.fillRect(RoomX, RoomY, RoomSize, RoomSize);
-            } else {
-                g.setColor(Color.RED);
-                int pointSize = 2; // You can adjust the size of the point as needed
-                g.fillOval(RoomX, RoomY, pointSize, pointSize);
+
+            int playerCount = playerIndicators.size();
+
+            if (playerCount == 1) {
+                JPanel playerIndicator = playerIndicators.get(0);
+                int indicatorSize = playerIndicator.getWidth();
+                int indicatorX = (roomSize - indicatorSize) / 2;
+                int indicatorY = (roomSize - indicatorSize) / 2;
+                playerIndicator.setBounds(indicatorX, indicatorY, indicatorSize, indicatorSize);
+                roomPanel.add(playerIndicator);
+            } else if (playerCount > 1) {
+                int totalWidth = playerCount * 10 + (playerCount - 1) * 5;
+                int startX = (roomSize - totalWidth) / 2;
+
+                for (int i = 0; i < playerCount; i++) {
+                    JPanel playerIndicator = playerIndicators.get(i);
+                    int indicatorSize = playerIndicator.getWidth();
+                    int indicatorX = startX + i * (indicatorSize + 5);
+                    int indicatorY = (roomSize - indicatorSize) / 2;
+                    playerIndicator.setBounds(indicatorX, indicatorY, indicatorSize, indicatorSize);
+                    roomPanel.add(playerIndicator);
+                }
             }
+
+            if (playerCount > 0) {
+                roomPanel.setBackground(Color.WHITE);
+            }
+
+            this.add(roomPanel);
         }
     }
+
 }

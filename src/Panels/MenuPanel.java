@@ -80,7 +80,7 @@ public class MenuPanel extends JPanel {
             GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
             GameFrame.singleGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
             System.out.println("Single Player");
-            GameFrame.singleGamePanel.InitializeGame();
+            GameFrame.singleGamePanel.InitializeGame(EGameMode.SINGLEPLAYER);
         });
 
         multiPlayer.addActionListener(event -> {
@@ -94,7 +94,7 @@ public class MenuPanel extends JPanel {
             GameFrame.previousPanel = GameFrame.multiGamePanel;
             GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
             GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "MULTI" panel
-            GameFrame.multiGamePanel.InitializeGame();
+            GameFrame.multiGamePanel.InitializeGame(EGameMode.MULTIPLAYER);
         });
 
         loadGameButton.addActionListener( event -> {

@@ -74,15 +74,14 @@ public class GamePanel extends JPanel {
         containerPanel.add(inventoryConsoles.get(inventoryConsoles.size()-1)); // Add the console to containerPanel
     }
 
-    public void AddPlayerView(JPanel playerView) {
-        playerView.setAlignmentX(Component.LEFT_ALIGNMENT);
-        gameConsoles.get(0).add(playerView);
-    }
-
-    public void InitializeGame() {
-        gameController = new GameController(EGameMode.SINGLEPLAYER, this);
+    public void InitializeGame(EGameMode gameMode) {
+        gameController = new GameController(gameMode, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
         mazeDisplayArea.add(mazeDisplay);
         gameController.StartGame();
+    }
+
+    public ArrayList<GameConsole> GetGameConsoles() {
+        return gameConsoles;
     }
 }

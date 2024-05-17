@@ -1,5 +1,4 @@
 package GameManager;
-import Commander.CommandInterpreter;
 import Controller.GameController;
 import Enums.EGameMode;
 import Enums.EVersion;
@@ -9,7 +8,6 @@ import Item.*;
 import Enums.ELogger;
 import Map.GameMap;
 
-import java.security.Key;
 import java.util.*;
 import Player.*;
 import Views.PlayerView;
@@ -79,11 +77,11 @@ public class GameManager implements java.io.Serializable{
 
         if ( gameMode == EGameMode.MULTIPLAYER ) {
 
-            Student student1 = new Student(map.getRandomCell(), this);
+            Student student1 = new Student( map.getRandomCell() , this);
             Student student2 = new Student(map.getRandomCell(), this);
 
-            gameController.studentViews.put(student1, new PlayerView());
-            gameController.studentViews.put(student2, new PlayerView());
+            gameController.studentToViews.put(student1, new PlayerView());
+            gameController.studentToViews.put(student2, new PlayerView());
 
             //Add 10 teacher to the game
 
@@ -120,7 +118,7 @@ public class GameManager implements java.io.Serializable{
             Room playerStartRoom = map.getRandomCell();
             Student student = new Student(playerStartRoom, this);
 
-            gameController.studentViews.put(student, new PlayerView());
+            gameController.studentToViews.put(student, new PlayerView());
 
             //add 8 teacher to the game with different starting room
             for( int i = 0; i < 8; i++){
@@ -237,7 +235,7 @@ public class GameManager implements java.io.Serializable{
         ArrayList<Item> transistorPairs = new ArrayList<Item>();
 
         for(Room r: allRooms){
-            allItems.addAll( r.getItems() );
+            allItems.addAll( r.GetItems() );
         }
         ArrayList<Player> allPlayers = getPlayers();
         for(Player p: allPlayers){

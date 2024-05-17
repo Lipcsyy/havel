@@ -41,7 +41,8 @@ public class Room implements java.io.Serializable , IObservable {
     protected int idNumberCopy = 1;
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
-    public List<Item> getItems(){return items;}
+
+    public List<Item> GetItems(){return items;}
 
     //-----------CONSTRUCTOR--------------------------
 
@@ -74,7 +75,7 @@ public class Room implements java.io.Serializable , IObservable {
         this.items = new ArrayList<Item>();
         this.players = new ArrayList<Player>();
 
-        for ( var i : room.getItems() ) {
+        for ( var i : room.GetItems() ) {
             this.AddItem(i);
         }
 

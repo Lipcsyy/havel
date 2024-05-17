@@ -1,7 +1,6 @@
 package Controller;
 import Enums.EGameMode;
 import Interfaces.IObserver;
-import Map.GameMap;
 import Room.*;
 import GameManager.*;
 import Player.*;
@@ -10,7 +9,7 @@ import Views.ItemView;
 import Views.PlayerView;
 import Views.RoomView;
 import Panels.*;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 
 public class GameController implements IObserver {
@@ -27,7 +26,7 @@ public class GameController implements IObserver {
 
     HashMap<Item, ItemView > itemViews = new HashMap<Item, ItemView>();
 
-    public HashMap<Student, PlayerView> studentViews = new HashMap<Student, PlayerView>();
+    public HashMap<Student, PlayerView> studentToViews = new HashMap<Student, PlayerView>();
 
     private boolean isRunning = false;
 
@@ -39,9 +38,9 @@ public class GameController implements IObserver {
 
         this.isRunning = true;
 
-        System.out.println(studentViews.size());
+        System.out.println(studentToViews.size());
 
-        for ( Student student : studentViews.keySet() ) {
+        for ( Student student : studentToViews.keySet() ) {
             System.out.println("Adding observer");
             student.GetRoom().AddObserver(this );
         }
@@ -89,22 +88,31 @@ public class GameController implements IObserver {
 
     public void Render() {
 
-        System.out.println("Rendering");
 
-       for ( Student studentView : studentViews.keySet() ) {
-            studentViews.get(studentView).Render(gamePanel);
+       int studentIndex = 0;
+       for ( Student studentView : studentToViews.keySet() ) {
+           studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
+           System.out.println(studentIndex);
+           studentIndex++;
        }
 
-       HashMap<Room,RoomView> studentRoomViews = new HashMap<Room, RoomView>();
+        //rendering the room the student is in
+        for ( Student student : studentToViews.keySet() ) {
 
-       for ( Student studentView : studentViews.keySet() ) {
-           roomViews.get(studentView.GetRoom()).Render();
-           studentRoomViews.put(  studentView.GetRoom() ,roomViews.get(studentView.GetRoom()));
-       }
+            Room room = student.GetRoom();
 
-       for ( Room room : studentRoomViews.keySet() ) {
-           studentRoomViews.get(room).Render();
-       }
+            if (roomViews.containsKey(room)) {
+                roomViews.get(room).Render(gamePanel.GetGameConsoles().get(0));
+            }
+
+            room.GetItems().forEach(item -> {
+                if (itemViews.containsKey(item)) {
+                    itemViews.get(item).Render(gamePanel.GetGameConsoles().get(0));
+                }
+            });
+
+        }
+
     }
 
     public HashMap<Player, PlayerView> GetPlayerViews() {

@@ -1,8 +1,17 @@
 package Views;
 import Interfaces.IObserver;
 
-public class RoomView {
-    public void Render() {
-        // TODO implement here
+import javax.swing.*;
+import java.awt.*;
+
+public class RoomView extends JPanel {
+
+    public RoomView() {
+        this.setSize(300, 300);
+        this.setBackground(Color.BLACK);
+    }
+
+    public void Render(JPanel gamePanel) {
+        gamePanel.add(this);
     }
 }
