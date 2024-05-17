@@ -49,20 +49,4 @@ public class MazeDisplay extends JPanel {
             }
         }
     }
-
-    public static void createAndShowGUI(GameMap mazeGenerator) {
-        JFrame frame = new JFrame("Maze");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new MazeDisplay(mazeGenerator));
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        GameMap maze = new GameMap(20, 20); // Adjust size as needed
-        maze.generateMaze();
-
-        createAndShowGUI(maze);
-    }
 }

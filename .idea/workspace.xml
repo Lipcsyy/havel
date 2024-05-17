@@ -7,15 +7,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="idk">
-      <change afterPath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: connected the map with the rooms">
+      <change afterPath="$PROJECT_DIR$/src/Enums/EGameMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/LoadFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/LoadFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logger/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/GasRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/GasRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
-    <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="Changes by Madia" />
+    <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MenuPanel.java" afterDir="false" />
+    </list>
+    <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="Changes by Madia">
+      <change afterPath="$PROJECT_DIR$/src/Enums/EVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/CommandInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/FakeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/FakeItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logger/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logger/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+    </list>
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,14 +49,85 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Panels/MenuPanel.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="35" end1="37" start2="37" end2="37" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="57" end1="57" start2="57" end2="59" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="68" end1="68" start2="70" end2="72" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="69" end1="70" start2="73" end2="74" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="71" end1="72" start2="75" end2="76" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="73" end1="74" start2="77" end2="78" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="75" end1="76" start2="79" end2="79" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="78" end1="78" start2="81" end2="83" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="83" end1="84" start2="88" end2="89" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="85" end1="86" start2="90" end2="91" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="87" end1="88" start2="92" end2="93" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="89" end1="90" start2="94" end2="94" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="92" end1="92" start2="96" end2="97" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Logger/Tester.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="50" end1="51" start2="51" end2="52" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="54" end1="55" start2="55" end2="56" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="56" end1="57" start2="57" end2="58" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="66" end1="67" start2="67" end2="68" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="72" end1="73" start2="73" end2="74" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="76" end1="77" start2="77" end2="78" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="79" end1="80" start2="80" end2="81" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="262" end1="264" start2="263" end2="265" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="274" end1="276" start2="275" end2="277" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="292" end1="294" start2="293" end2="295" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Panels/MazeDisplay.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="4" end1="5" start2="5" end2="5" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="6" end1="6" start2="6" end2="8" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="8" end1="8" start2="10" end2="11" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="11" end1="11" start2="14" end2="15" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="12" end1="13" start2="16" end2="17" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="14" end1="14" start2="18" end2="19" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="16" end1="17" start2="21" end2="21" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="27" end1="30" start2="31" end2="34" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="32" end1="36" start2="36" end2="40" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="49" end1="49" start2="53" end2="70" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="51" end1="67" start2="72" end2="72" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Panels/GamePanel.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="4" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="5" end1="5" start2="6" end2="7" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="20" end1="21" start2="22" end2="23" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="41" end1="43" start2="43" end2="43" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="50" end1="52" start2="50" end2="50" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="78" end1="79" start2="76" end2="80" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="80" end1="82" start2="81" end2="84" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+        <range start1="83" end1="84" start2="85" end2="86" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Commander/CommandInterpreter.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="7" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+        <range start1="6" end1="6" start2="8" end2="9" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="7" end1="7" start2="10" end2="11" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="51" end1="52" start2="55" end2="56" changelist="6e8fb268-c513-43ca-ad65-5217f82aa710" />
+      </ranges>
+    </file>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -51,6 +146,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MazeDisplay.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -84,11 +180,30 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="MazeDisplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Panels.MazeDisplay" />
+      <module name="havel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Panels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MazeDisplay" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -120,9 +235,9 @@
       <workItem from="1715179697870" duration="803000" />
       <workItem from="1715234805205" duration="9000" />
       <workItem from="1715252473338" duration="2454000" />
-      <workItem from="1715254990617" duration="662000" />
-      <workItem from="1715255669248" duration="3089000" />
-      <workItem from="1715261280746" duration="13147000" />
+      <workItem from="1715254990617" duration="505000" />
+      <workItem from="1715873350859" duration="4279000" />
+      <workItem from="1715879255941" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -396,23 +511,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715178516693</updated>
     </task>
-    <task id="LOCAL-00035" summary="MenuButton created and applied">
-      <option name="closed" value="true" />
-      <created>1715255584917</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1715255584917</updated>
-    </task>
-    <task id="LOCAL-00036" summary="idk">
-      <option name="closed" value="true" />
-      <created>1715260906452</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1715260906452</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,11 +552,18 @@
     <MESSAGE value="All panel classes are added, navigation solved" />
     <MESSAGE value="primitive gameconsoles and inventoryconsoles added" />
     <MESSAGE value="pausepanel logic done" />
-    <MESSAGE value="MenuButton created and applied" />
-    <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="pausepanel logic done" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameManager/GameManager.java</url>
+          <line>400</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="GameManager.GameManager" memberName="map" />

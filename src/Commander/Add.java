@@ -79,17 +79,17 @@ public class Add implements ICommand {
                 break;
 
             case "Room":
-                room = new Room( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                room = new Room( Integer.parseInt( params[ 1 ] ), CommandInterpreter.gameManager );
                 System.out.println( room.id );
                 break;
 
             case "GasRoom":
-                GasRoom gasRoom = new GasRoom( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                GasRoom gasRoom = new GasRoom( Integer.parseInt( params[ 1 ] ), CommandInterpreter.gameManager );
                 System.out.println( gasRoom.id );
                 break;
 
             case "MagicRoom":
-                MagicRoom magicRoom = new MagicRoom( Integer.parseInt( params[ 1 ] ), new ArrayList< Item >(), new ArrayList< Room >(), CommandInterpreter.gameManager );
+                MagicRoom magicRoom = new MagicRoom( Integer.parseInt( params[ 1 ] ), CommandInterpreter.gameManager );
                 System.out.println( magicRoom.id );
                 break;
 

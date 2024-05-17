@@ -3,6 +3,8 @@ package Map;
 import java.util.*;
 import java.util.stream.Collectors;
 import Room.Room;
+import GameManager.GameManager;
+import Views.RoomView;
 
 public class GameMap {
     private final int width;
@@ -13,13 +15,14 @@ public class GameMap {
     private static final int N = 1, S = 2, E = 4, W = 8;
     private static final int[] DIRECTIONS = {N, S, E, W};
 
-    public GameMap(int width, int height) {
+    public GameMap(int width, int height, GameManager gameManager) {
         this.width = width;
         this.height = height;
         // Initialize the graph with all cells having no neighbors
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                Room cell = new Room();
+                Room cell = new Room((new Random()).nextInt(0,5),gameManager);
+                gameManager.GetGameController().SetRoomView(cell);
                 cell.setCoordinates(x, y);
                 adjacencyList.put(cell, new HashSet<>());
             }
@@ -27,15 +30,12 @@ public class GameMap {
     }
 
     public void generateMaze() {
-        System.out.println("Generating maze...");
         // Start with a random cell
         Room startCell = getRandomCell();
         startCell.in = true;
         addFrontier(startCell);
 
         while (!allCellsIn()) {
-
-            System.out.println("Cells in: " + adjacencyList.keySet().stream().filter(c -> c.in).count() + " / " + adjacencyList.size());
 
             Room frontierCell = removeRandomFrontierCell();
             List<Room> inNeighbors = getInNeighbors(frontierCell);
@@ -46,11 +46,9 @@ public class GameMap {
                 addFrontier(frontierCell);
             }
         }
-
-        System.out.println("Maze generated!");
     }
 
-    private Room getRandomCell() {
+    public Room getRandomCell() {
         int x = rand.nextInt(width);
         int y = rand.nextInt(height);
         return findCell(x, y);

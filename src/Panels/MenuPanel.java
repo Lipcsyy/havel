@@ -1,6 +1,8 @@
 package Panels;
 
 import Buttons.MenuButton;
+import Controller.GameController;
+import Enums.EGameMode;
 import Map.GameMap;
 
 import javax.swing.*;
@@ -34,8 +36,6 @@ public class MenuPanel extends JPanel {
 
         setBackground(Color.GRAY);
 
-        SetButtons();
-
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS)); // Set layout to BoxLayout
         buttonPanel.setBackground(Color.GRAY);
@@ -55,6 +55,8 @@ public class MenuPanel extends JPanel {
         add(Box.createVerticalGlue()); // Add vertical glue between topPanel and buttonPanel
         add(buttonPanel);
         add(Box.createVerticalGlue()); // Add vertical glue after buttonPanel
+
+        SetButtons();
     }
 
     private void SetButtons() {
@@ -66,30 +68,33 @@ public class MenuPanel extends JPanel {
 
         singlePlayer.addActionListener(event -> {
 
+            System.out.println("Single Player ACTION LISTENER");
+
             // make the maze and add it to the panel
-            GameMap maze = new GameMap(20, 20);
+            /*GameMap maze = new GameMap(20, 20);
             maze.generateMaze();
-            GameFrame.singleGamePanel.SetMazeDisplay(maze);
+            GameFrame.singleGamePanel.SetMazeDisplay(maze);*/
 
-            // set the previous panel and set focus
+            // set the previous panel and set focus and start the game
             GameFrame.previousPanel = GameFrame.singleGamePanel;
-
             GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
             GameFrame.singleGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
+            System.out.println("Single Player");
+            GameFrame.singleGamePanel.InitializeGame();
         });
 
         multiPlayer.addActionListener(event -> {
 
             // make the maze and add it to the panel
-            GameMap maze = new GameMap(20, 20);
+            /*GameMap maze = new GameMap(20, 20);
             maze.generateMaze();
-            GameFrame.multiGamePanel.SetMazeDisplay(maze);
+            GameFrame.multiGamePanel.SetMazeDisplay(maze);*/
 
-            // set the previous panel and set focus
+            // set the previous panel and set focus and start the game
             GameFrame.previousPanel = GameFrame.multiGamePanel;
-
             GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
             GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "MULTI" panel
+            GameFrame.multiGamePanel.InitializeGame();
         });
 
         loadGameButton.addActionListener( event -> {

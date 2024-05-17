@@ -1,8 +1,10 @@
 package Panels;
 
 import Controller.GameController;
+import Enums.EGameMode;
 import GameManager.GameManager;
 import Map.GameMap;
+import Views.PlayerView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +20,7 @@ public class GamePanel extends JPanel {
     private JPanel containerPanel;
     private GameController gameController;
 
-    public GamePanel(){
+    public GamePanel(EGameMode gameMode){
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int SCREEN_WIDTH = (int) screenSize.getWidth();
@@ -39,16 +41,12 @@ public class GamePanel extends JPanel {
         mazeDisplayArea = new JPanel();
         mazeDisplayArea.setPreferredSize(new Dimension((int)Math.round((float) SCREEN_WIDTH / 3), SCREEN_HEIGHT));
         mazeDisplayArea.setBackground(Color.GRAY);
-        mazeDisplay = new MazeDisplay(new GameMap(10,10));
-        mazeDisplayArea.add(mazeDisplay);
 
         // Set the layout of the GamePanel to BorderLayout
         setLayout(new BorderLayout());
 
         add(containerPanel, BorderLayout.WEST);
         add(mazeDisplayArea, BorderLayout.EAST);
-
-        // Initialize the GameController
 
     }
 
@@ -76,11 +74,15 @@ public class GamePanel extends JPanel {
         containerPanel.add(inventoryConsoles.get(inventoryConsoles.size()-1)); // Add the console to containerPanel
     }
 
-    public void SetMazeDisplay(GameMap maze){
+    public void AddPlayerView(JPanel playerView) {
+        playerView.setAlignmentX(Component.LEFT_ALIGNMENT);
+        gameConsoles.get(0).add(playerView);
+    }
 
-        mazeDisplayArea.remove(mazeDisplay);
-        mazeDisplay = new MazeDisplay(maze);
+    public void InitializeGame() {
+        gameController = new GameController(EGameMode.SINGLEPLAYER, this);
+        mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
         mazeDisplayArea.add(mazeDisplay);
-
+        gameController.StartGame();
     }
 }

@@ -4,7 +4,9 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 import GameManager.GameManager;
+import Panels.GamePanel;
 
+import javax.swing.*;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 

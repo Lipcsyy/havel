@@ -48,18 +48,16 @@ public class Room implements java.io.Serializable , IObservable {
     /**
      * This is the constructor of the room class.
      * @param capacity The capacity of the room.
-     * @param items The items in the room.
-     * @param neighbours The neighbours of the room.
      */
-    public Room(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager){
+    public Room(int capacity,  GameManager gameManager){
 
-        this.capacity = capacity;
-        this.items = items;
-        this.players = new ArrayList<>();
         this.gameManager = gameManager;
         this.id = "Room_" + idNumber++;
 
-        gameManager.AddRoom(this);
+        this.capacity = capacity;
+        this.items = new ArrayList<Item>();
+        this.players = new ArrayList<>();
+
     }
 
     //Copy constructor
@@ -91,7 +89,6 @@ public class Room implements java.io.Serializable , IObservable {
 
     }
 
-    public Room(){}
 
     public Room setCoordinates(int x, int y) {
         this.x = x;

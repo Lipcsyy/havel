@@ -1,4 +1,6 @@
 package Panels;
+import Enums.EGameMode;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -6,8 +8,8 @@ public class GameFrame extends JFrame {
     public static CardLayout layout = new CardLayout();
     public static JPanel mainPanel = new JPanel();
     public static MenuPanel menuPanel = new MenuPanel();
-    public static GamePanel singleGamePanel = new GamePanel();
-    public static GamePanel multiGamePanel = new GamePanel();
+    public static GamePanel singleGamePanel = new GamePanel(EGameMode.SINGLEPLAYER);
+    public static GamePanel multiGamePanel = new GamePanel(EGameMode.MULTIPLAYER);
     public static PausePanel pausePanel = new PausePanel();
     public static LoaderPanel loaderPanel = new LoaderPanel();
     public static JPanel previousPanel;
