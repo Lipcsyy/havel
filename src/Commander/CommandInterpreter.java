@@ -3,6 +3,8 @@ package Commander;
 import java.sql.SQLOutput;
 import java.util.*;
 
+import Controller.GameController;
+import Enums.EGameMode;
 import GameManager.GameManager;
 import Panels.GamePanel;
 
@@ -51,7 +53,7 @@ public class CommandInterpreter {
         System.out.println("Info <PlayerType | RoomType | ItemType | GameManager>");
         System.out.println("LoadFromFile <FilePath>");
 
-        gameManager = new GameManager();
+        gameManager = new GameManager( EGameMode.SINGLEPLAYER);
         isRunning = true;
         Scanner scanner = new Scanner( System.in );
 

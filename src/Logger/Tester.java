@@ -1,4 +1,5 @@
 package Logger;
+import Enums.EGameMode;
 import GameManager.GameManager;
 import Room.*;
 import Item.*;
@@ -48,7 +49,7 @@ public class Tester {
     static Student student2;
     static Teacher teacher;
 
-    static GameManager gameManager = new GameManager();
+    static GameManager gameManager = new GameManager( EGameMode.SINGLEPLAYER);
 
     private static void SetupStudentEntersRoomWhereTeacher() {
 
