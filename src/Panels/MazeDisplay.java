@@ -32,37 +32,40 @@ public class MazeDisplay extends JPanel {
         g.setColor(Color.green);
         g.fillRect(0, 0, getWidth(), getHeight());
 
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(10));
+
         for (Room room : adjacencyList.keySet()) {
             int roomX = room.x * roomSize;
             int roomY = room.y * roomSize;
 
             // Draw room background
-            g.setColor(Color.white);
-            g.fillRect(roomX, roomY, roomSize, roomSize);
+            g2d.setColor(Color.white);
+            g2d.fillRect(roomX, roomY, roomSize, roomSize);
 
             // Draw walls for the room
-            g.setColor(Color.black);
+            g2d.setColor(Color.black);
             if (!adjacencyList.get(room).contains(findCell(room.x, room.y - 1))) { // Top wall
-                g.drawLine(roomX, roomY, roomX + roomSize, roomY);
+                g2d.drawLine(roomX, roomY, roomX + roomSize, roomY);
             }
             if (!adjacencyList.get(room).contains(findCell(room.x, room.y + 1))) { // Bottom wall
-                g.drawLine(roomX, roomY + roomSize, roomX + roomSize, roomY + roomSize);
+                g2d.drawLine(roomX, roomY + roomSize, roomX + roomSize, roomY + roomSize);
             }
             if (!adjacencyList.get(room).contains(findCell(room.x - 1, room.y))) { // Left wall
-                g.drawLine(roomX, roomY, roomX, roomY + roomSize);
+                g2d.drawLine(roomX, roomY, roomX, roomY + roomSize);
             }
             if (!adjacencyList.get(room).contains(findCell(room.x + 1, room.y))) { // Right wall
-                g.drawLine(roomX + roomSize, roomY, roomX + roomSize, roomY + roomSize);
+                g2d.drawLine(roomX + roomSize, roomY, roomX + roomSize, roomY + roomSize);
             }
 
             // Draw players in the room
             int playerIndicatorSize = 10;
             for (Student student : gameController.studentToViews.keySet()) {
                 if (student.GetRoom() == room) {
-                    g.setColor(Color.RED);
+                    g2d.setColor(Color.RED);
                     int playerX = roomX + (roomSize - playerIndicatorSize) / 2;
                     int playerY = roomY + (roomSize - playerIndicatorSize) / 2;
-                    g.fillOval(playerX, playerY, playerIndicatorSize, playerIndicatorSize);
+                    g2d.fillOval(playerX, playerY, playerIndicatorSize, playerIndicatorSize);
                 }
             }
         }

@@ -18,8 +18,8 @@ public class GameMap {
         this.width = width;
         this.height = height;
         // Initialize the graph with all cells having no neighbors
-        for (int x = 0; x < height; x++) {
-            for (int y = 0; y < width; y++) {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
                 Room cell = new Room((new Random()).nextInt(0,5),gameManager);
                 gameManager.GetGameController().SetRoomView(cell);
                 cell.setCoordinates(x, y);
