@@ -28,63 +28,53 @@ public class MazeDisplay extends JPanel {
         HashMap<Room, Set<Room>> adjacencyList = mazeGenerator.getAdjacencyList();
         int roomSize = 300 / mazeGenerator.getWidth(); // Calculate Room size based on maze width and panel size
 
-        this.setLayout(null); // Set the layout manager to null for absolute positioning
+        // Set background color for the whole panel
+        g.setColor(Color.green);
+        g.fillRect(0, 0, getWidth(), getHeight());
 
         for (Room room : adjacencyList.keySet()) {
             int roomX = room.x * roomSize;
             int roomY = room.y * roomSize;
 
-            // We need to add a JPanel for each room
-            JPanel roomPanel = new JPanel();
-            roomPanel.setBounds(roomX, roomY, roomSize, roomSize);
-            roomPanel.setBackground(Color.green);
-            roomPanel.setLayout(null); // Set layout manager to null for absolute positioning of the red dot
+            // Draw room background
+            g.setColor(Color.white);
+            g.fillRect(roomX, roomY, roomSize, roomSize);
 
-            ArrayList<JPanel> playerIndicators = new ArrayList<>();
+            // Draw walls for the room
+            g.setColor(Color.black);
+            if (!adjacencyList.get(room).contains(findCell(room.x, room.y - 1))) { // Top wall
+                g.drawLine(roomX, roomY, roomX + roomSize, roomY);
+            }
+            if (!adjacencyList.get(room).contains(findCell(room.x, room.y + 1))) { // Bottom wall
+                g.drawLine(roomX, roomY + roomSize, roomX + roomSize, roomY + roomSize);
+            }
+            if (!adjacencyList.get(room).contains(findCell(room.x - 1, room.y))) { // Left wall
+                g.drawLine(roomX, roomY, roomX, roomY + roomSize);
+            }
+            if (!adjacencyList.get(room).contains(findCell(room.x + 1, room.y))) { // Right wall
+                g.drawLine(roomX + roomSize, roomY, roomX + roomSize, roomY + roomSize);
+            }
 
+            // Draw players in the room
+            int playerIndicatorSize = 10;
             for (Student student : gameController.studentToViews.keySet()) {
                 if (student.GetRoom() == room) {
-                    JPanel playerPanel = gameController.studentToViews.get(student);
-
-                    // Create a copy of the playerPanel
-                    JPanel playerIndicator = new JPanel();
-                    playerIndicator.setBackground(Color.RED);
-                    int indicatorSize = 10;
-
-                    playerIndicator.setSize(indicatorSize, indicatorSize);
-                    playerIndicators.add(playerIndicator);
+                    g.setColor(Color.RED);
+                    int playerX = roomX + (roomSize - playerIndicatorSize) / 2;
+                    int playerY = roomY + (roomSize - playerIndicatorSize) / 2;
+                    g.fillOval(playerX, playerY, playerIndicatorSize, playerIndicatorSize);
                 }
             }
-
-            int playerCount = playerIndicators.size();
-
-            if (playerCount == 1) {
-                JPanel playerIndicator = playerIndicators.get(0);
-                int indicatorSize = playerIndicator.getWidth();
-                int indicatorX = (roomSize - indicatorSize) / 2;
-                int indicatorY = (roomSize - indicatorSize) / 2;
-                playerIndicator.setBounds(indicatorX, indicatorY, indicatorSize, indicatorSize);
-                roomPanel.add(playerIndicator);
-            } else if (playerCount > 1) {
-                int totalWidth = playerCount * 10 + (playerCount - 1) * 5;
-                int startX = (roomSize - totalWidth) / 2;
-
-                for (int i = 0; i < playerCount; i++) {
-                    JPanel playerIndicator = playerIndicators.get(i);
-                    int indicatorSize = playerIndicator.getWidth();
-                    int indicatorX = startX + i * (indicatorSize + 5);
-                    int indicatorY = (roomSize - indicatorSize) / 2;
-                    playerIndicator.setBounds(indicatorX, indicatorY, indicatorSize, indicatorSize);
-                    roomPanel.add(playerIndicator);
-                }
-            }
-
-            if (playerCount > 0) {
-                roomPanel.setBackground(Color.WHITE);
-            }
-
-            this.add(roomPanel);
         }
+    }
+
+    private Room findCell(int x, int y) {
+        for (Room cell : mazeGenerator.getAdjacencyList().keySet()) {
+            if (cell.x == x && cell.y == y) {
+                return cell;
+            }
+        }
+        return null;
     }
 
 }
