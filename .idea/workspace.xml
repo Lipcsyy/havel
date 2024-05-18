@@ -7,12 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="az ajtók kinda jó">
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="az ajtók mostmár jó (átméretezés)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GameConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GameConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
     <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="" />
@@ -158,7 +157,7 @@
       <workItem from="1716016260648" duration="2759000" />
       <workItem from="1716019198060" duration="1894000" />
       <workItem from="1716021308497" duration="7525000" />
-      <workItem from="1716031551569" duration="10213000" />
+      <workItem from="1716031551569" duration="12551000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -448,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716054139710</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="az ajtók mostmár jó (átméretezés)">
+      <option name="closed" value="true" />
+      <created>1716056400131</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1716056400131</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initinal Commit" />
     <MESSAGE value="Added Player class" />
     <MESSAGE value="Added Item class" />
     <MESSAGE value="Added Room Class" />
@@ -491,7 +497,8 @@
     <MESSAGE value="pausepanel logic done" />
     <MESSAGE value="feat: connected the map with the rooms" />
     <MESSAGE value="az ajtók kinda jó" />
-    <option name="LAST_COMMIT_MESSAGE" value="az ajtók kinda jó" />
+    <MESSAGE value="az ajtók mostmár jó (átméretezés)" />
+    <option name="LAST_COMMIT_MESSAGE" value="az ajtók mostmár jó (átméretezés)" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

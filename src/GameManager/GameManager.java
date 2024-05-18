@@ -72,8 +72,9 @@ public class GameManager implements java.io.Serializable{
 
     private void InitalizeGame(EGameMode gameMode) {
 
-        map = new GameMap(5,6, this);
+        map = new GameMap(4,4, this);
         map.generateMaze();
+        map.displayMaze();
 
         if ( gameMode == EGameMode.MULTIPLAYER ) {
 

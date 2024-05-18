@@ -21,6 +21,7 @@ public class MazeDisplay extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawMaze(g);
+
     }
 
     private void drawMaze(Graphics g) {
@@ -36,7 +37,7 @@ public class MazeDisplay extends JPanel {
             // We need to add a JPanel for each room
             JPanel roomPanel = new JPanel();
             roomPanel.setBounds(roomX, roomY, roomSize, roomSize);
-            roomPanel.setBackground(Color.BLACK);
+            roomPanel.setBackground(Color.green);
             roomPanel.setLayout(null); // Set layout manager to null for absolute positioning of the red dot
 
             ArrayList<JPanel> playerIndicators = new ArrayList<>();

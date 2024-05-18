@@ -128,6 +128,7 @@ public class GameController implements IObserver {
                 //for(RoomView rView : roomViews.values())
                 //    rView.Initialize(roomWidth, roomHeight);
                 roomView.Initialize(roomWidth, roomHeight);
+                System.out.println("roomindex: " + room.GetX() + " " + room.GetY());
             }
 
             for (Item item : room.GetItems()) {
@@ -137,6 +138,8 @@ public class GameController implements IObserver {
                 }
             }
             studentIndex++;
+
+
 
         }
 
