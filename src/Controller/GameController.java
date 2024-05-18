@@ -9,6 +9,7 @@ import Views.ItemView;
 import Views.PlayerView;
 import Views.DoorView;
 import Panels.*;
+import Views.RoomView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public class GameController implements IObserver {
     //This is the room of the student
     private Room displayedRoom;
 
-    HashMap<Room, ArrayList<DoorView>> roomViews = new HashMap<Room, ArrayList<DoorView>>();
+    HashMap<Room, RoomView> roomViews = new HashMap<Room, RoomView>();
 
     HashMap<Player, PlayerView > playerViews = new HashMap<Player, PlayerView>();
 
@@ -93,7 +94,7 @@ public class GameController implements IObserver {
 
        int studentIndex = 0;
        for ( Student studentView : studentToViews.keySet() ) {
-           studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
+           //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
            System.out.println(studentIndex);
            studentIndex++;
        }
@@ -101,38 +102,32 @@ public class GameController implements IObserver {
         //rendering the room the student is in
         studentIndex = 0;
         for ( Student student : studentToViews.keySet() ) {
-
             Room room = student.GetRoom();
 
-            Set<Room> neighbours = room.GetNeighbours();
-            boolean[] neighbourDirections = new boolean[4];
-            for(Room neighbour : neighbours) {
-                if (neighbour.GetX() == room.GetX() + 1) {
-                    neighbourDirections[0] = true;
-                } else if (neighbour.GetX() == room.GetX() - 1) {
-                    neighbourDirections[1] = true;
-                } else if (neighbour.GetY() == room.GetY() + 1) {
-                    neighbourDirections[2] = true;
-                } else if (neighbour.GetY() == room.GetY() - 1) {
-                    neighbourDirections[3] = true;
-                }
-            }
-
             if (roomViews.containsKey(room)) {
-                ArrayList<DoorView> doorViews = roomViews.get(room);
-                for(int i = 0; i < 4; i++) {
-                    if (neighbourDirections[i]) {
-                        //doorViews.get(i).gbc = gamePanel.GetGameConsoles().get(studentIndex).gbc;
-                        doorViews.get(i).Render(gamePanel.GetGameConsoles().get(studentIndex));
-                        System.out.println("Rendered a door to: " + studentIndex);
+                RoomView roomView = roomViews.get(room);
+
+                Set<Room> neighbours = room.GetNeighbours();
+                for(Room neighbour : neighbours) {
+                    if (neighbour.GetX() == room.GetX() + 1) {
+                        roomViews.get(room).hasRightDoor = true;
+                    } else if (neighbour.GetX() == room.GetX() - 1) {
+                        roomViews.get(room).hasLeftDoor = true;
+                    } else if (neighbour.GetY() == room.GetY() + 1) {
+                        roomViews.get(room).hasBottomDoor = true;
+                    } else if (neighbour.GetY() == room.GetY() - 1) {
+                        roomViews.get(room).hasTopDoor = true;
                     }
                 }
 
+                //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
+                gamePanel.GetGameConsoles().get(studentIndex).addRoomView(roomView);
+                roomView.Initialize();
             }
 
             for (Item item : room.GetItems()) {
                 if (itemViews.containsKey(item)) {
-                    itemViews.get(item).Render(gamePanel.GetGameConsoles().get(studentIndex));
+                    //itemViews.get(item).Render(gamePanel.GetGameConsoles().get(studentIndex));
                     System.out.println("Rendered an item to: " + studentIndex);
                 }
             }
@@ -159,12 +154,8 @@ public class GameController implements IObserver {
     }
 
     public void SetRoomView(Room room) {
-        this.roomViews.put(room, new ArrayList<DoorView>(){{
-            add(new DoorView(0));
-            add(new DoorView(1));
-            add(new DoorView(2));
-            add(new DoorView(3));
-        }});
+        RoomView roomView = new RoomView(false, false, false, false);
+        this.roomViews.put(room, roomView);
     }
 
 }
