@@ -25,10 +25,10 @@ public class RoomView extends JPanel {
         setBackground(Color.lightGray);
         setLayout(null); // No layout manager for absolute positioning
     }
-    public void Initialize(){
+    public void Initialize(int width, int height) {
         // Room dimensions
-        int roomWidth = getParent().getWidth(); //need the parent to set the size
-        int roomHeight = getParent().getHeight();
+        int roomWidth = width; //need the parent to set the size
+        int roomHeight = height;
         this.setPreferredSize(new Dimension(roomWidth, roomHeight));
 
         // Door dimensions
