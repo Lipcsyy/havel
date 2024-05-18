@@ -85,6 +85,7 @@ public class MenuPanel extends JPanel {
 
         multiPlayer.addActionListener(event -> {
 
+            System.out.println("Multi Player ACTION LISTENER");
             // make the maze and add it to the panel
             /*GameMap maze = new GameMap(20, 20);
             maze.generateMaze();

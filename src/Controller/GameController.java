@@ -7,10 +7,12 @@ import Player.*;
 import Item.*;
 import Views.ItemView;
 import Views.PlayerView;
-import Views.RoomView;
+import Views.DoorView;
 import Panels.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class GameController implements IObserver {
 
@@ -20,7 +22,7 @@ public class GameController implements IObserver {
     //This is the room of the student
     private Room displayedRoom;
 
-    HashMap<Room, RoomView> roomViews = new HashMap<Room, RoomView >();
+    HashMap<Room, ArrayList<DoorView>> roomViews = new HashMap<Room, ArrayList<DoorView>>();
 
     HashMap<Player, PlayerView > playerViews = new HashMap<Player, PlayerView>();
 
@@ -97,19 +99,44 @@ public class GameController implements IObserver {
        }
 
         //rendering the room the student is in
+        studentIndex = 0;
         for ( Student student : studentToViews.keySet() ) {
 
             Room room = student.GetRoom();
 
-            if (roomViews.containsKey(room)) {
-                roomViews.get(room).Render(gamePanel.GetGameConsoles().get(0));
+            Set<Room> neighbours = room.GetNeighbours();
+            boolean[] neighbourDirections = new boolean[4];
+            for(Room neighbour : neighbours) {
+                if (neighbour.GetX() == room.GetX() + 1) {
+                    neighbourDirections[0] = true;
+                } else if (neighbour.GetX() == room.GetX() - 1) {
+                    neighbourDirections[1] = true;
+                } else if (neighbour.GetY() == room.GetY() + 1) {
+                    neighbourDirections[2] = true;
+                } else if (neighbour.GetY() == room.GetY() - 1) {
+                    neighbourDirections[3] = true;
+                }
             }
 
-            room.GetItems().forEach(item -> {
-                if (itemViews.containsKey(item)) {
-                    itemViews.get(item).Render(gamePanel.GetGameConsoles().get(0));
+            if (roomViews.containsKey(room)) {
+                ArrayList<DoorView> doorViews = roomViews.get(room);
+                for(int i = 0; i < 4; i++) {
+                    if (neighbourDirections[i]) {
+                        //doorViews.get(i).gbc = gamePanel.GetGameConsoles().get(studentIndex).gbc;
+                        doorViews.get(i).Render(gamePanel.GetGameConsoles().get(studentIndex));
+                        System.out.println("Rendered a door to: " + studentIndex);
+                    }
                 }
-            });
+
+            }
+
+            for (Item item : room.GetItems()) {
+                if (itemViews.containsKey(item)) {
+                    itemViews.get(item).Render(gamePanel.GetGameConsoles().get(studentIndex));
+                    System.out.println("Rendered an item to: " + studentIndex);
+                }
+            }
+            studentIndex++;
 
         }
 
@@ -132,7 +159,12 @@ public class GameController implements IObserver {
     }
 
     public void SetRoomView(Room room) {
-        this.roomViews.put(room, new RoomView());
+        this.roomViews.put(room, new ArrayList<DoorView>(){{
+            add(new DoorView(0));
+            add(new DoorView(1));
+            add(new DoorView(2));
+            add(new DoorView(3));
+        }});
     }
 
 }

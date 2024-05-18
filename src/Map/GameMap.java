@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 import Room.Room;
 import GameManager.GameManager;
-import Views.RoomView;
 
 public class GameMap {
     private final int width;
