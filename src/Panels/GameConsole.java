@@ -29,6 +29,6 @@ public class GameConsole extends JPanel {
 
     public void addRoomView(RoomView roomView) {
         roomView.setBounds(0, 0, this.getWidth(), this.getHeight()); // Set the position and size of the RoomView within GameConsole
-        add(roomView);
+        this.add(roomView);
     }
 }

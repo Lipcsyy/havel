@@ -207,10 +207,13 @@ public abstract class Player implements java.io.Serializable {
 
         this.room.DecreasePassagesBeforeStickiness();
 
+        this.room.RemoveObserver(gameManager.GetGameController());
         this.room.RemovePlayer(this);
-        room.AddPlayer(this);
-        this.SetRoom(room);
 
+        room.AddPlayer(this);
+        room.AddObserver(gameManager.GetGameController());
+
+        this.SetRoom(room);
 
         for ( int i = 0; i < items.size(); i++ ) {
             items.get(i).DecreaseTurnsLeft(this);
@@ -230,6 +233,8 @@ public abstract class Player implements java.io.Serializable {
      * @param room The room to change to.
      */
     public void ChangeRoom(Room room) {
+
+        System.out.println("Changing motherfucking roooom");
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );

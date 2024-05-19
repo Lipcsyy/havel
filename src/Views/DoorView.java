@@ -2,8 +2,9 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
-public class DoorView extends JPanel {
+public class DoorView extends JButton {
 
     //int direction = 0;
     public DoorView() {
@@ -19,6 +20,18 @@ public class DoorView extends JPanel {
 
         // Fill the door area
         g.fillRect(0, 0, getWidth(), getHeight());
+    }
+
+    public void AddClickListener( ActionListener listener ) {
+        this.addActionListener(listener);
+    }
+
+    public void RemoveClickListener ( ActionListener listener ) {
+        this.removeActionListener(listener);
+    }
+
+    public void Render() {
+        paintComponent(getGraphics());
     }
 
 }

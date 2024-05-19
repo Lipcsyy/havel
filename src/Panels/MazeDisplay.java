@@ -24,6 +24,10 @@ public class MazeDisplay extends JPanel {
 
     }
 
+    public void Render() {
+        paintComponent(getGraphics());
+    }
+
     private void drawMaze(Graphics g) {
         HashMap<Room, Set<Room>> adjacencyList = mazeGenerator.getAdjacencyList();
         int roomSize = 300 / mazeGenerator.getWidth(); // Calculate Room size based on maze width and panel size
@@ -118,6 +122,8 @@ public class MazeDisplay extends JPanel {
         }
         return null;
     }
+
+
 
     /*
     //masik feketitett mazedisplay

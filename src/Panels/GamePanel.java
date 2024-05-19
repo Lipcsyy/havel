@@ -2,9 +2,6 @@ package Panels;
 
 import Controller.GameController;
 import Enums.EGameMode;
-import GameManager.GameManager;
-import Map.GameMap;
-import Views.PlayerView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,4 +81,13 @@ public class GamePanel extends JPanel {
     public ArrayList<GameConsole> GetGameConsoles() {
         return gameConsoles;
     }
+
+    //get inventoryConsoles
+    public ArrayList<InventoryConsole> GetInventoryConsoles(){return inventoryConsoles;}
+
+
+    public void Render() {
+        mazeDisplay.Render();
+    }
+
 }

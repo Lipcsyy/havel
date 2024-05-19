@@ -1,9 +1,7 @@
 package Panels;
 
 import Buttons.MenuButton;
-import Controller.GameController;
 import Enums.EGameMode;
-import Map.GameMap;
 
 import javax.swing.*;
 import java.awt.*;
