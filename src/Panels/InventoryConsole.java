@@ -9,5 +9,6 @@ public class InventoryConsole extends JPanel {
         setPreferredSize( new Dimension(width, height) );
         this.setFocusable(true);
         setBackground(Color.BLACK);
+        setLayout(new FlowLayout());
     }
 }

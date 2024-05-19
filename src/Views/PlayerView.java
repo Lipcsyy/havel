@@ -14,7 +14,7 @@ public class PlayerView extends JPanel {
     }
 
     public void Render(JPanel gamePanel) {
-        gamePanel.add(this, BorderLayout.CENTER);
+        gamePanel.add(this);
     }
 
 }

@@ -1,5 +1,8 @@
 package Views;
 
+import Controller.GameController;
+import Enums.EDirection;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -67,6 +70,36 @@ public class RoomView extends JPanel {
             rightDoor.setBounds(roomWidth - doorThickness, (roomHeight - doorLength) / 2, doorThickness, doorLength);
             rightDoor.setSize(doorThickness, doorLength);
             add(rightDoor);
+        }
+    }
+
+    public DoorView GetDoor(EDirection direction){
+        if(direction == EDirection.WEST) return leftDoor;
+        if(direction == EDirection.EAST) return rightDoor;
+        if(direction == EDirection.NORTH) return topDoor;
+        if (direction == EDirection.SOUTH) return bottomDoor;
+        return topDoor;
+    }
+
+    public void Render(int roomWidth, int roomHeight) {
+
+        Initialize(roomWidth, roomHeight);
+
+        if (hasTopDoor) {
+            topDoor.Render();
+            System.out.println("Rendering top door");
+        }
+        if (hasBottomDoor) {
+            bottomDoor.Render();
+            System.out.println("Rendering bottom door");
+        }
+        if (hasLeftDoor) {
+            leftDoor.Render();
+            System.out.println("Rendering left door");
+        }
+        if (hasRightDoor) {
+            rightDoor.Render();
+            System.out.println("Rendering right door");
         }
     }
 }

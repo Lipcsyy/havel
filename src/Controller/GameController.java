@@ -181,6 +181,8 @@ public class GameController implements IObserver {
                 }
 
                 //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
+
+
                 gamePanel.GetGameConsoles().get(studentIndex).addRoomView(roomView);
 
                 int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
@@ -193,8 +195,8 @@ public class GameController implements IObserver {
 
             for (Item item : room.GetItems()) {
                 if (itemViews.containsKey(item)) {
-                    //itemViews.get(item).Render(gamePanel.GetGameConsoles().get(studentIndex));
-                    //System.out.println("Rendered an item to: " + studentIndex);
+                    itemViews.get(item).Render(gamePanel.GetInventoryConsoles().get(studentIndex));
+                    System.out.println("Rendered an item to: " + studentIndex);
                 }
             }
             studentIndex++;
