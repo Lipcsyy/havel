@@ -107,17 +107,30 @@ public class GameController implements IObserver {
             if (roomViews.containsKey(room)) {
                 RoomView roomView = roomViews.get(room);
 
-                Set<Room> neighbours = room.GetNeighbours();
+                Set<Room> neighbours = gameManager.map.getAdjacencyList().get(room);
                 for(Room neighbour : neighbours) {
-                    if (neighbour.GetX() == room.GetX() + 1) {
-                        roomViews.get(room).hasRightDoor = true;
-                    } else if (neighbour.GetX() == room.GetX() - 1) {
-                        roomViews.get(room).hasLeftDoor = true;
-                    } else if (neighbour.GetY() == room.GetY() + 1) {
-                        roomViews.get(room).hasBottomDoor = true;
-                    } else if (neighbour.GetY() == room.GetY() - 1) {
-                        roomViews.get(room).hasTopDoor = true;
-                    }
+                    System.out.println("neighbour: " + neighbour.GetX() + " " + neighbour.GetY());
+//                    if (neighbour.GetX() == room.GetX() + 1) {
+//                        roomViews.get(room).hasRightDoor = true;
+//                    } else if (neighbour.GetX() == room.GetX() - 1) {
+//                        roomViews.get(room).hasLeftDoor = true;
+//                    } else if (neighbour.GetY() == room.GetY() + 1) {
+//                        roomViews.get(room).hasBottomDoor = true;
+//                    } else if (neighbour.GetY() == room.GetY() - 1) {
+//                        roomViews.get(room).hasTopDoor = true;
+//                    }
+                }
+                if (neighbours.contains(findCell(room.x, room.y - 1))) { // Top wall
+                    roomView.hasTopDoor = true;
+                }
+                if (neighbours.contains(findCell(room.x, room.y + 1))) { // Bottom wall
+                    roomView.hasBottomDoor = true;
+                }
+                if (neighbours.contains(findCell(room.x - 1, room.y))) { // Left wall
+                    roomView.hasLeftDoor = true;
+                }
+                if (neighbours.contains(findCell(room.x + 1, room.y))) { // Right wall
+                    roomView.hasRightDoor = true;
                 }
 
                 //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
@@ -128,22 +141,27 @@ public class GameController implements IObserver {
                 //for(RoomView rView : roomViews.values())
                 //    rView.Initialize(roomWidth, roomHeight);
                 roomView.Initialize(roomWidth, roomHeight);
-                System.out.println("roomindex: " + room.GetX() + " " + room.GetY());
+                System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
             }
 
             for (Item item : room.GetItems()) {
                 if (itemViews.containsKey(item)) {
                     //itemViews.get(item).Render(gamePanel.GetGameConsoles().get(studentIndex));
-                    System.out.println("Rendered an item to: " + studentIndex);
+                    //System.out.println("Rendered an item to: " + studentIndex);
                 }
             }
             studentIndex++;
-
-
-
         }
-
     }
+    private Room findCell(int x, int y) {
+        for (Room cell : gameManager.getRooms()) {
+            if (cell.x == x && cell.y == y) {
+                return cell;
+            }
+        }
+        return null;
+    }
+
 
     public HashMap<Player, PlayerView> GetPlayerViews() {
         return playerViews;
