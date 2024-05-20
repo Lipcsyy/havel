@@ -48,31 +48,51 @@ public class RoomView extends JPanel {
 
         // Add doors conditionally
         if (hasTopDoor) {
-            topDoor = new DoorView();
-            topDoor.setBounds((roomWidth - doorLength) / 2, 0, doorLength, doorThickness);
-            topDoor.setSize(doorLength, doorThickness);
-            add(topDoor);
+            if (topDoor == null) {
+                topDoor = new DoorView();
+                topDoor.setBounds((roomWidth - doorLength) / 2, 0, doorLength, doorThickness);
+                topDoor.setSize(doorLength, doorThickness);
+                add(topDoor);
+            }
+        } else if (topDoor != null) {
+            remove(topDoor);
+            topDoor = null;
         }
 
         if (hasBottomDoor) {
-            bottomDoor = new DoorView();
-            bottomDoor.setBounds((roomWidth - doorLength) / 2, roomHeight - doorThickness, doorLength, doorThickness);
-            bottomDoor.setSize(doorLength, doorThickness);
-            add(bottomDoor);
+            if (bottomDoor == null) {
+                bottomDoor = new DoorView();
+                bottomDoor.setBounds((roomWidth - doorLength) / 2, roomHeight - doorThickness, doorLength, doorThickness);
+                bottomDoor.setSize(doorLength, doorThickness);
+                add(bottomDoor);
+            }
+        } else if (bottomDoor != null) {
+            remove(bottomDoor);
+            bottomDoor = null;
         }
 
         if (hasLeftDoor) {
-            leftDoor = new DoorView();
-            leftDoor.setBounds(0, (roomHeight - doorLength) / 2, doorThickness, doorLength);
-            leftDoor.setSize(doorThickness, doorLength);
-            add(leftDoor);
+            if (leftDoor == null) {
+                leftDoor = new DoorView();
+                leftDoor.setBounds(0, (roomHeight - doorLength) / 2, doorThickness, doorLength);
+                leftDoor.setSize(doorThickness, doorLength);
+                add(leftDoor);
+            }
+        } else if (leftDoor != null) {
+            remove(leftDoor);
+            leftDoor = null;
         }
 
         if (hasRightDoor) {
-            rightDoor = new DoorView();
-            rightDoor.setBounds(roomWidth - doorThickness, (roomHeight - doorLength) / 2, doorThickness, doorLength);
-            rightDoor.setSize(doorThickness, doorLength);
-            add(rightDoor);
+            if (rightDoor == null) {
+                rightDoor = new DoorView();
+                rightDoor.setBounds(roomWidth - doorThickness, (roomHeight - doorLength) / 2, doorThickness, doorLength);
+                rightDoor.setSize(doorThickness, doorLength);
+                add(rightDoor);
+            }
+        } else if (rightDoor != null) {
+            remove(rightDoor);
+            rightDoor = null;
         }
 
         //this.add(studentView);
