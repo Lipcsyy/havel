@@ -81,8 +81,13 @@ public class GameManager implements java.io.Serializable{
             Student student1 = new Student( map.getRandomCell() , this);
             Student student2 = new Student(map.getRandomCell(), this);
 
+            //Adding the students to the studentToView
             gameController.studentToViews.put(student1, new PlayerView());
             gameController.studentToViews.put(student2, new PlayerView());
+
+            //Adding the students to the playerViews too
+            gameController.playerViews.put(student1, new PlayerView());
+            gameController.playerViews.put(student2, new PlayerView());
 
             //Add 10 teacher to the game
 
@@ -396,22 +401,6 @@ public class GameManager implements java.io.Serializable{
         return null;
     }
 
-    public void GameLoop(){
-        while( isRuning ) {
-            //akkor anyád
-            for ( Player p : players ) {
-                //p.move();
-            }
-
-            for ( Player p : players ) {
-                p.DecreaseItemsTurnsLeft();
-            }
-        }
-    }
-
-    public void SetGameController(GameController gameController) {
-        this.gameController = gameController;
-    }
 
     public GameController GetGameController() {
         return gameController;

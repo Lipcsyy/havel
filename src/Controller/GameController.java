@@ -23,16 +23,18 @@ public class GameController implements IObserver {
     public GameManager gameManager;
     private GamePanel gamePanel;
 
-    //This is the room of the student
-    private Room displayedRoom;
+    //-------------------------------------The views to the in game elements--------------------------------------
 
     HashMap<Room, RoomView> roomViews = new HashMap<Room, RoomView>();
 
-    HashMap<Player, PlayerView > playerViews = new HashMap<Player, PlayerView>();
+    public HashMap<Player, PlayerView > playerViews = new HashMap<Player, PlayerView>();
 
     HashMap<Item, ItemView > itemViews = new HashMap<Item, ItemView>();
 
     public HashMap<Student, PlayerView> studentToViews = new HashMap<Student, PlayerView>();
+
+
+    //-------------------------------------------------------------------------------------------------------------
 
     private boolean isRunning = false;
 
@@ -184,27 +186,31 @@ public class GameController implements IObserver {
                 //Adding the room view to the gamepanel's corresponding gameconsole
                 gamePanel.GetGameConsoles().get(studentIndex).AddRoomView(roomView);
 
-                //Adding the playerview to the roomview to render it
+                //ADDING VIEWS TO THE ROOM
                 PlayerView studentView = studentToViews.get(student);
-                roomView.add(studentView);
 
-                //Adding the item's view to the room to render them
-                ArrayList<ItemView> roomItemViews = itemViews.
+                ArrayList<PlayerView> viewToPlayersInRoom = new ArrayList<>();
 
-                //Adding the student view to the gamepanel
-
-                int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
-                int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
-
-                for (Item item : room.GetItems()) {
-                    if (itemViews.containsKey(item)) {
-                        ItemView actItemView = itemViews.get(item);
-                        roomView.add(actItemView);
-                        actItemView.Render();
+                for ( Player player : playerViews.keySet() ) {
+                    if (player != student) {
+                        PlayerView playerView = playerViews.get(player);
+                        viewToPlayersInRoom.add(playerView);
                     }
                 }
 
-                roomView.Render( roomWidth, roomHeight, studentView );
+
+                //Adding the item's view to the room to render them
+                ArrayList<ItemView> roomItemViews = new ArrayList<>();
+                for (Item item : room.GetItems()) {
+                    ItemView itemView = itemViews.get(item);
+                    roomItemViews.add(itemView);
+                }
+
+                // setting size and rendering
+                int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
+                int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
+
+                roomView.Render( roomWidth, roomHeight, studentView ,roomItemViews, viewToPlayersInRoom );
 
                 System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
             }
