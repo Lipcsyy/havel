@@ -210,7 +210,7 @@ public class GameController implements IObserver {
                 int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
                 int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
 
-                roomView.Render( roomWidth, roomHeight, studentView ,roomItemViews, viewToPlayersInRoom );
+                roomView.Render( roomWidth, roomHeight, studentView, roomItemViews, viewToPlayersInRoom, student.GetRoom() );
 
                 System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
             }

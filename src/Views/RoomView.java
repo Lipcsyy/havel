@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+import Enums.ERooms;
+import Room.*;
 
 public class RoomView extends JPanel {
 

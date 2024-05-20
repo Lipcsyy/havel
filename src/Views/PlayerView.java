@@ -20,5 +20,4 @@ public class PlayerView extends JPanel {
         System.out.println("Rendering this bitch");
         repaint();
     }
-
 }
