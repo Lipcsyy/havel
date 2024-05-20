@@ -1,6 +1,7 @@
 package GameManager;
 import Controller.GameController;
 import Enums.EGameMode;
+import Enums.EPlayers;
 import Enums.EVersion;
 import Logger.Logger;
 import Room.*;
@@ -82,12 +83,12 @@ public class GameManager implements java.io.Serializable{
             Student student2 = new Student(map.getRandomCell(), this);
 
             //Adding the students to the studentToView
-            gameController.studentToViews.put(student1, new PlayerView());
-            gameController.studentToViews.put(student2, new PlayerView());
+            gameController.studentToViews.put(student1, new PlayerView( EPlayers.STUDENT));
+            gameController.studentToViews.put(student2, new PlayerView( EPlayers.STUDENT));
 
             //Adding the students to the playerViews too
-            gameController.playerViews.put(student1, new PlayerView());
-            gameController.playerViews.put(student2, new PlayerView());
+            gameController.playerViews.put(student1, new PlayerView( EPlayers.STUDENT));
+            gameController.playerViews.put(student2, new PlayerView( EPlayers.STUDENT));
 
             //Add 10 teacher to the game
 
@@ -124,7 +125,7 @@ public class GameManager implements java.io.Serializable{
             Room playerStartRoom = map.getRandomCell();
             Student student = new Student(playerStartRoom, this);
 
-            gameController.studentToViews.put(student, new PlayerView());
+            gameController.studentToViews.put(student, new PlayerView( EPlayers.STUDENT));
 
             //add 8 teacher to the game with different starting room
             for( int i = 0; i < 8; i++){

@@ -1,8 +1,13 @@
 package Views;
 import Controller.GameController;
 import Enums.EDirection;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Enums.ERooms;
@@ -15,6 +20,8 @@ public class RoomView extends JPanel {
     public boolean hasLeftDoor;
     public boolean hasRightDoor;
 
+    transient private BufferedImage image;
+
     DoorView topDoor;
     DoorView bottomDoor;
     DoorView leftDoor;
@@ -23,7 +30,19 @@ public class RoomView extends JPanel {
     public ItemHolder itemHolder;
     public PlayerHolder playerHolder;
 
-    public RoomView(boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor) {
+    public RoomView(ERooms eRooms, boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor) {
+
+        try {
+            if (eRooms == ERooms.ROOM) {
+                image = ImageIO.read(new File("/src/Images/room.png"));
+            } else if (eRooms == ERooms.GASROOM) {
+                image = ImageIO.read(new File("/src/Images/gasroom.png"));
+            } else if (eRooms == ERooms.MAGICROOM) {
+                image = ImageIO.read(new File("/src/Images/magicroom.png"));
+            }
+        } catch ( Exception e){
+
+        }
 
         this.hasTopDoor = hasTopDoor;
         this.hasBottomDoor = hasBottomDoor;
@@ -33,7 +52,6 @@ public class RoomView extends JPanel {
         setBackground(Color.lightGray);
         setFocusable(true);
         setLayout(null); // No layout manager for absolute positioning
-
     }
 
     public void Initialize(int width, int height, PlayerView studentView, ArrayList<ItemView> itemViews,

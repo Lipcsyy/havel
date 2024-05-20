@@ -247,8 +247,7 @@ public class GameController implements IObserver {
         this.itemViews.put(item, new ItemView());
     }
 
-    public void SetRoomView(Room room) {
-        RoomView roomView = new RoomView(false, false, false, false);
+    public void SetRoomView(Room room, RoomView roomView) {
         this.roomViews.put(room, roomView);
     }
 

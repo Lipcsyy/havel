@@ -2,8 +2,11 @@ package Map;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import Enums.ERooms;
 import Room.Room;
 import GameManager.GameManager;
+import Views.RoomView;
 
 public class GameMap {
     private final int width;
@@ -14,7 +17,7 @@ public class GameMap {
     private static final int N = 1, S = 2, E = 4, W = 8;
     private static final int[] DIRECTIONS = {N, S, E, W};
 
-    public GameMap(int width, int height, GameManager gameManager) {
+    public GameMap(int width, int height, GameManager gameManager){
         this.width = width;
         this.height = height;
         // Initialize the graph with all cells having no neighbors
