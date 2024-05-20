@@ -21,7 +21,6 @@ public class MazeDisplay extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawMaze(g);
-
     }
 
     public void Render() {

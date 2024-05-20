@@ -26,13 +26,12 @@ public class RoomView extends JPanel {
         this.hasLeftDoor = hasLeftDoor;
         this.hasRightDoor = hasRightDoor;
 
-        //setPreferredSize(new Dimension(400, 400));
         setBackground(Color.lightGray);
+        setFocusable(true);
         setLayout(null); // No layout manager for absolute positioning
 
     }
     public void Initialize(int width, int height) {
-
 
         // Room dimensions
         int roomWidth = width; //need the parent to set the size

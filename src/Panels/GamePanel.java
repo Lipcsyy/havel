@@ -83,11 +83,11 @@ public class GamePanel extends JPanel {
     }
 
     //get inventoryConsoles
-    public ArrayList<InventoryConsole> GetInventoryConsoles(){return inventoryConsoles;}
-
+    public ArrayList<InventoryConsole> GetInventoryConsoles(){
+        return inventoryConsoles;
+    }
 
     public void Render() {
         mazeDisplay.Render();
     }
-
 }

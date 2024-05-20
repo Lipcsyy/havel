@@ -42,21 +42,19 @@ public class GameController implements IObserver {
         this.gameManager = new GameManager(gameMode, this);
         this.gamePanel =gamePanel;
 
-        this.isRunning = true;
-
         System.out.println(studentToViews.size());
 
         for ( Student student : studentToViews.keySet() ) {
             System.out.println("Adding observer");
             student.GetRoom().AddObserver(this );
         }
-
-        System.out.println("Running");
-
     }
 
 
     public void StartGame() {
+
+        this.isRunning = true;
+        System.out.println("Running");
 
         Render();
 
@@ -145,14 +143,14 @@ public class GameController implements IObserver {
 
     public void Render() {
 
-       gamePanel.Render();
+        gamePanel.Render();
 
-       int studentIndex = 0;
-       for ( Student studentView : studentToViews.keySet() ) {
-           //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
-           gamePanel.GetGameConsoles().get(studentIndex).removeAll();
-           studentIndex++;
-       }
+        int studentIndex = 0;
+        for ( Student studentView : studentToViews.keySet() ) {
+            //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
+            gamePanel.GetGameConsoles().get(studentIndex).removeAll();
+            studentIndex++;
+        }
 
         //rendering the room the student is in
         studentIndex = 0;
@@ -182,6 +180,13 @@ public class GameController implements IObserver {
 
                 //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
 
+               /*for (Item item : room.GetItems()) {
+                    if (itemViews.containsKey(item)) {
+                        ItemView actItemView = itemViews.get(item);
+                        roomView.add(actItemView);
+                        actItemView.Render();
+                    }
+                }*/
 
                 gamePanel.GetGameConsoles().get(studentIndex).addRoomView(roomView);
 
@@ -189,16 +194,9 @@ public class GameController implements IObserver {
                 int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
 
                 roomView.Render( roomWidth, roomHeight );
-
                 System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
             }
 
-            for (Item item : room.GetItems()) {
-                if (itemViews.containsKey(item)) {
-                    itemViews.get(item).Render(gamePanel.GetInventoryConsoles().get(studentIndex));
-                    System.out.println("Rendered an item to: " + studentIndex);
-                }
-            }
             studentIndex++;
         }
     }

@@ -1,15 +1,16 @@
 package Views;
 
+import Player.Student;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class ItemView extends JPanel {
 
     public ItemView() {
-        //setPreferredSize( new Dimension(20, 20) );
+        setPreferredSize( new Dimension(30, 30) );
         this.setFocusable(true);
-        //setBackground(Color.BLUE);
-
+        setBackground(Color.BLUE);
     }
 
     @Override
@@ -20,11 +21,11 @@ public class ItemView extends JPanel {
         g.setColor(Color.pink);
 
         //the item
-        g.fillRect(0, 0, 40,40);
+        g.fillRect(0, 0, 20,20);
 
     }
-    public void Render(JPanel inventoryConsole) {
-        inventoryConsole.add(this);
+    public void Render(){
+        paintComponent(getGraphics());
     }
 
 }

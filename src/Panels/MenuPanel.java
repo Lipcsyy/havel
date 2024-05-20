@@ -68,11 +68,6 @@ public class MenuPanel extends JPanel {
 
             System.out.println("Single Player ACTION LISTENER");
 
-            // make the maze and add it to the panel
-            /*GameMap maze = new GameMap(20, 20);
-            maze.generateMaze();
-            GameFrame.singleGamePanel.SetMazeDisplay(maze);*/
-
             // set the previous panel and set focus and start the game
             GameFrame.previousPanel = GameFrame.singleGamePanel;
             GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
@@ -84,10 +79,6 @@ public class MenuPanel extends JPanel {
         multiPlayer.addActionListener(event -> {
 
             System.out.println("Multi Player ACTION LISTENER");
-            // make the maze and add it to the panel
-            /*GameMap maze = new GameMap(20, 20);
-            maze.generateMaze();
-            GameFrame.multiGamePanel.SetMazeDisplay(maze);*/
 
             // set the previous panel and set focus and start the game
             GameFrame.previousPanel = GameFrame.multiGamePanel;
