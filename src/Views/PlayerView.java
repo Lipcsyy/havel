@@ -13,8 +13,13 @@ public class PlayerView extends JPanel {
         setBackground(Color.RED);
     }
 
-    public void Render(JPanel gamePanel) {
-        gamePanel.add(this);
+    public void Render() {
+        System.out.println("Rendering this shit");
+        setBounds(100, 100 / 2, 10, 10);
+        setSize(10, 10);
+        this.setFocusable(true);
+        setBackground(Color.RED);
+        paintComponent(getGraphics());
     }
 
 }

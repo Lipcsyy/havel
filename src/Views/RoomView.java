@@ -80,7 +80,8 @@ public class RoomView extends JPanel {
         return topDoor;
     }
 
-    public void Render(int roomWidth, int roomHeight) {
+
+    public void Render(int roomWidth, int roomHeight, ArrayList<PlayerView> studentViews, ArrayList<ItemView> itemViews) {
 
         Initialize(roomWidth, roomHeight);
 

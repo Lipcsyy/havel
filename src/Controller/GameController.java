@@ -50,7 +50,6 @@ public class GameController implements IObserver {
         }
     }
 
-
     public void StartGame() {
 
         this.isRunning = true;
@@ -143,6 +142,7 @@ public class GameController implements IObserver {
 
     public void Render() {
 
+        //Rendering the maze display
         gamePanel.Render();
 
         int studentIndex = 0;
@@ -165,6 +165,7 @@ public class GameController implements IObserver {
 
                 Set<Room> neighbours = gameManager.map.getAdjacencyList().get(room);
 
+                //setting whether there are doors to other rooms
                 if (neighbours.contains(findCell(room.x, room.y - 1))) { // Top wall
                     roomView.hasTopDoor = true;
                 }
@@ -180,25 +181,38 @@ public class GameController implements IObserver {
 
                 //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
 
-               /*for (Item item : room.GetItems()) {
+                //Adding the room view to the gamepanel's corresponding gameconsole
+                gamePanel.GetGameConsoles().get(studentIndex).AddRoomView(roomView);
+
+                //Adding the playerview to the roomview to render it
+                PlayerView studentView = studentToViews.get(student);
+                roomView.add(studentView);
+
+                //Adding the item's view to the room to render them
+                ArrayList<ItemView> roomItemViews = itemViews.
+
+                //Adding the student view to the gamepanel
+
+                int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
+                int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
+
+                for (Item item : room.GetItems()) {
                     if (itemViews.containsKey(item)) {
                         ItemView actItemView = itemViews.get(item);
                         roomView.add(actItemView);
                         actItemView.Render();
                     }
-                }*/
+                }
 
-                gamePanel.GetGameConsoles().get(studentIndex).addRoomView(roomView);
+                roomView.Render( roomWidth, roomHeight, studentView );
 
-                int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
-                int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
-
-                roomView.Render( roomWidth, roomHeight );
                 System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
             }
 
+
             studentIndex++;
         }
+
     }
 
     private Room findCell(int x, int y) {

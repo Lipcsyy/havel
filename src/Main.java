@@ -9,7 +9,6 @@ import static Logger.Tester.testMap;
 
 public class Main {
     public static void main(String[] args) {
-
 //        System.out.println("1. Use TVSZ");
 //        System.out.println("2. Use Camembert");
 //        System.out.println("3. Use BeerGlass");

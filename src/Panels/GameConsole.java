@@ -1,6 +1,6 @@
 package Panels;
 
-import Views.DoorView;
+import Views.PlayerView;
 import Views.RoomView;
 
 import javax.swing.*;
@@ -19,10 +19,11 @@ public class GameConsole extends JPanel {
         setLayout(null);
     }
 
-    public void addRoomView(RoomView roomView) {
+    public void AddRoomView(RoomView roomView) {
         roomView.setBounds(0, 0, this.getWidth(), this.getHeight()); // Set the position and size of the RoomView within GameConsole
         this.add(roomView);
     }
+
 
     public int getConsoleWidth(){
         return width;
