@@ -240,7 +240,7 @@ public abstract class Player implements java.io.Serializable {
             Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
         }
 
-        if( !room.GetNeighbours().contains(this.room) ) {
+        if( !this.room.GetNeighbours().contains(room) ) {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
             }
