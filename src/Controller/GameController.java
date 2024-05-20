@@ -147,6 +147,7 @@ public class GameController implements IObserver {
         //Rendering the maze display
         gamePanel.Render();
 
+        // clear the content of the gameconsoles
         int studentIndex = 0;
         for ( Student studentView : studentToViews.keySet() ) {
             //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));

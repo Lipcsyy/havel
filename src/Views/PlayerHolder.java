@@ -5,15 +5,16 @@ import java.util.ArrayList;
 
 public class PlayerHolder extends JPanel {
 
-    public PlayerHolder(ArrayList<PlayerView> playerViews, int roomWidth, int roomHeight){
+    public PlayerHolder(PlayerView studentView, ArrayList<PlayerView> playerViews, int roomWidth, int roomHeight){
 
         setPreferredSize(new Dimension(roomWidth - 200, roomHeight / 3));
         setBackground(Color.GRAY);
         setFocusable(true);
         setLayout(new GridLayout(1, 5));
 
-        for(PlayerView item: playerViews){
-            add(item);
+        add(studentView);
+        for(PlayerView playerView: playerViews){
+            add(playerView);
         }
     }
 }

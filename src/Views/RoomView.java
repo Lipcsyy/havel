@@ -1,10 +1,9 @@
 package Views;
-
 import Controller.GameController;
 import Enums.EDirection;
-
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 
 public class RoomView extends JPanel {
@@ -19,6 +18,9 @@ public class RoomView extends JPanel {
     DoorView leftDoor;
     DoorView rightDoor;
 
+    public ItemHolder itemHolder;
+    public PlayerHolder playerHolder;
+
     public RoomView(boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor) {
 
         this.hasTopDoor = hasTopDoor;
@@ -31,7 +33,9 @@ public class RoomView extends JPanel {
         setLayout(null); // No layout manager for absolute positioning
 
     }
-    public void Initialize(int width, int height) {
+
+    public void Initialize(int width, int height, PlayerView studentView, ArrayList<ItemView> itemViews,
+                           ArrayList<PlayerView> playerViews) {
 
         // Room dimensions
         int roomWidth = width; //need the parent to set the size
@@ -70,6 +74,9 @@ public class RoomView extends JPanel {
             rightDoor.setSize(doorThickness, doorLength);
             add(rightDoor);
         }
+
+        add(new ItemHolder(itemViews, roomWidth, roomHeight));
+        add(new PlayerHolder(studentView, playerViews, roomWidth, roomHeight));
     }
 
     public DoorView GetDoor(EDirection direction){
@@ -84,7 +91,7 @@ public class RoomView extends JPanel {
     public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews,
                        ArrayList<PlayerView> playerViews) {
 
-        Initialize(roomWidth, roomHeight);
+        Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews);
 
         if (hasTopDoor) {
             topDoor.Render();
