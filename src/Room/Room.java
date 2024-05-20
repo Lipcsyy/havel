@@ -405,6 +405,10 @@ public class Room implements java.io.Serializable , IObservable {
         }
     }
 
+    public int GetCapacity() {
+        return capacity;
+    }
+
     //-----------INFORMATION FUNCTIONS----------------
 
     public void PrintInfo() {

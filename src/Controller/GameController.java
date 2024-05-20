@@ -182,7 +182,6 @@ public class GameController implements IObserver {
                     roomView.hasRightDoor = true;
                 }
 
-                //gamePanel.GetGameConsoles().get(studentIndex).add(roomView);
 
                 //Adding the room view to the gamepanel's corresponding gameconsole
                 gamePanel.GetGameConsoles().get(studentIndex).AddRoomView(roomView);
@@ -199,9 +198,9 @@ public class GameController implements IObserver {
                     }
                 }
 
-
                 //Adding the item's view to the room to render them
                 ArrayList<ItemView> roomItemViews = new ArrayList<>();
+
                 for (Item item : room.GetItems()) {
                     ItemView itemView = itemViews.get(item);
                     roomItemViews.add(itemView);
@@ -236,8 +235,8 @@ public class GameController implements IObserver {
         return playerViews;
     }
 
-    public void SetPlayerViews(Player player) {
-        this.playerViews.put(player, new PlayerView());
+    public void SetPlayerViews(Player player, PlayerView playerView) {
+        this.playerViews.put(player, playerView);
     }
 
     public HashMap<Item, ItemView> GetItemViews() {

@@ -1,7 +1,8 @@
 package Views;
 
-import Panels.GamePanel;
-
+import Enums.EPlayers;
+import javax.imageio.*;
+import java.io.File;
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,11 +16,9 @@ public class PlayerView extends JPanel {
 
     public void Render() {
         System.out.println("Rendering this shit");
-        setBounds(100, 100 / 2, 10, 10);
-        setSize(10, 10);
         this.setFocusable(true);
-        setBackground(Color.RED);
-        paintComponent(getGraphics());
+        System.out.println("Rendering this bitch");
+        repaint();
     }
 
 }

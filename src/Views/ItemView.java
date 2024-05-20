@@ -13,19 +13,12 @@ public class ItemView extends JPanel {
         setBackground(Color.BLUE);
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        // Set the color for the item
-        g.setColor(Color.pink);
-
-        //the item
-        g.fillRect(0, 0, 20,20);
-
-    }
     public void Render(){
-        paintComponent(getGraphics());
+        System.out.println("itemholder vagyok");
+        setSize(10, 10);
+        this.setFocusable(true);
+        setBackground(Color.BLUE);
+        repaint();
     }
 
 }

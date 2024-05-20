@@ -35,7 +35,7 @@ public class RoomView extends JPanel {
     }
 
     public void Initialize(int width, int height, PlayerView studentView, ArrayList<ItemView> itemViews,
-                           ArrayList<PlayerView> playerViews) {
+                           ArrayList<PlayerView> playerViews, Room room) {
 
         // Room dimensions
         int roomWidth = width; //need the parent to set the size
@@ -75,8 +75,14 @@ public class RoomView extends JPanel {
             add(rightDoor);
         }
 
-        add(new ItemHolder(itemViews, roomWidth, roomHeight));
-        add(new PlayerHolder(studentView, playerViews, roomWidth, roomHeight));
+        //this.add(studentView);
+
+        this.playerHolder = new PlayerHolder(studentView, playerViews, roomWidth, roomHeight, room.GetCapacity());
+        this.add(playerHolder);
+
+        this.itemHolder = new ItemHolder(itemViews, roomWidth, roomHeight, room.GetItems().size());
+        this.add(itemHolder);
+
     }
 
     public DoorView GetDoor(EDirection direction){
@@ -88,10 +94,9 @@ public class RoomView extends JPanel {
     }
 
 
-    public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews,
-                       ArrayList<PlayerView> playerViews) {
+    public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews, ArrayList<PlayerView> playerViews, Room room) {
 
-        Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews);
+        Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews, room);
 
         if (hasTopDoor) {
             topDoor.Render();
@@ -109,5 +114,12 @@ public class RoomView extends JPanel {
             rightDoor.Render();
             System.out.println("Rendering right door");
         }
+
+        revalidate();
+        repaint();
+
+        playerHolder.Render();
+        itemHolder.Render();
+
     }
 }

@@ -94,7 +94,7 @@ public class GameManager implements java.io.Serializable{
             for (  int i = 0; i < 10; i++ ) {
 
                 Teacher teacher = new Teacher(map.getRandomCell(), this);
-                gameController.SetPlayerViews(teacher);
+                gameController.SetPlayerViews(teacher, new PlayerView( EPlayers.TEACHER));
 
                 while ( teacher.GetRoom() == student1.GetRoom() || teacher.GetRoom() == student2.GetRoom() ) {
                     teacher.SetRoom(map.getRandomCell());
@@ -105,7 +105,7 @@ public class GameManager implements java.io.Serializable{
 
             for (int i = 0; i < 3; i++) {
                 Cleaner cleaner = new Cleaner(map.getRandomCell(), this);
-                gameController.SetPlayerViews(cleaner);
+                gameController.SetPlayerViews(cleaner, new PlayerView( EPlayers.CLEANER));
             }
 
             //Adding the items to the game
@@ -135,7 +135,7 @@ public class GameManager implements java.io.Serializable{
 
                 Teacher teacher = new Teacher(TeacherStartRoom, this);
 
-                gameController.SetPlayerViews( teacher );
+                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
             }
 
             //add 2 cleaner to the game
@@ -143,7 +143,7 @@ public class GameManager implements java.io.Serializable{
                 Room CleanerStartRoom = map.getRandomCell();
                 Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
 
-                gameController.SetPlayerViews( cleaner );
+                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
             }
 
             //adding items
