@@ -11,6 +11,7 @@ import Player.Player;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 public class Room implements java.io.Serializable , IObservable {
 
@@ -311,6 +312,8 @@ public class Room implements java.io.Serializable , IObservable {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");
             }
+            JOptionPane.showMessageDialog(null, "No more space in room!", "Message", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("No space in room");
             return;
         }
 
