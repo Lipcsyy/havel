@@ -1,4 +1,5 @@
 package Logger;
+import Enums.EGameMode;
 import GameManager.GameManager;
 import Room.*;
 import Item.*;
@@ -48,13 +49,13 @@ public class Tester {
     static Student student2;
     static Teacher teacher;
 
-    static GameManager gameManager = new GameManager();
+    static GameManager gameManager = new GameManager( EGameMode.SINGLEPLAYER);
 
     private static void SetupStudentEntersRoomWhereTeacher() {
 
-        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        room1 = new Room( 5, gameManager);
         student1 = new Student(room1, gameManager);
-        room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        room2 = new Room( 5, gameManager);
         teacher = new Teacher(room2, gameManager);
 
         gameManager.ConnectRoomsTwoWay(room1, room2);
@@ -64,20 +65,20 @@ public class Tester {
     private static void SetupStudentEntersRoomWhereNobody( RoomType enterRoomType ) {
 
         System.out.println("Creating rooms");
-        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        room1 = new Room( 5, gameManager);
         System.out.println("Creating student");
         student1 = new Student(room1, gameManager);
 
         switch( enterRoomType ) {
             case Normal:
-                room2 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+                room2 = new Room( 5, gameManager);
                 break;
             case Gas:
                 System.out.println("Creating room2");
-                room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+                room2 = new GasRoom( 5, gameManager);
                 break;
             case Magic:
-                room2 = new MagicRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+                room2 = new MagicRoom( 5,  gameManager);
                 break;
         }
 
@@ -260,8 +261,8 @@ public class Tester {
     //10.1 A Door of the Magic Room disappears
     public static void Test17() {
 
-        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
-        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        MagicRoom magicRoom = new MagicRoom(5, gameManager);
+        Room room = new Room(5, gameManager);
         room.SetNeighbours(magicRoom);
         Student student = new Student(room, gameManager);
         magicRoom.ManageDoors(room, true);
@@ -272,8 +273,8 @@ public class Tester {
     //10.2 A Door of the Magic Room appears
     public static void Test18() {
 
-        MagicRoom magicRoom = new MagicRoom(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
-        Room room = new Room(5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        MagicRoom magicRoom = new MagicRoom(5, gameManager);
+        Room room = new Room(5, gameManager);
         Student student = new Student(room, gameManager);
         magicRoom.ManageDoors(room, false);
         student.ChangeRoom(magicRoom);
@@ -290,8 +291,8 @@ public class Tester {
     }
 
     public static void Test20 () {
-        room1 = new Room( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
-        room2 = new GasRoom( 5, new ArrayList<Item>(), new ArrayList<Room>(), gameManager);
+        room1 = new Room( 5,  gameManager);
+        room2 = new GasRoom( 5, gameManager);
         gameManager.ConnectRoomsTwoWay(room1, room2);
 
         Player cleaner = new Cleaner(room1, gameManager);

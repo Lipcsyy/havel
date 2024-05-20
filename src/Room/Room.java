@@ -41,25 +41,24 @@ public class Room implements java.io.Serializable , IObservable {
     protected int idNumberCopy = 1;
     public void setIdNumberCopySer(){idNumberCopy = idNumber;}
     public void setIdNumberSer(){idNumber = idNumberCopy;}
-    public List<Item> getItems(){return items;}
+
+    public List<Item> GetItems(){return items;}
 
     //-----------CONSTRUCTOR--------------------------
 
     /**
      * This is the constructor of the room class.
      * @param capacity The capacity of the room.
-     * @param items The items in the room.
-     * @param neighbours The neighbours of the room.
      */
-    public Room(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager){
+    public Room(int capacity,  GameManager gameManager){
 
-        this.capacity = capacity;
-        this.items = items;
-        this.players = new ArrayList<>();
         this.gameManager = gameManager;
         this.id = "Room_" + idNumber++;
 
-        gameManager.AddRoom(this);
+        this.capacity = capacity;
+        this.items = new ArrayList<Item>();
+        this.players = new ArrayList<>();
+
     }
 
     //Copy constructor
@@ -76,7 +75,7 @@ public class Room implements java.io.Serializable , IObservable {
         this.items = new ArrayList<Item>();
         this.players = new ArrayList<Player>();
 
-        for ( var i : room.getItems() ) {
+        for ( var i : room.GetItems() ) {
             this.AddItem(i);
         }
 
@@ -91,7 +90,6 @@ public class Room implements java.io.Serializable , IObservable {
 
     }
 
-    public Room(){}
 
     public Room setCoordinates(int x, int y) {
         this.x = x;
@@ -467,4 +465,7 @@ public class Room implements java.io.Serializable , IObservable {
             observer.Render();
         }
     }
+
+    public int GetX() {return x;}
+    public int GetY() {return y;}
 }

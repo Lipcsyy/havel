@@ -16,12 +16,8 @@ public class GasRoom extends Room {
         idNumber = 1;
     }
 
-    public GasRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
-        this.capacity = capacity;
-        this.items = items;
-        this.players = new ArrayList<>();
-        this.gameManager = gameManager;
-
+    public GasRoom(int capacity, GameManager gameManager) {
+        super(capacity, gameManager);
         this.id = "GasRoom_" + idNumber++;
 
         gameManager.AddRoom(this);

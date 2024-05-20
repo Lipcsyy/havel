@@ -1,11 +1,19 @@
 package Item;
 import Player.Player;
 import java.util.Random;
+import Enums.*;
 
 public class FakeItem extends Item {
 
     static int idNumber = 1;
-    double version;
+
+    /*
+    VERSIONS:
+    0.0 - 0.33 : MASK
+    0.33 - 0.66 : TVSZ
+    0.66 - 1.0 : SLIDERULE
+     */
+    EVersion version;
 
     public static void ResetCounter(){
         idNumber = 1;
@@ -16,8 +24,9 @@ public class FakeItem extends Item {
 
     public FakeItem() {
         super( "FakeItem_" + idNumber++ );
+    }
 
-        Random random = new Random();
-        version = random.nextDouble( 0, 1 );
+    public void setVersion( EVersion version){
+        this.version = version;
     }
 }

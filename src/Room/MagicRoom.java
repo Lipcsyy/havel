@@ -20,12 +20,8 @@ public class MagicRoom extends Room {
         idNumber = 1;
     }
 
-    public MagicRoom(int capacity, List<Item> items, List<Room> neighbours, GameManager gameManager) {
-
-        this.capacity = capacity;
-        this.items = items;
-        this.players = new ArrayList<>();
-        this.gameManager = gameManager;
+    public MagicRoom(int capacity, GameManager gameManager) {
+        super(capacity,gameManager);
 
         this.id = "MagicRoom_" + idNumber++;
 

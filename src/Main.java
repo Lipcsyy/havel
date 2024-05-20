@@ -15,7 +15,7 @@ public class Main {
 //        System.out.println("3. Use BeerGlass");
 //        System.out.println("4. Student moves to an empty room");
 //        System.out.println("5. Student moves to a gased room without a mask");
-//        System.out.println("6. Student moves to a gased room with a mask");
+//        System.out.println("6. Student moves to a gased room with a m ask");
 //        System.out.println("7. Student moves to a room where there is a student");
 //        System.out.println("8. Student moves to a room where there is a teacher," +
 //                " and the student doesn't have a TVSZ");

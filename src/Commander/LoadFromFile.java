@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import Enums.EGameMode;
 import GameManager.GameManager;
 
 public class LoadFromFile implements ICommand{
@@ -36,15 +38,13 @@ public class LoadFromFile implements ICommand{
             return;
         }
 
-        CommandInterpreter.gameManager = new GameManager();
+        CommandInterpreter.gameManager = new GameManager( EGameMode.SINGLEPLAYER );
         Player.Student.ResetCounter();
 
         while(fileScanner.hasNextLine()){
 
             String cmd = fileScanner.nextLine();
             String[] cmdParams = cmd.split(" ");
-
-
 
             ICommand command = CommandInterpreter.commands.get(cmdParams[0]);
             command.execute(Arrays.copyOfRange(cmdParams, 1, cmdParams.length));
