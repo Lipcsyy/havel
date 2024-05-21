@@ -297,7 +297,7 @@ public class Room implements java.io.Serializable , IObservable {
         }
 
         //The player can't move is he is frozen
-        if( player.GetFrozenForRound() != 0 ) {
+        if( player.GetFrozenForRound() > 0 ) {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");
             }
@@ -308,7 +308,6 @@ public class Room implements java.io.Serializable , IObservable {
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
-            NotifyObservers();
         } else {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");

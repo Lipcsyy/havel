@@ -42,7 +42,6 @@ public class GasRoom extends Room {
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
-            NotifyObservers();
         } else {
             if (GameManager.loggerStatus == ELogger.INFO ) {
                 Logger.logExit(this.getClass().getName(), "Enter");
@@ -91,6 +90,7 @@ public class GasRoom extends Room {
 
         //TODO: Make the players go out of the room
         this.gameManager.ChangeRoomToNormalInList(this);
+
 
         //clean the room, so it can be sticky later
         this.SetRoomNumberOfPassagesBeforeStickiness(5);

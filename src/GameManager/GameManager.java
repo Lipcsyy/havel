@@ -279,6 +279,7 @@ public class GameManager implements java.io.Serializable{
 
         //We need remove the players from the target room and add them to the new room
         Iterator<Player> it = targetRoom.GetPlayers().iterator();
+
         while (it.hasNext()) {
 
             Player p = it.next();
@@ -291,6 +292,7 @@ public class GameManager implements java.io.Serializable{
             p.GetInventory().forEach((item) -> {
                 item.SetRoom(newRoom);
             });
+
         }
 
         //We need to set the newRoom as the neighbour of the target room's (the room we want to delete) neighbours.
@@ -299,12 +301,24 @@ public class GameManager implements java.io.Serializable{
         var neighboursOfTarget = targetRoom.GetNeighbours();
 
         //we remove from the rooms neighbour list the room that will be deleted soon
+        for ( int i = 0; i < neighboursOfTarget.size(); i++ ) {
+
+            Room r = (Room)neighboursOfTarget.toArray()[i];
+            DisconnectRoomsTwoWay( r, targetRoom );
+            i--;
+        }
+
         for (Room r : neighboursOfTarget) {
-            r.RemoveNeighbour(targetRoom);
+            this.ConnectRoomsTwoWay( r, newRoom );
         }
 
         //There are no references left for the targetRoom, so it should be deleted
         map.getAdjacencyList().remove(targetRoom);
+
+        //after removing the target room we need to change the key of the roomviews with the new room
+        gameController.ChangeRoomView(targetRoom, newRoom);
+
+        gameController.GetRoomViewByRoom(newRoom).repaint();
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");

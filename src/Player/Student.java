@@ -48,7 +48,11 @@ public class Student extends Player {
             }
         }
 
+        //If we get here nothing could save the student so it DIEEEES;
         SetIsAlive(false);
+
+        //We should display that the student died -> we need to implement this
+        //TODO: We need to check when handling the inputs from the students whether they are alive or not
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "ReactToTeacher");
@@ -101,6 +105,37 @@ public class Student extends Player {
             Logger.logExit(this.getClass().getName(), "Freeze");
         }
         return false;
+    }
+
+    @Override
+    public void Move(Room room) {
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "Move", "room" );
+        }
+
+        this.room.DecreasePassagesBeforeStickiness();
+
+        this.room.RemoveObserver(gameManager.GetGameController());
+        this.room.RemovePlayer(this);
+
+        room.AddPlayer(this);
+        room.AddObserver(gameManager.GetGameController());
+
+        this.SetRoom(room);
+
+        for ( int i = 0; i < items.size(); i++ ) {
+            items.get(i).DecreaseTurnsLeft(this);
+            if (items.get(i).NeedToThrow()) {
+                this.RemoveFromInventory( items.get(i) );
+                i--;
+            }
+        }
+
+        room.NotifyObservers();
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "Move" );
+        }
     }
 
     // ------OWN METHODS OF THE STUDENT CLASS TO BE USED BY BUTTONS-------

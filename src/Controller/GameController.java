@@ -2,6 +2,7 @@ package Controller;
 import Enums.EDirection;
 import Enums.EGameMode;
 import Enums.EItems;
+import Enums.ERooms;
 import Interfaces.IObserver;
 import Room.*;
 import GameManager.*;
@@ -73,12 +74,31 @@ public class GameController implements IObserver {
 
 
     private void handleNextTurn() {
+
         ArrayList<Student> students = new ArrayList<>(studentToViews.keySet());
+        for(int i = 0; i < students.size(); i++){
+            if(student.GetIsAlive() == false){
+                students.remove(student);
+                i--;
+            }
+        }
+
+
         if (!students.isEmpty()) {
+
             Student currentPlayer = students.get(currentPlayerIndex);
-            currentPlayer.DecreaseFrozenForRound();
             System.out.println("(handleNextTurn):FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
+
             HandleInput(currentPlayer);
+
+            //Decreasing the frozen rounds on the player
+            currentPlayer.DecreaseFrozenForRound();
+
+            //Decreasing every should-be-decreased-after-round-is-over items
+            currentPlayer.GetInventory().forEach( ( Item item ) -> {
+                item.DecreaseTurnsLeft( currentPlayer );
+            } );
+
             MoveInGameCharacters();
         }
 
@@ -123,12 +143,17 @@ public class GameController implements IObserver {
         System.out.println("MOVE IN GAME CHARACTERS");
 
         for (Player player : playerViews.keySet()) {
-            if (player instanceof Teacher) {
-                Teacher teacher = (Teacher) player;
-                Room nextRoom = gameManager.map.GetRandomNeighbour(teacher.GetRoom());
-                teacher.ChangeRoom(nextRoom);
+
+            //We don't want to move the student only the other characters
+            if ( studentToViews.containsKey(player) == false ) {
+                player.ChangeRoom(gameManager.map.GetRandomNeighbour(player.GetRoom()));
             }
+
+            player.DecreaseFrozenRounds();
+
         }
+
+
     }
 
     private void removeDoorListeners(RoomView roomView) {
@@ -332,6 +357,16 @@ public class GameController implements IObserver {
             roomView.getItemHolder().Render();
         }
         UpdateInventoryConsole();
+    }
+
+    public void ChangeRoomView( Room target, Room newRoom ) {
+        RoomView roomView = roomViews.get(target);
+        roomViews.remove(target);
+        roomViews.put(newRoom, new RoomView( ERooms.ROOM, false, false, false, false ));
+    }
+
+    public RoomView GetRoomViewByRoom( Room room ){
+        return roomViews.get( room );
     }
 
 }

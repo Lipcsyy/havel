@@ -32,7 +32,7 @@ public class AirFreshener extends Item{
 
         abilityNumber--;
         player.GetRoom().CleanRoom(false);
-
+        
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "ReactToGas", "true");
         }
