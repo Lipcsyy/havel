@@ -13,7 +13,8 @@ public class ItemHolder extends JPanel {
             itemViews = _itemViews;
         }
 
-        setPreferredSize(new Dimension(holderWidth - 200, holderHeight - 100));
+        setMaximumSize(new Dimension(600, 84));
+        setMinimumSize(new Dimension(400, 84));
         setOpaque(false);
         setLayout(new GridLayout(1, size, 10, 10));
     }

@@ -1,12 +1,19 @@
 package Panels;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class InventoryConsole extends JPanel {
 
+    transient private BufferedImage image;
     public InventoryConsole(int width, int height){
-        setPreferredSize( new Dimension(width, height) );
+        setMaximumSize( new Dimension(380, 84) );
+        setPreferredSize( new Dimension(380, 84));
+        setMinimumSize( new Dimension(380, 84) );
+        setOpaque(false);
         this.setFocusable(true);
         try {
             image = ImageIO.read(new File("./src/Images/inventory.png"));

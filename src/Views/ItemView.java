@@ -61,7 +61,7 @@ public class ItemView extends JPanel {
 
     public void Render(){
         System.out.println("itemholder vagyok");
-        setSize(10, 10);
+        setSize(new Dimension(64, 64));
         this.setFocusable(true);
 
         repaint();

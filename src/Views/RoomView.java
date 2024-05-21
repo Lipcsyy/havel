@@ -317,7 +317,7 @@ public class RoomView extends JPanel {
             rightDoor.Render();
             System.out.println("Rendering right door");
         }
-        
+
         revalidate();
         repaint();
 
