@@ -77,8 +77,8 @@ public class GameController implements IObserver {
 
         ArrayList<Student> students = new ArrayList<>(studentToViews.keySet());
         for(int i = 0; i < students.size(); i++){
-            if(student.GetIsAlive() == false){
-                students.remove(student);
+            if(students.get(i).GetIsAlive() == false){
+                students.remove(students.get(i));
                 i--;
             }
         }

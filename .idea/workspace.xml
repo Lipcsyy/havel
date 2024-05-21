@@ -8,14 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: connected the map with the rooms">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/AirFreshener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/AirFreshener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/GasRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/GasRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
     </list>
     <list id="4bbc8edd-eec1-4399-9d5c-846eadb9af4a" name="Changes by bologa" comment="" />
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor">
@@ -53,55 +47,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/GameManager/GameManager.java">
-      <ranges>
-        <range start1="156" end1="162" start2="156" end2="162" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="281" end1="281" start2="281" end2="282" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="293" end1="293" start2="294" end2="295" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="301" end1="301" start2="303" end2="310" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="302" end1="303" start2="311" end2="312" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="308" end1="308" start2="317" end2="322" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/Player/Student.java">
       <ranges>
         <range start1="6" end1="6" start2="6" end2="7" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
         <range start1="7" end1="7" start2="8" end2="9" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
         <range start1="44" end1="44" start2="46" end2="47" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="50" end1="50" start2="53" end2="54" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="51" end1="51" start2="55" end2="58" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="90" end1="90" start2="97" end2="98" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="105" end1="105" start2="113" end2="144" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Room/GasRoom.java">
-      <ranges>
-        <range start1="44" end1="45" start2="44" end2="44" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="64" end1="64" start2="63" end2="67" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="93" end1="93" start2="96" end2="97" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="94" end1="94" start2="97" end2="98" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/Controller/GameController.java">
       <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="13" end1="13" start2="14" end2="15" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
-        <range start1="16" end1="16" start2="18" end2="19" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
-        <range start1="21" end1="21" start2="24" end2="25" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
-        <range start1="48" end1="48" start2="52" end2="76" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
-        <range start1="75" end1="75" start2="103" end2="104" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="76" end1="76" start2="105" end2="112" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="77" end1="77" start2="113" end2="114" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="78" end1="79" start2="115" end2="115" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="80" end1="80" start2="116" end2="117" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="81" end1="81" start2="118" end2="127" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="82" end1="82" start2="128" end2="130" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
-        <range start1="125" end1="129" start2="173" end2="177" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="130" end1="130" start2="178" end2="181" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="131" end1="131" start2="182" end2="184" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="247" end1="247" start2="300" end2="301" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
-        <range start1="248" end1="249" start2="302" end2="304" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
-        <range start1="250" end1="250" start2="305" end2="310" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
-        <range start1="335" end1="335" start2="395" end2="405" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="14" end1="14" start2="14" end2="15" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
+        <range start1="17" end1="17" start2="18" end2="19" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
+        <range start1="22" end1="22" start2="24" end2="25" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
+        <range start1="49" end1="49" start2="52" end2="76" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
+        <range start1="79" end1="81" start2="106" end2="108" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="102" end1="102" start2="129" end2="131" changelist="78835435-7326-4e53-96c7-2aceb074cea1" />
+        <range start1="272" end1="272" start2="301" end2="302" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
+        <range start1="273" end1="274" start2="303" end2="305" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
+        <range start1="275" end1="275" start2="306" end2="311" changelist="e7431344-8dce-44fa-b07b-06730d15326e" />
       </ranges>
     </file>
   </component>
@@ -221,15 +185,7 @@
       <workItem from="1716293929092" duration="7487000" />
       <workItem from="1716302275015" duration="10364000" />
       <workItem from="1716312771334" duration="1271000" />
-      <workItem from="1716317344546" duration="5478000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initinal Commit">
-      <option name="closed" value="true" />
-      <created>1710940860421</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1710940860421</updated>
+      <workItem from="1716317344546" duration="5573000" />
     </task>
     <task id="LOCAL-00002" summary="Added Player class">
       <option name="closed" value="true" />
@@ -615,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716311378359</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="feat: connected the map with the rooms">
+      <option name="closed" value="true" />
+      <created>1716323375206</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716323375207</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,9 +620,9 @@
     <MESSAGE value="Changes by bologa" />
     <MESSAGE value="Changes by Madia" />
     <MESSAGE value="Changes by lenovo" />
-    <MESSAGE value="feat: connected the map with the rooms" />
     <MESSAGE value="Changes by kovac" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by kovac" />
+    <MESSAGE value="feat: connected the map with the rooms" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: connected the map with the rooms" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
