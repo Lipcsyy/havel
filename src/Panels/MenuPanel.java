@@ -32,11 +32,11 @@ public class MenuPanel extends JPanel {
         topPanel.setPreferredSize(new Dimension((int)Math.round(SCREEN_WIDTH * 0.8), (int)Math.round(SCREEN_HEIGHT* 0.5)));
         this.setFocusable(true);
 
-        setBackground(Color.GRAY);
+        //setBackground(Color.GRAY);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS)); // Set layout to BoxLayout
-        buttonPanel.setBackground(Color.GRAY);
+        //buttonPanel.setBackground(Color.GRAY);
         buttonPanel.add(Box.createHorizontalGlue()); // Add horizontal glue before buttons
         buttonPanel.add(singlePlayer);
         buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons

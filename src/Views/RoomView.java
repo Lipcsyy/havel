@@ -41,7 +41,7 @@ public class RoomView extends JPanel {
                 image = ImageIO.read(new File("./src/Images/magicroom.png"));
             }
         } catch ( Exception e){
-
+            e.printStackTrace();
         }
 
         this.hasTopDoor = hasTopDoor;
@@ -51,14 +51,26 @@ public class RoomView extends JPanel {
 
         setBackground(Color.lightGray);
         setFocusable(true);
-        setLayout(null); // No layout manager for absolute positioning
+        setLayout(new BorderLayout());
+        setOpaque(false);
+
+        InitilizeDoors(60, 20);
+
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image != null) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 
     public void Initialize(int width, int height, PlayerView studentView, ArrayList<ItemView> itemViews,
                            ArrayList<PlayerView> playerViews, Room room) {
 
         // Room dimensions
-        int roomWidth = width; //need the parent to set the size
+        int roomWidth = width; // need the parent to set the size
         int roomHeight = height;
         this.setPreferredSize(new Dimension(roomWidth, roomHeight));
 
@@ -66,13 +78,143 @@ public class RoomView extends JPanel {
         int doorThickness = 20;
         int doorLength = 60;
 
+        JPanel centerPanel = InitializeCenterPanel(roomWidth, roomHeight);
+
+        System.out.println("Initializing doors");
+
+
+        // Add doors conditionally
+        JPanel topPanel = new JPanel(new GridBagLayout());
+        topPanel.setPreferredSize(new Dimension(doorLength, doorThickness));
+        topPanel.setOpaque(false);
+        add(topPanel, BorderLayout.NORTH);
+
+        JPanel bottomPanel = new JPanel(new GridBagLayout());
+        bottomPanel.setPreferredSize(new Dimension(doorLength, doorThickness));
+        bottomPanel.setOpaque(false);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+        JPanel leftPanel = new JPanel(new GridBagLayout());
+        leftPanel.setPreferredSize(new Dimension(doorThickness, doorThickness));
+        leftPanel.setOpaque(false);
+        add(leftPanel, BorderLayout.WEST);
+
+        JPanel rightPanel = new JPanel(new GridBagLayout());
+        rightPanel.setPreferredSize(new Dimension(doorThickness, doorThickness));
+        rightPanel.setOpaque(false);
+        add(rightPanel, BorderLayout.EAST);
+
+
         // Add doors conditionally
         if (hasTopDoor) {
             if (topDoor == null) {
+                System.out.println("Adding top door");
                 topDoor = new DoorView();
-                topDoor.setBounds((roomWidth - doorLength) / 2, 0, doorLength, doorThickness);
-                topDoor.setSize(doorLength, doorThickness);
-                add(topDoor);
+                topDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
+                topPanel.add(topDoor);
+                add(topPanel, BorderLayout.NORTH);
+            }
+        }
+        /*
+        else if (topDoor != null) {
+            remove(topDoor);
+            topDoor = null;
+        }
+        */
+        if (hasBottomDoor) {
+            if (bottomDoor == null) {
+                System.out.println("Adding bottom door");
+                bottomDoor = new DoorView();
+                bottomDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
+                bottomPanel.add(bottomDoor);
+                add(bottomPanel, BorderLayout.SOUTH);
+            }
+        }
+        /*
+        else if (bottomDoor != null) {
+            remove(bottomDoor);
+            bottomDoor = null;
+        }
+        */
+        if (hasLeftDoor) {
+            if (leftDoor == null) {
+                System.out.println("Adding left door");
+                leftDoor = new DoorView();
+                leftDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
+                leftPanel.add(leftDoor);
+                add(leftPanel, BorderLayout.WEST);
+            }
+        }
+        /*
+        else if (leftDoor != null) {
+            remove(leftDoor);
+            leftDoor = null;
+        }
+        */
+        if (hasRightDoor) {
+            if (rightDoor == null) {
+                System.out.println("Adding right door");
+                rightDoor = new DoorView();
+                rightDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
+                rightPanel.add(rightDoor);
+                add(rightPanel, BorderLayout.EAST);
+            }
+        }
+        /*
+        else if (rightDoor != null) {
+            remove(rightDoor);
+            rightDoor = null;
+        }
+        */
+
+        // Add player and item holders to the center panel
+        this.playerHolder = new PlayerHolder(studentView, playerViews, centerPanel.getWidth(), centerPanel.getHeight() / 2, room.GetCapacity());
+        centerPanel.add(playerHolder);
+
+        this.itemHolder = new ItemHolder(itemViews, centerPanel.getWidth(), centerPanel.getHeight() / 2 , room.GetItems().size());
+        centerPanel.add(itemHolder);
+
+        centerPanel.setOpaque(false);
+
+        centerPanel.revalidate();
+        centerPanel.repaint();
+    }
+
+    private void InitilizeDoors(int doorLength, int doorThickness) {
+
+        System.out.println("Initializing doors");
+
+
+        // Add doors conditionally
+        JPanel topPanel = new JPanel(new GridBagLayout());
+        topPanel.setPreferredSize(new Dimension(doorLength, doorThickness));
+        topPanel.setOpaque(false);
+        add(topPanel, BorderLayout.NORTH);
+
+        JPanel bottomPanel = new JPanel(new GridBagLayout());
+        bottomPanel.setPreferredSize(new Dimension(doorLength, doorThickness));
+        bottomPanel.setOpaque(false);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+        JPanel leftPanel = new JPanel(new GridBagLayout());
+        leftPanel.setPreferredSize(new Dimension(doorThickness, doorThickness));
+        leftPanel.setOpaque(false);
+        add(leftPanel, BorderLayout.WEST);
+
+        JPanel rightPanel = new JPanel(new GridBagLayout());
+        rightPanel.setPreferredSize(new Dimension(doorThickness, doorThickness));
+        rightPanel.setOpaque(false);
+        add(rightPanel, BorderLayout.EAST);
+
+
+        // Add doors conditionally
+        if (hasTopDoor) {
+            if (topDoor == null) {
+                System.out.println("Adding top door");
+                topDoor = new DoorView();
+                topDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
+                topPanel.add(topDoor);
+                add(topPanel, BorderLayout.NORTH);
             }
         } else if (topDoor != null) {
             remove(topDoor);
@@ -81,10 +223,11 @@ public class RoomView extends JPanel {
 
         if (hasBottomDoor) {
             if (bottomDoor == null) {
+                System.out.println("Adding bottom door");
                 bottomDoor = new DoorView();
-                bottomDoor.setBounds((roomWidth - doorLength) / 2, roomHeight - doorThickness, doorLength, doorThickness);
-                bottomDoor.setSize(doorLength, doorThickness);
-                add(bottomDoor);
+                bottomDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
+                bottomPanel.add(bottomDoor);
+                add(bottomPanel, BorderLayout.SOUTH);
             }
         } else if (bottomDoor != null) {
             remove(bottomDoor);
@@ -93,10 +236,11 @@ public class RoomView extends JPanel {
 
         if (hasLeftDoor) {
             if (leftDoor == null) {
+                System.out.println("Adding left door");
                 leftDoor = new DoorView();
-                leftDoor.setBounds(0, (roomHeight - doorLength) / 2, doorThickness, doorLength);
-                leftDoor.setSize(doorThickness, doorLength);
-                add(leftDoor);
+                leftDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
+                leftPanel.add(leftDoor);
+                add(leftPanel, BorderLayout.WEST);
             }
         } else if (leftDoor != null) {
             remove(leftDoor);
@@ -105,24 +249,35 @@ public class RoomView extends JPanel {
 
         if (hasRightDoor) {
             if (rightDoor == null) {
+                System.out.println("Adding right door");
                 rightDoor = new DoorView();
-                rightDoor.setBounds(roomWidth - doorThickness, (roomHeight - doorLength) / 2, doorThickness, doorLength);
-                rightDoor.setSize(doorThickness, doorLength);
-                add(rightDoor);
+                rightDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
+                rightPanel.add(rightDoor);
+                add(rightPanel, BorderLayout.EAST);
             }
         } else if (rightDoor != null) {
             remove(rightDoor);
             rightDoor = null;
         }
+        */
 
-        //this.add(studentView);
+    }
 
-        this.itemHolder = new ItemHolder(itemViews, roomWidth, roomHeight, room.GetItems().size());
-        this.add(itemHolder);
+    private JPanel InitializeCenterPanel(int roomWidth, int roomHeight) {
+        // Adding a center panel to hold the items and players
+        int centerPanelWidth = roomWidth - 50;
+        int centerPanelHeight = roomHeight - 50;
 
-        this.playerHolder = new PlayerHolder(studentView, playerViews, roomWidth, roomHeight, room.GetCapacity());
-        this.add(playerHolder);
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+        centerPanel.setPreferredSize(new Dimension(centerPanelWidth, centerPanelHeight));
+        centerPanel.setMaximumSize(new Dimension(centerPanelWidth, centerPanelHeight));
+        centerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        centerPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
+        centerPanel.setOpaque(false);
+        add(centerPanel, BorderLayout.CENTER);
 
+        return centerPanel;
     }
 
     public DoorView GetDoor(EDirection direction){
@@ -132,7 +287,6 @@ public class RoomView extends JPanel {
         if (direction == EDirection.SOUTH) return bottomDoor;
         return topDoor;
     }
-
 
     public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews, ArrayList<PlayerView> playerViews, Room room) {
 
@@ -154,11 +308,11 @@ public class RoomView extends JPanel {
             rightDoor.Render();
             System.out.println("Rendering right door");
         }
+        
+        revalidate();
+        repaint();
 
         playerHolder.Render();
         itemHolder.Render();
-
-        revalidate();
-        repaint();
     }
 }

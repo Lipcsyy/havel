@@ -43,7 +43,7 @@ public class LoaderPanel extends JPanel {
         this.setFocusable(true);
 
         // background
-        this.setBackground(Color.GRAY);
+        //this.setBackground(Color.GRAY);
 
     }
 

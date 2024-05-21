@@ -8,7 +8,7 @@ public class InventoryConsole extends JPanel {
     public InventoryConsole(int width, int height){
         setPreferredSize( new Dimension(width, height) );
         this.setFocusable(true);
-        setBackground(Color.BLACK);
+        //setBackground(Color.BLACK);
         setLayout(new GridLayout(1, 5));
     }
 }

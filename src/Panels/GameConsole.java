@@ -15,7 +15,7 @@ public class GameConsole extends JPanel {
         this.height = height;
         setPreferredSize( new Dimension(width, height) );
         this.setFocusable(true);
-        setBackground(Color.white);
+        //setBackground(Color.white);
         setLayout(null);
     }
 

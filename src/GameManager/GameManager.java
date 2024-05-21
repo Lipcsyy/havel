@@ -75,7 +75,7 @@ public class GameManager implements java.io.Serializable{
 
     private void InitalizeGame(EGameMode gameMode) {
 
-        map = new GameMap(4,4, this);
+        map = new GameMap(2,2, this);
         map.generateMaze();
         map.displayMaze();
 
@@ -94,7 +94,7 @@ public class GameManager implements java.io.Serializable{
 
             //Add 10 teacher to the game
 
-            for (  int i = 0; i < 10; i++ ) {
+            for (  int i = 0; i < 4; i++ ) {
 
                 Teacher teacher = new Teacher(map.getRandomCell(), this);
                 gameController.SetPlayerViews(teacher, new PlayerView( EPlayers.TEACHER));
@@ -106,7 +106,7 @@ public class GameManager implements java.io.Serializable{
 
             //Adding three cleaners to the game
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 1; i++) {
                 Cleaner cleaner = new Cleaner(map.getRandomCell(), this);
                 gameController.SetPlayerViews(cleaner, new PlayerView( EPlayers.CLEANER));
             }
@@ -130,24 +130,27 @@ public class GameManager implements java.io.Serializable{
             gameController.studentToViews.put(student, new PlayerView( EPlayers.STUDENT));
 
             //add 8 teacher to the game with different starting room
-            for( int i = 0; i < 8; i++){
-                Room TeacherStartRoom = map.getRandomCell();
-                while( TeacherStartRoom == playerStartRoom){
-                    TeacherStartRoom = map.getRandomCell();
-                }
-
-                Teacher teacher = new Teacher(TeacherStartRoom, this);
-
-                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
-            }
+//            for( int i = 0; i < 2; i++){
+//                Room TeacherStartRoom = map.getRandomCell();
+//                while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
+//                    TeacherStartRoom = map.getRandomCell();
+//                }
+//
+//                Teacher teacher = new Teacher(TeacherStartRoom, this);
+//
+//                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
+//            }
 
             //add 2 cleaner to the game
-            for( int i = 0; i < 2; i++){
-                Room CleanerStartRoom = map.getRandomCell();
-                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
-
-                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
-            }
+//            for( int i = 0; i < 2; i++){
+//                Room CleanerStartRoom = map.getRandomCell();
+//                if( CleanerStartRoom.HasMoreSpaceInRoom() == false){
+//                    CleanerStartRoom = map.getRandomCell();
+//                }
+//                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
+//
+//                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
+//            }
 
             //adding items
             SlideRule slideRule = new SlideRule();

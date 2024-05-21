@@ -23,7 +23,7 @@ public class GameMap {
         // Initialize the graph with all cells having no neighbors
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                Room cell = new Room((new Random()).nextInt(1,5),gameManager);
+                Room cell = new Room((new Random()).nextInt(4,5),gameManager);
                 gameManager.GetGameController().SetRoomView(cell, new RoomView( ERooms.ROOM, false, false, false, false));
                 cell.setCoordinates(x, y);
                 adjacencyList.put(cell, new HashSet<>());

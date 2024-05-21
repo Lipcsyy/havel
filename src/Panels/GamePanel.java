@@ -26,14 +26,12 @@ public class GamePanel extends JPanel {
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true); // Enable keyboard focus for the panel
         requestFocusInWindow(); // Request keyboard focus when the panel is shown
-        setBackground(Color.GRAY);
 
         SetKeyListener();
 
         // Initialize containerPanel and set its preferred size to one third of the screen width
         containerPanel = new JPanel();
         containerPanel.setPreferredSize(new Dimension((int)Math.round((float)SCREEN_WIDTH * (2.0f / 3.0f)), SCREEN_HEIGHT));
-        containerPanel.setBackground(Color.GRAY);
 
         // Initialize mazeDisplayArea and set its preferred size to one third of the screen width
         mazeDisplayArea = new JPanel();
@@ -73,6 +71,7 @@ public class GamePanel extends JPanel {
     }
 
     public void InitializeGame(EGameMode gameMode) {
+
         gameController = new GameController(gameMode, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
         mazeDisplayArea.add(mazeDisplay);

@@ -41,10 +41,8 @@ public class GameController implements IObserver {
     public GameController(EGameMode gameMode, GamePanel gamePanel) {
 
         // MVC triangle setup
-        this.gameManager = new GameManager(gameMode, this);
-        this.gamePanel = gamePanel;
-
-        System.out.println(studentToViews.size());
+        this.gameManager = new GameManager(gameMode, this); //Connecting to the model
+        this.gamePanel = gamePanel; //Connecting to the view
 
         for ( Student student : studentToViews.keySet() ) {
             System.out.println("Adding observer");
@@ -59,10 +57,7 @@ public class GameController implements IObserver {
         this.gameManager.SetGameController(this);
         this.gamePanel = gamePanel;
 
-        System.out.println(studentToViews.size());
-
         for ( Student student : studentToViews.keySet() ) {
-            System.out.println("Adding observer");
             student.GetRoom().AddObserver(this );
         }
     }
@@ -70,25 +65,12 @@ public class GameController implements IObserver {
     public void StartGame() {
 
         this.isRunning = true;
-        System.out.println("Running");
+        this.isPlayerActive = new ArrayList<Boolean>();
 
         Render();
 
         Student player1 = studentToViews.keySet().iterator().next();
         HandleInput(player1);
-
-//        while (isRunning) {
-//
-//            HandleInput();  // Handle user input for the active room
-//
-//            //move non-playable character
-//            Render();       // Render only the active room
-//            try {
-//                Thread.sleep(16);  // Approximately 60 FPS
-//            } catch (InterruptedException e) {
-//                Thread.currentThread().interrupt();
-//            }
-//        }
     }
 
     private void HandleInput(Student student) {
@@ -178,7 +160,6 @@ public class GameController implements IObserver {
 
             if (roomViews.containsKey(room)) {
 
-                System.out.println("Should change room");
                 RoomView roomView = roomViews.get(room);
 
                 Set<Room> neighbours = gameManager.map.getAdjacencyList().get(room);
@@ -203,9 +184,11 @@ public class GameController implements IObserver {
 
                 // student and other players in the room
                 PlayerView studentView = studentToViews.get(student);
+
                 ArrayList<PlayerView> viewToPlayersInRoom = new ArrayList<>();
+
                 for ( Player player : playerViews.keySet() ) {
-                    if (player != student) {
+                    if (player != student && player.GetRoom() == room) {
                         PlayerView playerView = playerViews.get(player);
                         viewToPlayersInRoom.add(playerView);
                     }
