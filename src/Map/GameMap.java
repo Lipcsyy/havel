@@ -29,7 +29,7 @@ public class GameMap {
 
                 double randomNumber = random.nextDouble(0,1);
 
-                if( randomNumber < 1){
+                if( randomNumber < 0.2){
                     GasRoom cell = new GasRoom((new Random()).nextInt(4, 5), gameManager);
                     gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.GASROOM, false, false, false, false));
                     cell.setCoordinates(x, y);

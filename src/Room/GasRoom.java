@@ -62,6 +62,10 @@ public class GasRoom extends Room {
             playerInRoom.Interact(player);
         }
 
+        if (items.isEmpty() == false && wasSavedFromFreeze == true) {
+            player.CollectItem(items.get(0));
+        }
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Enter");
         }

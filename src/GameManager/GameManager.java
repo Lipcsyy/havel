@@ -154,12 +154,12 @@ public class GameManager implements java.io.Serializable{
 //            }
 
             //adding items
-            SlideRule slideRule = new SlideRule();
-            Room SlideRuleRoom = map.getRandomCell();
-            while( SlideRuleRoom == playerStartRoom){
-                SlideRuleRoom = map.getRandomCell();
-            }
-            SlideRuleRoom.AddItem(slideRule);
+           // SlideRule slideRule = new SlideRule();
+            //Room SlideRuleRoom = map.getRandomCell();
+            //while( SlideRuleRoom == playerStartRoom){
+              //  SlideRuleRoom = map.getRandomCell();
+            //}
+            //SlideRuleRoom.AddItem(slideRule);
         }
 
         InitalizeItems( gameMode );

@@ -44,6 +44,7 @@ public class Student extends Player {
                     }
                     if (item.NeedToThrow()) {
                         this.RemoveFromInventory(item);
+                        gameManager.GetGameController().RenderAfterDrop(this);
                     }
                     return;
                 }
@@ -94,6 +95,7 @@ public class Student extends Player {
 
                  if ( item.NeedToThrow() )
                      this.RemoveFromInventory(item);
+                     gameManager.GetGameController().RenderAfterDrop(this);
 
                  return true;
              }

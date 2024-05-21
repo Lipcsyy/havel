@@ -87,6 +87,7 @@ public abstract class Item implements java.io.Serializable{
         }
     }
 
+
     public boolean NeedToThrow(){
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "NeedToThrow", "");
