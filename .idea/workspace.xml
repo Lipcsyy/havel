@@ -8,39 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: connected the map with the rooms">
-      <change afterPath="$PROJECT_DIR$/src/Images/airfreshener.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/inventory.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/beer1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/beerglass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/transistor másolata.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/transistor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GameConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GameConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/InventoryConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/InventoryConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/PausePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/PausePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/DoorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DoorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ItemHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ItemHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/PlayerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
-    </list>
-    <list id="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" name="Changes by bologa" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Views/DoorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DoorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
-    <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="Changes by lenovo">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+    <list id="f4f9331d-4097-4310-9a6e-eb992a39687d" name="Changes by kovac" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
     </list>
-    <list id="15a0218a-8e59-43d9-8d75-f8fda468ec22" name="Changes by Madia" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+    <list id="15a0218a-8e59-43d9-8d75-f8fda468ec22" name="Changes by Madia" comment="Changes by Madia">
+      <change beforePath="$PROJECT_DIR$/src/Panels/InventoryConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/InventoryConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ItemHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ItemHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/ItemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ItemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
     </list>
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
@@ -62,98 +44,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Panels/GamePanel.java">
-      <ranges>
-        <range start1="28" end1="29" start2="28" end2="28" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="35" end1="36" start2="34" end2="34" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="40" end1="41" start2="38" end2="39" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="75" end1="75" start2="73" end2="74" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="82" end1="82" start2="81" end2="82" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/GameManager/GameManager.java">
-      <ranges>
-        <range start1="2" end1="5" start2="2" end2="3" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="8" end1="9" start2="6" end2="6" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="13" end1="13" start2="10" end2="11" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="77" end1="78" start2="75" end2="76" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="96" end1="97" start2="94" end2="95" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="101" end1="102" start2="99" end2="100" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="108" end1="109" start2="106" end2="107" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="110" end1="110" start2="108" end2="111" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="132" end1="142" start2="133" end2="143" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="144" end1="150" start2="145" end2="154" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="175" end1="176" start2="179" end2="180" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="180" end1="181" start2="184" end2="185" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="185" end1="186" start2="189" end2="190" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="190" end1="191" start2="194" end2="195" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="195" end1="196" start2="199" end2="200" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="200" end1="201" start2="204" end2="205" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="205" end1="206" start2="209" end2="210" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="209" end1="210" start2="213" end2="214" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="215" end1="216" start2="219" end2="220" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="220" end1="221" start2="224" end2="225" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="225" end1="226" start2="229" end2="230" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Controller/GameController.java">
-      <ranges>
-        <range start1="39" end1="39" start2="39" end2="40" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="43" end1="47" start2="44" end2="46" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="60" end1="62" start2="59" end2="59" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="64" end1="65" start2="61" end2="61" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="72" end1="73" start2="68" end2="69" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="78" end1="91" start2="74" end2="74" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="169" end1="169" start2="152" end2="153" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="178" end1="178" start2="162" end2="163" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="180" end1="181" start2="165" end2="165" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="205" end1="205" start2="189" end2="190" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="206" end1="206" start2="191" end2="192" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="207" end1="208" start2="193" end2="194" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="229" end1="229" start2="215" end2="221" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="257" end1="259" start2="249" end2="251" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/Views/RoomView.java">
       <ranges>
-        <range start1="43" end1="44" start2="43" end2="44" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="51" end1="52" start2="51" end2="52" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="53" end1="54" start2="53" end2="58" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="55" end1="55" start2="59" end2="67" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="60" end1="61" start2="72" end2="73" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="67" end1="67" start2="79" end2="208" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="71" end1="71" start2="212" end2="213" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="72" end1="75" start2="214" end2="217" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="76" end1="77" start2="218" end2="221" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="80" end1="81" start2="224" end2="225" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="83" end1="83" start2="227" end2="228" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="84" end1="87" start2="229" end2="232" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="88" end1="89" start2="233" end2="236" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="92" end1="93" start2="239" end2="240" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="95" end1="95" start2="242" end2="243" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="96" end1="99" start2="244" end2="247" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="100" end1="101" start2="248" end2="251" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="104" end1="105" start2="254" end2="255" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="107" end1="107" start2="257" end2="258" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="108" end1="111" start2="259" end2="262" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="112" end1="113" start2="263" end2="266" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="116" end1="124" start2="269" end2="270" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="127" end1="127" start2="273" end2="290" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="134" end1="135" start2="297" end2="297" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="139" end1="139" start2="301" end2="302" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="156" end1="160" start2="319" end2="320" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="162" end1="162" start2="322" end2="325" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="82" end1="83" start2="82" end2="83" changelist="f4f9331d-4097-4310-9a6e-eb992a39687d" />
+        <range start1="184" end1="185" start2="184" end2="185" changelist="f4f9331d-4097-4310-9a6e-eb992a39687d" />
+        <range start1="319" end1="320" start2="319" end2="320" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/Views/DoorView.java">
+    <file path="$PROJECT_DIR$/src/Panels/InventoryConsole.java">
       <ranges>
-        <range start1="8" end1="9" start2="8" end2="8" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="16" end1="18" start2="15" end2="15" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="19" end1="21" start2="16" end2="16" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="24" end1="25" start2="19" end2="20" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="28" end1="29" start2="23" end2="24" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="33" end1="33" start2="28" end2="29" changelist="b3932d05-50e9-4b53-87b7-7a9e2aa784b0" />
-        <range start1="35" end1="36" start2="31" end2="31" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="4" end1="4" start2="5" end2="7" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="7" end1="7" start2="10" end2="11" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="8" end1="9" start2="12" end2="16" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="10" end1="12" start2="17" end2="26" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="13" end1="13" start2="27" end2="40" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
       </ranges>
     </file>
   </component>
@@ -270,6 +175,7 @@
       <workItem from="1715879255941" duration="26000" />
       <workItem from="1716138916211" duration="6480000" />
       <workItem from="1716222929606" duration="12819000" />
+      <workItem from="1716293929092" duration="786000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -567,7 +473,47 @@
       <option name="project" value="LOCAL" />
       <updated>1716226839496</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="feat: connected the map with the rooms">
+      <option name="closed" value="true" />
+      <created>1716290634375</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290634375</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat: connected the map with the rooms">
+      <option name="closed" value="true" />
+      <created>1716290642304</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290642304</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Changes by lenovo">
+      <option name="closed" value="true" />
+      <created>1716290647269</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290647269</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Changes by Madia">
+      <option name="closed" value="true" />
+      <created>1716290655045</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290655045</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat: connected the map with the rooms">
+      <option name="closed" value="true" />
+      <created>1716290667509</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1716290667509</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,11 +542,9 @@
     <MESSAGE value="fix: Fixed the player and room's functions" />
     <MESSAGE value="Changes by kovac" />
     <MESSAGE value="fix: almost made the command interpreter" />
-    <MESSAGE value="Changes by bologa" />
     <MESSAGE value="fix: changes by vera" />
     <MESSAGE value="fix: tests are ready" />
     <MESSAGE value="feat: added the observer architecture to the game" />
-    <MESSAGE value="Changes by Madia" />
     <MESSAGE value="updatek, pausepanel" />
     <MESSAGE value="Render fixed" />
     <MESSAGE value="Observers fixed" />
@@ -608,9 +552,11 @@
     <MESSAGE value="All panel classes are added, navigation solved" />
     <MESSAGE value="primitive gameconsoles and inventoryconsoles added" />
     <MESSAGE value="pausepanel logic done" />
-    <MESSAGE value="feat: connected the map with the rooms" />
+    <MESSAGE value="Changes by bologa" />
     <MESSAGE value="Changes by lenovo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by lenovo" />
+    <MESSAGE value="Changes by Madia" />
+    <MESSAGE value="feat: connected the map with the rooms" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: connected the map with the rooms" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

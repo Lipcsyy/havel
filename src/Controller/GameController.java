@@ -130,18 +130,19 @@ public class GameController implements IObserver {
 
     public void MovePlayerToRoom(Student player, Room newRoom) {
 
-        System.out.println("Moving player to room");
+        System.out.println("MovePlayerToRoom");
 
         int index = studentToViews.keySet().stream().toList().indexOf(player);
 
         gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
 
         player.ChangeRoom(newRoom);
-        Render();
+        UpdateInventoryConsole();
     }
 
     public void Render() {
 
+        System.out.println("Render (gamecontroller)");
         //Rendering the maze display
         gamePanel.Render();
 
@@ -223,6 +224,20 @@ public class GameController implements IObserver {
             studentIndex++;
         }
 
+    }
+
+    public void UpdateInventoryConsole(){
+        System.out.println("UpdateInventoryConsole:");
+        for ( Student student : studentToViews.keySet()) {
+            int studentIndex = studentToViews.keySet().stream().toList().indexOf(student);
+            for (Item item : student.getItems()) {
+                System.out.println("-one item at student inventory");
+                ItemView itemView = itemViews.get(item);
+                gamePanel.GetInventoryConsoles().get(studentIndex).add(itemView);
+                gamePanel.GetInventoryConsoles().get(studentIndex).revalidate();
+                gamePanel.GetInventoryConsoles().get(studentIndex).repaint();
+            }
+        }
     }
 
     private Room findCell(int x, int y) {

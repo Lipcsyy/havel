@@ -33,6 +33,7 @@ public class GamePanel extends JPanel {
         containerPanel = new JPanel();
         containerPanel.setPreferredSize(new Dimension((int)Math.round((float)SCREEN_WIDTH * (2.0f / 3.0f)), SCREEN_HEIGHT));
 
+
         // Initialize mazeDisplayArea and set its preferred size to one third of the screen width
         mazeDisplayArea = new JPanel();
         mazeDisplayArea.setPreferredSize(new Dimension((int)Math.round((float) SCREEN_WIDTH / 3), SCREEN_HEIGHT));
@@ -97,6 +98,9 @@ public class GamePanel extends JPanel {
 
     public void Render() {
         mazeDisplay.Render();
+        for( InventoryConsole inventoryConsole : inventoryConsoles ) {
+            inventoryConsole.Render();
+        }
     }
 
     public void SaveGame() {

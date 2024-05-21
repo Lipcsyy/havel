@@ -12,7 +12,8 @@ public class PlayerHolder extends JPanel {
         studentView = _studentView;
         playerViews = _playerViews;
 
-        setPreferredSize(new Dimension(holderWidth - 200, holderHeight - 100));
+        setMaximumSize(new Dimension(400, 148));
+        setMinimumSize(new Dimension(400, 148));
         //setBackground(Color.RED);
 
         setLayout(new GridLayout(0, capacity, 0, 0));
