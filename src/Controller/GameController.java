@@ -204,7 +204,9 @@ public class GameController implements IObserver {
                 player.ChangeRoom(gameManager.map.GetRandomNeighbour(player.GetRoom()));
             }
 
-            player.DecreaseFrozenRounds();
+            if(player.getFrozenForRound() > 0){
+                player.DecreaseFrozenRounds();
+            }
 
         }
 
