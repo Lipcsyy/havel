@@ -23,8 +23,8 @@ public class LoaderPanel extends JPanel {
     private JScrollPane scrollPane;
     private JPanel buttonPanel;
     public static MenuButton deleteButton;
-    public static MenuButton loadButton;
-    public static MenuButton mainMenuButtonLoader = new MenuButton("Return to main menu");
+    public MenuButton loadButton;
+    public MenuButton mainMenuButtonLoader = new MenuButton("Return to main menu");
 
     public LoaderPanel() {
 

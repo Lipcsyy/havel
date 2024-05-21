@@ -7,14 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="mazedisplay és drawmaze, vonalak távolítása">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="loaderpanel első verzió (régi törölve) beolvasás jó kéne legyen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MenuPanel.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
     <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="" />
@@ -159,7 +155,7 @@
       <workItem from="1716189685623" duration="2277000" />
       <workItem from="1716217839340" duration="23000" />
       <workItem from="1716217887913" duration="56000" />
-      <workItem from="1716274621287" duration="3876000" />
+      <workItem from="1716274621287" duration="4224000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -473,7 +469,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716121181470</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="loaderpanel első verzió, beolvasás jó kéne legyen">
+      <option name="closed" value="true" />
+      <created>1716278679889</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1716278679889</updated>
+    </task>
+    <task id="LOCAL-00041" summary="loaderpanel első verzió (régi törölve) beolvasás jó kéne legyen">
+      <option name="closed" value="true" />
+      <created>1716278765268</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1716278765268</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,8 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Room Class" />
-    <MESSAGE value="Added a Logger" />
     <MESSAGE value="Changed Player class" />
     <MESSAGE value="Last commit" />
     <MESSAGE value="Changes made by the team" />
@@ -516,7 +526,9 @@
     <MESSAGE value="az ajtók mostmár jó (átméretezés)" />
     <MESSAGE value="az ajtók jó" />
     <MESSAGE value="mazedisplay és drawmaze, vonalak távolítása" />
-    <option name="LAST_COMMIT_MESSAGE" value="mazedisplay és drawmaze, vonalak távolítása" />
+    <MESSAGE value="loaderpanel első verzió, beolvasás jó kéne legyen" />
+    <MESSAGE value="loaderpanel első verzió (régi törölve) beolvasás jó kéne legyen" />
+    <option name="LAST_COMMIT_MESSAGE" value="loaderpanel első verzió (régi törölve) beolvasás jó kéne legyen" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
