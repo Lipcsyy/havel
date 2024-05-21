@@ -3,47 +3,11 @@ package Panels;
 import Buttons.MenuButton;
 import Enums.EGameMode;
 import GameManager.GameManager;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class LoaderPanel extends JPanel {
-    private final JButton mainMenuButton = new MenuButton("Return to main menu");
-    public LoaderPanel(){
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int SCREEN_WIDTH = (int) screenSize.getWidth();
-        int SCREEN_HEIGHT = (int) screenSize.getHeight();
-        this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
-        this.setFocusable(true);
-        setBackground(Color.GRAY);
-
-        SetButtons();
-
-        add(mainMenuButton);
-    }
-
-    private void SetButtons() {
-        mainMenuButton.addActionListener( event -> {
-            GameFrame.layout.show(GameFrame.mainPanel, "MENU" );
-        });
-    }
-}
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
