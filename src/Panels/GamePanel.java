@@ -98,4 +98,8 @@ public class GamePanel extends JPanel {
     public void Render() {
         mazeDisplay.Render();
     }
+
+    public void SaveGame() {
+
+    }
 }
