@@ -2,6 +2,7 @@ package Panels;
 
 import Controller.GameController;
 import Enums.EGameMode;
+import GameManager.GameManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -73,6 +74,13 @@ public class GamePanel extends JPanel {
 
     public void InitializeGame(EGameMode gameMode) {
         gameController = new GameController(gameMode, this);
+        mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
+        mazeDisplayArea.add(mazeDisplay);
+        gameController.StartGame();
+    }
+
+    public void InitializeLoadedGame(GameManager gameManager) {
+        gameController = new GameController(gameManager, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
         mazeDisplayArea.add(mazeDisplay);
         gameController.StartGame();

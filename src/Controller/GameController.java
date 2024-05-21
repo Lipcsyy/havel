@@ -42,7 +42,22 @@ public class GameController implements IObserver {
 
         // MVC triangle setup
         this.gameManager = new GameManager(gameMode, this);
-        this.gamePanel =gamePanel;
+        this.gamePanel = gamePanel;
+
+        System.out.println(studentToViews.size());
+
+        for ( Student student : studentToViews.keySet() ) {
+            System.out.println("Adding observer");
+            student.GetRoom().AddObserver(this );
+        }
+    }
+
+    public GameController(GameManager gameManager, GamePanel gamePanel) {
+
+        // MVC triangle setup
+        this.gameManager = gameManager;
+        this.gameManager.SetGameController(this);
+        this.gamePanel = gamePanel;
 
         System.out.println(studentToViews.size());
 
@@ -186,11 +201,9 @@ public class GameController implements IObserver {
                 //Adding the room view to the gamepanel's corresponding gameconsole
                 gamePanel.GetGameConsoles().get(studentIndex).AddRoomView(roomView);
 
-                //ADDING VIEWS TO THE ROOM
+                // student and other players in the room
                 PlayerView studentView = studentToViews.get(student);
-
                 ArrayList<PlayerView> viewToPlayersInRoom = new ArrayList<>();
-
                 for ( Player player : playerViews.keySet() ) {
                     if (player != student) {
                         PlayerView playerView = playerViews.get(player);
@@ -198,9 +211,8 @@ public class GameController implements IObserver {
                     }
                 }
 
-                //Adding the item's view to the room to render them
+                // items in the room
                 ArrayList<ItemView> roomItemViews = new ArrayList<>();
-
                 for (Item item : room.GetItems()) {
                     ItemView itemView = itemViews.get(item);
                     roomItemViews.add(itemView);

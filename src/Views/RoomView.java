@@ -34,11 +34,11 @@ public class RoomView extends JPanel {
 
         try {
             if (eRooms == ERooms.ROOM) {
-                image = ImageIO.read(new File("/src/Images/room.png"));
+                image = ImageIO.read(new File("./src/Images/room.png"));
             } else if (eRooms == ERooms.GASROOM) {
-                image = ImageIO.read(new File("/src/Images/gasroom.png"));
+                image = ImageIO.read(new File("./src/Images/gasroom.png"));
             } else if (eRooms == ERooms.MAGICROOM) {
-                image = ImageIO.read(new File("/src/Images/magicroom.png"));
+                image = ImageIO.read(new File("./src/Images/magicroom.png"));
             }
         } catch ( Exception e){
 
@@ -117,11 +117,11 @@ public class RoomView extends JPanel {
 
         //this.add(studentView);
 
-        this.playerHolder = new PlayerHolder(studentView, playerViews, roomWidth, roomHeight, room.GetCapacity());
-        this.add(playerHolder);
-
         this.itemHolder = new ItemHolder(itemViews, roomWidth, roomHeight, room.GetItems().size());
         this.add(itemHolder);
+
+        this.playerHolder = new PlayerHolder(studentView, playerViews, roomWidth, roomHeight, room.GetCapacity());
+        this.add(playerHolder);
 
     }
 
@@ -155,11 +155,10 @@ public class RoomView extends JPanel {
             System.out.println("Rendering right door");
         }
 
-        revalidate();
-        repaint();
-
         playerHolder.Render();
         itemHolder.Render();
 
+        revalidate();
+        repaint();
     }
 }

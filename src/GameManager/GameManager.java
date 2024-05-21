@@ -18,12 +18,13 @@ public class GameManager implements java.io.Serializable{
     public static ELogger loggerStatus = ELogger.SUPRESS;
 
     private GameController gameController;
-
+    public EGameMode gameMode;
     public GameMap map;
     private final ArrayList<Player> players;
 
-    public GameManager(EGameMode gameMod){
+    public GameManager(EGameMode gameMode){
         players = new ArrayList<Player>();
+        this.gameMode = gameMode;
 
         Student.ResetCounter();
         Teacher.ResetCounter();
@@ -49,6 +50,7 @@ public class GameManager implements java.io.Serializable{
        this.gameController = gameController;
 
        players = new ArrayList<Player>();
+       this.gameMode = gameMode;
 
        Student.ResetCounter();
        Teacher.ResetCounter();
@@ -405,5 +407,9 @@ public class GameManager implements java.io.Serializable{
 
     public GameController GetGameController() {
         return gameController;
+    }
+
+    public void SetGameController(GameController gameController){
+        this.gameController = gameController;
     }
 }

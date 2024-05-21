@@ -7,56 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: connected the map with the rooms">
-      <change afterPath="$PROJECT_DIR$/src/Enums/EItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/EPlayers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/ERooms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/beer1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/camembert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/cleaner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/cleaner_sleep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/gasroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/magicroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/rag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/room.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/sliderule.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/student.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/student_sleep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/teacher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/transistor másolata.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Images/tvsz.png" afterDir="false" />
+    <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="mazedisplay és drawmaze, vonalak távolítása">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ItemHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ItemHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ItemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ItemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/PlayerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
-    </list>
-    <list id="dbddf12d-c925-4222-9e36-2a48fdbd3928" name="Changes by bologa" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/LoaderPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
-    <list id="5de3f891-1454-4223-9448-960d29bcf9c8" name="Changes by kovac" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
-    </list>
-    <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="Changes by lenovo">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
-    </list>
-    <list id="15a0218a-8e59-43d9-8d75-f8fda468ec22" name="Changes by Madia" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
-    </list>
+    <list id="e3171d1b-fe20-4559-a4de-63947d5ad9ae" name="Changes by lenovo" comment="" />
+    <list id="6e8fb268-c513-43ca-ad65-5217f82aa710" name="Changes by Madia" comment="Changes by Madia" />
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,83 +29,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Views/PlayerView.java">
-      <ranges>
-        <range start1="2" end1="4" start2="2" end2="5" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="6" end1="6" start2="7" end2="8" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="9" end1="11" start2="11" end2="28" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="16" end1="16" start2="33" end2="40" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="17" end1="19" start2="41" end2="41" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="20" end1="22" start2="42" end2="44" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="23" end1="24" start2="45" end2="45" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Map/GameMap.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="6" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="6" end1="6" start2="8" end2="9" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="16" end1="17" start2="19" end2="20" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="22" end1="24" start2="25" end2="27" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Controller/GameController.java">
-      <ranges>
-        <range start1="85" end1="86" start2="85" end2="86" changelist="5de3f891-1454-4223-9448-960d29bcf9c8" />
-        <range start1="184" end1="185" start2="184" end2="184" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="200" end1="201" start2="199" end2="199" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="204" end1="204" start2="202" end2="203" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="213" end1="214" start2="212" end2="213" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="238" end1="240" start2="237" end2="239" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="250" end1="252" start2="249" end2="250" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Views/RoomView.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="5" end1="5" start2="7" end2="10" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="7" end1="7" start2="12" end2="14" changelist="e3171d1b-fe20-4559-a4de-63947d5ad9ae" />
-        <range start1="15" end1="15" start2="22" end2="24" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="23" end1="24" start2="32" end2="45" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="33" end1="34" start2="54" end2="54" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="37" end1="38" start2="57" end2="58" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="50" end1="54" start2="70" end2="79" changelist="dbddf12d-c925-4222-9e36-2a48fdbd3928" />
-        <range start1="57" end1="61" start2="82" end2="91" changelist="dbddf12d-c925-4222-9e36-2a48fdbd3928" />
-        <range start1="64" end1="68" start2="94" end2="103" changelist="dbddf12d-c925-4222-9e36-2a48fdbd3928" />
-        <range start1="71" end1="75" start2="106" end2="115" changelist="dbddf12d-c925-4222-9e36-2a48fdbd3928" />
-        <range start1="77" end1="79" start2="117" end2="125" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="90" end1="92" start2="136" end2="137" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="93" end1="94" start2="138" end2="139" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="111" end1="111" start2="156" end2="163" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/GameManager/GameManager.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="84" end1="86" start2="85" end2="87" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="88" end1="90" start2="89" end2="91" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="96" end1="97" start2="97" end2="98" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="107" end1="108" start2="108" end2="109" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="126" end1="127" start2="127" end2="128" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="137" end1="138" start2="138" end2="139" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-        <range start1="145" end1="146" start2="146" end2="147" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Room/Room.java">
-      <ranges>
-        <range start1="13" end1="13" start2="13" end2="14" changelist="5de3f891-1454-4223-9448-960d29bcf9c8" />
-        <range start1="313" end1="313" start2="314" end2="316" changelist="5de3f891-1454-4223-9448-960d29bcf9c8" />
-        <range start1="407" end1="407" start2="410" end2="414" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
-      </ranges>
-    </file>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -171,7 +63,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lipcseymarton/4.semester/Projlab/havel&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kovac/Desktop/github-copilot-intellij-1.5.4.5571.zip&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -193,7 +85,6 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\IdeaProjects\havel\src\Images" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -211,6 +102,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MazeDisplay" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MazeDisplay" />
@@ -220,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -255,8 +150,16 @@
       <workItem from="1715254990617" duration="505000" />
       <workItem from="1715873350859" duration="4279000" />
       <workItem from="1715879255941" duration="26000" />
-      <workItem from="1716138916211" duration="6480000" />
-      <workItem from="1716222929606" duration="12819000" />
+      <workItem from="1716016260648" duration="2759000" />
+      <workItem from="1716019198060" duration="1894000" />
+      <workItem from="1716021308497" duration="7525000" />
+      <workItem from="1716031551569" duration="15667000" />
+      <workItem from="1716106979463" duration="8106000" />
+      <workItem from="1716138049586" duration="1252000" />
+      <workItem from="1716189685623" duration="2277000" />
+      <workItem from="1716217839340" duration="23000" />
+      <workItem from="1716217887913" duration="56000" />
+      <workItem from="1716274621287" duration="3876000" />
     </task>
     <task id="LOCAL-00001" summary="Initinal Commit">
       <option name="closed" value="true" />
@@ -532,29 +435,45 @@
     </task>
     <task id="LOCAL-00035" summary="feat: connected the map with the rooms">
       <option name="closed" value="true" />
-      <created>1716225960437</created>
+      <created>1716032098036</created>
       <option name="number" value="00035" />
       <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1716225960437</updated>
+      <updated>1716032098036</updated>
     </task>
-    <task id="LOCAL-00036" summary="feat: connected the map with the rooms">
+    <task id="LOCAL-00036" summary="az ajtók kinda jó">
       <option name="closed" value="true" />
-      <created>1716226832407</created>
+      <created>1716054139710</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1716226832407</updated>
+      <updated>1716054139710</updated>
     </task>
-    <task id="LOCAL-00037" summary="Changes by lenovo">
+    <task id="LOCAL-00037" summary="az ajtók mostmár jó (átméretezés)">
       <option name="closed" value="true" />
-      <created>1716226839496</created>
+      <created>1716056400131</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1716226839496</updated>
+      <updated>1716056400131</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="az ajtók jó">
+      <option name="closed" value="true" />
+      <created>1716061614087</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1716061614087</updated>
+    </task>
+    <task id="LOCAL-00039" summary="mazedisplay és drawmaze, vonalak távolítása">
+      <option name="closed" value="true" />
+      <created>1716121181470</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1716121181470</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,9 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initinal Commit" />
-    <MESSAGE value="Added Player class" />
-    <MESSAGE value="Added Item class" />
     <MESSAGE value="Added Room Class" />
     <MESSAGE value="Added a Logger" />
     <MESSAGE value="Changed Player class" />
@@ -596,8 +512,11 @@
     <MESSAGE value="primitive gameconsoles and inventoryconsoles added" />
     <MESSAGE value="pausepanel logic done" />
     <MESSAGE value="feat: connected the map with the rooms" />
-    <MESSAGE value="Changes by lenovo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by lenovo" />
+    <MESSAGE value="az ajtók kinda jó" />
+    <MESSAGE value="az ajtók mostmár jó (átméretezés)" />
+    <MESSAGE value="az ajtók jó" />
+    <MESSAGE value="mazedisplay és drawmaze, vonalak távolítása" />
+    <option name="LAST_COMMIT_MESSAGE" value="mazedisplay és drawmaze, vonalak távolítása" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -606,6 +525,11 @@
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="neighbours.toArray()[1]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
