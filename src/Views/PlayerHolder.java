@@ -27,6 +27,10 @@ public class PlayerHolder extends JPanel {
         this.setOpaque(false);
     }
 
+    public PlayerHolder(){
+
+    }
+
     public void Render() {
         studentView.Render();
         revalidate();

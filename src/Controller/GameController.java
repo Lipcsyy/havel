@@ -441,4 +441,16 @@ public class GameController implements IObserver {
         return roomViews.get( room );
     }
 
+    public GamePanel GetGamePanel(){
+        return gamePanel;
+    }
+
+    private void showGameOver(String message) {
+        JOptionPane.showMessageDialog(null, message, "Game Over", JOptionPane.INFORMATION_MESSAGE);
+        int result = JOptionPane.showConfirmDialog(null, "Exit game?", "Game Over", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }
+
 }

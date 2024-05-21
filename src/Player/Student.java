@@ -53,6 +53,7 @@ public class Student extends Player {
 
         //If we get here nothing could save the student so it DIEEEES;
         SetIsAlive(false);
+        DropAllItem();
 
         //We should display that the student died -> we need to implement this
         //TODO: We need to check when handling the inputs from the students whether they are alive or not

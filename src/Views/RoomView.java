@@ -54,8 +54,39 @@ public class RoomView extends JPanel {
         setOpaque(false);
 
         InitilizeDoors(60, 20);
+    }
+
+    /*
+    public RoomView(ERooms eRooms, ItemHolder itemHolder, PlayerHolder playerHolder, boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor){
+
+        this.hasTopDoor = hasTopDoor;
+        this.hasBottomDoor = hasBottomDoor;
+        this.hasLeftDoor = hasLeftDoor;
+        this.hasRightDoor = hasRightDoor;
+
+        try {
+            if (eRooms == ERooms.ROOM) {
+                image = ImageIO.read(new File("./src/Images/room.png"));
+            } else if (eRooms == ERooms.GASROOM) {
+                image = ImageIO.read(new File("./src/Images/gasroom.png"));
+            } else if (eRooms == ERooms.MAGICROOM) {
+                image = ImageIO.read(new File("./src/Images/magicroom.png"));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        setFocusable(true);
+        setLayout(new BorderLayout());
+        setOpaque(false);
+
+        InitilizeDoors(60, 20);
+
+        this.itemHolder = itemHolder;
+        this.playerHolder = playerHolder;
 
     }
+     */
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -327,5 +358,41 @@ public class RoomView extends JPanel {
 
     public ItemHolder getItemHolder(){
         return itemHolder;
+    }
+
+    public PlayerHolder getPlayerHolder(){
+        return playerHolder;
+    }
+
+    public void loadBackgroundImage(ERooms eRooms) {
+        try {
+            if (eRooms == ERooms.ROOM) {
+                image = ImageIO.read(new File("./src/Images/room.png"));
+            } else if (eRooms == ERooms.GASROOM) {
+                image = ImageIO.read(new File("./src/Images/gasroom.png"));
+            } else if (eRooms == ERooms.MAGICROOM) {
+                image = ImageIO.read(new File("./src/Images/magicroom.png"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public void setBackgroundPicture( ERooms eRooms ) {
+        try {
+            if (eRooms == ERooms.ROOM) {
+                image = ImageIO.read(new File("./src/Images/room.png"));
+            } else if (eRooms == ERooms.GASROOM) {
+                image = ImageIO.read(new File("./src/Images/gasroom.png"));
+            } else if (eRooms == ERooms.MAGICROOM) {
+                image = ImageIO.read(new File("./src/Images/magicroom.png"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        repaint();
     }
 }

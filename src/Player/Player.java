@@ -5,6 +5,8 @@ import Room.*;
 import Logger.*;
 import GameManager.*;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
@@ -123,6 +125,9 @@ public abstract class Player implements java.io.Serializable {
             this.RemoveFromInventory(items.get(i));
             i--;
         }
+
+        gameManager.GetGameController().RenderAfterDrop( this );
+        
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "DropAllItem");
@@ -346,6 +351,23 @@ public abstract class Player implements java.io.Serializable {
     public void DropItem( Item item) {}
 
     public void Transistor() {}
+
+    public void win(){
+        gameManager.GetGameController().GetGamePanel().removeAll();
+
+        JPanel winPanel = new JPanel();
+        winPanel.setBackground( Color.YELLOW );
+
+
+        JLabel winLabel = new JLabel("U WIN MOTHERFUCKER");
+        winLabel.setOpaque( false );
+        winLabel.setForeground( Color.BLACK );
+        winLabel.setHorizontalAlignment( SwingConstants.CENTER );
+        winLabel.setVerticalAlignment( SwingConstants.CENTER );
+
+        gameManager.GetGameController().GetGamePanel().add(winPanel);
+        gameManager.GetGameController().GetGamePanel().add(winLabel);
+    }
 
 
     //-----------INFORMATION FUNCTIONS----------------

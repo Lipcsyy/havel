@@ -113,7 +113,7 @@ public class GameManager implements java.io.Serializable{
             }
 
             //Adding the items to the game
-
+            /*
             Room slideRuleRoom = map.getRandomCell();
 
             while ( slideRuleRoom == student1.GetRoom() || slideRuleRoom == student2.GetRoom() ) {
@@ -121,7 +121,7 @@ public class GameManager implements java.io.Serializable{
             }
 
             slideRuleRoom.AddItem(new SlideRule());
-
+            */
         }
         else {
 
@@ -157,12 +157,14 @@ public class GameManager implements java.io.Serializable{
            }
 
             //adding items
-           // SlideRule slideRule = new SlideRule();
-            //Room SlideRuleRoom = map.getRandomCell();
-            //while( SlideRuleRoom == playerStartRoom){
-              //  SlideRuleRoom = map.getRandomCell();
-            //}
-            //SlideRuleRoom.AddItem(slideRule);
+            SlideRule slideRule = new SlideRule();
+            Room SlideRuleRoom = map.getRandomCell();
+            while( SlideRuleRoom == playerStartRoom){
+                SlideRuleRoom = map.getRandomCell();
+            }
+            SlideRuleRoom.AddItem(slideRule);
+
+
         }
 
         InitalizeItems( gameMode );
@@ -317,6 +319,7 @@ public class GameManager implements java.io.Serializable{
             Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
         }
     }
+*/
 
     public void AddRoom( Room room ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {

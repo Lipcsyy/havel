@@ -186,6 +186,7 @@ public class Room implements java.io.Serializable , IObservable {
 
         this.turnsLeftForEffect = 0;
 
+
         if ( isWashed ) {
             this.SetRoomNumberOfPassagesBeforeStickiness(5);
         }
@@ -277,6 +278,7 @@ public class Room implements java.io.Serializable , IObservable {
         }
         this.turnsLeftForEffect = turnsLeftForEffect;
 
+        gameManager.GetGameController().ChangeRoomViewToGas( this );
         //System.out.println(players.size());
 
         for ( Player player : this.players ) {
@@ -284,6 +286,23 @@ public class Room implements java.io.Serializable , IObservable {
         }
 
         NotifyObservers();
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
+        }
+    }
+
+    public void DecreaseTurnsLeftForEffect() {
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        }
+        if( turnsLeftForEffect > 0)
+            this.turnsLeftForEffect--;
+
+        if( this.turnsLeftForEffect == 0) {
+            gameManager.GetGameController().ChangeRoomViewToNormal( this );
+        }
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
@@ -323,20 +342,13 @@ public class Room implements java.io.Serializable , IObservable {
             return false;
         }
 
-        if (!items.isEmpty()) {
-            player.CollectItem(items.get(0));
-        }
-
+        boolean wasSavedFromFreeze = false;
         if(turnsLeftForEffect > 0){
             wasSavedFromFreeze = player.Freeze(3);
         }
 
         //making the players interact with each-other
-        for(int i = 0; i<players.size();i++){
-
-            int siz = players.size();
-
-            Player playerInRoom = players.get(i);
+        for (Player playerInRoom : players) {
 
             if (playerInRoom == player) {
                 continue;
@@ -344,11 +356,14 @@ public class Room implements java.io.Serializable , IObservable {
 
             player.Interact(playerInRoom);
             playerInRoom.Interact(player);
-            int newsiz = players.size();
+        }
 
-            //if we removed a player
-            if(newsiz != siz){
-                i--;
+        System.out.println("TURNS LEFT FOR EFFECT: " + turnsLeftForEffect);
+
+        if ( !items.isEmpty() && player.GetIsAlive()) {
+            if( turnsLeftForEffect == 0 || (turnsLeftForEffect > 0 && wasSavedFromFreeze == true)){
+                System.out.println("COLLECTING ITEM");
+                player.CollectItem(items.get(0));
             }
         }
 
