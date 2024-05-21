@@ -144,11 +144,11 @@ public class Student extends Player {
             Logger.logEntry(this.getClass().getName(), "DropRandomItem", "");
         }
 
-        if( !this.items.isEmpty() ){
+        if( this.items.size() >1 ){
 
             Random rnd = new Random();
             int inventorySize = this.GetInventory().size();
-            int indexToRemove = rnd.nextInt(inventorySize);
+            int indexToRemove = rnd.nextInt(inventorySize-1);
             Item droppedItem = this.items.remove(indexToRemove);
 
             // Add the removed item to the room
