@@ -17,6 +17,7 @@ public class MazeDisplay extends JPanel {
         this.gameController = gameController;
         setPreferredSize(new Dimension(300, 300)); // Set the window size
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -54,9 +55,7 @@ public class MazeDisplay extends JPanel {
                 if (student.GetRoom() == room) {
                     studentInRoom = true;
                     Set<Room> rooomneighbors = adjacencyList.get(room);
-                    //System.out.println("neighbours size (from mazedisplay): " + rooomneighbors.size());
                     for (Room neighbour : rooomneighbors) {
-                        //System.out.println("(md) neighbour: " + neighbour.GetX() + " " + neighbour.GetY());
                     }
                 }
             }

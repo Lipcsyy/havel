@@ -18,6 +18,7 @@ public class GameMap {
     private static final int[] DIRECTIONS = {N, S, E, W};
 
     public GameMap(int width, int height, GameManager gameManager){
+
         this.width = width;
         this.height = height;
 
@@ -30,8 +31,9 @@ public class GameMap {
                 double randomNumber = random.nextDouble(0,1);
 
                 if( randomNumber < 0.2){
-                    GasRoom cell = new GasRoom((new Random()).nextInt(4, 5), gameManager);
+                    Room cell = new Room((new Random()).nextInt(4, 5), gameManager);
                     gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.GASROOM, false, false, false, false));
+                    cell.SetTurnsLeftForEffect( Integer.MAX_VALUE );
                     cell.setCoordinates(x, y);
                     adjacencyList.put(cell, new HashSet<>());
                 } else if ( randomNumber < 0.4){

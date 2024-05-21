@@ -103,15 +103,17 @@ public class GameController implements IObserver {
     private void handleNextTurn() {
 
         ArrayList<Student> students = new ArrayList<>(studentToViews.keySet());
+
+        int numAlive = 0;
         for(int i = 0; i < students.size(); i++){
-            if(students.get(i).GetIsAlive() == false){
-                students.remove(students.get(i));
-                i--;
+            Student actStudent = students.get(i);
+            if(actStudent.GetIsAlive() == false){
+                roomViews.get(actStudent.GetRoom()).add(endGamePanel);
             }
+            else numAlive++;
         }
 
-
-        if (!students.isEmpty()) {
+        if (numAlive != 0) {
 
             Student currentPlayer = students.get(currentPlayerIndex);
             System.out.println("(handleNextTurn):FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
@@ -122,15 +124,23 @@ public class GameController implements IObserver {
             currentPlayer.DecreaseFrozenForRound();
 
             //Decreasing every should-be-decreased-after-round-is-over items
-            currentPlayer.GetInventory().forEach( ( Item item ) -> {
-                item.DecreaseTurnsLeft( currentPlayer );
-            } );
+            currentPlayer.DecreaseItemsTurnsLeft();
+
+            //Drop the items that needs to be dropped
+            for ( int i = 0; i < currentPlayer.GetInventory().size(); i++ ) {
+                if ( currentPlayer.GetInventory().get(i).NeedToThrow() == true ) {
+                    currentPlayer.RemoveFromInventory( currentPlayer.GetInventory().get(i) );
+                    i--;
+                }
+            }
 
             MoveInGameCharacters();
-        } else {
-            gamePanel.GetGameConsoles().get(currentPlayerIndex).add(endGamePanel);
-        }
 
+            List<Room> rooms = gameManager.getRooms();
+            for( Room room : rooms){
+                room.DecreaseTurnsLeftForEffect();
+            }
+        }
     }
 
     private void HandleInput(Student student) {
@@ -139,20 +149,29 @@ public class GameController implements IObserver {
         RoomView currentRoomView = roomViews.get(student.GetRoom());
         Room currentRoom = student.GetRoom();
 
-        removeDoorListeners(currentRoomView);
-
         if (currentRoomView.hasTopDoor) {
             DoorView topDoor = currentRoomView.GetDoor(EDirection.NORTH);
             topDoor.addActionListener(e -> {
                 MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
             });
         }
+
         if (currentRoomView.hasBottomDoor) {
             DoorView bottomDoor = currentRoomView.GetDoor(EDirection.SOUTH);
             bottomDoor.addActionListener(e -> {
-                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y + 1)));
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
+                this.gamePanel.requestFocusInWindow();
             });
         }
+        
+        if (currentRoomView.hasBottomDoor) {
+            DoorView bottomDoor = currentRoomView.GetDoor( EDirection.SOUTH );
+            bottomDoor.addActionListener( e -> {
+                MovePlayerToRoom( student, Objects.requireNonNull( findCell( currentRoom.x, currentRoom.y + 1 )));
+                this.gamePanel.requestFocusInWindow();
+            });
+        }
+        
         if (currentRoomView.hasLeftDoor) {
             DoorView leftDoor = currentRoomView.GetDoor(EDirection.WEST);
             leftDoor.addActionListener(e -> {
@@ -382,6 +401,7 @@ public class GameController implements IObserver {
         if (roomView != null) {
             // Update the item holder with the current items in the room
             ArrayList<ItemView> roomItemViews = new ArrayList<>();
+
             for (Item item : student.GetRoom().GetItems()) {
                 ItemView itemView = itemViews.get(item);
                 if (itemView != null) {
@@ -395,10 +415,16 @@ public class GameController implements IObserver {
         UpdateInventoryConsole();
     }
 
-    public void ChangeRoomView( Room target, Room newRoom ) {
-        RoomView roomView = roomViews.get(target);
-        roomViews.remove(target);
-        roomViews.put(newRoom, new RoomView( ERooms.ROOM, false, false, false, false ));
+    public void ChangeRoomViewToNormal( Room room ) {
+
+        RoomView roomView = roomViews.get(room);
+        roomView.setBackgroundPicture( ERooms.ROOM );
+    }
+
+    public void ChangeRoomViewToGas( Room room ) {
+
+        RoomView roomView = roomViews.get(room);
+        roomView.setBackgroundPicture( ERooms.GASROOM );
     }
 
     public RoomView GetRoomViewByRoom( Room room ){

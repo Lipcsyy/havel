@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 public class Room implements java.io.Serializable , IObservable {
 
     GameManager gameManager;
-
     public int x, y;
     public boolean in = false; // In the maze
     private List<IObserver> observers = new ArrayList<>();
@@ -191,6 +190,10 @@ public class Room implements java.io.Serializable , IObservable {
             this.SetRoomNumberOfPassagesBeforeStickiness(5);
         }
 
+        gameManager.GetGameController().ChangeRoomViewToNormal( this );
+
+        //We need to update the view
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CleanRoom");
         }
@@ -277,8 +280,11 @@ public class Room implements java.io.Serializable , IObservable {
         //System.out.println(players.size());
 
         for ( Player player : this.players ) {
-            player.Freeze(turnsLeftForEffect);
+            player.Freeze(3);
         }
+
+        NotifyObservers();
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
         }
@@ -322,7 +328,7 @@ public class Room implements java.io.Serializable , IObservable {
         }
 
         if(turnsLeftForEffect > 0){
-            player.Freeze(turnsLeftForEffect);
+            wasSavedFromFreeze = player.Freeze(3);
         }
 
         //making the players interact with each-other

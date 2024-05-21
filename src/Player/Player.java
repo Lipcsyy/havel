@@ -136,8 +136,9 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "RemoveFromInventory", "item");
         }
-
+        
         this.GetInventory().remove(item);
+        gameManager.GetGameController().RenderAfterDrop( this );
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit( this.getClass().getName(), "RemoveFromInventory" );

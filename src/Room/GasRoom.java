@@ -93,7 +93,7 @@ public class GasRoom extends Room {
         }
 
         //TODO: Make the players go out of the room
-        this.gameManager.ChangeRoomToNormalInList(this);
+        //this.gameManager.ChangeRoomToNormalInList(this);
 
 
         //clean the room, so it can be sticky later

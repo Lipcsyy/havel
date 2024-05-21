@@ -7,7 +7,7 @@ public class ItemHolder extends JPanel {
 
     ArrayList<ItemView> itemViews = new ArrayList<>();
 
-    public ItemHolder(ArrayList<ItemView> _itemViews, int holderWidth, int holderHeight, int size) {
+    public ItemHolder( ArrayList<ItemView> _itemViews, int size) {
 
         if (_itemViews != null) {
             itemViews = _itemViews;
@@ -15,6 +15,11 @@ public class ItemHolder extends JPanel {
 
         setOpaque(false);
         setLayout(new GridLayout(1, size, 10, 10));
+    }
+
+    public ItemHolder() {
+        setOpaque(false);
+        setLayout(new GridLayout(1, 5, 10, 10));
     }
 
     public void setItemViews(ArrayList<ItemView> _itemViews) {

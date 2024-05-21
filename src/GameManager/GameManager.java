@@ -71,7 +71,7 @@ public class GameManager implements java.io.Serializable{
        InitalizeGame(gameMode);
     }
 
-    private void InitalizeGame(EGameMode gameMode) {
+    private void InitalizeGame(EGameMode gameMode)  {
 
         map = new GameMap(4, 4, this);
         map.generateMaze();
@@ -124,14 +124,17 @@ public class GameManager implements java.io.Serializable{
 
         }
         else {
+
             //Add student to the game
             Room playerStartRoom = map.getRandomCell();
             Student student = new Student(playerStartRoom, this);
-
             gameController.studentToViews.put(student, new PlayerView( EPlayers.STUDENT));
 
+            //TODO:REMOVE THIS
+            Rag rag = new Rag();
+
             //add 8 teacher to the game with different starting room
-            for( int i = 0; i < 2; i++){
+            for( int i = 0; i < 1; i++){
                 Room TeacherStartRoom = map.getRandomCell();
                 while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
                     TeacherStartRoom = map.getRandomCell();
@@ -143,15 +146,15 @@ public class GameManager implements java.io.Serializable{
             }
 
             //add 2 cleaner to the game
-//            for( int i = 0; i < 2; i++){
-//                Room CleanerStartRoom = map.getRandomCell();
-//                if( CleanerStartRoom.HasMoreSpaceInRoom() == false){
-//                    CleanerStartRoom = map.getRandomCell();
-//                }
-//                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
-//
-//                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
-//            }
+            for( int i = 0; i < 1; i++){
+                Room CleanerStartRoom = map.getRandomCell();
+                if( CleanerStartRoom.HasMoreSpaceInRoom() == false){
+                    CleanerStartRoom = map.getRandomCell();
+                }
+                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
+
+                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
+           }
 
             //adding items
            // SlideRule slideRule = new SlideRule();
@@ -267,63 +270,52 @@ public class GameManager implements java.io.Serializable{
         return allItems;
     }
 
-    public void ChangeRoomToNormalInList( Room targetRoom )
-    {
-
-        if (GameManager.loggerStatus == ELogger.INFO ) {
+    /*
+    public void ChangeRoomToNormalInList(Room targetRoom) {
+        if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "ChangeRoomToNormalInList", "targetRoom");
         }
 
-        //Copying the room we want to change -> we make it into a normal room no matter what
+        // Create a new Room with the same properties as the targetRoom
         Room newRoom = new Room(targetRoom, this);
 
-        //We need remove the players from the target room and add them to the new room
+        // Move players from the targetRoom to the newRoom
         Iterator<Player> it = targetRoom.GetPlayers().iterator();
-
         while (it.hasNext()) {
-
             Player p = it.next();
-
-            // Remove player from the current room
             it.remove();
             p.SetRoom(newRoom);
 
             // Move items to the new room
-            p.GetInventory().forEach((item) -> {
-                item.SetRoom(newRoom);
-            });
-
+            p.GetInventory().forEach(item -> item.SetRoom(newRoom));
         }
 
-        //We need to set the newRoom as the neighbour of the target room's (the room we want to delete) neighbours.
+        // Get the neighbors of the targetRoom
+        var neighborsOfTarget = targetRoom.GetNeighbours();
 
-        //we get here all the neighbours of the room we want to delete
-        var neighboursOfTarget = targetRoom.GetNeighbours();
-
-        //we remove from the rooms neighbour list the room that will be deleted soon
-        for ( int i = 0; i < neighboursOfTarget.size(); i++ ) {
-
-            Room r = (Room)neighboursOfTarget.toArray()[i];
-            DisconnectRoomsTwoWay( r, targetRoom );
-            i--;
+        // Remove the targetRoom from its neighbors' adjacency lists
+        for (Room neighbor : neighborsOfTarget) {
+            DisconnectRoomsTwoWay(neighbor, targetRoom);
         }
 
-        for (Room r : neighboursOfTarget) {
-            this.ConnectRoomsTwoWay( r, newRoom );
-        }
-
-        //There are no references left for the targetRoom, so it should be deleted
+        // Remove the targetRoom from the adjacency list
         map.getAdjacencyList().remove(targetRoom);
 
-        //after removing the target room we need to change the key of the roomviews with the new room
-        gameController.ChangeRoomView(targetRoom, newRoom);
-
-        gameController.GetRoomViewByRoom(newRoom).repaint();
-
-        if (GameManager.loggerStatus == ELogger.INFO ) {
-            Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
+        // Add the newRoom to the adjacency list and connect it to the neighbors
+        map.getAdjacencyList().put(newRoom, new HashSet<>());
+        for (Room neighbor : neighborsOfTarget) {
+            ConnectRoomsTwoWay(neighbor, newRoom);
         }
 
+        // Update the game controller with the new room
+        gameController.ChangeRoomViewToNormal(targetRoom, newRoom);
+
+        // Refresh the view for the new room
+        gameController.GetRoomViewByRoom(newRoom).repaint();
+
+        if (GameManager.loggerStatus == ELogger.INFO) {
+            Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
+        }
     }
 
     public void AddRoom( Room room ) {

@@ -127,14 +127,6 @@ public class Student extends Player {
 
         this.SetRoom(room);
 
-        for ( int i = 0; i < items.size(); i++ ) {
-            items.get(i).DecreaseTurnsLeft(this);
-            if (items.get(i).NeedToThrow()) {
-                this.RemoveFromInventory( items.get(i) );
-                i--;
-            }
-        }
-
         room.NotifyObservers();
 
         if (GameManager.loggerStatus == ELogger.INFO ) {

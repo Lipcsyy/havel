@@ -42,7 +42,7 @@ public class Camembert extends Item{
         }
 
         this.MakeGas(player.GetRoom());
-        abilityNumber--;
+        abilityNumber = 0;
 
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "Use");

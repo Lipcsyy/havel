@@ -27,8 +27,8 @@ public class RoomView extends JPanel {
     DoorView leftDoor;
     DoorView rightDoor;
 
-    public ItemHolder itemHolder;
-    public PlayerHolder playerHolder;
+    public ItemHolder itemHolder = new ItemHolder();
+    public PlayerHolder playerHolder = new PlayerHolder();
 
     public RoomView(ERooms eRooms, boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor) {
 
@@ -49,7 +49,6 @@ public class RoomView extends JPanel {
         this.hasLeftDoor = hasLeftDoor;
         this.hasRightDoor = hasRightDoor;
 
-        //setBackground(Color.lightGray);
         setFocusable(true);
         setLayout(new BorderLayout());
         setOpaque(false);
@@ -171,7 +170,7 @@ public class RoomView extends JPanel {
         this.playerHolder = new PlayerHolder(studentView, playerViews, centerPanel.getWidth(), centerPanel.getHeight() / 2, room.GetCapacity());
         centerPanel.add(playerHolder);
 
-        this.itemHolder = new ItemHolder(itemViews, centerPanel.getWidth(), centerPanel.getHeight() / 2 , room.GetItems().size());
+        this.itemHolder = new ItemHolder(itemViews, room.GetItems().size());
         centerPanel.add(itemHolder);
 
         centerPanel.setOpaque(false);
