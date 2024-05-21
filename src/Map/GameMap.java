@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import Enums.ERooms;
-import Room.Room;
+import Room.*;
 import GameManager.GameManager;
 import Views.RoomView;
 
@@ -20,13 +20,31 @@ public class GameMap {
     public GameMap(int width, int height, GameManager gameManager){
         this.width = width;
         this.height = height;
+
+        Random random = new Random();
+
         // Initialize the graph with all cells having no neighbors
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                Room cell = new Room((new Random()).nextInt(4,5),gameManager);
-                gameManager.GetGameController().SetRoomView(cell, new RoomView( ERooms.ROOM, false, false, false, false));
-                cell.setCoordinates(x, y);
-                adjacencyList.put(cell, new HashSet<>());
+
+                double randomNumber = random.nextDouble(0,1);
+
+                if( randomNumber < 1){
+                    GasRoom cell = new GasRoom((new Random()).nextInt(4, 5), gameManager);
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.GASROOM, false, false, false, false));
+                    cell.setCoordinates(x, y);
+                    adjacencyList.put(cell, new HashSet<>());
+                } else if ( randomNumber < 0.4){
+                    MagicRoom cell = new MagicRoom((new Random()).nextInt(4, 5), gameManager);
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.MAGICROOM, false, false, false, false));
+                    cell.setCoordinates(x, y);
+                    adjacencyList.put(cell, new HashSet<>());
+                } else {
+                    Room cell = new Room((new Random()).nextInt(4, 5), gameManager);
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.ROOM, false, false, false, false));
+                    cell.setCoordinates(x, y);
+                    adjacencyList.put(cell, new HashSet<>());
+                }
             }
         }
     }

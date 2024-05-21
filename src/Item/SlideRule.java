@@ -31,10 +31,10 @@ public class SlideRule extends Item {
      *
      * @param player The Player object picking up the SlideRule.
      */
-    public void PickUpItem(Player player) {
+    /*public void PickUpItem(Player player) {
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
             Logger.logExit(this.getClass().getName(), "PickUpItem");
         }
-    }
+    }*/
 }

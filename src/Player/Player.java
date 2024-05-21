@@ -188,6 +188,7 @@ public abstract class Player implements java.io.Serializable {
             Logger.logEntry(this.getClass().getName(), "AddItem", item.getClass().getName());
         }
         this.items.add(item);
+        gameManager.GetGameController().AddActionListenerToItemView(this, item);
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "AddItem");
         }
@@ -334,7 +335,7 @@ public abstract class Player implements java.io.Serializable {
     // empty function, only overridden in Student (will apply on Students when picking up a BeerGlass)
     public void DropRandomItem() {}
 
-    public void DropItem() {}
+    public void DropItem( Item item) {}
 
     public void Transistor() {}
 

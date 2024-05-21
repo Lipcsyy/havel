@@ -13,8 +13,6 @@ public class ItemHolder extends JPanel {
             itemViews = _itemViews;
         }
 
-        setMaximumSize(new Dimension(600, 84));
-        setMinimumSize(new Dimension(400, 84));
         setOpaque(false);
         setLayout(new GridLayout(1, size, 10, 10));
     }
@@ -26,6 +24,10 @@ public class ItemHolder extends JPanel {
     }
 
     public void Render() {
+
+        setMaximumSize(new Dimension(itemViews.size() * 84, 84));
+        setPreferredSize(new Dimension( itemViews.size() * 84, 84 ));
+        setMinimumSize(new Dimension(itemViews.size() * 84, 84));
 
         removeAll();
 

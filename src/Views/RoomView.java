@@ -324,4 +324,8 @@ public class RoomView extends JPanel {
         playerHolder.Render();
         itemHolder.Render();
     }
+
+    public ItemHolder getItemHolder(){
+        return itemHolder;
+    }
 }

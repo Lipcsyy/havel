@@ -17,6 +17,13 @@ public class GameFrame extends JFrame {
     public static JPanel previousPanel;
 
     public GameFrame(){
+        layout = new CardLayout();
+        mainPanel = new JPanel();
+        menuPanel = new MenuPanel();
+        singleGamePanel = new GamePanel(EGameMode.SINGLEPLAYER);
+        multiGamePanel = new GamePanel(EGameMode.MULTIPLAYER);
+        pausePanel = new PausePanel();
+
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int SCREEN_WIDTH = (int) screenSize.getWidth();

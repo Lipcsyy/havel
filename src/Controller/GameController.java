@@ -1,6 +1,7 @@
 package Controller;
 import Enums.EDirection;
 import Enums.EGameMode;
+import Enums.EItems;
 import Interfaces.IObserver;
 import Room.*;
 import GameManager.*;

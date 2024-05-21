@@ -190,9 +190,9 @@ public class GameManager implements java.io.Serializable{
             gameController.SetItemViews(airFreshener, new ItemView(EItems.AIRFRESHENER));
 
             //Add BeerGlass
-            BeerGlass beerGlass = new BeerGlass();
-            map.getRandomCell().AddItem(beerGlass);
-            gameController.SetItemViews(beerGlass, new ItemView(EItems.BEERGLASS));
+            //BeerGlass beerGlass = new BeerGlass();
+            //map.getRandomCell().AddItem(beerGlass);
+            //gameController.SetItemViews(beerGlass, new ItemView(EItems.BEERGLASS));
 
             //Add Camembert
             Camembert camembert = new Camembert();
@@ -216,17 +216,17 @@ public class GameManager implements java.io.Serializable{
             //Add FakeItems
             FakeItem fakeMask = new FakeItem();
             fakeMask.setVersion(EVersion.MASK);
-            map.getRandomCell().AddItem(fakeMask);
-            gameController.SetItemViews(fakeMask, new ItemView(EItems.MASK));
+            //map.getRandomCell().AddItem(fakeMask);
+            //gameController.SetItemViews(fakeMask, new ItemView(EItems.MASK));
 
             FakeItem fakeTvsz = new FakeItem();
             fakeTvsz.setVersion(EVersion.TVSZ);
-            map.getRandomCell().AddItem(fakeTvsz);
-            gameController.SetItemViews(fakeTvsz, new ItemView(EItems.TVSZ));
+            //map.getRandomCell().AddItem(fakeTvsz);
+            //gameController.SetItemViews(fakeTvsz, new ItemView(EItems.TVSZ));
 
             FakeItem fakeSlideRule = new FakeItem();
             fakeSlideRule.setVersion(EVersion.SLIDERULE);
-            map.getRandomCell().AddItem(fakeSlideRule);
+            //map.getRandomCell().AddItem(fakeSlideRule);
             gameController.SetItemViews(fakeSlideRule, new ItemView(EItems.SLIDERULE));
         }
     }

@@ -1,10 +1,14 @@
 package Panels;
 
+import Views.ItemView;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class InventoryConsole extends JPanel {
 
@@ -20,9 +24,9 @@ public class InventoryConsole extends JPanel {
         } catch( Exception e){
             e.printStackTrace();
         }
-        //setBackground(Color.BLACK);
+
         setLayout(new GridLayout(1, 5, 10, 10));
-        
+
         Render();
     }
 
@@ -38,4 +42,5 @@ public class InventoryConsole extends JPanel {
         revalidate();
         repaint();
     }
+
 }

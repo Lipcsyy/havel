@@ -14,6 +14,7 @@ public class ItemView extends JPanel {
     transient private BufferedImage image;
     public ItemView(EItems eItems) {
 
+        this.eItems = eItems;
         try {
 
             switch (eItems) {
@@ -65,6 +66,10 @@ public class ItemView extends JPanel {
         this.setFocusable(true);
 
         repaint();
+    }
+
+    public EItems geteItems(){
+        return eItems;
     }
 
 }

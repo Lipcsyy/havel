@@ -121,23 +121,22 @@ public class Student extends Player {
     }
 
     // Drops the oldest item in the inventory
-    public void DropItem() {
+    @Override
+    public void DropItem( Item item) {
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "DropItem", "");
         }
-
-        if( !this.items.isEmpty() ){
-
-            Item firstItem = this.items.remove(0);
-
+            this.items.remove(item);
             // Add the removed item to the room
-            this.room.AddItem(firstItem);
-        }
+            this.room.AddItem(item);
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "DropItem");
         }
+
+        gameManager.GetGameController().RemoveActionListenerFromItemView(this, item);
+        gameManager.GetGameController().RenderAfterDrop(this);
     }
 
     public void DropRandomItem() {
