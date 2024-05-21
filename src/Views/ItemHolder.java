@@ -19,6 +19,12 @@ public class ItemHolder extends JPanel {
         setLayout(new GridLayout(1, size, 10, 10));
     }
 
+    public void setItemViews(ArrayList<ItemView> _itemViews) {
+        if (_itemViews != null) {
+            itemViews = _itemViews;
+        }
+    }
+
     public void Render() {
 
         removeAll();

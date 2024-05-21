@@ -290,7 +290,7 @@ public class Room implements java.io.Serializable , IObservable {
      * This function is called when a player enters the room.
      * @param player The player that enters the room.
      */
-    public void Enter(Player player){
+    public boolean Enter(Player player){
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Enter", "player");
@@ -301,7 +301,8 @@ public class Room implements java.io.Serializable , IObservable {
             if (GameManager.loggerStatus == ELogger.INFO) {
                 Logger.logExit(this.getClass().getName(), "Enter");
             }
-            return;
+            System.out.println("Could not change room");
+            return false;
         }
 
         //Adding the player if there is more space in the room
@@ -314,7 +315,7 @@ public class Room implements java.io.Serializable , IObservable {
             }
             JOptionPane.showMessageDialog(null, "No more space in room!", "Message", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("No space in room");
-            return;
+            return false;
         }
 
         if (!items.isEmpty()) {
@@ -349,6 +350,8 @@ public class Room implements java.io.Serializable , IObservable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Enter");
         }
+
+        return true;
     }
 
     /**

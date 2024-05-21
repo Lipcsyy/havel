@@ -19,8 +19,6 @@ public class GasRoom extends Room {
     public GasRoom(int capacity, GameManager gameManager) {
         super(capacity, gameManager);
         this.id = "GasRoom_" + idNumber++;
-
-        gameManager.AddRoom(this);
     }
 
     /**
@@ -28,10 +26,17 @@ public class GasRoom extends Room {
      * @param player The player that enters the room.
      */
     @Override
-    public void Enter(Player player){
+    public boolean Enter(Player player){
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Enter", "player");
+        }
+
+        if ( player.GetFrozenForRound() > 0 ) {
+            if (GameManager.loggerStatus == ELogger.INFO ) {
+                Logger.logExit(this.getClass().getName(), "Enter");
+            }
+            return false;
         }
 
         //Adding the player if there is more space in the room
@@ -41,10 +46,10 @@ public class GasRoom extends Room {
             if (GameManager.loggerStatus == ELogger.INFO ) {
                 Logger.logExit(this.getClass().getName(), "Enter");
             }
-            return;
+            return false;
         }
 
-        player.Freeze(3);
+        boolean wasSavedFromFreez = player.Freeze(3);
 
         //making the players interact with each-other
         for (Player playerInRoom : players) {
@@ -60,6 +65,16 @@ public class GasRoom extends Room {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Enter");
         }
+
+        if ( wasSavedFromFreez == true ) {
+            return true;
+        }
+
+        if ( player.GetFrozenForRound() == 0 ) {
+            return true;
+        }
+
+        return false;
     }
 
     @Override

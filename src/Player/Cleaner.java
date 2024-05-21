@@ -65,11 +65,13 @@ public class Cleaner extends Player {
 
     // Cleaner can't freeze
     @Override
-    public void Freeze( int freezeForRounds ) {
+    public boolean Freeze( int freezeForRounds ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Freeze", "3");
             Logger.logExit(this.getClass().getName(), "Freeze");
         }
+
+        return true;
     }
 
     @Override

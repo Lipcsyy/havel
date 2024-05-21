@@ -136,4 +136,9 @@ public class GameMap {
             System.out.println();
         }
     }
+
+    public Room GetRandomNeighbour(Room room){
+        List<Room> neighbours = new ArrayList<>(adjacencyList.get(room));
+        return neighbours.get(rand.nextInt(neighbours.size()));
+    }
 }

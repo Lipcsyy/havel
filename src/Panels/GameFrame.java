@@ -5,14 +5,17 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
-    public static CardLayout layout = new CardLayout();
-    public static JPanel mainPanel = new JPanel();
-    public static MenuPanel menuPanel = new MenuPanel();
-    public static GamePanel singleGamePanel = new GamePanel(EGameMode.SINGLEPLAYER);
-    public static GamePanel multiGamePanel = new GamePanel(EGameMode.MULTIPLAYER);
-    public static PausePanel pausePanel = new PausePanel();
-    public static LoaderPanel loaderPanel = new LoaderPanel();
+
+    public static CardLayout layout;
+    public static JPanel mainPanel;
+    public static MenuPanel menuPanel;
+    public static GamePanel singleGamePanel;
+    public static GamePanel multiGamePanel;
+    public static PausePanel pausePanel;
+
+    //public static LoaderPanel loaderPanel = new LoaderPanel();
     public static JPanel previousPanel;
+
     public GameFrame(){
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -34,7 +37,7 @@ public class GameFrame extends JFrame {
         mainPanel.add(singleGamePanel, "SINGLE");
         mainPanel.add(multiGamePanel, "MULTI");
         mainPanel.add(pausePanel, "PAUSE");
-        mainPanel.add(loaderPanel, "LOADER");
+        //mainPanel.add(loaderPanel, "LOADER");
 
         add(mainPanel);
         setTitle("Logarléc");

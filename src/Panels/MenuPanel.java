@@ -89,7 +89,7 @@ public class MenuPanel extends JPanel {
 
         loadGameButton.addActionListener( event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "LOADER" );
-            GameFrame.loaderPanel.makeModel();  // Load the saved games
+            //GameFrame.loaderPanel.makeModel();  // Load the saved games
         });
 
         exitButton.addActionListener( event -> System.exit(0));

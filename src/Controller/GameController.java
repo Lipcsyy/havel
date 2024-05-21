@@ -6,17 +6,13 @@ import Room.*;
 import GameManager.*;
 import Player.*;
 import Item.*;
-import Views.ItemView;
-import Views.PlayerView;
-import Views.DoorView;
+import Views.*;
 import Panels.*;
-import Views.RoomView;
+
+import javax.swing.*;
 import java.awt.event.ActionListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class GameController implements IObserver {
 
@@ -36,8 +32,8 @@ public class GameController implements IObserver {
 
     //-------------------------------------------------------------------------------------------------------------
 
-    private boolean isRunning = false;
-    private ArrayList<Boolean> isPlayerActive;
+    private int currentPlayerIndex = 0; // Track the current player's index
+    private int playerMoveCount = 0; // Track the number of player moves
 
     public GameController(EGameMode gameMode, GamePanel gamePanel) {
 
@@ -63,10 +59,10 @@ public class GameController implements IObserver {
         }
     }
 
+
     public void StartGame() {
 
-        this.isRunning = true;
-        this.isPlayerActive = new ArrayList<Boolean>();
+        System.out.println("Items:" + itemViews.size());
 
         Render();
 
@@ -74,30 +70,63 @@ public class GameController implements IObserver {
         HandleInput(player1);
     }
 
-    private void HandleInput(Student student) {
 
-        System.out.println("Handling input");
+    private void handleNextTurn() {
+        ArrayList<Student> students = new ArrayList<>(studentToViews.keySet());
+        if (!students.isEmpty()) {
+            Student currentPlayer = students.get(currentPlayerIndex);
+            currentPlayer.DecreaseFrozenForRound();
+            System.out.println("FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
+            MoveInGameCharacters();
+            HandleInput(currentPlayer);
+        }
+
+    }
+
+    private void HandleInput(Student student) {
+        System.out.println("Handling input for " + student);
 
         RoomView currentRoomView = roomViews.get(student.GetRoom());
         Room currentRoom = student.GetRoom();
 
-        //removeDoorListeners(currentRoomView);
+        removeDoorListeners(currentRoomView);
 
-        if ( currentRoomView.hasTopDoor ) {
+        if (currentRoomView.hasTopDoor) {
             DoorView topDoor = currentRoomView.GetDoor(EDirection.NORTH);
-            topDoor.AddClickListener(e -> MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1))));
+            topDoor.addActionListener(e -> {
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
+            });
         }
-        if ( currentRoomView.hasBottomDoor ) {
+        if (currentRoomView.hasBottomDoor) {
             DoorView bottomDoor = currentRoomView.GetDoor(EDirection.SOUTH);
-            bottomDoor.AddClickListener(e -> MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y + 1))));
+            bottomDoor.addActionListener(e -> {
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y + 1)));
+            });
         }
-        if ( currentRoomView.hasLeftDoor ) {
+        if (currentRoomView.hasLeftDoor) {
             DoorView leftDoor = currentRoomView.GetDoor(EDirection.WEST);
-            leftDoor.AddClickListener(e -> MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x - 1, currentRoom.y))));
+            leftDoor.addActionListener(e -> {
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x - 1, currentRoom.y)));
+            });
         }
-        if ( currentRoomView.hasRightDoor ) {
+        if (currentRoomView.hasRightDoor) {
             DoorView rightDoor = currentRoomView.GetDoor(EDirection.EAST);
-            rightDoor.AddClickListener(e -> MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x + 1, currentRoom.y))));
+            rightDoor.addActionListener(e -> {
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x + 1, currentRoom.y)));
+            });
+        }
+    }
+
+    private void MoveInGameCharacters() {
+
+        System.out.println("MOVING IN GAME CHARACTERS");
+
+        for (Player player : playerViews.keySet()) {
+            if (player instanceof Teacher) {
+                Teacher teacher = (Teacher) player;
+                Room nextRoom = gameManager.map.GetRandomNeighbour(teacher.GetRoom());
+                teacher.ChangeRoom(nextRoom);
+            }
         }
     }
 
@@ -134,111 +163,108 @@ public class GameController implements IObserver {
 
         int index = studentToViews.keySet().stream().toList().indexOf(player);
 
-        gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
 
-        player.ChangeRoom(newRoom);
+        if (player.ChangeRoom(newRoom)  == true) {
+            System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());
+            gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
+        };
+
         UpdateInventoryConsole();
+
+        nextTurn(); // Move to the next turn after rendering
+
     }
 
     public void Render() {
-
         System.out.println("Render (gamecontroller)");
-        //Rendering the maze display
         gamePanel.Render();
 
-        // clear the content of the gameconsoles
+        // clear the content of the game consoles
         int studentIndex = 0;
-        for ( Student studentView : studentToViews.keySet() ) {
-            //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
+        for (Student studentView : studentToViews.keySet()) {
             gamePanel.GetGameConsoles().get(studentIndex).removeAll();
             gamePanel.GetInventoryConsoles().get(studentIndex).removeAll();
             studentIndex++;
         }
 
-        //rendering the room the student is in
+        // rendering the room the student is in
         studentIndex = 0;
-        for ( Student student : studentToViews.keySet()) {
-
+        for (Student student : studentToViews.keySet()) {
             Room room = student.GetRoom();
 
-            // set the contents of the room
             if (roomViews.containsKey(room)) {
-
                 RoomView roomView = roomViews.get(room);
-
                 Set<Room> neighbours = gameManager.map.getAdjacencyList().get(room);
 
-                //setting whether there are doors to other rooms
-                if (neighbours.contains(findCell(room.x, room.y - 1))) { // Top wall
-                    roomView.hasTopDoor = true;
-                }
-                if (neighbours.contains(findCell(room.x, room.y + 1))) { // Bottom wall
-                    roomView.hasBottomDoor = true;
-                }
-                if (neighbours.contains(findCell(room.x - 1, room.y))) { // Left wall
-                    roomView.hasLeftDoor = true;
-                }
-                if (neighbours.contains(findCell(room.x + 1, room.y))) { // Right wall
-                    roomView.hasRightDoor = true;
-                }
+                roomView.hasTopDoor = neighbours.contains(findCell(room.x, room.y - 1));
+                roomView.hasBottomDoor = neighbours.contains(findCell(room.x, room.y + 1));
+                roomView.hasLeftDoor = neighbours.contains(findCell(room.x - 1, room.y));
+                roomView.hasRightDoor = neighbours.contains(findCell(room.x + 1, room.y));
 
-
-                //Adding the room view to the gamepanel's corresponding gameconsole
                 gamePanel.GetGameConsoles().get(studentIndex).AddRoomView(roomView);
 
-                // student and other players in the room
                 PlayerView studentView = studentToViews.get(student);
-
                 ArrayList<PlayerView> viewToPlayersInRoom = new ArrayList<>();
 
-                for ( Player player : playerViews.keySet() ) {
+                for (Player player : playerViews.keySet()) {
                     if (player != student && player.GetRoom() == room) {
                         PlayerView playerView = playerViews.get(player);
                         viewToPlayersInRoom.add(playerView);
                     }
                 }
 
-                // items in the room
                 ArrayList<ItemView> roomItemViews = new ArrayList<>();
                 for (Item item : room.GetItems()) {
                     ItemView itemView = itemViews.get(item);
                     roomItemViews.add(itemView);
                 }
 
-                // setting size and rendering
                 int roomWidth = gamePanel.GetGameConsoles().get(studentIndex).getConsoleWidth();
                 int roomHeight = gamePanel.GetGameConsoles().get(studentIndex).getConsoleHeight();
+                roomView.Render(roomWidth, roomHeight, studentToViews.get(student), roomItemViews, viewToPlayersInRoom, student.GetRoom());
 
-                roomView.Render( roomWidth, roomHeight, studentView, roomItemViews, viewToPlayersInRoom, student.GetRoom() );
-
-                System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
+                System.out.println("roomindex: " + room.GetX() + " " + room.GetY());
             }
 
-            // set the contents of the inventorypanel
-            for(Item item: student.getItems()){
-                ItemView itemView = itemViews.get(item);
-                gamePanel.GetInventoryConsoles().get(studentIndex).add(itemView);
-            }
-
-
+            UpdateInventoryConsole();
             studentIndex++;
         }
-
     }
 
     public void UpdateInventoryConsole(){
+
         System.out.println("UpdateInventoryConsole:");
+
         for ( Student student : studentToViews.keySet()) {
+
             int studentIndex = studentToViews.keySet().stream().toList().indexOf(student);
-            for (Item item : student.getItems()) {
-                System.out.println("-one item at student inventory");
-                ItemView itemView = itemViews.get(item);
-                gamePanel.GetInventoryConsoles().get(studentIndex).add(itemView);
-                gamePanel.GetInventoryConsoles().get(studentIndex).revalidate();
-                gamePanel.GetInventoryConsoles().get(studentIndex).repaint();
+
+            List<Item> items = student.getItems();
+
+            gamePanel.GetInventoryConsoles().get(studentIndex).removeAll();
+
+            for (Item item : items) {
+                gamePanel.GetInventoryConsoles().get(studentIndex).add( itemViews.get(item) );
             }
+
+            gamePanel.GetInventoryConsoles().get(studentIndex).Render();
         }
+
     }
+
+
+    private void nextTurn() {
+        playerMoveCount++;
+
+        if (playerMoveCount >= studentToViews.size()) {
+            playerMoveCount = 0;
+            //moveInGameCharacters();
+        }
+
+        currentPlayerIndex = (currentPlayerIndex + 1) % studentToViews.size();
+        handleNextTurn();
+    }
+
 
     private Room findCell(int x, int y) {
         for (Room cell : gameManager.getRooms()) {
@@ -248,7 +274,6 @@ public class GameController implements IObserver {
         }
         return null;
     }
-
 
     public HashMap<Player, PlayerView> GetPlayerViews() {
         return playerViews;
@@ -268,6 +293,43 @@ public class GameController implements IObserver {
 
     public void SetRoomView(Room room, RoomView roomView) {
         this.roomViews.put(room, roomView);
+    }
+
+    public void AddActionListenerToItemView( Player player ,Item item ) {
+        ItemView itemView = itemViews.get(item);
+        itemView.AddClickListener(e -> player.DropItem(item));
+    }
+
+    public void RemoveActionListenerFromItemView( Player player ,Item item ) {
+        ItemView itemView = itemViews.get(item);
+        ActionListener[] listeners = itemView.getActionListeners();
+        for (ActionListener listener : listeners) {
+            itemView.removeActionListener(listener);
+        }
+    }
+
+    public void AddActionListenerToItemViewTransistor( Player player ,Item item ) {
+        ItemView itemView = itemViews.get(item);
+        itemView.AddClickListener(e -> item.UseTransistor(player));
+    }
+
+    public void RenderAfterDrop( Player student ){
+
+        RoomView roomView = roomViews.get(student.GetRoom());
+        if (roomView != null) {
+            // Update the item holder with the current items in the room
+            ArrayList<ItemView> roomItemViews = new ArrayList<>();
+            for (Item item : student.GetRoom().GetItems()) {
+                ItemView itemView = itemViews.get(item);
+                if (itemView != null) {
+                    roomItemViews.add(itemView);
+                }
+            }
+
+            roomView.getItemHolder().setItemViews(roomItemViews); // Ensure item views are updated
+            roomView.getItemHolder().Render();
+        }
+        UpdateInventoryConsole();
     }
 
 }

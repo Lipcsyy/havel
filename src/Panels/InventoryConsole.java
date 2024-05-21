@@ -13,7 +13,7 @@ public class InventoryConsole extends JPanel {
         setMaximumSize( new Dimension(380, 84) );
         setPreferredSize( new Dimension(380, 84));
         setMinimumSize( new Dimension(380, 84) );
-        setOpaque(false);
+
         this.setFocusable(true);
         try {
             image = ImageIO.read(new File("./src/Images/inventory.png"));

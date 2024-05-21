@@ -74,7 +74,7 @@ public class Student extends Player {
     }
 
     @Override
-    public void Freeze( int freezeForRounds) {
+    public boolean Freeze( int freezeForRounds) {
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Freeze", "5");
@@ -89,16 +89,18 @@ public class Student extends Player {
                  if ( item.NeedToThrow() )
                      this.RemoveFromInventory(item);
 
-                 return;
+                 return true;
              }
         }
 
         this.frozenForRound = freezeForRounds;
         this.DropAllItem();
 
+
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Freeze");
         }
+        return false;
     }
 
     // ------OWN METHODS OF THE STUDENT CLASS TO BE USED BY BUTTONS-------
@@ -213,6 +215,19 @@ public class Student extends Player {
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "DecreaseItemsTurnsLeft");
+        }
+    }
+
+    public void DecreaseFrozenForRound() {
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "DecreaseFrozenForRound", "");
+        }
+
+        if( this.frozenForRound > 0 )
+            this.frozenForRound--;
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "DecreaseFrozenForRound");
         }
     }
 

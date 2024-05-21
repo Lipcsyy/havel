@@ -73,7 +73,7 @@ public class GameManager implements java.io.Serializable{
 
     private void InitalizeGame(EGameMode gameMode) {
 
-        map = new GameMap(2,2, this);
+        map = new GameMap(4, 4, this);
         map.generateMaze();
         map.displayMaze();
 
@@ -131,16 +131,16 @@ public class GameManager implements java.io.Serializable{
             gameController.studentToViews.put(student, new PlayerView( EPlayers.STUDENT));
 
             //add 8 teacher to the game with different starting room
-//            for( int i = 0; i < 2; i++){
-//                Room TeacherStartRoom = map.getRandomCell();
-//                while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
-//                    TeacherStartRoom = map.getRandomCell();
-//                }
-//
-//                Teacher teacher = new Teacher(TeacherStartRoom, this);
-//
-//                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
-//            }
+            for( int i = 0; i < 2; i++){
+                Room TeacherStartRoom = map.getRandomCell();
+                while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
+                    TeacherStartRoom = map.getRandomCell();
+                }
+
+                Teacher teacher = new Teacher(TeacherStartRoom, this);
+
+                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
+            }
 
             //add 2 cleaner to the game
 //            for( int i = 0; i < 2; i++){

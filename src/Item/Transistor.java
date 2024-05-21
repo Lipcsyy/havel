@@ -245,6 +245,8 @@ public class Transistor extends Item{
             Logger.logExit(this.getClass().getName(), "Deploy", "true");
         }
 
+        player.gameManager.GetGameController().RenderAfterDrop(player);
+
         return true;
     }
 

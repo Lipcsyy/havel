@@ -21,7 +21,7 @@ public class DropItem implements ICommand {
             return;
         }
 
-        student.DropItem();
+       // student.DropItem();
     }
 
 }

@@ -205,7 +205,7 @@ public class Tester {
         student1.AddItem(new Rag());
         student1.AddItem(new Mask());
 
-        student1.DropItem();
+        //student1.DropItem();
 
     }
 

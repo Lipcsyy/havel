@@ -100,7 +100,9 @@ public abstract class Player implements java.io.Serializable {
             return;
         }
 
+        //he the player can collect the item we pick up it
         item.PickUpItem(this);
+
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "CollectItem");
@@ -228,11 +230,8 @@ public abstract class Player implements java.io.Serializable {
         }
     }
 
-    /**
-     * This function changes the room of the player.
-     * @param room The room to change to.
-     */
-    public void ChangeRoom(Room room) {
+
+    public boolean ChangeRoom(Room room) {
 
         System.out.println("Changing motherfucking roooom");
 
@@ -240,18 +239,20 @@ public abstract class Player implements java.io.Serializable {
             Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );
         }
 
-        if( !this.room.GetNeighbours().contains(room) ) {
-            if (GameManager.loggerStatus == ELogger.INFO) {
-                Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
-            }
-            return;
-        }
+//        if( !this.room.GetNeighbours().contains(room) ) {
+//            if (GameManager.loggerStatus == ELogger.INFO) {
+//                Logger.logExit(this.getClass().getName(), "ChangeRoom", "");
+//            }
+//            return false;
+//        }
 
-        room.Enter(this);
+        boolean canChangeRoom = room.Enter(this);
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "ChangeRoom" );
         }
+
+        return canChangeRoom;
     }
 
     /**
@@ -302,7 +303,7 @@ public abstract class Player implements java.io.Serializable {
      * This function when called freeze the player for a number of rounds
      * @param freezeForRounds The number of rounds the player needs to be frozen
      */
-    public void Freeze( int freezeForRounds ) {
+    public boolean Freeze( int freezeForRounds ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "Freeze", "5");
         }
@@ -314,6 +315,8 @@ public abstract class Player implements java.io.Serializable {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Freeze");
         }
+
+        return  false;
     }
 
     /**
