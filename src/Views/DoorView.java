@@ -26,6 +26,7 @@ public class DoorView extends JButton {
     }
 
     public void Render() {
+
         paintComponent(getGraphics());
     }
 }

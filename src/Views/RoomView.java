@@ -216,11 +216,13 @@ public class RoomView extends JPanel {
                 topPanel.add(topDoor);
                 add(topPanel, BorderLayout.NORTH);
             }
-        } else if (topDoor != null) {
+        }
+        /*
+        else if (topDoor != null) {
             remove(topDoor);
             topDoor = null;
         }
-
+        */
         if (hasBottomDoor) {
             if (bottomDoor == null) {
                 System.out.println("Adding bottom door");
@@ -229,11 +231,13 @@ public class RoomView extends JPanel {
                 bottomPanel.add(bottomDoor);
                 add(bottomPanel, BorderLayout.SOUTH);
             }
-        } else if (bottomDoor != null) {
+        }
+        /*
+        else if (bottomDoor != null) {
             remove(bottomDoor);
             bottomDoor = null;
         }
-
+        */
         if (hasLeftDoor) {
             if (leftDoor == null) {
                 System.out.println("Adding left door");
@@ -242,11 +246,13 @@ public class RoomView extends JPanel {
                 leftPanel.add(leftDoor);
                 add(leftPanel, BorderLayout.WEST);
             }
-        } else if (leftDoor != null) {
+        }
+        /*
+        else if (leftDoor != null) {
             remove(leftDoor);
             leftDoor = null;
         }
-
+        */
         if (hasRightDoor) {
             if (rightDoor == null) {
                 System.out.println("Adding right door");
@@ -255,7 +261,9 @@ public class RoomView extends JPanel {
                 rightPanel.add(rightDoor);
                 add(rightPanel, BorderLayout.EAST);
             }
-        } else if (rightDoor != null) {
+        }
+        /*
+        else if (rightDoor != null) {
             remove(rightDoor);
             rightDoor = null;
         }
