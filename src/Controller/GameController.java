@@ -299,8 +299,15 @@ public class GameController implements IObserver {
 
             gamePanel.GetInventoryConsoles().get(studentIndex).removeAll();
 
+            int placeIndex = 0;
             for (Item item : items) {
-                gamePanel.GetInventoryConsoles().get(studentIndex).add( itemViews.get(item) );
+                gamePanel.GetInventoryConsoles().get(studentIndex).add( itemViews.get(item), 0, placeIndex );
+                placeIndex++;
+            }
+            //adding JPanels only for the alignment of the inventoryConsole
+            while(placeIndex < 5){
+                gamePanel.GetInventoryConsoles().get(studentIndex).add(new JLabel());
+                placeIndex++;
             }
 
             gamePanel.GetInventoryConsoles().get(studentIndex).Render();

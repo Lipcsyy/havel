@@ -49,7 +49,6 @@ public class ItemView extends JButton {
             e.printStackTrace();
         }
         setPreferredSize( new Dimension(30, 30) );
-        setOpaque(false);
         this.setFocusable(true);
         this.setOpaque(false);
         this.setContentAreaFilled(false);
