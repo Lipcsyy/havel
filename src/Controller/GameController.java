@@ -247,8 +247,8 @@ public class GameController implements IObserver {
         return itemViews;
     }
 
-    public void SetItemViews(Item item) {
-        this.itemViews.put(item, new ItemView());
+    public void SetItemViews(Item item, ItemView itemView) {
+        this.itemViews.put(item, itemView);
     }
 
     public void SetRoomView(Room room, RoomView roomView) {

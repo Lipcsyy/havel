@@ -1,16 +1,14 @@
 package GameManager;
 import Controller.GameController;
-import Enums.EGameMode;
-import Enums.EPlayers;
-import Enums.EVersion;
+import Enums.*;
 import Logger.Logger;
 import Room.*;
 import Item.*;
-import Enums.ELogger;
 import Map.GameMap;
 
 import java.util.*;
 import Player.*;
+import Views.ItemView;
 import Views.PlayerView;
 
 public class GameManager implements java.io.Serializable{
@@ -99,7 +97,7 @@ public class GameManager implements java.io.Serializable{
                 Teacher teacher = new Teacher(map.getRandomCell(), this);
                 gameController.SetPlayerViews(teacher, new PlayerView( EPlayers.TEACHER));
 
-                while ( teacher.GetRoom() == student1.GetRoom() || teacher.GetRoom() == student2.GetRoom() ) {
+                while ( teacher.GetRoom() == student1.GetRoom() || teacher.GetRoom() == student2.GetRoom() ||  teacher.GetRoom().HasMoreSpaceInRoom() == false) {
                     teacher.SetRoom(map.getRandomCell());
                 }
             }
@@ -108,6 +106,9 @@ public class GameManager implements java.io.Serializable{
 
             for (int i = 0; i < 1; i++) {
                 Cleaner cleaner = new Cleaner(map.getRandomCell(), this);
+                if( cleaner.GetRoom().HasMoreSpaceInRoom() == false){
+                    cleaner.SetRoom(map.getRandomCell());
+                }
                 gameController.SetPlayerViews(cleaner, new PlayerView( EPlayers.CLEANER));
             }
 
@@ -176,57 +177,57 @@ public class GameManager implements java.io.Serializable{
             //Add Mask
             Mask mask = new Mask();
             map.getRandomCell().AddItem(mask);
-            gameController.SetItemViews(mask);
+            gameController.SetItemViews(mask, new ItemView(EItems.MASK));
 
             //Add TVSZ
             Tvsz tvsz = new Tvsz();
             map.getRandomCell().AddItem(tvsz);
-            gameController.SetItemViews(tvsz);
+            gameController.SetItemViews(tvsz, new ItemView( EItems.TVSZ));
 
             //Add AirFreshener
             AirFreshener airFreshener = new AirFreshener();
             map.getRandomCell().AddItem(airFreshener);
-            gameController.SetItemViews(airFreshener);
+            gameController.SetItemViews(airFreshener, new ItemView(EItems.AIRFRESHENER));
 
             //Add BeerGlass
             BeerGlass beerGlass = new BeerGlass();
             map.getRandomCell().AddItem(beerGlass);
-            gameController.SetItemViews(beerGlass);
+            gameController.SetItemViews(beerGlass, new ItemView(EItems.BEERGLASS));
 
             //Add Camembert
             Camembert camembert = new Camembert();
             map.getRandomCell().AddItem(camembert);
-            gameController.SetItemViews(camembert);
+            gameController.SetItemViews(camembert, new ItemView(EItems.CAMEMBERT));
 
             //Add Rag
             Rag rag = new Rag();
             map.getRandomCell().AddItem(rag);
-            gameController.SetItemViews(rag);
+            gameController.SetItemViews(rag, new ItemView(EItems.RAG));
 
             //Add Transistor pairs
             Transistor transistor = new Transistor();
             map.getRandomCell().AddItem(transistor);
-            gameController.SetItemViews(transistor);
+            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
 
             transistor = new Transistor();
             map.getRandomCell().AddItem(transistor);
-            gameController.SetItemViews(transistor);
+            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
 
             //Add FakeItems
             FakeItem fakeMask = new FakeItem();
             fakeMask.setVersion(EVersion.MASK);
             map.getRandomCell().AddItem(fakeMask);
-            gameController.SetItemViews(fakeMask);
+            gameController.SetItemViews(fakeMask, new ItemView(EItems.MASK));
 
             FakeItem fakeTvsz = new FakeItem();
             fakeTvsz.setVersion(EVersion.TVSZ);
             map.getRandomCell().AddItem(fakeTvsz);
-            gameController.SetItemViews(fakeTvsz);
+            gameController.SetItemViews(fakeTvsz, new ItemView(EItems.TVSZ));
 
             FakeItem fakeSlideRule = new FakeItem();
             fakeSlideRule.setVersion(EVersion.SLIDERULE);
             map.getRandomCell().AddItem(fakeSlideRule);
-            gameController.SetItemViews(fakeSlideRule);
+            gameController.SetItemViews(fakeSlideRule, new ItemView(EItems.SLIDERULE));
         }
     }
 

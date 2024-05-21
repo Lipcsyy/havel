@@ -25,18 +25,22 @@ public class PlayerView extends JPanel {
 
         }
 
-
+        this.setOpaque(false);
         this.setFocusable(true);
-        setBackground(Color.RED);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image != null) {
+            g.drawImage(image, 0, 0,64, 128, null);
+        }
     }
 
     public void Render() {
 
-        JLabel picLabel = new JLabel(new ImageIcon(image));
-        picLabel.setPreferredSize(new Dimension(64, 128) );
         this.setPreferredSize( new Dimension(64, 128) );
         this.setSize(64,128);
-        add(picLabel);
 
         System.out.println("Rendering this shit");
         this.setFocusable(true);

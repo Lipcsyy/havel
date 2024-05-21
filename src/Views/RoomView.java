@@ -49,7 +49,7 @@ public class RoomView extends JPanel {
         this.hasLeftDoor = hasLeftDoor;
         this.hasRightDoor = hasRightDoor;
 
-        setBackground(Color.lightGray);
+        //setBackground(Color.lightGray);
         setFocusable(true);
         setLayout(new BorderLayout());
         setOpaque(false);
@@ -299,6 +299,7 @@ public class RoomView extends JPanel {
     public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews, ArrayList<PlayerView> playerViews, Room room) {
 
         Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews, room);
+
 
         if (hasTopDoor) {
             topDoor.Render();
