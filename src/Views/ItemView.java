@@ -55,7 +55,7 @@ public class ItemView extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image != null) {
-            g.drawImage(image, 0, 0, 64, 64, this);
+            g.drawImage(image, 10, 10, 64, 64, this);
         }
     }
 

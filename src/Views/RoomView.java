@@ -80,7 +80,7 @@ public class RoomView extends JPanel {
 
         JPanel centerPanel = InitializeCenterPanel(roomWidth, roomHeight);
 
-        System.out.println("Initializing doors");
+        System.out.println("Initialize (roomview)");
 
 
         // Add doors conditionally
@@ -182,7 +182,7 @@ public class RoomView extends JPanel {
 
     private void InitilizeDoors(int doorLength, int doorThickness) {
 
-        System.out.println("Initializing doors");
+        System.out.println("InitializeDoors");
 
 
         // Add doors conditionally
