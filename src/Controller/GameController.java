@@ -43,7 +43,7 @@ public class GameController implements IObserver {
         this.gamePanel = gamePanel; //Connecting to the view
 
         for ( Student student : studentToViews.keySet() ) {
-            System.out.println("Adding observer");
+            //System.out.println("Adding observer");
             student.GetRoom().AddObserver(this );
         }
     }
@@ -63,7 +63,7 @@ public class GameController implements IObserver {
 
     public void StartGame() {
 
-        System.out.println("Items:" + itemViews.size());
+        System.out.println("Items size: " + itemViews.size());
 
         Render();
 
@@ -85,7 +85,7 @@ public class GameController implements IObserver {
     }
 
     private void HandleInput(Student student) {
-        System.out.println("Handling input for " + student);
+        System.out.println("HandleInput for: " + student);
 
         RoomView currentRoomView = roomViews.get(student.GetRoom());
         Room currentRoom = student.GetRoom();
@@ -120,7 +120,7 @@ public class GameController implements IObserver {
 
     private void MoveInGameCharacters() {
 
-        System.out.println("MOVING IN GAME CHARACTERS");
+        System.out.println("MOVE IN GAME CHARACTERS");
 
         for (Player player : playerViews.keySet()) {
             if (player instanceof Teacher) {
@@ -167,8 +167,8 @@ public class GameController implements IObserver {
         System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());
 
         if (player.ChangeRoom(newRoom)  == true) {
-            System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());
-            gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
+            System.out.println("Player moved to room:(changeRoom true): " + newRoom.GetX() + " " + newRoom.GetY());
+            //gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
         };
 
         UpdateInventoryConsole();
@@ -235,7 +235,7 @@ public class GameController implements IObserver {
 
     public void UpdateInventoryConsole(){
 
-        System.out.println("UpdateInventoryConsole:");
+        System.out.println("UpdateInventoryConsole");
 
         for ( Student student : studentToViews.keySet()) {
 

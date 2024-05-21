@@ -108,7 +108,7 @@ public class RoomView extends JPanel {
         // Add doors conditionally
         if (hasTopDoor) {
             if (topDoor == null) {
-                System.out.println("Adding top door");
+                //System.out.println("Adding top door");
                 topDoor = new DoorView();
                 topDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 topPanel.add(topDoor);
@@ -123,7 +123,7 @@ public class RoomView extends JPanel {
         */
         if (hasBottomDoor) {
             if (bottomDoor == null) {
-                System.out.println("Adding bottom door");
+                //System.out.println("Adding bottom door");
                 bottomDoor = new DoorView();
                 bottomDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 bottomPanel.add(bottomDoor);
@@ -138,7 +138,7 @@ public class RoomView extends JPanel {
         */
         if (hasLeftDoor) {
             if (leftDoor == null) {
-                System.out.println("Adding left door");
+                //System.out.println("Adding left door");
                 leftDoor = new DoorView();
                 leftDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 leftPanel.add(leftDoor);
@@ -153,7 +153,7 @@ public class RoomView extends JPanel {
         */
         if (hasRightDoor) {
             if (rightDoor == null) {
-                System.out.println("Adding right door");
+                //System.out.println("Adding right door");
                 rightDoor = new DoorView();
                 rightDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 rightPanel.add(rightDoor);
@@ -210,7 +210,7 @@ public class RoomView extends JPanel {
         // Add doors conditionally
         if (hasTopDoor) {
             if (topDoor == null) {
-                System.out.println("Adding top door");
+                //System.out.println("Adding top door");
                 topDoor = new DoorView();
                 topDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 topPanel.add(topDoor);
@@ -225,7 +225,7 @@ public class RoomView extends JPanel {
         */
         if (hasBottomDoor) {
             if (bottomDoor == null) {
-                System.out.println("Adding bottom door");
+                //System.out.println("Adding bottom door");
                 bottomDoor = new DoorView();
                 bottomDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 bottomPanel.add(bottomDoor);
@@ -240,7 +240,7 @@ public class RoomView extends JPanel {
         */
         if (hasLeftDoor) {
             if (leftDoor == null) {
-                System.out.println("Adding left door");
+                //System.out.println("Adding left door");
                 leftDoor = new DoorView();
                 leftDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 leftPanel.add(leftDoor);
@@ -255,7 +255,7 @@ public class RoomView extends JPanel {
         */
         if (hasRightDoor) {
             if (rightDoor == null) {
-                System.out.println("Adding right door");
+                //System.out.println("Adding right door");
                 rightDoor = new DoorView();
                 rightDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 rightPanel.add(rightDoor);
@@ -298,24 +298,25 @@ public class RoomView extends JPanel {
 
     public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews, ArrayList<PlayerView> playerViews, Room room) {
 
+        System.out.println("roomview.render");
         Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews, room);
 
 
         if (hasTopDoor) {
             topDoor.Render();
-            System.out.println("Rendering top door");
+            //System.out.println("Rendering top door");
         }
         if (hasBottomDoor) {
             bottomDoor.Render();
-            System.out.println("Rendering bottom door");
+            //System.out.println("Rendering bottom door");
         }
         if (hasLeftDoor) {
             leftDoor.Render();
-            System.out.println("Rendering left door");
+            //System.out.println("Rendering left door");
         }
         if (hasRightDoor) {
             rightDoor.Render();
-            System.out.println("Rendering right door");
+            //System.out.println("Rendering right door");
         }
 
         revalidate();

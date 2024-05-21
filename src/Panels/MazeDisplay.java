@@ -54,9 +54,9 @@ public class MazeDisplay extends JPanel {
                 if (student.GetRoom() == room) {
                     studentInRoom = true;
                     Set<Room> rooomneighbors = adjacencyList.get(room);
-                    System.out.println("neighbours size (from mazedisplay): " + rooomneighbors.size());
+                    //System.out.println("neighbours size (from mazedisplay): " + rooomneighbors.size());
                     for (Room neighbour : rooomneighbors) {
-                        System.out.println("(md) neighbour: " + neighbour.GetX() + " " + neighbour.GetY());
+                        //System.out.println("(md) neighbour: " + neighbour.GetX() + " " + neighbour.GetY());
                     }
                 }
             }
@@ -72,25 +72,25 @@ public class MazeDisplay extends JPanel {
             if (! neighbors.contains(findCell(room.x, room.y - 1))) { // Top wall
                 g2d.drawLine(roomX+a, roomY+a, roomX + roomSize-a, roomY+a);
                 if(studentInRoom) {
-                    System.out.println("Top wall drawn");
+                    //System.out.println("Top wall drawn");
                 }
             }
             if (!neighbors.contains(findCell(room.x, room.y + 1))) { // Bottom wall
                 g2d.drawLine(roomX+a, roomY + roomSize-a, roomX + roomSize-a, roomY + roomSize-a);
                 if(studentInRoom) {
-                    System.out.println("Bottom wall drawn");
+                    //System.out.println("Bottom wall drawn");
                 }
             }
             if (!neighbors.contains(findCell(room.x - 1, room.y))) { // Left wall
                 g2d.drawLine(roomX+a, roomY+a, roomX+a, roomY + roomSize-a);
                 if(studentInRoom) {
-                    System.out.println("Left wall drawn");
+                    //System.out.println("Left wall drawn");
                 }
             }
             if (!neighbors.contains(findCell(room.x + 1, room.y))) { // Right wall
                 g2d.drawLine(roomX + roomSize-a, roomY+a, roomX + roomSize-a, roomY + roomSize-a);
                 if(studentInRoom) {
-                    System.out.println("Right wall drawn");
+                    //System.out.println("Right wall drawn");
                 }
             }
 
