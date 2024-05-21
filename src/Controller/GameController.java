@@ -120,6 +120,10 @@ public class GameController implements IObserver {
 
             HandleInput(currentPlayer);
 
+            if(currentPlayer.GetIsAlive() == false){
+                roomViews.get(currentPlayer.GetRoom()).add(endGamePanel);
+            }
+
             //Decreasing the frozen rounds on the player
             currentPlayer.DecreaseFrozenForRound();
 
@@ -153,6 +157,7 @@ public class GameController implements IObserver {
             DoorView topDoor = currentRoomView.GetDoor(EDirection.NORTH);
             topDoor.addActionListener(e -> {
                 MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
+                this.gamePanel.requestFocusInWindow();
             });
         }
 
@@ -176,12 +181,14 @@ public class GameController implements IObserver {
             DoorView leftDoor = currentRoomView.GetDoor(EDirection.WEST);
             leftDoor.addActionListener(e -> {
                 MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x - 1, currentRoom.y)));
+                this.gamePanel.requestFocusInWindow();
             });
         }
         if (currentRoomView.hasRightDoor) {
             DoorView rightDoor = currentRoomView.GetDoor(EDirection.EAST);
             rightDoor.addActionListener(e -> {
                 MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x + 1, currentRoom.y)));
+                this.gamePanel.requestFocusInWindow();
             });
         }
     }

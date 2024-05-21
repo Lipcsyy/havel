@@ -75,6 +75,7 @@ public class GamePanel extends JPanel {
 
         gameController = new GameController(gameMode, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
+        mazeDisplayArea.removeAll();
         mazeDisplayArea.add(mazeDisplay);
         gameController.StartGame();
     }

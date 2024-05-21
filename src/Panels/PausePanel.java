@@ -7,9 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PausePanel extends JPanel {
-    private final JButton mainMenuButton = new MenuButton("Return to main menu");
-    private final JButton saveButton = new MenuButton("Save the game");
-    private final JButton restartButton = new MenuButton("Restart the game");
+    private final MenuButton mainMenuButton = new MenuButton("Return to main menu");
+    private final MenuButton saveButton = new MenuButton("Save the game");
+    private final MenuButton restartButton = new MenuButton("Restart the game");
+    private final MenuButton cancelButton = new MenuButton("Cancel");
 
     public PausePanel() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -31,6 +32,8 @@ public class PausePanel extends JPanel {
         add(restartButton);
         add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
         add(mainMenuButton);
+        add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
+        add(cancelButton);
         add(Box.createVerticalGlue()); // Add vertical glue after buttons
     }
 
@@ -38,10 +41,12 @@ public class PausePanel extends JPanel {
         mainMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         saveButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         restartButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        cancelButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
 
         mainMenuButton.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "MENU");
         });
+
         saveButton.addActionListener(event -> {
             // Save the game
             if(GameFrame.previousPanel == GameFrame.singleGamePanel){
@@ -51,23 +56,28 @@ public class PausePanel extends JPanel {
                 GameFrame.multiGamePanel.SaveGame();
             }
         });
+
         restartButton.addActionListener(event -> {
             if(GameFrame.previousPanel == GameFrame.singleGamePanel){
-
-                GameFrame.previousPanel = GameFrame.singleGamePanel;
                 GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
-                GameFrame.singleGamePanel.requestFocusInWindow(); // Request focus on the "SINGLE" panel
-                System.out.println("Single Player");
+                GameFrame.singleGamePanel.requestFocusInWindow();
                 GameFrame.singleGamePanel.InitializeGame(EGameMode.SINGLEPLAYER);
-
             }
             else {
-
-                GameFrame.previousPanel = GameFrame.multiGamePanel;
                 GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
-                GameFrame.multiGamePanel.requestFocusInWindow(); // Request focus on the "MULTI" panel
+                GameFrame.multiGamePanel.requestFocusInWindow();
                 GameFrame.multiGamePanel.InitializeGame(EGameMode.MULTIPLAYER);
+            }
+        });
 
+        cancelButton.addActionListener(event -> {
+            if(GameFrame.previousPanel == GameFrame.singleGamePanel){
+                GameFrame.layout.show(GameFrame.mainPanel, "SINGLE" );
+                GameFrame.singleGamePanel.requestFocusInWindow();
+            }
+            else {
+                GameFrame.layout.show(GameFrame.mainPanel, "MULTI" );
+                GameFrame.singleGamePanel.requestFocusInWindow();
             }
         });
     }

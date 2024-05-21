@@ -11,6 +11,7 @@ public class MenuPanel extends JPanel {
     private final JButton multiPlayer = new MenuButton("Multiplayer");
     private final JButton loadGameButton = new MenuButton("Load Game");
     private final JButton exitButton = new MenuButton("Exit");
+    private Image backgroundImage;
 
     public MenuPanel() {
 
@@ -19,6 +20,8 @@ public class MenuPanel extends JPanel {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true);
+
+        backgroundImage = new ImageIcon("background.jpg").getImage();
 
         JPanel topPanel = new JPanel() {
             @Override
@@ -93,5 +96,13 @@ public class MenuPanel extends JPanel {
         });
 
         exitButton.addActionListener( event -> System.exit(0));
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 }
