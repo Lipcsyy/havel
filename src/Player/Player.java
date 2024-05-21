@@ -235,6 +235,8 @@ public abstract class Player implements java.io.Serializable {
     public boolean ChangeRoom(Room room) {
 
         System.out.println("Changing motherfucking roooom");
+        System.out.println(frozenForRound);
+
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "ChangeRoom", "room" );

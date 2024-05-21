@@ -40,7 +40,7 @@ public class RoomView extends JPanel {
             } else if (eRooms == ERooms.MAGICROOM) {
                 image = ImageIO.read(new File("./src/Images/magicroom.png"));
             }
-        } catch ( Exception e){
+        } catch (Exception e){
             e.printStackTrace();
         }
 

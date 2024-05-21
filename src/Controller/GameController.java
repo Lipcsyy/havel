@@ -77,9 +77,9 @@ public class GameController implements IObserver {
         if (!students.isEmpty()) {
             Student currentPlayer = students.get(currentPlayerIndex);
             currentPlayer.DecreaseFrozenForRound();
-            System.out.println("FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
-            MoveInGameCharacters();
+            System.out.println("(handleNextTurn):FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
             HandleInput(currentPlayer);
+            MoveInGameCharacters();
         }
 
     }
@@ -164,6 +164,7 @@ public class GameController implements IObserver {
 
         int index = studentToViews.keySet().stream().toList().indexOf(player);
 
+        System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());
 
         if (player.ChangeRoom(newRoom)  == true) {
             System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());

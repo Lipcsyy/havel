@@ -42,6 +42,7 @@ public class GasRoom extends Room {
         //Adding the player if there is more space in the room
         if (HasMoreSpaceInRoom()) {
             player.Move(this);
+            NotifyObservers();
         } else {
             if (GameManager.loggerStatus == ELogger.INFO ) {
                 Logger.logExit(this.getClass().getName(), "Enter");
@@ -49,7 +50,7 @@ public class GasRoom extends Room {
             return false;
         }
 
-        boolean wasSavedFromFreez = player.Freeze(3);
+        boolean wasSavedFromFreeze = player.Freeze(3);
 
         //making the players interact with each-other
         for (Player playerInRoom : players) {
@@ -66,7 +67,7 @@ public class GasRoom extends Room {
             Logger.logExit(this.getClass().getName(), "Enter");
         }
 
-        if ( wasSavedFromFreez == true ) {
+        if ( wasSavedFromFreeze == true ) {
             return true;
         }
 
@@ -74,7 +75,7 @@ public class GasRoom extends Room {
             return true;
         }
 
-        return false;
+        return true;
     }
 
     @Override
