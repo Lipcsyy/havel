@@ -54,6 +54,7 @@ public class Camembert extends Item{
             Logger.logEntry(this.getClass().getName(), "MakeGas", "room");
         }
         room.SetTurnsLeftForEffect(5);
+        //room.setBackgroundImage("./src/Images/gasroom.png");
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "MakeGas");
         }

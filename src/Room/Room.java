@@ -483,4 +483,7 @@ public class Room implements java.io.Serializable , IObservable {
 
     public int GetX() {return x;}
     public int GetY() {return y;}
+
+
+
 }

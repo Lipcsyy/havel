@@ -244,6 +244,7 @@ public class GameController implements IObserver {
             //gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
         };
 
+
         UpdateInventoryConsole();
 
         nextTurn(); // Move to the next turn after rendering

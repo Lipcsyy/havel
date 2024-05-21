@@ -364,4 +364,37 @@ public abstract class Player implements java.io.Serializable {
         }
     }
 
+    /*
+
+    public void loadBackgroundImage(ERooms eRooms) {
+        try {
+            if (eRooms == ERooms.ROOM) {
+                image = ImageIO.read(new File("./src/Images/room.png"));
+            } else if (eRooms == ERooms.GASROOM) {
+                image = ImageIO.read(new File("./src/Images/gasroom.png"));
+            } else if (eRooms == ERooms.MAGICROOM) {
+                image = ImageIO.read(new File("./src/Images/magicroom.png"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadBackgroundImage(Room room) {
+        try {
+            image = ImageIO.read(new File(room.getBackgroundImage()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ItemHolder getItemHolder() {
+        return itemHolder;
+    }
+
+    public PlayerHolder getPlayerHolder() {
+        return playerHolder;
+    }
+    */
+
 }
