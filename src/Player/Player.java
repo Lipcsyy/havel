@@ -13,11 +13,11 @@ public abstract class Player implements java.io.Serializable {
 
     public String id;
 
-    protected GameManager gameManager;
+    public GameManager gameManager;
 
     protected boolean isAlive;
     protected Room room;
-    protected List<Item> items;
+    public List<Item> items;
     protected int frozenForRound = 0;
 
     protected int idNumberCopy = 1;
@@ -330,6 +330,10 @@ public abstract class Player implements java.io.Serializable {
             Logger.logExit(this.getClass().getName(), "GetFrozenForRound", String.valueOf(this.frozenForRound));
         }
         return this.frozenForRound;
+    }
+
+    public void DecreaseFrozenRounds(){
+        frozenForRound--;
     }
 
     // empty function, only overridden in Student (will apply on Students when picking up a BeerGlass)

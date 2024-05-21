@@ -232,6 +232,8 @@ public class Transistor extends Item{
     @Override
     public boolean Deploy(Player player){
 
+        System.out.println("deployinggg");
+
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "Deploy", "student");
         }
@@ -255,7 +257,8 @@ public class Transistor extends Item{
             Logger.logEntry(this.getClass().getName(), "PickUpItem", "player");
         }
         if(!this.hasPair){
-            player.AddItem(this);
+            player.items.add(this);
+            player.gameManager.GetGameController().AddActionListenerToItemViewTransistor(player, this);
             player.GetRoom().RemoveItem(this);
         }
         if (GameManager.loggerStatus == ELogger.INFO) {
@@ -272,4 +275,5 @@ public class Transistor extends Item{
         if( room != null)
             System.out.println( "Deployed: " + room.id );
     }
+
 }

@@ -6,17 +6,19 @@ import Player.Student;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class ItemView extends JPanel {
+public class ItemView extends JButton {
 
+    private EItems eItems;
     transient private BufferedImage image;
     public ItemView(EItems eItems) {
 
         this.eItems = eItems;
         try {
-
             switch (eItems) {
                 case TVSZ:
                     image = ImageIO.read(new File("./src/Images/tvsz.png"));
@@ -49,6 +51,10 @@ public class ItemView extends JPanel {
         setPreferredSize( new Dimension(30, 30) );
         setOpaque(false);
         this.setFocusable(true);
+        this.setOpaque(false);
+        this.setContentAreaFilled(false);
+        this.setBorderPainted(false);
+
         //setBackground(Color.BLUE);
     }
 
@@ -60,6 +66,10 @@ public class ItemView extends JPanel {
         }
     }
 
+    public void AddClickListener(ActionListener listener) {
+        this.addActionListener(listener);
+    }
+    public void RemoveClickListener( ActionListener listener ){ this.removeActionListener( listener ); }
     public void Render(){
         System.out.println("itemholder vagyok");
         setSize(new Dimension(64, 64));

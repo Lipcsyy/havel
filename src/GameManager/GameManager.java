@@ -416,4 +416,12 @@ public class GameManager implements java.io.Serializable{
     public void SetGameController(GameController gameController){
         this.gameController = gameController;
     }
+
+    public void DecreaseFrozenValues(){
+        for(Player player: players){
+            if(player.GetFrozenForRound() > 0){
+                player.DecreaseFrozenRounds();
+            }
+        }
+    }
 }
