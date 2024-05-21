@@ -37,6 +37,7 @@ public class GameController implements IObserver {
     //-------------------------------------------------------------------------------------------------------------
 
     private boolean isRunning = false;
+    private ArrayList<Boolean> isPlayerActive;
 
     public GameController(EGameMode gameMode, GamePanel gamePanel) {
 
@@ -149,6 +150,7 @@ public class GameController implements IObserver {
         for ( Student studentView : studentToViews.keySet() ) {
             //studentToViews.get(studentView).Render(gamePanel.GetGameConsoles().get(studentIndex));
             gamePanel.GetGameConsoles().get(studentIndex).removeAll();
+            gamePanel.GetInventoryConsoles().get(studentIndex).removeAll();
             studentIndex++;
         }
 
@@ -158,6 +160,7 @@ public class GameController implements IObserver {
 
             Room room = student.GetRoom();
 
+            // set the contents of the room
             if (roomViews.containsKey(room)) {
 
                 RoomView roomView = roomViews.get(room);
@@ -208,6 +211,12 @@ public class GameController implements IObserver {
                 roomView.Render( roomWidth, roomHeight, studentView, roomItemViews, viewToPlayersInRoom, student.GetRoom() );
 
                 System.out.println("roomindex: " + room.GetX() + " " + room.GetY() + "\n");
+            }
+
+            // set the contents of the inventorypanel
+            for(Item item: student.getItems()){
+                ItemView itemView = itemViews.get(item);
+                gamePanel.GetInventoryConsoles().get(studentIndex).add(itemView);
             }
 
 

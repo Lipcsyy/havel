@@ -79,6 +79,7 @@ public class GamePanel extends JPanel {
     }
 
     public void InitializeLoadedGame(GameManager gameManager) {
+
         gameController = new GameController(gameManager, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
         mazeDisplayArea.add(mazeDisplay);
