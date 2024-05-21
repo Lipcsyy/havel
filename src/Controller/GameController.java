@@ -12,14 +12,17 @@ import Views.*;
 import Panels.*;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 import java.util.*;
+import java.util.List;
 
 public class GameController implements IObserver {
 
     public GameManager gameManager;
     private GamePanel gamePanel;
+    private JPanel endGamePanel;
 
     //-------------------------------------The views to the in game elements--------------------------------------
 
@@ -47,6 +50,30 @@ public class GameController implements IObserver {
             //System.out.println("Adding observer");
             student.GetRoom().AddObserver(this );
         }
+
+        SetEndGamePanel();
+    }
+
+    private void SetEndGamePanel() {
+        int roomWidth = gamePanel.GetGameConsoles().get(0).getConsoleWidth();
+        int roomHeight = gamePanel.GetGameConsoles().get(0).getConsoleHeight();
+
+        endGamePanel = new JPanel();
+        endGamePanel.setSize(roomWidth, roomHeight);
+        endGamePanel.setBackground(Color.BLACK);
+        endGamePanel.setLayout(new GridBagLayout());
+
+        JLabel gameOverLabel = new JLabel("Game Over!");
+        gameOverLabel.setForeground(Color.RED);
+        gameOverLabel.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 24));
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.insets = new Insets(0, 0, 0, 0);
+
+        endGamePanel.add(gameOverLabel, gbc);
     }
 
     public GameController(GameManager gameManager, GamePanel gamePanel) {
@@ -100,6 +127,8 @@ public class GameController implements IObserver {
             } );
 
             MoveInGameCharacters();
+        } else {
+            gamePanel.GetGameConsoles().get(currentPlayerIndex).add(endGamePanel);
         }
 
     }

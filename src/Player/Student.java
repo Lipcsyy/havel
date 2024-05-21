@@ -4,7 +4,9 @@ import Item.Item;
 import Logger.*;
 import Room.*;
 import Enums.ELogger;
+import Views.PlayerView;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class Student extends Player {
