@@ -31,8 +31,8 @@ public class GameMap {
         cell1.setCoordinates(0, 0);
         adjacencyList.put(cell1, new HashSet<>());
 
-        MagicRoom cell2 = new MagicRoom((new Random()).nextInt(4, 5), gameManager);
-        RoomView roomView = new RoomView(ERooms.MAGICROOM, false, false, false, false);
+        Room cell2 = new Room((new Random()).nextInt(4, 5), gameManager);
+        RoomView roomView = new RoomView(ERooms.ROOM, false, false, false, false);
         gameManager.GetGameController().SetRoomView(cell2, roomView );
         cell2.setCoordinates(1, 0);
         adjacencyList.put(cell2, new HashSet<>());
@@ -181,9 +181,13 @@ public class GameMap {
         }
     }
 
-    public Room GetRandomNeighbour(Room room){
+    public Room GetRandomNeighbour(Room room) {
         List<Room> neighbours = new ArrayList<>(adjacencyList.get(room));
-        return neighbours.get(rand.nextInt(neighbours.size()));
+        if (neighbours.isEmpty()) {
+            return null; // No neighbours available
+        }
+        int randomNumber = new Random().nextInt(neighbours.size());
+        return neighbours.get(randomNumber);
     }
 
     public Room GetRoomByIndex(int index){

@@ -285,7 +285,6 @@ public class Room implements java.io.Serializable , IObservable {
             player.Freeze(3);
         }
 
-        NotifyObservers();
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");

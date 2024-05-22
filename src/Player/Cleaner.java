@@ -74,6 +74,7 @@ public class Cleaner extends Player {
         return true;
     }
 
+
     @Override
     public void Move(Room room) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
@@ -87,6 +88,8 @@ public class Cleaner extends Player {
         this.SetRoom(room);
 
         room.CleanRoom(true);
+
+        room.NotifyObservers();
 
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logExit(this.getClass().getName(), "Move" );

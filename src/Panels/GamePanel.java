@@ -17,6 +17,7 @@ public class GamePanel extends JPanel {
     private JPanel mazeDisplayArea;
     private JPanel containerPanel;
     private GameController gameController;
+    private Image backgroundImage;
 
     public GamePanel(EGameMode gameMode){
 
@@ -26,6 +27,8 @@ public class GamePanel extends JPanel {
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true); // Enable keyboard focus for the panel
         requestFocusInWindow(); // Request keyboard focus when the panel is shown
+
+        backgroundImage = new ImageIcon("./src/Images/background.jpg").getImage();
 
         SetKeyListener();
 

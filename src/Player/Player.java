@@ -121,6 +121,11 @@ public abstract class Player implements java.io.Serializable {
         }
 
         for ( int i = 0; i < items.size(); i++ ) {
+
+            if ( items.get(i).NeedToThrow() == true ) {
+                continue;
+            }
+
             this.room.AddItem(items.get(i));
             this.RemoveFromInventory(items.get(i));
             i--;
@@ -225,6 +230,8 @@ public abstract class Player implements java.io.Serializable {
 
         this.SetRoom(room);
 
+        room.NotifyObservers();
+
         for ( int i = 0; i < items.size(); i++ ) {
             items.get(i).DecreaseTurnsLeft(this);
             if (items.get(i).NeedToThrow()) {
@@ -241,7 +248,6 @@ public abstract class Player implements java.io.Serializable {
 
     public boolean ChangeRoom(Room room) {
 
-        System.out.println("Changing motherfucking roooom");
         System.out.println(frozenForRound);
 
 

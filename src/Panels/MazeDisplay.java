@@ -7,6 +7,7 @@ import Controller.GameController;
 import Map.GameMap;
 import Room.Room;
 import Player.Student;
+import Player.Player;
 
 public class MazeDisplay extends JPanel {
     private final GameMap mazeGenerator;
@@ -107,6 +108,20 @@ public class MazeDisplay extends JPanel {
 //                    for(Room neighbour : rooomneighbors) {
 //                        System.out.println("(md) neighbour: " + neighbour.GetX() + " " + neighbour.GetY());
 //                    }
+                }
+            }
+
+            for ( Player player  : gameController.GetPlayerViews().keySet() ) {
+
+                if ( gameController.studentToViews.keySet().contains(player) ) {
+                    continue;
+                }
+
+                if ( player.GetRoom() == room ) {
+                    g2d.setColor(Color.BLUE);
+                    int playerX = roomX + (roomSize - playerIndicatorSize) / 2;
+                    int playerY = roomY + (roomSize - playerIndicatorSize) / 2;
+                    g2d.fillOval(playerX, playerY, playerIndicatorSize, playerIndicatorSize);
                 }
             }
         }

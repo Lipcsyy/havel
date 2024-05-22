@@ -17,7 +17,10 @@ import java.awt.event.ActionListener;
 
 import java.util.*;
 import java.util.List;
-
+/**
+ * This class represents the game controller in the game.
+ * It implements the IObserver interface and has specific behaviors such as handling player input and rendering the game.
+ */
 public class GameController implements IObserver {
 
     public GameManager gameManager;
@@ -39,7 +42,12 @@ public class GameController implements IObserver {
 
     private int currentPlayerIndex = 0; // Track the current player's index
     private int playerMoveCount = 0; // Track the number of player moves
-
+    /**
+     * Constructor for the GameController class.
+     * It sets the game mode and the game panel.
+     * @param gameMode The game mode to be set.
+     * @param gamePanel The game panel to be set.
+     */
     public GameController(EGameMode gameMode, GamePanel gamePanel) {
 
         // MVC triangle setup
@@ -75,7 +83,12 @@ public class GameController implements IObserver {
 
         endGamePanel.add(gameOverLabel, gbc);
     }
-
+    /**
+     * Constructor for the GameController class.
+     * It sets the game manager and the game panel.
+     * @param gameManager The game manager to be set.
+     * @param gamePanel The game panel to be set.
+     */
     public GameController(GameManager gameManager, GamePanel gamePanel) {
 
         // MVC triangle setup
@@ -88,7 +101,9 @@ public class GameController implements IObserver {
         }
     }
 
-
+    /**
+     * Starts the game.
+     */
     public void StartGame() {
 
         System.out.println("Items size: " + itemViews.size());
@@ -99,7 +114,9 @@ public class GameController implements IObserver {
         HandleInput(player1);
     }
 
-
+    /**
+     * Handles the next turn.
+     */
     private void handleNextTurn() {
 
         ArrayList<Student> students = new ArrayList<>(studentToViews.keySet());
@@ -108,15 +125,19 @@ public class GameController implements IObserver {
         for(int i = 0; i < students.size(); i++){
             Student actStudent = students.get(i);
             if(actStudent.GetIsAlive() == false){
-                roomViews.get(actStudent.GetRoom()).add(endGamePanel);
+                RoomView rV = roomViews.get(actStudent.GetRoom());
+                removeDoorListeners(rV);
+                disableButtons(rV);
+                rV.add(endGamePanel);
             }
             else numAlive++;
         }
 
         if (numAlive != 0) {
 
+
             Student currentPlayer = students.get(currentPlayerIndex);
-            System.out.println("(handleNextTurn):FROZEN MOTHERFUCKING ROUNDSSS:" + currentPlayer.GetFrozenForRound());
+            System.out.println("(handleNextTurn): frozenForRounds:" + currentPlayer.GetFrozenForRound());
 
             HandleInput(currentPlayer);
 
@@ -138,22 +159,61 @@ public class GameController implements IObserver {
                 }
             }
 
-            //MoveInGameCharacters();
-
             List<Room> rooms = gameManager.getRooms();
             for( Room room : rooms){
                 room.DecreaseTurnsLeftForEffect();
             }
+
+            Random random = new Random();
+            double needToManageDoors = random.nextDouble(0,1);
+
+            if( needToManageDoors < 0.1 ){
+                boolean manageType;
+                if( needToManageDoors < 0.5){
+                    manageType = true;
+                } else {
+                    manageType = false;
+                }
+
+                for( Room room : rooms) {
+                    Room neighbour = gameManager.map.GetRandomNeighbour( room );
+                    room.ManageDoors(neighbour, manageType);
+                    this.roomViews.get(room).InitilizeDoors(50, 10);
+                    this.roomViews.get(neighbour).InitilizeDoors(50, 10);
+                }
+            }
         }
     }
 
+    private void disableButtons(RoomView roomView) {
+        if (roomView.hasTopDoor) {
+            DoorView topDoor = roomView.GetDoor(EDirection.NORTH);
+            topDoor.setEnabled(false);
+        }
+        if (roomView.hasBottomDoor) {
+            DoorView bottomDoor = roomView.GetDoor(EDirection.SOUTH);
+            bottomDoor.setEnabled(false);
+        }
+        if (roomView.hasLeftDoor) {
+            DoorView leftDoor = roomView.GetDoor(EDirection.WEST);
+            leftDoor.setEnabled(false);
+        }
+        if (roomView.hasRightDoor) {
+            DoorView rightDoor = roomView.GetDoor(EDirection.EAST);
+            rightDoor.setEnabled(false);
+        }
+    }
+    /**
+     * Handles the input for a student.
+     * @param student The student for which the input is handled.
+     */
     private void HandleInput(Student student) {
         System.out.println("HandleInput for: " + student);
 
         RoomView currentRoomView = roomViews.get(student.GetRoom());
         Room currentRoom = student.GetRoom();
 
-        removeDoorListeners(currentRoomView);
+        //removeDoorListeners(currentRoomView);
 
         if (currentRoomView.hasTopDoor) {
             DoorView topDoor = currentRoomView.GetDoor(EDirection.NORTH);
@@ -167,14 +227,6 @@ public class GameController implements IObserver {
             DoorView bottomDoor = currentRoomView.GetDoor(EDirection.SOUTH);
             bottomDoor.addActionListener(e -> {
                 MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
-                this.gamePanel.requestFocusInWindow();
-            });
-        }
-        
-        if (currentRoomView.hasBottomDoor) {
-            DoorView bottomDoor = currentRoomView.GetDoor( EDirection.SOUTH );
-            bottomDoor.addActionListener( e -> {
-                MovePlayerToRoom( student, Objects.requireNonNull( findCell( currentRoom.x, currentRoom.y + 1 )));
                 this.gamePanel.requestFocusInWindow();
             });
         }
@@ -195,9 +247,12 @@ public class GameController implements IObserver {
         }
     }
 
+    /**
+     * Moves the in-game characters.
+     */
     private void MoveInGameCharacters() {
 
-        System.out.println("MOVE IN GAME CHARACTERS");
+        System.out.println("MoveInGameCharacters");
 
         for (Player player : playerViews.keySet()) {
 
@@ -215,7 +270,13 @@ public class GameController implements IObserver {
 
     }
 
+    /**
+     * Removes the door listeners from the given room view.
+     *
+     * @param roomView The room view to remove the door listeners from.
+     */
     private void removeDoorListeners(RoomView roomView) {
+        System.out.println("RemoveDoorListeners");
         if (roomView.hasTopDoor) {
             DoorView topDoor = roomView.GetDoor(EDirection.NORTH);
             for (ActionListener listener : topDoor.getActionListeners()) {
@@ -242,6 +303,12 @@ public class GameController implements IObserver {
         }
     }
 
+    /**
+     * Moves the given player to the given room.
+     *
+     * @param player The player to move.
+     * @param newRoom The room to move the player to.
+     */
     public void MovePlayerToRoom(Student player, Room newRoom) {
 
         System.out.println("MovePlayerToRoom");
@@ -250,10 +317,13 @@ public class GameController implements IObserver {
 
         System.out.println("Player moved to room: " + newRoom.GetX() + " " + newRoom.GetY());
 
-        if (player.ChangeRoom(newRoom)  == true) {
-            System.out.println("Player moved to room:(changeRoom true): " + newRoom.GetX() + " " + newRoom.GetY());
-            //gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
-        };
+
+        if (player.ChangeRoom(newRoom) == true) {
+            removeDoorListeners(roomViews.get(player.GetRoom()));
+        }
+
+        //System.out.println("Player moved to room:(changeRoom true): " + newRoom.GetX() + " " + newRoom.GetY());
+        //gamePanel.GetGameConsoles().get(index).remove(roomViews.get(player.GetRoom()));
 
 
         UpdateInventoryConsole();
@@ -262,8 +332,11 @@ public class GameController implements IObserver {
 
     }
 
+    /**
+     * Renders the game.
+     */
     public void Render() {
-        System.out.println("Render (gamecontroller)");
+        System.out.println("Gamecontroller.Render !!");
         gamePanel.Render();
 
         // clear the content of the game consoles
@@ -318,9 +391,12 @@ public class GameController implements IObserver {
         }
     }
 
+    /**
+     *Updates the inventory console.
+     */
     public void UpdateInventoryConsole(){
 
-        System.out.println("UpdateInventoryConsole");
+        //System.out.println("UpdateInventoryConsole");
 
         for ( Student student : studentToViews.keySet()) {
 
@@ -347,19 +423,28 @@ public class GameController implements IObserver {
     }
 
 
+    /**
+     * Moves to the next turn.
+     */
     private void nextTurn() {
         playerMoveCount++;
 
         if (playerMoveCount >= studentToViews.size()) {
             playerMoveCount = 0;
-            //moveInGameCharacters();
         }
 
         currentPlayerIndex = (currentPlayerIndex + 1) % studentToViews.size();
+        MoveInGameCharacters();
         handleNextTurn();
     }
 
-
+    /**
+     * Finds a cell with the given coordinates.
+     *
+     * @param x The x-coordinate of the cell.
+     * @param y The y-coordinate of the cell.
+     * @return The cell with the given coordinates, or null if no such cell exists.
+     */
     private Room findCell(int x, int y) {
         for (Room cell : gameManager.getRooms()) {
             if (cell.x == x && cell.y == y) {
@@ -427,23 +512,46 @@ public class GameController implements IObserver {
         UpdateInventoryConsole();
     }
 
+    /**
+     * Changes the room view to normal.
+     *
+     * @param room The room to change the view of.
+     */
     public void ChangeRoomViewToNormal( Room room ) {
 
         RoomView roomView = roomViews.get(room);
         roomView.setBackgroundPicture( ERooms.ROOM );
     }
 
+    /**
+     * Changes the room view to gas.
+     *
+     * @param room The room to change the view of.
+     */
     public void ChangeRoomViewToGas( Room room ) {
 
         RoomView roomView = roomViews.get(room);
         roomView.setBackgroundPicture( ERooms.GASROOM );
     }
 
+    /**
+     * Changes the room view to magic.
+     *
+     * @param room The room to change the view of.
+     */
+
     public void ChangeRoomViewToMagic(Room room){
         RoomView roomView = roomViews.get(room);
         roomView.setBackgroundPicture( ERooms.MAGICROOM );
     }
 
+    /**
+     * Gets the room view by room.
+     *
+     * @param room The room to get the view of.
+     * @return The room view of the given room.
+     */
+    
     public RoomView GetRoomViewByRoom( Room room ){
         return roomViews.get( room );
     }
@@ -451,13 +559,29 @@ public class GameController implements IObserver {
     public GamePanel GetGamePanel(){
         return gamePanel;
     }
-
+    
     private void showGameOver(String message) {
         JOptionPane.showMessageDialog(null, message, "Game Over", JOptionPane.INFORMATION_MESSAGE);
         int result = JOptionPane.showConfirmDialog(null, "Exit game?", "Game Over", JOptionPane.YES_NO_OPTION);
         if (result == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
+    }
+    /**
+     * Shows the win game message.
+     */
+    public void WinGame(){
+
+        JPanel winPanel = new JPanel();
+        winPanel.setBackground( Color.YELLOW );
+
+        JLabel winLabel = new JLabel("You won!");
+        winLabel.setOpaque( false );
+        winLabel.setForeground( Color.BLACK );
+        winLabel.setHorizontalAlignment( SwingConstants.CENTER );
+        winLabel.setVerticalAlignment( SwingConstants.CENTER );
+
+        gamePanel.add(winPanel);
     }
 
 }

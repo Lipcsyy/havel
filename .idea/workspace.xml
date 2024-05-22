@@ -8,18 +8,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a460ec7-2448-4304-ac71-fd92baaa9954" name="Changes" comment="feat: connected the map with the rooms">
+      <change afterPath="$PROJECT_DIR$/src/Images/background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Camembert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Camembert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MazeDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Cleaner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/PlayerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerHolder.java" afterDir="false" />
+    </list>
+    <list id="2ebdc8de-f571-4031-982b-068adff0915b" name="Changes by bologa" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/ChangeRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
     </list>
     <list id="78835435-7326-4e53-96c7-2aceb074cea1" name="Changes by Hunor" comment="Changes by Hunor" />
-    <list id="e7431344-8dce-44fa-b07b-06730d15326e" name="Changes by kovac" comment="Changes by kovac" />
+    <list id="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" name="Changes by kovac" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Commander/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commander/AddItemToPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Mask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Mask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Rag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Rag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoomView.java" afterDir="false" />
+    </list>
     <list id="0ac52fed-0cdd-4b60-b66e-d0ecf18025ed" name="Changes by lenovo" comment="Changes by lenovo">
+      <change beforePath="$PROJECT_DIR$/src/Item/SlideRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SlideRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/PausePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/PausePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/PlayerView.java" afterDir="false" />
     </list>
     <list id="15a0218a-8e59-43d9-8d75-f8fda468ec22" name="Changes by Madia" comment="Changes by Madia">
+      <change beforePath="$PROJECT_DIR$/src/GameManager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room/MagicRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room/MagicRoom.java" afterDir="false" />
     </list>
     <list id="e6fcc51d-a55e-468b-9f93-c8734d044c53" name="Changes by User" comment="Last commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,10 +69,120 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/Map/GameMap.java">
       <ranges>
-        <range start1="29" end1="30" start2="29" end2="30" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="39" end1="39" start2="39" end2="40" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="43" end1="43" start2="44" end2="46" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
-        <range start1="188" end1="188" start2="191" end2="195" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="33" end1="35" start2="33" end2="35" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="39" end1="40" start2="39" end2="40" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="45" end1="46" start2="45" end2="46" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="183" end1="184" start2="183" end2="184" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="185" end1="186" start2="185" end2="190" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Views/RoomView.java">
+      <ranges>
+        <range start1="136" end1="137" start2="136" end2="136" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="147" end1="153" start2="146" end2="146" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="162" end1="168" start2="155" end2="155" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="177" end1="183" start2="164" end2="164" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="192" end1="198" start2="173" end2="173" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="212" end1="213" start2="187" end2="188" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="214" end1="216" start2="189" end2="190" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="247" end1="247" start2="221" end2="223" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="249" end1="255" start2="225" end2="225" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="262" end1="262" start2="232" end2="234" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="264" end1="270" start2="236" end2="236" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="277" end1="277" start2="243" end2="245" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="279" end1="285" start2="247" end2="247" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="292" end1="292" start2="254" end2="256" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="294" end1="300" start2="258" end2="258" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="330" end1="331" start2="288" end2="289" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Commander/Add.java">
+      <ranges>
+        <range start1="8" end1="9" start2="8" end2="12" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="12" end1="12" start2="15" end2="20" changelist="2ebdc8de-f571-4031-982b-068adff0915b" />
+        <range start1="15" end1="16" start2="23" end2="24" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="26" end1="27" start2="34" end2="35" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="31" end1="32" start2="39" end2="40" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="37" end1="38" start2="45" end2="46" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Room/Room.java">
+      <ranges>
+        <range start1="287" end1="288" start2="287" end2="287" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="360" end1="361" start2="359" end2="360" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="364" end1="365" start2="363" end2="364" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/GameManager/GameManager.java">
+      <ranges>
+        <range start1="75" end1="76" start2="75" end2="76" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="128" end1="129" start2="128" end2="129" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="133" end1="134" start2="133" end2="133" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="159" end1="161" start2="158" end2="164" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="176" end1="176" start2="179" end2="183" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="242" end1="242" start2="249" end2="253" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="248" end1="248" start2="259" end2="263" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="252" end1="252" start2="267" end2="271" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="278" end1="308" start2="297" end2="297" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="309" end1="327" start2="298" end2="302" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="337" end1="337" start2="312" end2="316" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="347" end1="347" start2="326" end2="331" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="352" end1="352" start2="336" end2="341" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="360" end1="360" start2="349" end2="354" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="367" end1="367" start2="361" end2="366" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="377" end1="377" start2="376" end2="381" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="381" end1="381" start2="385" end2="390" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="390" end1="390" start2="399" end2="404" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="403" end1="403" start2="417" end2="420" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="414" end1="414" start2="431" end2="436" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+        <range start1="424" end1="424" start2="446" end2="450" changelist="15a0218a-8e59-43d9-8d75-f8fda468ec22" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Controller/GameController.java">
+      <ranges>
+        <range start1="19" end1="20" start2="19" end2="23" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="41" end1="42" start2="44" end2="50" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="77" end1="78" start2="85" end2="91" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="90" end1="91" start2="103" end2="106" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="101" end1="102" start2="116" end2="119" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="110" end1="111" start2="127" end2="131" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="117" end1="117" start2="137" end2="138" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="118" end1="119" start2="139" end2="140" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="140" end1="142" start2="161" end2="161" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="146" end1="146" start2="165" end2="184" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="149" end1="149" start2="187" end2="209" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="155" end1="156" start2="215" end2="216" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="173" end1="181" start2="233" end2="233" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="197" end1="197" start2="249" end2="252" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="199" end1="200" start2="254" end2="255" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="217" end1="217" start2="272" end2="277" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="218" end1="218" start2="278" end2="279" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="244" end1="244" start2="305" end2="311" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="252" end1="256" start2="319" end2="326" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="264" end1="264" start2="334" end2="337" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="265" end1="266" start2="338" end2="339" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="320" end1="320" start2="393" end2="396" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="322" end1="323" start2="398" end2="399" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="349" end1="349" start2="425" end2="428" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="354" end1="355" start2="433" end2="433" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="358" end1="358" start2="436" end2="437" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="361" end1="362" start2="440" end2="447" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="429" end1="429" start2="514" end2="519" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="435" end1="435" start2="525" end2="530" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="441" end1="441" start2="536" end2="542" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="446" end1="446" start2="547" end2="554" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="450" end1="450" start2="558" end2="563" changelist="82b0e4c3-e79e-42d7-bfde-ce1e351fe9e7" />
+        <range start1="453" end1="454" start2="566" end2="567" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="461" end1="461" start2="574" end2="590" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Panels/GamePanel.java">
+      <ranges>
+        <range start1="19" end1="19" start2="19" end2="20" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="29" end1="29" start2="30" end2="32" changelist="7a460ec7-2448-4304-ac71-fd92baaa9954" />
+        <range start1="34" end1="35" start2="37" end2="38" changelist="0ac52fed-0cdd-4b60-b66e-d0ecf18025ed" />
+        <range start1="39" end1="40" start2="42" end2="43" changelist="0ac52fed-0cdd-4b60-b66e-d0ecf18025ed" />
+        <range start1="106" end1="106" start2="109" end2="117" changelist="0ac52fed-0cdd-4b60-b66e-d0ecf18025ed" />
       </ranges>
     </file>
   </component>
@@ -165,30 +302,7 @@
       <workItem from="1716293929092" duration="7487000" />
       <workItem from="1716302275015" duration="10364000" />
       <workItem from="1716312771334" duration="1271000" />
-    </task>
-    <task id="LOCAL-00004" summary="Added Room Class">
-      <option name="closed" value="true" />
-      <created>1710945702907</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1710945702907</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added a Logger">
-      <option name="closed" value="true" />
-      <created>1710948034670</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1710948034670</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Changed Player class">
-      <option name="closed" value="true" />
-      <created>1710948050177</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1710948050177</updated>
+      <workItem from="1716370409394" duration="2109000" />
     </task>
     <task id="LOCAL-00007" summary="Last commit">
       <option name="closed" value="true" />
@@ -558,7 +672,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716361873596</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="feat: connected the map with the rooms">
+      <option name="closed" value="true" />
+      <created>1716362562412</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1716362562412</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Changes by lenovo">
+      <option name="closed" value="true" />
+      <created>1716362568913</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1716362568913</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Changes by Madia">
+      <option name="closed" value="true" />
+      <created>1716362575476</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1716362575476</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

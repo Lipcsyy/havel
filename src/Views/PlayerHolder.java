@@ -32,7 +32,10 @@ public class PlayerHolder extends JPanel {
     }
 
     public void Render() {
-        studentView.Render();
+        if ( studentView != null ) {
+            studentView.Render();
+        }
+
         revalidate();
         repaint();
     }
