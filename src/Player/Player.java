@@ -318,6 +318,8 @@ public abstract class Player implements java.io.Serializable {
             Logger.logEntry(this.getClass().getName(), "Freeze", "5");
         }
 
+
+        System.out.println("FREEZING THE PLAYER");
         this.frozenForRound = freezeForRounds;
 
         this.DropAllItem();

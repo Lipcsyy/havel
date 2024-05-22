@@ -73,7 +73,7 @@ public class GameManager implements java.io.Serializable{
 
     private void InitalizeGame(EGameMode gameMode)  {
 
-        map = new GameMap(4, 4, this);
+        map = new GameMap(3, 1, this);
         map.generateMaze();
         map.displayMaze();
 
@@ -126,7 +126,7 @@ public class GameManager implements java.io.Serializable{
         else {
 
             //Add student to the game
-            Room playerStartRoom = map.getRandomCell();
+            Room playerStartRoom = map.GetRoomByIndex(2);
             Student student = new Student(playerStartRoom, this);
             gameController.studentToViews.put(student, new PlayerView( EPlayers.STUDENT));
 
@@ -134,40 +134,40 @@ public class GameManager implements java.io.Serializable{
             Rag rag = new Rag();
 
             //add 8 teacher to the game with different starting room
-            for( int i = 0; i < 1; i++){
-                Room TeacherStartRoom = map.getRandomCell();
-                while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
-                    TeacherStartRoom = map.getRandomCell();
-                }
-
-                Teacher teacher = new Teacher(TeacherStartRoom, this);
-
-                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
-            }
+//            for( int i = 0; i < 1; i++){
+//                Room TeacherStartRoom = map.getRandomCell();
+//                while( TeacherStartRoom == playerStartRoom || TeacherStartRoom.HasMoreSpaceInRoom() == false){
+//                    TeacherStartRoom = map.getRandomCell();
+//                }
+//
+//                Teacher teacher = new Teacher(TeacherStartRoom, this);
+//
+//                gameController.SetPlayerViews( teacher, new PlayerView(EPlayers.TEACHER) );
+//            }
 
             //add 2 cleaner to the game
-            for( int i = 0; i < 1; i++){
-                Room CleanerStartRoom = map.getRandomCell();
-                if( CleanerStartRoom.HasMoreSpaceInRoom() == false){
-                    CleanerStartRoom = map.getRandomCell();
-                }
-                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
-
-                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
-           }
+//            for( int i = 0; i < 1; i++){
+//                Room CleanerStartRoom = map.getRandomCell();
+//                if( CleanerStartRoom.HasMoreSpaceInRoom() == false){
+//                    CleanerStartRoom = map.getRandomCell();
+//                }
+//                Cleaner cleaner = new Cleaner( CleanerStartRoom, this);
+//
+//                gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
+//           }
 
             //adding items
-            SlideRule slideRule = new SlideRule();
-            Room SlideRuleRoom = map.getRandomCell();
-            while( SlideRuleRoom == playerStartRoom){
-                SlideRuleRoom = map.getRandomCell();
-            }
-            SlideRuleRoom.AddItem(slideRule);
+//            SlideRule slideRule = new SlideRule();
+//            Room SlideRuleRoom = map.getRandomCell();
+//            while( SlideRuleRoom == playerStartRoom){
+//                SlideRuleRoom = map.getRandomCell();
+//            }
+//            SlideRuleRoom.AddItem(slideRule);
 
 
         }
 
-        InitalizeItems( gameMode );
+        //InitalizeItems( gameMode );
     }
 
     public void InitalizeItems( EGameMode gameMode ){

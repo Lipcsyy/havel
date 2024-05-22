@@ -153,6 +153,8 @@ public class GameController implements IObserver {
         RoomView currentRoomView = roomViews.get(student.GetRoom());
         Room currentRoom = student.GetRoom();
 
+        removeDoorListeners(currentRoomView);
+
         if (currentRoomView.hasTopDoor) {
             DoorView topDoor = currentRoomView.GetDoor(EDirection.NORTH);
             topDoor.addActionListener(e -> {

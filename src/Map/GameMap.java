@@ -161,4 +161,8 @@ public class GameMap {
         List<Room> neighbours = new ArrayList<>(adjacencyList.get(room));
         return neighbours.get(rand.nextInt(neighbours.size()));
     }
+
+    public Room GetRoomByIndex(int index){
+        return (Room)adjacencyList.keySet().toArray()[index];
+    }
 }
