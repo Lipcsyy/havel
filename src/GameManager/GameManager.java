@@ -177,6 +177,10 @@ public class GameManager implements java.io.Serializable{
         //InitalizeItems( gameMode );
     }
 
+    /**
+     * Initalize the starting items in the game and adding itt to rooms
+     * @param gameMode decides how many items we need from each type
+     */
     public void InitalizeItems( EGameMode gameMode ){
         int numberOfItems;
         if( gameMode == EGameMode.MULTIPLAYER){
@@ -243,16 +247,28 @@ public class GameManager implements java.io.Serializable{
         }
     }
 
+    /**
+     * Returns the Rooms in the game in a list
+     * @return the rooms in the game
+     */
     public ArrayList<Room> getRooms(){
         ArrayList<Room> allRooms = new ArrayList<Room >();
         allRooms.addAll( map.getAdjacencyList().keySet() );
         return allRooms;
     }
 
+    /**
+     * Retruns the Player entities from the game
+     * @return the entities in the game
+     */
     public ArrayList<Player> getPlayers(){
         return players;
     }
 
+    /**
+     * Returns all items from the game
+     * @return the items in the game
+     */
     public ArrayList<Item> getItems(){
 
         ArrayList<Item> allItems = new ArrayList< Item >();
@@ -279,55 +295,11 @@ public class GameManager implements java.io.Serializable{
         return allItems;
     }
 
-    /*
-    public void ChangeRoomToNormalInList(Room targetRoom) {
-        if (GameManager.loggerStatus == ELogger.INFO) {
-            Logger.logEntry(this.getClass().getName(), "ChangeRoomToNormalInList", "targetRoom");
-        }
 
-        // Create a new Room with the same properties as the targetRoom
-        Room newRoom = new Room(targetRoom, this);
-
-        // Move players from the targetRoom to the newRoom
-        Iterator<Player> it = targetRoom.GetPlayers().iterator();
-        while (it.hasNext()) {
-            Player p = it.next();
-            it.remove();
-            p.SetRoom(newRoom);
-
-            // Move items to the new room
-            p.GetInventory().forEach(item -> item.SetRoom(newRoom));
-        }
-
-        // Get the neighbors of the targetRoom
-        var neighborsOfTarget = targetRoom.GetNeighbours();
-
-        // Remove the targetRoom from its neighbors' adjacency lists
-        for (Room neighbor : neighborsOfTarget) {
-            DisconnectRoomsTwoWay(neighbor, targetRoom);
-        }
-
-        // Remove the targetRoom from the adjacency list
-        map.getAdjacencyList().remove(targetRoom);
-
-        // Add the newRoom to the adjacency list and connect it to the neighbors
-        map.getAdjacencyList().put(newRoom, new HashSet<>());
-        for (Room neighbor : neighborsOfTarget) {
-            ConnectRoomsTwoWay(neighbor, newRoom);
-        }
-
-        // Update the game controller with the new room
-        gameController.ChangeRoomViewToNormal(targetRoom, newRoom);
-
-        // Refresh the view for the new room
-        gameController.GetRoomViewByRoom(newRoom).repaint();
-
-        if (GameManager.loggerStatus == ELogger.INFO) {
-            Logger.logExit(this.getClass().getName(), "ChangeRoomToNormalInList");
-        }
-    }
-*/
-
+    /**
+     * Add a room to the game
+     * @param room the room we want to attach to the map
+     */
     public void AddRoom( Room room ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "AddRoom", "room");
@@ -338,6 +310,10 @@ public class GameManager implements java.io.Serializable{
         }
     }
 
+    /**
+     * Add a player to the game
+     * @param player the player we want to add to the game
+     */
     public void AddPlayer( Player player){
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "AddPlayer", "player");
@@ -348,11 +324,21 @@ public class GameManager implements java.io.Serializable{
         }
     }
 
+    /**
+     * Connect two rooms in oneway mode, but only one room get new door
+     * @param room1 the first room, who has the door
+     * @param room2 the second room, who doesn't have the door
+     */
     public void ConnectRoomsOneWay(Room room1, Room room2) {
         Set<Room> room1Neighbours = map.getAdjacencyList().get(room1);
         room1Neighbours.add(room2);
     }
 
+    /**
+     * Connect two rooms in twoway mode, and each room get new door
+     * @param room1 the first room
+     * @param room2 the second room
+     */
     public void ConnectRoomsTwoWay(Room room1, Room room2) {
         Set<Room> room1Neighbors = map.getAdjacencyList().get(room1);
         Set<Room> room2Neighbors = map.getAdjacencyList().get(room2);
@@ -361,6 +347,11 @@ public class GameManager implements java.io.Serializable{
         room2Neighbors.add(room1);
     }
 
+    /**
+     * Disconnect two rooms in oneway mode, but just one room lost its door
+     * @param room1 the first room, who lost its door
+     * @param room2 the second room, who doesn't lost his door
+     */
     public void DisconnectRoomsOneWay(Room room1, Room room2) {
         Set<Room> room1Neighbors = map.getAdjacencyList().get(room1);
         if (room1Neighbors != null) {
@@ -368,6 +359,11 @@ public class GameManager implements java.io.Serializable{
         }
     }
 
+    /**
+     * Disconnect two rooms in twoway mode, each room lost its door
+     * @param room1 the first room
+     * @param room2 the second room
+     */
     public void DisconnectRoomsTwoWay(Room room1, Room room2) {
         DisconnectRoomsOneWay(room1, room2);
         DisconnectRoomsOneWay(room2, room1);
@@ -378,10 +374,20 @@ public class GameManager implements java.io.Serializable{
         isRuning = false;
     }
 
+    /**
+     * Get a rooms neighbours from the map
+     * @param room the room, which neighbours we need
+     * @return a list of the neighbour rooms
+     */
     public Set<Room> GetNeighbours(Room room) {
         return map.getAdjacencyList().get(room);
     }
 
+    /**
+     * Get a room by its ID
+     * @param id the rooms ID, which we want to get
+     * @return the room, what have this ID
+     */
     public Room GetRoomById(String id) {
         for (Room r : map.getAdjacencyList().keySet()) {
             if (r.id.equals(id)) {
@@ -391,6 +397,11 @@ public class GameManager implements java.io.Serializable{
         return null;
     }
 
+    /**
+     * Get a player by its ID
+     * @param id the players ID, which we want to get
+     * @return the player, what have this ID
+     */
     public Player GetPlayerById(String id) {
         for (Room r : map.getAdjacencyList().keySet()) {
             for (Player p : r.GetPlayers()) {
@@ -404,6 +415,9 @@ public class GameManager implements java.io.Serializable{
 
     //-----------INFORMATION FUNCTIONS----------------
 
+    /**
+     * Printing the important infos from gamemanager
+     */
     public void PrintInfo() {
 
         for ( Room r : map.getAdjacencyList().keySet() ) {
@@ -415,6 +429,11 @@ public class GameManager implements java.io.Serializable{
         }
     }
 
+    /**
+     * Get an item by its ID
+     * @param id the items ID, which we want to get
+     * @return the item, what have this ID
+     */
     public Item GetItemById(String id) {
         for (Item i : getItems()) {
             if (i.id.equals(id)) {
@@ -425,6 +444,10 @@ public class GameManager implements java.io.Serializable{
     }
 
 
+    /**
+     * Getter for the gamecontroller attribute
+     * @return the gamecontroller
+     */
     public GameController GetGameController() {
         return gameController;
     }

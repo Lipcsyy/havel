@@ -43,7 +43,7 @@ public class MagicRoom extends Room {
             if(neighboursOfRoom.size() == 0)
                 return;
 
-            gameManager.DisconnectRoomsTwoWay(this, neighboursOfRoom.stream().toList().get(new Random().nextInt(neighboursOfRoom.size())));
+            gameManager.DisconnectRoomsOneWay(this, neighboursOfRoom.stream().toList().get(new Random().nextInt(neighboursOfRoom.size())));
 
         }
         else //Make two rooms neighbours
