@@ -30,13 +30,13 @@ public class GameFrame extends JFrame {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
-        singleGamePanel.AddGameConsole(new GameConsole(700,280));
+        /*singleGamePanel.AddGameConsole(new GameConsole(700,280));
         singleGamePanel.AddInventoryConsole(new InventoryConsole(400,70));
 
         multiGamePanel.AddGameConsole(new GameConsole(700,280));
         multiGamePanel.AddInventoryConsole(new InventoryConsole(400,70));
         multiGamePanel.AddGameConsole(new GameConsole(700,280));
-        multiGamePanel.AddInventoryConsole(new InventoryConsole(400,70));
+        multiGamePanel.AddInventoryConsole(new InventoryConsole(400,70));*/
 
         mainPanel.setLayout(layout);
 
