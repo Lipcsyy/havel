@@ -230,7 +230,9 @@ public abstract class Player implements java.io.Serializable {
 
         this.SetRoom(room);
 
-        room.NotifyObservers();
+        gameManager.GetGameController().GetRoomViewByRoom(room).getPlayerHolder().add(gameManager.GetGameController().GetPlayerViews().get(this));
+        gameManager.GetGameController().GetRoomViewByRoom(room).getPlayerHolder().repaint();
+        gameManager.GetGameController().GetGamePanel().repaint();
 
         for ( int i = 0; i < items.size(); i++ ) {
             items.get(i).DecreaseTurnsLeft(this);

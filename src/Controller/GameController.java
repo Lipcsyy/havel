@@ -167,9 +167,9 @@ public class GameController implements IObserver {
             Random random = new Random();
             double needToManageDoors = random.nextDouble(0,1);
 
-            if( needToManageDoors < 0.1 ){
+            if( needToManageDoors < 0 ){
                 boolean manageType;
-                if( needToManageDoors < 0.5){
+                if( needToManageDoors < 0.05){
                     manageType = true;
                 } else {
                     manageType = false;
