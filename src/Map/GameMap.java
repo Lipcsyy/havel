@@ -186,4 +186,8 @@ public class GameMap {
     public Room GetRoomByIndex(int index){
         return (Room)adjacencyList.keySet().toArray()[index];
     }
+
+    public Room RoomGetRoomByCoordinates(int x, int y){
+        return findCell(x, y);
+    }
 }

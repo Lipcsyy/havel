@@ -138,7 +138,7 @@ public class GameController implements IObserver {
                 }
             }
 
-            MoveInGameCharacters();
+            //MoveInGameCharacters();
 
             List<Room> rooms = gameManager.getRooms();
             for( Room room : rooms){
