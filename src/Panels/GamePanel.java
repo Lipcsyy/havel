@@ -73,22 +73,10 @@ public class GamePanel extends JPanel {
 
     public void InitializeGame(EGameMode gameMode) {
 
-        /*containerPanel.removeAll();
         mazeDisplayArea.removeAll();
-
-        if(gameMode == EGameMode.SINGLEPLAYER){
-            this.AddGameConsole(new GameConsole(700,280));
-            this.AddInventoryConsole(new InventoryConsole(400,70));
-        } else {
-            this.AddGameConsole(new GameConsole(700,280));
-            this.AddInventoryConsole(new InventoryConsole(400,70));
-            this.AddGameConsole(new GameConsole(700,280));
-            this.AddInventoryConsole(new InventoryConsole(400,70));
-        }*/
 
         gameController = new GameController(gameMode, this);
         mazeDisplay = new MazeDisplay(gameController.gameManager.map, gameController);
-        mazeDisplayArea.removeAll();
         mazeDisplayArea.add(mazeDisplay);
         gameController.StartGame();
     }
@@ -115,9 +103,5 @@ public class GamePanel extends JPanel {
         for( InventoryConsole inventoryConsole : inventoryConsoles ) {
             inventoryConsole.Render();
         }
-    }
-
-    public void SaveGame() {
-
     }
 }
