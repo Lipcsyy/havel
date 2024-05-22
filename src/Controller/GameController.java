@@ -226,7 +226,7 @@ public class GameController implements IObserver {
         if (currentRoomView.hasBottomDoor) {
             DoorView bottomDoor = currentRoomView.GetDoor(EDirection.SOUTH);
             bottomDoor.addActionListener(e -> {
-                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y - 1)));
+                MovePlayerToRoom(student, Objects.requireNonNull(findCell(currentRoom.x, currentRoom.y + 1)));
                 this.gamePanel.requestFocusInWindow();
             });
         }
