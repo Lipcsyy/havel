@@ -210,7 +210,7 @@ public class RoomView extends JPanel {
         centerPanel.repaint();
     }
 
-    private void InitilizeDoors(int doorLength, int doorThickness) {
+    public void InitilizeDoors(int doorLength, int doorThickness) {
 
         System.out.println("InitializeDoors");
 
@@ -245,6 +245,8 @@ public class RoomView extends JPanel {
                 topDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 topPanel.add(topDoor);
                 add(topPanel, BorderLayout.NORTH);
+
+                topDoor.Render();
             }
         }
         /*
@@ -260,6 +262,8 @@ public class RoomView extends JPanel {
                 bottomDoor.setPreferredSize(new Dimension(doorLength, doorThickness));
                 bottomPanel.add(bottomDoor);
                 add(bottomPanel, BorderLayout.SOUTH);
+
+                bottomDoor.Render();
             }
         }
         /*
@@ -275,6 +279,8 @@ public class RoomView extends JPanel {
                 leftDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 leftPanel.add(leftDoor);
                 add(leftPanel, BorderLayout.WEST);
+
+                leftDoor.Render();
             }
         }
         /*
@@ -290,6 +296,8 @@ public class RoomView extends JPanel {
                 rightDoor.setPreferredSize(new Dimension(doorThickness, doorLength));
                 rightPanel.add(rightDoor);
                 add(rightPanel, BorderLayout.EAST);
+
+                rightDoor.Render();
             }
         }
         /*

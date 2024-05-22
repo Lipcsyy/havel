@@ -6,10 +6,18 @@ import Item.*;
 
 import java.util.ArrayList;
 
-
+/**
+ * This class represents the Add command in the game.
+ * It implements the ICommand interface and has specific behaviors such as adding a new player or room.
+ */
 
 public class Add implements ICommand {
 
+    /**
+     * Executes the Add command.
+     * It adds a new player or room based on the parameters.
+     * @param params The parameters for the command.
+     */
     public void execute( String[] params ) {
 
         if ( params.length != 2 ) {

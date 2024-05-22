@@ -1,6 +1,16 @@
 package Commander;
 
+/**
+ * This class represents the ChangeRoom command in the game.
+ * It implements the ICommand interface and has specific behaviors such as changing the room of a player.
+ */
+
 public class ChangeRoom implements ICommand {
+    /**
+     * Executes the ChangeRoom command.
+     * It changes the room of a player based on the parameters.
+     * @param params The parameters for the command. The first parameter is the player's ID and the second one is the room's ID.
+     */
     public void execute( String[] params){
 
         if (params.length != 2) {
