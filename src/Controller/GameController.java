@@ -556,6 +556,11 @@ public class GameController implements IObserver {
         return roomViews.get( room );
     }
 
+    /**
+     * Gets the game panel.
+     *
+     * @return The game panel.
+     */
     public GamePanel GetGamePanel(){
         return gamePanel;
     }

@@ -49,7 +49,7 @@ public class Rag extends Item{
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logEntry(this.getClass().getName(), "DecreaseTurnsLeft", "");
         }
-        System.out.println("Rag durability decreased by 1 "+ turnsLeft);
+        //System.out.println("Rag durability decreased by 1 "+ turnsLeft);
         turnsLeft --;
         if (GameManager.loggerStatus == ELogger.INFO) {
             Logger.logExit(this.getClass().getName(), "DecreaseTurnsLeft", "turnsLeft --");

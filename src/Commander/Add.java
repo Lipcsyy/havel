@@ -21,7 +21,7 @@ public class Add implements ICommand {
     public void execute( String[] params ) {
 
         if ( params.length != 2 ) {
-            System.out.println( "Invalid number of parameters" );
+            //System.out.println( "Invalid number of parameters" );
             return;
         }
 
@@ -32,18 +32,18 @@ public class Add implements ICommand {
                 Room room = CommandInterpreter.gameManager.GetRoomById( params[ 1 ] );
 
                 if ( room == null ) {
-                    System.out.println( "Could not find the room" );
+                    //System.out.println( "Could not find the room" );
                     return;
                 }
 
                 if ( ! room.HasMoreSpaceInRoom() ) {
-                    System.out.println( "Not enough space in room" );
+                    //System.out.println( "Not enough space in room" );
                     return;
                 }
 
                 student = new Student( room, CommandInterpreter.gameManager );
 
-                System.out.println( student.id );
+                //System.out.println( student.id );
                 break;
 
             case "Teacher":

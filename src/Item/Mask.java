@@ -50,8 +50,8 @@ public class Mask extends Item{
 
     @Override
     public void PrintInfo() {
-        System.out.println();
-        System.out.println(  "Item: " + id );
-        System.out.println( "Durability: " + abilityNumber);
+        //System.out.println();
+        //System.out.println(  "Item: " + id );
+        //System.out.println( "Durability: " + abilityNumber);
     }
 }

@@ -357,11 +357,11 @@ public class Room implements java.io.Serializable , IObservable {
             playerInRoom.Interact(player);
         }
 
-        System.out.println("TURNS LEFT FOR EFFECT: " + turnsLeftForEffect);
+        //System.out.println("TURNS LEFT FOR EFFECT: " + turnsLeftForEffect);
 
         if ( !items.isEmpty() && player.GetIsAlive()) {
             if( turnsLeftForEffect == 0 || (turnsLeftForEffect > 0 && wasSavedFromFreeze == true)){
-                System.out.println("COLLECTING ITEM");
+                //System.out.println("COLLECTING ITEM");
                 player.CollectItem(items.get(0));
             }
         }

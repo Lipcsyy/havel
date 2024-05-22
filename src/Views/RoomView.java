@@ -134,7 +134,6 @@ public class RoomView extends JPanel {
         rightPanel.setOpaque(false);
         add(rightPanel, BorderLayout.EAST);
 
-
         // Add doors conditionally
         if (hasTopDoor) {
             if (topDoor == null) {
@@ -145,12 +144,6 @@ public class RoomView extends JPanel {
                 add(topPanel, BorderLayout.NORTH);
             }
         }
-        /*
-        else if (topDoor != null) {
-            remove(topDoor);
-            topDoor = null;
-        }
-        */
         if (hasBottomDoor) {
             if (bottomDoor == null) {
                 //System.out.println("Adding bottom door");
@@ -160,12 +153,6 @@ public class RoomView extends JPanel {
                 add(bottomPanel, BorderLayout.SOUTH);
             }
         }
-        /*
-        else if (bottomDoor != null) {
-            remove(bottomDoor);
-            bottomDoor = null;
-        }
-        */
         if (hasLeftDoor) {
             if (leftDoor == null) {
                 //System.out.println("Adding left door");
@@ -175,12 +162,6 @@ public class RoomView extends JPanel {
                 add(leftPanel, BorderLayout.WEST);
             }
         }
-        /*
-        else if (leftDoor != null) {
-            remove(leftDoor);
-            leftDoor = null;
-        }
-        */
         if (hasRightDoor) {
             if (rightDoor == null) {
                 //System.out.println("Adding right door");
@@ -190,12 +171,6 @@ public class RoomView extends JPanel {
                 add(rightPanel, BorderLayout.EAST);
             }
         }
-        /*
-        else if (rightDoor != null) {
-            remove(rightDoor);
-            rightDoor = null;
-        }
-        */
 
         // Add player and item holders to the center panel
         this.playerHolder = new PlayerHolder(studentView, playerViews, centerPanel.getWidth(), centerPanel.getHeight() / 2, room.GetCapacity());
@@ -212,8 +187,7 @@ public class RoomView extends JPanel {
 
     public void InitilizeDoors(int doorLength, int doorThickness) {
 
-        System.out.println("InitializeDoors");
-
+        //System.out.println("InitializeDoors");
 
         // Add doors conditionally
         JPanel topPanel = new JPanel(new GridBagLayout());
@@ -249,12 +223,6 @@ public class RoomView extends JPanel {
                 topDoor.Render();
             }
         }
-        /*
-        else if (topDoor != null) {
-            remove(topDoor);
-            topDoor = null;
-        }
-        */
         if (hasBottomDoor) {
             if (bottomDoor == null) {
                 //System.out.println("Adding bottom door");
@@ -266,12 +234,6 @@ public class RoomView extends JPanel {
                 bottomDoor.Render();
             }
         }
-        /*
-        else if (bottomDoor != null) {
-            remove(bottomDoor);
-            bottomDoor = null;
-        }
-        */
         if (hasLeftDoor) {
             if (leftDoor == null) {
                 //System.out.println("Adding left door");
@@ -283,12 +245,6 @@ public class RoomView extends JPanel {
                 leftDoor.Render();
             }
         }
-        /*
-        else if (leftDoor != null) {
-            remove(leftDoor);
-            leftDoor = null;
-        }
-        */
         if (hasRightDoor) {
             if (rightDoor == null) {
                 //System.out.println("Adding right door");
@@ -300,12 +256,6 @@ public class RoomView extends JPanel {
                 rightDoor.Render();
             }
         }
-        /*
-        else if (rightDoor != null) {
-            remove(rightDoor);
-            rightDoor = null;
-        }
-        */
 
     }
 
@@ -336,7 +286,7 @@ public class RoomView extends JPanel {
 
     public void Render(int roomWidth, int roomHeight, PlayerView studentView, ArrayList<ItemView> itemViews, ArrayList<PlayerView> playerViews, Room room) {
 
-        System.out.println("roomview.render");
+        //System.out.println("roomview.render");
         Initialize(roomWidth, roomHeight, studentView, itemViews, playerViews, room);
 
 
