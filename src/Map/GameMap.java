@@ -26,8 +26,8 @@ public class GameMap {
 
         //3 Rooms for debugging
         Room cell1 = new Room((new Random()).nextInt(4, 5), gameManager);
-        gameManager.GetGameController().SetRoomView(cell1, new RoomView(ERooms.GASROOM, false, false, false, false));
-        cell1.SetTurnsLeftForEffect( Integer.MAX_VALUE );
+        gameManager.GetGameController().SetRoomView(cell1, new RoomView(ERooms.ROOM, false, false, false, false));
+        //cell1.SetTurnsLeftForEffect( Integer.MAX_VALUE );
         cell1.setCoordinates(0, 0);
         adjacencyList.put(cell1, new HashSet<>());
 
@@ -37,10 +37,13 @@ public class GameMap {
         cell2.setCoordinates(1, 0);
         adjacencyList.put(cell2, new HashSet<>());
 
+        /*
         Room cell3 = new Room((new Random()).nextInt(4, 5), gameManager);
         gameManager.GetGameController().SetRoomView(cell3, new RoomView(ERooms.ROOM, false, false, false, false));
         cell3.setCoordinates(2, 0);
         adjacencyList.put(cell3, new HashSet<>());
+
+         */
 
     /*
         // Initialize the graph with all cells having no neighbors
