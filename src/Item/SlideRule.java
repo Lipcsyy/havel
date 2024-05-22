@@ -37,6 +37,6 @@ public class SlideRule extends Item {
             Logger.logExit(this.getClass().getName(), "PickUpItem");
         }
 
-        player.win();
+        player.gameManager.GetGameController().WinGame();
     }
 }

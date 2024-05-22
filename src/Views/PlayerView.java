@@ -41,10 +41,7 @@ public class PlayerView extends JPanel {
 
         this.setPreferredSize( new Dimension(64, 128) );
         this.setSize(64,128);
-
-        System.out.println("Rendering this shit");
         this.setFocusable(true);
-        System.out.println("Rendering this bitch");
         repaint();
     }
 }

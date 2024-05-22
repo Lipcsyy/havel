@@ -35,12 +35,12 @@ public class GamePanel extends JPanel {
         // Initialize containerPanel and set its preferred size to one third of the screen width
         containerPanel = new JPanel();
         containerPanel.setPreferredSize(new Dimension((int)Math.round((float)SCREEN_WIDTH * (2.0f / 3.0f)), SCREEN_HEIGHT));
-
+        containerPanel.setOpaque(false);
 
         // Initialize mazeDisplayArea and set its preferred size to one third of the screen width
         mazeDisplayArea = new JPanel();
         mazeDisplayArea.setPreferredSize(new Dimension((int)Math.round((float) SCREEN_WIDTH / 3), SCREEN_HEIGHT));
-        mazeDisplayArea.setBackground(Color.GRAY);
+        mazeDisplayArea.setOpaque(false);
 
         // Set the layout of the GamePanel to BorderLayout
         setLayout(new BorderLayout());
@@ -105,6 +105,14 @@ public class GamePanel extends JPanel {
         mazeDisplay.Render();
         for( InventoryConsole inventoryConsole : inventoryConsoles ) {
             inventoryConsole.Render();
+        }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }
     }
 }

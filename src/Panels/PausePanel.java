@@ -17,9 +17,8 @@ public class PausePanel extends JPanel {
         int SCREEN_HEIGHT = (int) screenSize.getHeight();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 
-        // Set the background color to transparent red
-        //setBackground(new Color(0,0,0,128));
-        // Make the panel not opaque
+        // Set the background color to half transparent
+        setBackground(new Color(0,0,0,128));
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Set layout to BoxLayout
 

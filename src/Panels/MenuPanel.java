@@ -21,7 +21,7 @@ public class MenuPanel extends JPanel {
         this.setPreferredSize( new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT) );
         this.setFocusable(true);
 
-        backgroundImage = new ImageIcon("background.jpg").getImage();
+        backgroundImage = new ImageIcon("./src/Images/background.jpg").getImage();
 
         JPanel topPanel = new JPanel() {
             @Override
@@ -49,6 +49,7 @@ public class MenuPanel extends JPanel {
         buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
         buttonPanel.add(exitButton);
         buttonPanel.add(Box.createHorizontalGlue()); // Add horizontal glue after buttons
+        buttonPanel.setOpaque(false);
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Set layout to BoxLayout
         add(Box.createVerticalGlue()); // Add vertical glue before topPanel
