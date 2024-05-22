@@ -8,7 +8,6 @@ import java.awt.*;
 
 public class PausePanel extends JPanel {
     private final MenuButton mainMenuButton = new MenuButton("Return to main menu");
-    private final MenuButton saveButton = new MenuButton("Save the game");
     private final MenuButton restartButton = new MenuButton("Restart the game");
     private final MenuButton cancelButton = new MenuButton("Cancel");
 
@@ -27,8 +26,6 @@ public class PausePanel extends JPanel {
         setButtons();
 
         add(Box.createVerticalGlue()); // Add vertical glue before buttons
-        add(saveButton);
-        add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
         add(restartButton);
         add(Box.createRigidArea(new Dimension(0, 10))); // Add space between buttons
         add(mainMenuButton);
@@ -39,22 +36,11 @@ public class PausePanel extends JPanel {
 
     private void setButtons() {
         mainMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
-        saveButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         restartButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         cancelButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
 
         mainMenuButton.addActionListener(event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "MENU");
-        });
-
-        saveButton.addActionListener(event -> {
-            // Save the game
-            if(GameFrame.previousPanel == GameFrame.singleGamePanel){
-                GameFrame.singleGamePanel.SaveGame();
-            }
-            else {
-                GameFrame.multiGamePanel.SaveGame();
-            }
         });
 
         restartButton.addActionListener(event -> {

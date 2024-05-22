@@ -9,7 +9,7 @@ import java.awt.*;
 public class MenuPanel extends JPanel {
     private final JButton singlePlayer = new MenuButton("Single Player");
     private final JButton multiPlayer = new MenuButton("Multiplayer");
-    private final JButton loadGameButton = new MenuButton("Load Game");
+    //private final JButton loadGameButton = new MenuButton("Load Game");
     private final JButton exitButton = new MenuButton("Exit");
     private Image backgroundImage;
 
@@ -44,8 +44,8 @@ public class MenuPanel extends JPanel {
         buttonPanel.add(singlePlayer);
         buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
         buttonPanel.add(multiPlayer);
-        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
-        buttonPanel.add(loadGameButton);
+        //buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
+        //buttonPanel.add(loadGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Add space between buttons
         buttonPanel.add(exitButton);
         buttonPanel.add(Box.createHorizontalGlue()); // Add horizontal glue after buttons
@@ -64,7 +64,7 @@ public class MenuPanel extends JPanel {
 
         singlePlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         multiPlayer.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
-        loadGameButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
+        //loadGameButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
         exitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button to center
 
         singlePlayer.addActionListener(event -> {
@@ -90,10 +90,10 @@ public class MenuPanel extends JPanel {
             GameFrame.multiGamePanel.InitializeGame(EGameMode.MULTIPLAYER);
         });
 
-        loadGameButton.addActionListener( event -> {
+        /*loadGameButton.addActionListener( event -> {
             GameFrame.layout.show(GameFrame.mainPanel, "LOADER" );
             //GameFrame.loaderPanel.makeModel();  // Load the saved games
-        });
+        });*/
 
         exitButton.addActionListener( event -> System.exit(0));
     }
