@@ -2,6 +2,7 @@ package Room;
 
 import GameManager.GameManager;
 import Item.Item;
+import Player.Player;
 import Room.*;
 import Enums.ELogger;
 
@@ -57,18 +58,63 @@ public class MagicRoom extends Room {
     }
 
     @Override
-    public void CleanRoom(boolean isWashed) {
+    public void CleanRoom( boolean isWashed ) {
         if (GameManager.loggerStatus == ELogger.INFO ) {
             Logger.logEntry(this.getClass().getName(), "CleanRoom", "");
         }
+
         this.turnsLeftForEffect = 0;
 
+
         if ( isWashed ) {
-            this.passagesBeforeStickiness = 5;
+            this.SetRoomNumberOfPassagesBeforeStickiness(5);
         }
 
-        if (GameManager.loggerStatus == ELogger.INFO) {
-            Logger.logExit(this.getClass().getName(), "CleanRoom" );
+        gameManager.GetGameController().ChangeRoomViewToMagic( this );
+
+        //We need to update the view
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "CleanRoom");
+        }
+    }
+
+    @Override
+    public void SetTurnsLeftForEffect(int turnsLeftForEffect) {
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        }
+        this.turnsLeftForEffect = turnsLeftForEffect;
+
+        gameManager.GetGameController().ChangeRoomViewToGas( this );
+        //System.out.println(players.size());
+
+        for ( Player player : this.players ) {
+            player.Freeze(3);
+        }
+
+        NotifyObservers();
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
+        }
+    }
+
+    public void DecreaseTurnsLeftForEffect() {
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logEntry(this.getClass().getName(), "SetTurnsLeftForEffect", String.valueOf(turnsLeftForEffect));
+        }
+        if( turnsLeftForEffect > 0)
+            this.turnsLeftForEffect--;
+
+        if( this.turnsLeftForEffect == 0) {
+            gameManager.GetGameController().ChangeRoomViewToMagic( this );
+        }
+
+        if (GameManager.loggerStatus == ELogger.INFO ) {
+            Logger.logExit(this.getClass().getName(), "SetTurnsLeftForEffect");
         }
     }
 }

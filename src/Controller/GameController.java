@@ -439,6 +439,11 @@ public class GameController implements IObserver {
         roomView.setBackgroundPicture( ERooms.GASROOM );
     }
 
+    public void ChangeRoomViewToMagic(Room room){
+        RoomView roomView = roomViews.get(room);
+        roomView.setBackgroundPicture( ERooms.MAGICROOM );
+    }
+
     public RoomView GetRoomViewByRoom( Room room ){
         return roomViews.get( room );
     }
