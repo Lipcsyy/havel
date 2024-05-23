@@ -30,7 +30,7 @@ public class RoomView extends JPanel {
     public ItemHolder itemHolder = new ItemHolder();
     public PlayerHolder playerHolder = new PlayerHolder();
 
-    public RoomView(ERooms eRooms, boolean hasTopDoor, boolean hasBottomDoor, boolean hasLeftDoor, boolean hasRightDoor) {
+    public RoomView(ERooms eRooms) {
 
         try {
             if (eRooms == ERooms.ROOM) {
@@ -44,10 +44,10 @@ public class RoomView extends JPanel {
             e.printStackTrace();
         }
 
-        this.hasTopDoor = hasTopDoor;
-        this.hasBottomDoor = hasBottomDoor;
-        this.hasLeftDoor = hasLeftDoor;
-        this.hasRightDoor = hasRightDoor;
+        this.hasTopDoor = false;
+        this.hasBottomDoor = false;
+        this.hasLeftDoor = false;
+        this.hasRightDoor = false;
 
         setFocusable(true);
         setLayout(new BorderLayout());
@@ -274,6 +274,13 @@ public class RoomView extends JPanel {
         add(centerPanel, BorderLayout.CENTER);
 
         return centerPanel;
+    }
+
+    public void SetDoor(EDirection direction){
+        if(direction == EDirection.WEST) hasLeftDoor = true;
+        if(direction == EDirection.EAST) hasRightDoor = true;
+        if(direction == EDirection.NORTH) hasTopDoor = true;
+        if(direction == EDirection.SOUTH) hasBottomDoor = true;
     }
 
     public DoorView GetDoor(EDirection direction){

@@ -41,6 +41,10 @@ public class MazeDisplay extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(lineThickness));
 
+        //room of teacher and cleaner
+        Room player1room = null;
+        Room player2room = null;
+
         for (Room room : adjacencyList.keySet()) {
             boolean studentInRoom = false;
             int roomX = room.x * roomSize;
@@ -117,12 +121,23 @@ public class MazeDisplay extends JPanel {
                     continue;
                 }
 
+                //(1 teacher and 1 cleaner esetén): one of them is green, other is blue
                 if ( player.GetRoom() == room ) {
-                    g2d.setColor(Color.BLUE);
+                    if( player1room == null) {
+                        player1room = room;
+                        g2d.setColor(Color.green);
+                    } else {
+                        player2room = room;
+                        g2d.setColor(Color.blue);
+                    }
                     int playerX = roomX + (roomSize - playerIndicatorSize) / 2;
                     int playerY = roomY + (roomSize - playerIndicatorSize) / 2;
                     g2d.fillOval(playerX, playerY, playerIndicatorSize, playerIndicatorSize);
                 }
+            }
+            //(1 TEACHER AND 1 CLEANER ESETÉN): TEACHER AND CLEANER IN THE SAME ROOM
+            if(player2room == player1room && player1room != null && player2room != null) {
+                System.out.println("--- Teacher and cleaner in the same room !!");
             }
         }
     }

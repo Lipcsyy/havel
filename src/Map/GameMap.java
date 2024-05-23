@@ -3,6 +3,7 @@ package Map;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import Enums.EDirection;
 import Enums.ERooms;
 import Room.*;
 import GameManager.GameManager;
@@ -17,8 +18,10 @@ public class GameMap {
     private static final int N = 1, S = 2, E = 4, W = 8;
     private static final int[] DIRECTIONS = {N, S, E, W};
 
-    public GameMap(int width, int height, GameManager gameManager){
+    private GameManager gameManager;
 
+    public GameMap(int width, int height, GameManager gameManager){
+        this.gameManager = gameManager;
         this.width = width;
         this.height = height;
 
@@ -52,20 +55,20 @@ public class GameMap {
 
                 double randomNumber = random.nextDouble(0,1);
 
-                if( randomNumber < 0.2){
+                if( randomNumber < 0.0){
                     Room cell = new Room((new Random()).nextInt(4, 5), gameManager);
-                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.GASROOM, false, false, false, false));
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.GASROOM));
                     cell.SetTurnsLeftForEffect( Integer.MAX_VALUE );
                     cell.setCoordinates(x, y);
                     adjacencyList.put(cell, new HashSet<>());
-                } else if ( randomNumber < 0.4){
+                } else if ( randomNumber < 0.0){
                     MagicRoom cell = new MagicRoom((new Random()).nextInt(4, 5), gameManager);
-                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.MAGICROOM, false, false, false, false));
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.MAGICROOM));
                     cell.setCoordinates(x, y);
                     adjacencyList.put(cell, new HashSet<>());
                 } else {
                     Room cell = new Room((new Random()).nextInt(4, 5), gameManager);
-                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.ROOM, false, false, false, false));
+                    gameManager.GetGameController().SetRoomView(cell, new RoomView(ERooms.ROOM));
                     cell.setCoordinates(x, y);
                     adjacencyList.put(cell, new HashSet<>());
                 }
@@ -115,6 +118,17 @@ public class GameMap {
                 Room neighbor = findCell(nx, ny);
                 if (!neighbor.in && !adjacencyList.get(neighbor).contains(cell)) {
                     adjacencyList.get(neighbor).add(cell);
+                    EDirection doorDirection = EDirection.NORTH; // Default value
+                    if (direction == S) {
+                        doorDirection = EDirection.NORTH;
+                    } else if (direction == N) {
+                        doorDirection = EDirection.SOUTH;
+                    } else if (direction == W) {
+                        doorDirection = EDirection.EAST;
+                    } else if (direction == E) {
+                        doorDirection = EDirection.WEST;
+                    }
+                    gameManager.GetGameController().GetRoomViewByRoom(neighbor).SetDoor(doorDirection);
                 }
             }
         }

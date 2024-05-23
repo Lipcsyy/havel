@@ -73,7 +73,7 @@ public class GameManager implements java.io.Serializable{
 
     private void InitalizeGame(EGameMode gameMode)  {
 
-        map = new GameMap(5, 5, this);
+        map = new GameMap(3, 3, this);
         map.generateMaze();
         map.displayMaze();
 
@@ -92,7 +92,7 @@ public class GameManager implements java.io.Serializable{
 
             //Add 10 teacher to the game
 
-            for (  int i = 0; i < 4; i++ ) {
+            for (  int i = 0; i < 3; i++ ) {
 
                 Teacher teacher = new Teacher(map.getRandomCell(), this);
                 gameController.SetPlayerViews(teacher, new PlayerView( EPlayers.TEACHER));
@@ -155,7 +155,7 @@ public class GameManager implements java.io.Serializable{
                 gameController.SetPlayerViews( cleaner, new PlayerView(EPlayers.CLEANER) );
            }
 
-            for( int i = 0; i < 3; i++) {
+            for( int i = 0; i < 0; i++) {
                 SlideRule slideRule = new SlideRule();
                 Room SlideRuleRoom = map.getRandomCell();
                 while( SlideRuleRoom == playerStartRoom){
@@ -178,48 +178,48 @@ public class GameManager implements java.io.Serializable{
         if( gameMode == EGameMode.MULTIPLAYER){
             numberOfItems = 3;
         } else {
-            numberOfItems = 2;
+            numberOfItems = 4;
         }
 
         for( int i = 0; i < numberOfItems; i++){
-            //Add Mask
-            Mask mask = new Mask();
-            map.getRandomCell().AddItem(mask);
-            gameController.SetItemViews(mask, new ItemView(EItems.MASK));
-
-            //Add TVSZ
-            Tvsz tvsz = new Tvsz();
-            map.getRandomCell().AddItem(tvsz);
-            gameController.SetItemViews(tvsz, new ItemView( EItems.TVSZ));
-
-            //Add AirFreshener
-            AirFreshener airFreshener = new AirFreshener();
-            map.getRandomCell().AddItem(airFreshener);
-            gameController.SetItemViews(airFreshener, new ItemView(EItems.AIRFRESHENER));
+//            //Add Mask
+//            Mask mask = new Mask();
+//            map.getRandomCell().AddItem(mask);
+//            gameController.SetItemViews(mask, new ItemView(EItems.MASK));
+//
+//            //Add TVSZ
+//            Tvsz tvsz = new Tvsz();
+//            map.getRandomCell().AddItem(tvsz);
+//            gameController.SetItemViews(tvsz, new ItemView( EItems.TVSZ));
+//
+//            //Add AirFreshener
+//            AirFreshener airFreshener = new AirFreshener();
+//            map.getRandomCell().AddItem(airFreshener);
+//            gameController.SetItemViews(airFreshener, new ItemView(EItems.AIRFRESHENER));
 
             //Add BeerGlass
-            //BeerGlass beerGlass = new BeerGlass();
-            //map.getRandomCell().AddItem(beerGlass);
-            //gameController.SetItemViews(beerGlass, new ItemView(EItems.BEERGLASS));
+            BeerGlass beerGlass = new BeerGlass();
+            map.getRandomCell().AddItem(beerGlass);
+            gameController.SetItemViews(beerGlass, new ItemView(EItems.BEERGLASS));
 
 //            //Add Camembert
 //            Camembert camembert = new Camembert();
 //            map.getRandomCell().AddItem(camembert);
 //            gameController.SetItemViews(camembert, new ItemView(EItems.CAMEMBERT));
 
-            //Add Rag
-            Rag rag = new Rag();
-            map.getRandomCell().AddItem(rag);
-            gameController.SetItemViews(rag, new ItemView(EItems.RAG));
+//            //Add Rag
+//            Rag rag = new Rag();
+//            map.getRandomCell().AddItem(rag);
+//            gameController.SetItemViews(rag, new ItemView(EItems.RAG));
 
             //Add Transistor pairs
-            Transistor transistor = new Transistor();
-            map.getRandomCell().AddItem(transistor);
-            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
-
-            transistor = new Transistor();
-            map.getRandomCell().AddItem(transistor);
-            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
+//            Transistor transistor = new Transistor();
+//            map.getRandomCell().AddItem(transistor);
+//            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
+//
+//            transistor = new Transistor();
+//            map.getRandomCell().AddItem(transistor);
+//            gameController.SetItemViews(transistor, new ItemView(EItems.TRANSISTOR));
 
             //Add FakeItems
             FakeItem fakeMask = new FakeItem();
